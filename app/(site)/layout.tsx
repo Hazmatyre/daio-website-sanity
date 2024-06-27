@@ -20,6 +20,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Footer3 } from "@/components/blocks/footer3";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -27,7 +28,8 @@ export async function generateMetadata(): Promise<Metadata> {
     // Metadata should never contain stega
     stega: false,
   });
-  const title = settings?.title || demo.title;
+  // const title = settings?.title || demo.title;
+  const title = "DAIO International"
   const description = settings?.description || demo.description;
 
   const ogImage = resolveOpenGraphImage(settings?.ogImage);
@@ -84,7 +86,7 @@ export default function RootLayout({
           {draftMode().isEnabled && <AlertBanner />}
           <main>{children}</main>
           <Suspense>
-            <Footer />
+            <Footer3 />
           </Suspense>
         </section>
         {draftMode().isEnabled && <VisualEditing />}
