@@ -21,6 +21,8 @@ import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Footer3 } from "@/components/blocks/footer3";
+import { Toaster } from "@/components/ui/sonner";
+import { Navbar3 } from "@/components/blocks/navbar3";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -84,6 +86,9 @@ export default function RootLayout({
       <body>
         <section className="min-h-screen">
           {draftMode().isEnabled && <AlertBanner />}
+          <Suspense>
+            <Navbar3 />
+          </Suspense>
           <main>{children}</main>
           <Suspense>
             <Footer3 />
@@ -91,6 +96,7 @@ export default function RootLayout({
         </section>
         {draftMode().isEnabled && <VisualEditing />}
         <SpeedInsights />
+        <Toaster />
       </body>
     </html>
   );
