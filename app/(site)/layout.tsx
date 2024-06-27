@@ -19,6 +19,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import { Button } from "@/components/ui/button";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -66,6 +67,7 @@ async function Footer() {
   return (
     <footer className="bg-accent-1 border-accent-2 border-t">
       This is the footer.
+      <Button>Wow!</Button>
     </footer>
   );
 }
