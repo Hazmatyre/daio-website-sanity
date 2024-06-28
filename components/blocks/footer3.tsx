@@ -145,9 +145,9 @@ export const Footer3Defaults: Footer3Props = {
   columnLinks: [
     {
       links: [
-        { title: "Link One", url: "#" },
-        { title: "Link Two", url: "#" },
-        { title: "Link Three", url: "#" },
+        { title: "Home", url: "#" },
+        { title: "Pongamia", url: "#" },
+        { title: "About Us", url: "#" },
         { title: "Link Four", url: "#" },
         { title: "Link Five", url: "#" },
       ],
