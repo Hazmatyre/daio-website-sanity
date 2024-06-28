@@ -8,7 +8,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-    './sanity/**/*.{ts,tsx}'
+    './sanity/**/*.{ts,tsx}',
 	],
   prefix: "",
   presets: [require("@relume_io/relume-tailwind")],

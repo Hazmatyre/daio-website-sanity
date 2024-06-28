@@ -13,6 +13,7 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import { Layout90 } from "@/components/blocks/Layout90.Hero";
+import { Layout245 } from "@/components/blocks/Layout245.Feature";
 
 
 export default async function Page() {
@@ -24,6 +25,9 @@ export default async function Page() {
   // ]);
 
   return (
-    <Layout90></Layout90>
+    <>
+      <Layout90></Layout90>
+      <Layout245></Layout245>
+    </>
   );
 }
