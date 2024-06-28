@@ -11,17 +11,19 @@ const config = {
     './sanity/**/*.{ts,tsx}'
 	],
   prefix: "",
+  presets: [require("@relume_io/relume-tailwind")],
   theme: {
     container: {
       center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      // padding: "2rem",
+      // screens: {
+      //   "2xl": "1400px",
+      // },
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"]
+        sans: ["var(--font-montserrat)"],
+        serif: ["var(--font-eb-garamond)"]
       },
       colors: {
         border: "hsl(var(--border))",

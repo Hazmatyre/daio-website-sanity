@@ -8,6 +8,8 @@ import {
   type PortableTextBlock,
 } from "next-sanity";
 import { Inter } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { draftMode } from "next/headers";
 import { Suspense } from "react";
 
@@ -20,6 +22,9 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { settingsQuery } from "@/sanity/lib/queries";
 import { resolveOpenGraphImage } from "@/sanity/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Footer3 } from "@/components/blocks/footer3";
+import { Toaster } from "@/components/ui/sonner";
+import { Navbar3 } from "@/components/blocks/navbar3";
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -27,7 +32,8 @@ export async function generateMetadata(): Promise<Metadata> {
     // Metadata should never contain stega
     stega: false,
   });
-  const title = settings?.title || demo.title;
+  // const title = settings?.title || demo.title;
+  const title = "DAIO International"
   const description = settings?.description || demo.description;
 
   const ogImage = resolveOpenGraphImage(settings?.ogImage);
@@ -58,6 +64,18 @@ const inter = Inter({
   display: "swap",
 });
 
+const eb_garamond = EB_Garamond({
+  variable: "--font-eb-garamond",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 async function Footer() {
   const data = await sanityFetch<SettingsQueryResult>({
     query: settingsQuery,
@@ -78,17 +96,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} bg-white text-black`}>
+    <html lang="en" className={`${montserrat.variable} ${eb_garamond.variable} bg-white text-black`}>
       <body>
         <section className="min-h-screen">
           {draftMode().isEnabled && <AlertBanner />}
+          <Suspense>
+            <Navbar3 />
+          </Suspense>
           <main>{children}</main>
           <Suspense>
-            <Footer />
+            <Footer3 />
           </Suspense>
         </section>
         {draftMode().isEnabled && <VisualEditing />}
         <SpeedInsights />
+        <Toaster />
       </body>
     </html>
   );
