@@ -12,6 +12,7 @@ import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
+import { Layout90 } from "@/components/blocks/Layout90.Hero";
 
 
 export default async function Page() {
@@ -23,8 +24,6 @@ export default async function Page() {
   // ]);
 
   return (
-    <div className="container mx-auto px-5">
-      PAGE CONTENT
-    </div>
+    <Layout90></Layout90>
   );
 }

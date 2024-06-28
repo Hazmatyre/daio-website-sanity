@@ -8,6 +8,8 @@ import {
   type PortableTextBlock,
 } from "next-sanity";
 import { Inter } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import { draftMode } from "next/headers";
 import { Suspense } from "react";
 
@@ -62,6 +64,18 @@ const inter = Inter({
   display: "swap",
 });
 
+const eb_garamond = EB_Garamond({
+  variable: "--font-eb-garamond",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+  subsets: ["latin"],
+  display: "swap",
+});
+
 async function Footer() {
   const data = await sanityFetch<SettingsQueryResult>({
     query: settingsQuery,
@@ -82,7 +96,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} bg-white text-black`}>
+    <html lang="en" className={`${montserrat.variable} ${eb_garamond.variable} bg-white text-black`}>
       <body>
         <section className="min-h-screen">
           {draftMode().isEnabled && <AlertBanner />}

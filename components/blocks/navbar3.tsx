@@ -38,7 +38,7 @@ export type Navbar3Props = React.ComponentPropsWithoutRef<"section"> & Partial<P
 export const Navbar3 = (props: Navbar3Props) => {
 
   return (
-    <nav className="flex items-center justify-between border-b border-border-primary bg-background-primary px-[5%] min-h-14 basis-0 grow">
+    <nav className="flex items-center justify-between border-b border-border-primary bg-background-primary px-[5%] min-h-20 basis-0 grow">
       <Sheet>
         <SheetTrigger asChild>
           <div className="basis-0 grow md:basis-auto md:grow-0">

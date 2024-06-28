@@ -22,7 +22,8 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)"]
+        sans: ["var(--font-montserrat)"],
+        serif: ["var(--font-eb-garamond)"]
       },
       colors: {
         border: "hsl(var(--border))",
