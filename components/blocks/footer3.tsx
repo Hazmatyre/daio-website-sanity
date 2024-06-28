@@ -5,6 +5,8 @@ import {
   BiLogoLinkedinSquare,
   BiLogoYoutube,
 } from "react-icons/bi";
+import Image from "next/image";
+import WebsiteLogo from '/public/daio-logo-green.svg'
 
 type ImageProps = {
   url?: string;
@@ -61,7 +63,11 @@ export const Footer3 = (props: Footer3Props) => {
           <div>
             <div className="mb-6 md:mb-8">
               <a href={logo.url}>
-                <img src={logo.src} alt={logo.alt} className="inline-block" />
+                <Image
+                  src={WebsiteLogo}
+                  alt="DAIO International Logo"
+                  className="h-6 w-auto"
+                />
               </a>
             </div>
             <div className="mb-6 md:mb-8">

@@ -6,10 +6,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { RxChevronDown } from "react-icons/rx";
 import { Button } from "../ui/button";
 import { useMediaQuery } from 'react-responsive'
-import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerTitle, DrawerTrigger } from "../ui/drawer";
+import { Drawer, DrawerClose, DrawerContent, DrawerDescription, DrawerFooter, DrawerHeader, DrawerOverlay, DrawerPortal, DrawerTitle, DrawerTrigger } from "../ui/drawer";
 import { Label } from "../ui/label";
 import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
+import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
+import Image from "next/image";
+import logo from '/public/daio-logo-green.svg'
+import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 
 type ImageProps = {
   url?: string;
@@ -33,45 +37,142 @@ export type Navbar3Props = React.ComponentPropsWithoutRef<"section"> & Partial<P
 
 export const Navbar3 = (props: Navbar3Props) => {
 
-  const [open, setOpen] = useState(false)
-  const isDesktop = useMediaQuery({
-    query: '(min-width: 992px)'
-  })
-
   return (
-    <nav className="flex items-center justify-between border-b border-border-primary bg-background-primary px-[5%] md:min-h-18">
-      {!isDesktop &&
-        <Drawer open={open} onOpenChange={setOpen}>
-          <DrawerTrigger asChild>
+    <nav className="flex items-center justify-between border-b border-border-primary bg-background-primary px-[5%] min-h-14 basis-0 grow">
+      <Sheet>
+        <SheetTrigger asChild>
+          <div className="basis-0 grow md:basis-auto md:grow-0">
             <Button
-              className="flex size-12 flex-col justify-center lg:hidden bg-transparent hover:bg-transparent"
+              className="flex size-12 flex-col justify-center md:hidden bg-transparent hover:bg-transparent relative -left-4 "
             >
               {Array(3)
                 .fill(null)
                 .map((_, index) => (
-                  <span key={index} className="my-[3px] h-0.5 w-6 bg-black lg:hidden" />
+                  <span key={index} className="my-[3px] h-0.5 w-6 bg-black md:hidden" />
                 ))}
             </Button>
-          </DrawerTrigger>
-          <DrawerContent>
-            <DrawerHeader className="text-left">
-              <DrawerTitle>Edit profile</DrawerTitle>
-              <DrawerDescription>
-                Make changes to your profile here. Click save when you&apos;re done.
-              </DrawerDescription>
-            </DrawerHeader>
-            <ProfileForm className="px-4" />
-            <DrawerFooter className="pt-2">
-              <DrawerClose asChild>
-                <Button variant="outline">Cancel</Button>
-              </DrawerClose>
-            </DrawerFooter>
-          </DrawerContent>
-        </Drawer>
-      }
-
+          </div>
+        </SheetTrigger>
+        <SheetContent side={"left"} title="Navigation Menu">
+          <VisuallyHidden.Root>
+            <SheetTitle>Navigation Menu</SheetTitle>
+            <SheetDescription>Mobile-only navigation menu</SheetDescription>
+          </VisuallyHidden.Root>
+          <SheetHeader className="flex flex-col gap-y-5">
+            <div className="flex">
+              <Image
+                src={logo}
+                alt="DAIO International Logo"
+                className="h-6 w-auto"
+              />
+            </div>
+          </SheetHeader>
+            <ul>
+              <li>Home</li>
+              <li>About</li>
+              <li>Pongamia</li>
+            </ul>
+        </SheetContent>
+      </Sheet>
+      <ul className="hidden md:flex basis-0 grow gap-x-5">
+        <a href="#">
+          <li>Home</li>
+        </a>
+        <a href="#">
+          <li>Pongamia</li>
+        </a>
+        <a href="#">
+          <li>About</li>
+        </a>
+      </ul>
+      <div className="">
+        <Image
+          src={logo}
+          alt="DAIO International Logo"
+          className="h-6 w-auto"
+        />
+      </div>
+      <div className="basis-0 grow flex justify-end">
+        <Button variant={"outline"} className="">
+          Contact
+        </Button>
+      </div>
     </nav>
-  );
+  )
+
+  // if (!isDesktop) {
+  //   return (
+  //     <nav className="flex items-center justify-between border-b border-border-primary bg-background-primary px-[5%]">
+  //       <>
+  //         <Sheet>
+  //           <SheetTrigger asChild>
+  //             <Button
+  //               className="flex size-12 flex-col justify-center lg:hidden bg-transparent hover:bg-transparent relative -left-4"
+  //             >
+  //               {Array(3)
+  //                 .fill(null)
+  //                 .map((_, index) => (
+  //                   <span key={index} className="my-[3px] h-0.5 w-6 bg-black lg:hidden" />
+  //                 ))}
+  //             </Button>
+  //           </SheetTrigger>
+
+  //           <SheetContent side={"left"}>
+  //             <SheetHeader className="flex flex-col gap-y-5">
+  //               <div className="flex">
+  //                 <Image
+  //                   src={logo}
+  //                   alt="DAIO International Logo"
+  //                   className="h-6 w-auto"
+  //                 />
+  //               </div>
+  //               <ul>
+  //                 <li>Home</li>
+  //                 <li>About</li>
+  //                 <li>Pongamia</li>
+  //               </ul>
+  //             </SheetHeader>
+  //           </SheetContent>
+  //         </Sheet>
+  //       </>
+  //       <div className="">
+  //         <Image
+  //           src={logo}
+  //           alt="DAIO International Logo"
+  //           className="h-6"
+  //         />
+  //       </div>
+  //       <Button variant={"outline"}>Contact</Button>
+  //     </nav>
+  //   );
+  // } else if (isDesktop) {
+  //   return (
+  //     <nav className="flex items-center justify-between border-b border-border-primary bg-background-primary px-[5%]">
+  //       <>
+  //         <ul>
+  //           <a href="#">
+  //             <li>Home</li>
+  //           </a>
+  //           <a href="#">
+  //             <li>Pongamia</li>
+  //           </a>
+  //           <a href="#">
+  //             <li>About</li>
+  //           </a>
+  //         </ul>
+  //       </>
+  //       <div className="">
+  //         <Image
+  //           src={logo}
+  //           alt="DAIO International Logo"
+  //           className="h-6"
+  //         />
+  //       </div>
+  //       <Button variant={"outline"}>Contact</Button>
+  //     </nav>
+  //   )
+  // }
+
 };
 
 function ProfileForm({ className }: React.ComponentProps<"form">) {
