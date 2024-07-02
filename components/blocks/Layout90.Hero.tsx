@@ -29,18 +29,21 @@ export const Layout90 = (props: Layout90Props) => {
         <div className="">
           <p className="md:text-md max-md:text-justify">{description}</p>
           <div className="flex mt-8 gap-x-3 justify-start">
-            <Button size={"lg"} variant={"default"}>Learn More</Button>
-            <Button size={"lg"} variant={"secondary"}>Get In Touch</Button>
+            <Button size={"lg"} variant={"secondary"}>Learn More</Button>
+            <Button size={"lg"} variant={"default"}>Get In Touch</Button>
           </div>
         </div>
       </div>
       <div className="relative aspect-video container mt-14 md:mt-18 lg:mt-20">
-        <Image
-          src={image.src}
-          className="w-full object-cover rounded-3xl"
-          alt={image.alt}
-          fill
-        />
+        <div className="overflow-hidden relative w-full h-full rounded-3xl">
+          <Image
+            src={image.src}
+            // className="w-full object-cover hover:scale-105 transition-transform ease-linear duration-2000"
+            className="w-full object-cover "
+            alt={image.alt}
+            fill
+          />
+        </div>
       </div>
     </section>
   );

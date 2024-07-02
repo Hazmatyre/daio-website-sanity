@@ -21,6 +21,9 @@ const config = {
       // },
     },
     extend: {
+      transitionDuration: {
+        '2000': '10000ms',
+      },
       fontFamily: {
         sans: ["var(--font-montserrat)"],
         serif: ["var(--font-eb-garamond)"]
