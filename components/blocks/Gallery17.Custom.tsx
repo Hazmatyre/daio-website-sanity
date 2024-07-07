@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import type { CarouselApi } from "@relume_io/relume-ui";
 import clsx from "clsx";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 
 type ImageProps = {
   src: string;
@@ -36,9 +37,10 @@ export const Gallery17 = (props: Gallery17Props) => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
+  
 
   return (
-    <section className="overflow-hidden">
+    <section className="">
       <div className="px-[5%] py-16 md:py-24 lg:py-28">
         <div className="container">
           <div className="mb-12 text-center md:mb-18 lg:mb-20">
@@ -49,9 +51,15 @@ export const Gallery17 = (props: Gallery17Props) => {
           <Carousel
             setApi={setApi}
             opts={{
-              loop: true,
+              loop: false,
               align: "start",
+              breakpoints: {
+                '(min-width: 768px)': { active: false }
+              },
+              dragFree: false,
+              skipSnaps: true,
             }}
+            plugins={[WheelGesturesPlugin()]}
           >
             <div className="relative">
               <CarouselContent className="ml-0">
