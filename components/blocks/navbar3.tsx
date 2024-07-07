@@ -40,7 +40,7 @@ export const Navbar3 = (props: Navbar3Props) => {
   return (
     <nav className="flex items-center justify-between border-b-0 border-border-primary bg-background-primary px-[5%] min-h-20 basis-0 grow">
       <Sheet>
-        <SheetTrigger asChild>
+        <SheetTrigger asChild className="hidden">
           <div className="basis-0 grow md:basis-auto md:grow-0">
             <Button
               className="flex size-12 flex-col justify-center md:hidden bg-transparent hover:bg-transparent relative -left-4 "
@@ -74,7 +74,7 @@ export const Navbar3 = (props: Navbar3Props) => {
             </ul>
         </SheetContent>
       </Sheet>
-      <ul className="hidden md:flex basis-0 grow gap-x-5">
+      <ul className="hidden /md:flex basis-0 grow gap-x-5">
         <a href="#">
           <li>Home</li>
         </a>
