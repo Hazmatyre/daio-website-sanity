@@ -4,8 +4,19 @@
 
   @layer base {
     :root {
-      --background: 48 100% 96%;
-      --foreground: 154 100% 14%;
+      --brand-floral-white: 48 100% 97%;
+      --brand-naples-yellow: 48 100% 70%;
+      --brand-dark-green: 154 100% 7%;
+      --brand-british-racing-green: 154 100% 14%;
+      --brand-darkmouth-green: 153 100% 20% ;
+      --brand-sea-green: 153 100% 27%;
+      --brand-jade: 154 100% 34%;
+      --brand-spring-green: 154 100% 47%; 
+      --brand-aquamaine: 154 100% 74%;
+      --brand-mint-green: 154 100% 93%;
+
+      --background: var(--brand-floral-white);
+      --foreground: var(--brand-darkmouth-green);
 
       --card: 0 0% 100%;
       --card-foreground: 222.2 84% 4.9%;
@@ -13,11 +24,11 @@
       --popover: 0 0% 100%;
       --popover-foreground: 222.2 84% 4.9%;
 
-      --primary: 48 100% 70%;
-      --primary-foreground: 154 100% 14%;
+      --primary: var(--brand-naples-yellow);
+      --primary-foreground: var(--brand-darkmouth-green);
 
-      --secondary: 154 100% 20%;
-      --secondary-foreground: 154 100% 74%;
+      --secondary: var(--brand-darkmouth-green);
+      --secondary-foreground: var(--brand-mint-green);
 
       --muted: 210 40% 96.1%;
       --muted-foreground: 215.4 16.3% 46.9%;
@@ -28,16 +39,16 @@
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 210 40% 98%;
 
-      --border: 154 100% 14%;
-      --input: 154 100% 14%;
+      --border: var(--brand-darkmouth-green);
+      --input: var(--brand-darkmouth-green);
       --ring: 222.2 84% 4.9%;
 
-      --radius: 0.5rem;
+      --radius: 1.75rem;
     }
 
     .dark {
-      --background: 222.2 84% 4.9%;
-      --foreground: 210 40% 98%;
+      --background: var(--brand-darkmouth-green);
+      --foreground: var(--brand-floral-white);
 
       --card: 222.2 84% 4.9%;
       --card-foreground: 210 40% 98%;
