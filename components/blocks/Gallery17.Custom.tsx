@@ -41,11 +41,11 @@ export const Gallery17 = (props: Gallery17Props) => {
 
   return (
     <section className="">
-      <div className="px-[5%] py-16 md:py-24 lg:py-28">
+      <div className="px-[5%] py-8 md:py-16 lg:py-24">
         <div className="container">
-          <div className="mb-12 text-center md:mb-18 lg:mb-20">
+          <div className="mb-12 text-center md:mb-18 lg:mb-20 flex flex-col items-center">
             <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
-            <p className="md:text-md">{description}</p>
+            <p className="md:text-md max-w-md">{description}</p>
           </div>
 
         </div>
@@ -56,8 +56,10 @@ export const Gallery17 = (props: Gallery17Props) => {
         opts={{
           loop: false,
           align: "start",
+
           breakpoints: {
-            '(min-width: 768px)': { active: false }
+            '(min-width: 1024px)': { active: false },
+            '(min-width: 768px)': { slidesToScroll: 2 },
           },
           dragFree: false,
           skipSnaps: true,
@@ -66,9 +68,9 @@ export const Gallery17 = (props: Gallery17Props) => {
         className="relative"
       >
         <div className="relative">
-          <CarouselContent className="ml-2">
+          <CarouselContent className="ml-2 lg:justify-center">
             {images.map((image, index) => (
-              <CarouselItem key={index} className="px-3 basis-[75.73%] md:basis-1/2 md:px-4">
+              <CarouselItem key={index} className="px-3 basis-[260px] md:basis-[344px] xxl:basis-[405px] md:px-4">
                 <div className="w-full aspect-[9/16] overflow-hidden rounded-lg">
                   <img
                     src={image.src}
@@ -80,8 +82,8 @@ export const Gallery17 = (props: Gallery17Props) => {
             ))}
           </CarouselContent>
         </div>
-        <div className="mt-[30px] flex items-center justify-center md:mt-[46px]">
-          <CarouselProgress></CarouselProgress>
+        <div className="mt-8 flex items-center justify-end px-[5%] md:mt-[46px] gap-x-2 container lg:hidden">
+          {/* <CarouselProgress></CarouselProgress> */}
           <CarouselPrevious className="bg-white flex md:size-12 lg:size-14" />
           <CarouselNext className="bg-white flex md:size-12 lg:size-14" />
         </div>
@@ -89,6 +91,12 @@ export const Gallery17 = (props: Gallery17Props) => {
     </section>
   );
 };
+
+// Sizes
+// 260 x 505 - done - 75,73%
+// md: 344 x 608
+// lg: 372 x 680
+// xxl: 405 x 740
 
 export const Gallery17Defaults: Gallery17Props = {
   heading: "Engineered for Mother Nature.",
@@ -106,10 +114,10 @@ export const Gallery17Defaults: Gallery17Props = {
       src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
       alt: "Placeholder image 3",
     },
-    {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
-      alt: "Placeholder image 4",
-    },
+    // {
+    //   src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
+    //   alt: "Placeholder image 4",
+    // },
   ],
 };
 
