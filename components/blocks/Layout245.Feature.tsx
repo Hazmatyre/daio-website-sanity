@@ -50,7 +50,7 @@ export const Layout245 = (props: Layout245Props) => {
               <h3 className="mb-5 text-2xl font-bold md:mb-6 md:text-3xl md:leading-[1.3] lg:text-4xl font-serif tracking-tight">
                 {section.heading}
               </h3>
-              <p className="text-justify leading-7">{section.description}</p>
+              <p className=" leading-7">{section.description}</p>
             </div>
           ))}
         </div>

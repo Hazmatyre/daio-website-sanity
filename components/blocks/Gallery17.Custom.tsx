@@ -47,43 +47,45 @@ export const Gallery17 = (props: Gallery17Props) => {
             <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
             <p className="md:text-md">{description}</p>
           </div>
-          {/* for all available options: https://www.embla-carousel.com/api/options/ */}
-          <Carousel
-            setApi={setApi}
-            opts={{
-              loop: false,
-              align: "start",
-              breakpoints: {
-                '(min-width: 768px)': { active: false }
-              },
-              dragFree: false,
-              skipSnaps: true,
-            }}
-            plugins={[WheelGesturesPlugin()]}
-          >
-            <div className="relative">
-              <CarouselContent className="ml-0">
-                {images.map((image, index) => (
-                  <CarouselItem key={index} className="px-3 md:basis-1/2 md:px-4">
-                    <div className="w-full">
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        className="aspect-square size-full object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </div>
-            <div className="mt-[30px] flex items-center justify-center md:mt-[46px]">
-              <CarouselPrevious className="bg-white flex md:size-12 lg:size-14" />
-              <CarouselNext className="bg-white flex md:size-12 lg:size-14" />
-              <CarouselProgress></CarouselProgress>
-            </div>
-          </Carousel>
+
         </div>
       </div>
+      {/* for all available options: https://www.embla-carousel.com/api/options/ */}
+      <Carousel
+        setApi={setApi}
+        opts={{
+          loop: false,
+          align: "start",
+          breakpoints: {
+            '(min-width: 768px)': { active: false }
+          },
+          dragFree: false,
+          skipSnaps: true,
+        }}
+        plugins={[WheelGesturesPlugin()]}
+        className="relative"
+      >
+        <div className="relative">
+          <CarouselContent className="ml-2">
+            {images.map((image, index) => (
+              <CarouselItem key={index} className="px-3 basis-[75.73%] md:basis-1/2 md:px-4">
+                <div className="w-full aspect-[9/16] overflow-hidden rounded-lg">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="aspect-square size-full object-cover"
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </div>
+        <div className="mt-[30px] flex items-center justify-center md:mt-[46px]">
+          <CarouselProgress></CarouselProgress>
+          <CarouselPrevious className="bg-white flex md:size-12 lg:size-14" />
+          <CarouselNext className="bg-white flex md:size-12 lg:size-14" />
+        </div>
+      </Carousel>
     </section>
   );
 };
