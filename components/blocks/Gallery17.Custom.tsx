@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import type { CarouselApi } from "@relume_io/relume-ui";
 import clsx from "clsx";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselProgress } from "../ui/carousel";
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 
 type ImageProps = {
@@ -37,7 +37,7 @@ export const Gallery17 = (props: Gallery17Props) => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
   }, [api]);
-  
+
 
   return (
     <section className="">
@@ -75,20 +75,11 @@ export const Gallery17 = (props: Gallery17Props) => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="hidden bg-white md:flex md:size-12 lg:size-14" />
-              <CarouselNext className="hidden bg-white md:flex md:size-12 lg:size-14" />
             </div>
             <div className="mt-[30px] flex items-center justify-center md:mt-[46px]">
-              {images.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => api?.scrollTo(index)}
-                  className={clsx("relative mx-[3px] inline-block size-2 rounded-full", {
-                    "bg-black": current === index + 1,
-                    "bg-neutral-darker/40": current !== index + 1,
-                  })}
-                />
-              ))}
+              <CarouselPrevious className="bg-white flex md:size-12 lg:size-14" />
+              <CarouselNext className="bg-white flex md:size-12 lg:size-14" />
+              <CarouselProgress></CarouselProgress>
             </div>
           </Carousel>
         </div>

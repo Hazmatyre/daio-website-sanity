@@ -28,6 +28,8 @@ type CarouselContextProps = {
   scrollNext: () => void
   canScrollPrev: boolean
   canScrollNext: boolean
+  scrollProgress: number
+
 } & CarouselProps
 
 const CarouselContext = React.createContext<CarouselContextProps | null>(null)
@@ -67,6 +69,7 @@ const Carousel = React.forwardRef<
     )
     const [canScrollPrev, setCanScrollPrev] = React.useState(false)
     const [canScrollNext, setCanScrollNext] = React.useState(false)
+    const [scrollProgress, setScrollProgress] = React.useState(0)
 
     const onSelect = React.useCallback((api: CarouselApi) => {
       if (!api) {
@@ -98,6 +101,11 @@ const Carousel = React.forwardRef<
       [scrollPrev, scrollNext]
     )
 
+    const onScroll = React.useCallback((api: CarouselApi) => {
+      const progress = Math.max(0, Math.min(1, api?.scrollProgress() || 0))
+      setScrollProgress(progress * 100)
+    }, [])
+
     React.useEffect(() => {
       if (!api || !setApi) {
         return
@@ -120,6 +128,17 @@ const Carousel = React.forwardRef<
       }
     }, [api, onSelect])
 
+    React.useEffect(() => {
+      if (!api) {
+        return
+      }
+      api
+      .on('reInit', onScroll)
+      .on('scroll', onScroll)
+      .on('slideFocus', onScroll)
+      onScroll(api)
+    }, [api, onScroll])
+
     return (
       <CarouselContext.Provider
         value={{
@@ -132,6 +151,7 @@ const Carousel = React.forwardRef<
           scrollNext,
           canScrollPrev,
           canScrollNext,
+          scrollProgress,
         }}
       >
         <div
@@ -206,7 +226,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute  h-8 w-8 rounded-full",
+        "flex  h-8 w-8 rounded-full",
         orientation === "horizontal"
           ? "-left-12 top-1/2 -translate-y-1/2"
           : "-top-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -235,7 +255,7 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute h-8 w-8 rounded-full",
+        "flex h-8 w-8 rounded-full",
         orientation === "horizontal"
           ? "-right-12 top-1/2 -translate-y-1/2"
           : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
@@ -252,6 +272,23 @@ const CarouselNext = React.forwardRef<
 })
 CarouselNext.displayName = "CarouselNext"
 
+const CarouselProgress = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  const { scrollProgress } = useCarousel()
+
+  return (
+    <div className="embla__progress">
+      <div
+        className="embla__progress__bar"
+        style={{ transform: `translate3d(${scrollProgress}%,0px,0px)` }}
+      />
+    </div>
+  )
+})
+CarouselProgress.displayName = "CarouselProgress"
+
 export {
   type CarouselApi,
   Carousel,
@@ -259,4 +296,5 @@ export {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
+  CarouselProgress
 }
