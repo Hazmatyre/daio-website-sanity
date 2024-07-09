@@ -12,6 +12,7 @@ import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 type SlideProps = {
   containerClasses?: string
@@ -47,6 +48,10 @@ export const Gallery17 = (props: Gallery17Props) => {
     });
   }, [api]);
 
+  const FADE_UP_ANIMATION_VARIANTS = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { type: "tween" } },
+  };
 
   return (
     <section className="">
@@ -77,17 +82,34 @@ export const Gallery17 = (props: Gallery17Props) => {
         className="relative pb-8 md:pb-16 xl:pb-24"
       >
         <div className="relative">
-          <CarouselContent className="ml-2 xl:justify-center">
-            {slides.map((slide, index) => (
-              <CarouselItem key={index} className="px-3 basis-[284px] md:basis-[376px] md:py-6 lg:basis-[406px] xxl:basis-[405px] md:px-5">
-                <div className={cn("w-full aspect-[9/16] overflow-hidden rounded-lg border relative z-10", slide.containerClasses)}>
-                  {slide.img}
-                  {slide.gradient}
-                  {slide.cardContent}
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
+          <motion.div
+            initial="hidden"
+            animate="show"
+            viewport={{ once: true }}
+            variants={{
+              hidden: {},
+              show: {
+                transition: {
+                  staggerChildren: 0.1,
+                },
+              },
+            }}
+          >
+            <CarouselContent className="ml-2 xl:justify-center">
+              {slides.map((slide, index) => (
+                <CarouselItem key={index} className="px-3 basis-[284px] md:basis-[376px] md:py-6 lg:basis-[406px] xxl:basis-[405px] md:px-5">
+                  <motion.div
+                    className={cn("w-full aspect-[9/16] overflow-hidden rounded-lg border relative z-10", slide.containerClasses)}
+                    variants={FADE_UP_ANIMATION_VARIANTS}
+                  >
+                    {slide.img}
+                    {slide.gradient}
+                    {slide.cardContent}
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+          </motion.div>
         </div>
         <div className="mt-8 flex items-center justify-end px-[5%] md:mt-[46px] gap-x-2 container xl:hidden">
           {/* <CarouselProgress></CarouselProgress> */}
