@@ -137,6 +137,7 @@ export const Gallery17Defaults: Gallery17Props = {
           alt={"Some alt text"}
           className="size-full absolute -z-20 object-cover object-bottom"
           width={405}
+          priority
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-white size-full via-25% via-white to-35% rounded-3xl" />,
@@ -160,6 +161,7 @@ export const Gallery17Defaults: Gallery17Props = {
           alt={"Some alt"}
           className="absolute bottom-1/4 -z-10 scale-150"
           width={405}
+          priority
         />,
       gradient:
         <div className="absolute -z-20 bg-gradient-to-b from-brand-700 to-brand-900  size-full rounded-3xl" />,
@@ -182,6 +184,7 @@ export const Gallery17Defaults: Gallery17Props = {
           alt={"Some alt text"}
           className="size-full absolute -z-20 object-cover position object-bottom"
           width={405}
+          priority
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-black to-65% via size-full rounded-3xl" />,
