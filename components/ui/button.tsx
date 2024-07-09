@@ -19,7 +19,8 @@ const buttonVariants = cva(
         accent: "bg-accent text-accent-foreground hover:bg-accent/90",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        chevron: "text-xs pointer-events-none bg-background border border-foreground font-extrabold"
+        chevron: "text-xs pointer-events-none bg-background border border-foreground font-extrabold",
+        disabled: "!opacity-100 bg-gray-300 text-foreground",
       },
       size: {
         default: "h-10 rounded-3xl px-5 py-2",

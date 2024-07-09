@@ -42,7 +42,7 @@
 
       --border: var(--brand-dartmouth-green);
       --input: var(--brand-dartmouth-green);
-      --ring: 222.2 84% 4.9%;
+      --ring: var(--brand-jade);
 
       --radius: 1.75rem;
     }

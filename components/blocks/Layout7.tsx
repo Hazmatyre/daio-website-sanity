@@ -83,7 +83,7 @@ export const Layout7Defaults: Layout7Props = {
     {
       title: "Fuel From Trees",
       description:
-        "We make eco-friendly fuel from Pongamia tree seeds as an energy alternative to diesel and palm.",
+        "We make eco-friendly bio-fuel from Pongamia tree seeds as an energy alternative to diesel and palm.",
     },
   ],
   buttons: [
