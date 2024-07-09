@@ -145,17 +145,17 @@ export const Footer3Defaults: Footer3Props = {
   columnLinks: [
     {
       links: [
-        { title: "Home", url: "/" },
-        { title: "About", url: "#" },
-        { title: "MyBio Bio-Toilet", url: "#" },
-        { title: "MyBio Bio-Fertiliser", url: "#" },
-        { title: "MyBotany Pongamia", url: "#" },
+        // { title: "Home", url: "/" },
+        // { title: "About", url: "#" },
+        // { title: "MyBio Bio-Toilet", url: "#" },
+        // { title: "MyBio Bio-Fertiliser", url: "#" },
+        // { title: "MyBotany Pongamia", url: "#" },
       ],
     },
     {
       links: [
-        { title: "Blog", url: "#" },
-        { title: "Contact", url: "#" },
+        // { title: "Blog", url: "#" },
+        // { title: "Contact", url: "#" },
         // { title: "Link Eight", url: "#" },
         // { title: "Link Nine", url: "#" },
         // { title: "Link Ten", url: "#" },
@@ -164,9 +164,9 @@ export const Footer3Defaults: Footer3Props = {
   ],
   socialMediaLinks: [
     // { url: "#", icon: <BiLogoFacebookCircle className="size-6" /> },
-    { url: "#", icon: <BiLogoInstagram className="size-6 fill-white" /> },
+    // { url: "#", icon: <BiLogoInstagram className="size-6 fill-white" /> },
     // { url: "#", icon: <FaXTwitter className="size-6 p-0.5" /> },
-    { url: "#", icon: <BiLogoLinkedinSquare className="size-6 fill-white" /> },
+    // { url: "#", icon: <BiLogoLinkedinSquare className="size-6 fill-white" /> },
     // { url: "#", icon: <BiLogoYoutube className="size-6" /> },
   ],
   footerText: "© 2024 DAIO International Sdn. Bhd. (1240908-W) All rights reserved.",
