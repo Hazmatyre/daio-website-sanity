@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Input, Label, Textarea } from "@relume_io/relume-ui";
+import { Label } from "../ui/label";
+import { Input } from "../ui/input";
+import { Textarea } from "../ui/textarea";
 import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
@@ -61,7 +63,7 @@ export const Contact5 = (props: Contact5Props) => {
             </div>
             <div className="flex items-center gap-4">
               <BiMap className="size-6 flex-none" />
-              <p>{address}</p>
+              <a href="https://maps.app.goo.gl/vyJEuCpxbyDbGVdZ7" className="whitespace-pre-line underline underline-offset-4 type-regular">{address}</a>
             </div>
           </div>
         </div>
@@ -129,12 +131,12 @@ export const Contact5 = (props: Contact5Props) => {
 };
 
 export const Contact5Defaults: Contact5Props = {
-  tagline: "Tagline",
-  heading: "Contact us",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  email: "hello@relume.io",
-  phone: "+1 (555) 000-0000",
-  address: "123 Sample St, Sydney NSW 2000 AU",
+  tagline: "Contact Us",
+  heading: "Get in touch.",
+  description: "We look forward to working with you to make the Earth a better place for our future generations.",
+  email: "hello@daiointernational.com",
+  phone: "+(60) 37 890 6684",
+  address: "Unit 39-02 (East Wing), Q Sentral, 2A Jalan Stesen Sentral 2, KL Sentral, 50470 Kuala Lumpur",
   button: { title: "Submit" },
 };
 
