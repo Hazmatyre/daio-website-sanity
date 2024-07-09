@@ -6,17 +6,18 @@
     :root {
       --brand-floral-white: 48 100% 97%;
       --brand-naples-yellow: 48 100% 70%;
+
       --brand-dark-green: 154 100% 7%;
       --brand-british-racing-green: 154 100% 14%;
-      --brand-darkmouth-green: 153 100% 20% ;
+      --brand-dartmouth-green: 153 100% 20% ;
       --brand-sea-green: 153 100% 27%;
       --brand-jade: 154 100% 34%;
       --brand-spring-green: 154 100% 47%; 
-      --brand-aquamaine: 154 100% 74%;
+      --brand-aquamarine: 154 100% 74%;
       --brand-mint-green: 154 100% 93%;
 
       --background: var(--brand-floral-white);
-      --foreground: var(--brand-darkmouth-green);
+      --foreground: var(--brand-dartmouth-green);
 
       --card: 0 0% 100%;
       --card-foreground: 222.2 84% 4.9%;
@@ -25,9 +26,9 @@
       --popover-foreground: 222.2 84% 4.9%;
 
       --primary: var(--brand-naples-yellow);
-      --primary-foreground: var(--brand-darkmouth-green);
+      --primary-foreground: var(--brand-dartmouth-green);
 
-      --secondary: var(--brand-darkmouth-green);
+      --secondary: var(--brand-dartmouth-green);
       --secondary-foreground: var(--brand-mint-green);
 
       --muted: 210 40% 96.1%;
@@ -39,15 +40,15 @@
       --destructive: 0 84.2% 60.2%;
       --destructive-foreground: 210 40% 98%;
 
-      --border: var(--brand-darkmouth-green);
-      --input: var(--brand-darkmouth-green);
+      --border: var(--brand-dartmouth-green);
+      --input: var(--brand-dartmouth-green);
       --ring: 222.2 84% 4.9%;
 
       --radius: 1.75rem;
     }
 
     .dark {
-      --background: var(--brand-darkmouth-green);
+      --background: var(--brand-dartmouth-green);
       --foreground: var(--brand-floral-white);
 
       --card: 222.2 84% 4.9%;

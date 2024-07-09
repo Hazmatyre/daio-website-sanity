@@ -29,6 +29,18 @@ const config = {
         serif: ["var(--font-eb-garamond)"]
       },
       colors: {
+        brand: {
+          "floralWhite": "hsl(var(--brand-floral-white))",
+          "naplesYellow": "hsl(var(--brand-naples-yellow))"  ,
+          "900": "hsl(var(--brand-dark-green))",
+          "800": "hsl(var(--brand-british-racing-green))",
+          "700": "hsl(var(--brand-dartmouth-green))",
+          "600": "hsl(var(--brand-sea-green))",
+          "500": "hsl(var(--brand-jade))",
+          "400": "hsl(var(--brand-spring-green))",
+          "200": "hsl(var(--brand-aquamarine))",
+          "50": "hsl(var(--brand-mint-green))",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
