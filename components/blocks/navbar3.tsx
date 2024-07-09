@@ -85,18 +85,18 @@ export const Navbar3 = (props: Navbar3Props) => {
           <li>About</li>
         </a>
       </ul>
-      <div className="">
+      <a href="/"  className="block">
         <Image
           src={logo}
           alt="DAIO International Logo"
           className="h-6 w-auto"
         />
-      </div>
-      <div className="basis-0 grow flex justify-end">
+      </a>
+      <a className="basis-0 grow flex justify-end block" href="/#contact-us">
         <Button variant={"outline"} className="">
           Contact
         </Button>
-      </div>
+      </a>
     </nav>
   )
 

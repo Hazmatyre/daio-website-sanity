@@ -171,7 +171,7 @@ export const Footer3Defaults: Footer3Props = {
   ],
   footerText: "© 2024 DAIO International Sdn. Bhd. (1240908-W) All rights reserved.",
   footerLinks: [
-    { title: "Terms & Conditions", url: "#" },
+    // { title: "Terms & Conditions", url: "#" },
   ],
 };
 

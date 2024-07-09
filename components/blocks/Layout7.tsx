@@ -1,9 +1,12 @@
-import { Button } from "@relume_io/relume-ui";
+import { Button } from "../ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { RxChevronRight } from "react-icons/rx";
+import Image from "next/image";
+import imgPollution from '/public/pexels-ellocofish-12906459.jpg'
 
 type ImageProps = {
-  src: string;
+  src: string | StaticImport;
   alt?: string;
 };
 
@@ -17,7 +20,7 @@ type Props = {
   heading: string;
   description: string;
   subHeadings: SubHeadingProps[];
-  buttons: ButtonProps[];
+  buttons: React.ReactNode[];
   image: ImageProps;
 };
 
@@ -47,18 +50,14 @@ export const Layout7 = (props: Layout7Props) => {
               ))}
             </div>
             <div className="mt-6 flex items-center gap-x-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              {buttons}
             </div>
           </div>
-          <div className="rounded-3xl overflow-hidden">
-            <img
+          <div className="rounded-3xl overflow-hidden shadow-xxlarge">
+            <Image
               src={image.src}
               className="w-full object-cover"
-              alt={image.alt} />
+              alt={image.alt || ""} />
           </div>
         </div>
       </div>
@@ -67,34 +66,28 @@ export const Layout7 = (props: Layout7Props) => {
 };
 
 export const Layout7Defaults: Layout7Props = {
-  tagline: "Tagline",
-  heading: "Medium length section heading goes here",
+  tagline: "Our Vision",
+  heading: "Dealing with Waste & Climate Change: Our Plans for a Sustainable Planet.",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    "At Daio International, our commitment lies in building a sustainable global future and striving for carbon neutrality by 2050. We strive to achieve a balance between financial success and social impact, envisioning a world where one does not have to choose between convenience and the well-being of the planet to pursue their goals and necessities.",
   subHeadings: [
     {
-      title: "Subheading one",
+      title: "Recycling Human Waste",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "Our MyBio Toilets do not require any piping for sewage. We collect and process urine into bio-fertiliser.",
     },
     {
-      title: "Subheading two",
+      title: "Fuel From Trees",
       description:
-        "Lorem ipsum dolor sit ameet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+        "We make eco-friendly fuel from Pongamia tree seeds as an energy alternative to diesel and palm.",
     },
   ],
   buttons: [
-    { title: "Button", variant: "secondary" },
-    {
-      title: "Button",
-      variant: "link",
-      size: "link",
-      iconRight: <RxChevronRight className="size-6" />,
-    },
+    <a key={1} href="/#contact-us"><Button >Contact Us</Button></a>,
+    // <Button key={2}>Button 2</Button>
   ],
   image: {
-    src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
-    alt: "Placeholder image",
+    src: imgPollution,    alt: "Woman looking through polluted glass by Trevor Lawrence. https://www.pexels.com/photo/woman-looking-through-polluted-glass-12906459/",
   },
 };
 

@@ -1,15 +1,18 @@
-import { Button } from "@relume_io/relume-ui";
+import Image from "next/image";
+import { Button } from "../ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import imgTeam from '/public/homepage-team-2144.webp'
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type ImageProps = {
-  src: string;
+  src: string | StaticImport;
   alt?: string;
 };
 
 type Props = {
   heading: string;
   description: string;
-  buttons: ButtonProps[];
+  buttons: React.ReactNode[];
   image: ImageProps;
 };
 
@@ -24,18 +27,14 @@ export const Header19 = (props: Header19Props) => {
     <header className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
-          <div className="order-2 lg:order-1 overflow-hidden rounded-3xl">
-            <img src={image.src} className="w-full object-cover" alt={image.alt} />
+          <div className="order-2 lg:order-1 overflow-hidden rounded-3xl block shadow-xxlarge">
+            <Image src={image.src} width={616} height={640} className="w-full object-cover" alt={image.alt || ""} />
           </div>
           <div className="order-1 lg:order-2">
             <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">{heading}</h1>
             <p className="md:text-md">{description}</p>
             <div className="mt-6 flex gap-x-4 md:mt-8">
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              {buttons}
             </div>
           </div>
         </div>
@@ -45,13 +44,15 @@ export const Header19 = (props: Header19Props) => {
 };
 
 export const Header19Defaults: Header19Props = {
-  heading: "Medium length hero heading goes here",
+  heading: "Join us in preserving the planet's future.",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-  buttons: [{ title: "Button" }, { title: "Button", variant: "secondary" }],
+    "We are looking for like-minded individuals and groups who care about the environment and want to make a difference. Together, we can create a sustainable future for generations to come.",
+  buttons: [
+    <a key={1} href="/#contact-us" className="block"><Button>Contact Us</Button></a>
+  ],
   image: {
-    src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
-    alt: "Placeholder image",
+    src: imgTeam,
+    alt: "DAIO International staff members photo.",
   },
 };
 
