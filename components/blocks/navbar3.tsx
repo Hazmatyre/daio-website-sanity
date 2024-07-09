@@ -90,6 +90,7 @@ export const Navbar3 = (props: Navbar3Props) => {
           src={logo}
           alt="DAIO International Logo"
           className="h-6 w-auto"
+          priority
         />
       </a>
       <a className="basis-0 grow flex justify-end block" href="/#contact-us">
