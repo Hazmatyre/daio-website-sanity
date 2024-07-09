@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss"
 import typography from '@tailwindcss/typography';
+import plugin from 'tailwindcss/plugin';
 
 const config = {
   darkMode: ["class"],
@@ -9,7 +10,7 @@ const config = {
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
     './sanity/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   presets: [require("@relume_io/relume-tailwind")],
   theme: {
@@ -31,7 +32,7 @@ const config = {
       colors: {
         brand: {
           "floralWhite": "hsl(var(--brand-floral-white))",
-          "naplesYellow": "hsl(var(--brand-naples-yellow))"  ,
+          "naplesYellow": "hsl(var(--brand-naples-yellow))",
           "900": "hsl(var(--brand-dark-green))",
           "800": "hsl(var(--brand-british-racing-green))",
           "700": "hsl(var(--brand-dartmouth-green))",
@@ -98,7 +99,62 @@ const config = {
   },
   plugins: [
     require("tailwindcss-animate"),
-    typography
+    typography,
+    plugin(({ addComponents, addBase, }) => {
+      addComponents({
+        ".type-desktop-h1": {
+          "@apply font-serif text-[3.5rem] leading-[120%] font-bold": ""
+        },
+        ".type-desktop-h2": {
+          "@apply font-serif text-[3rem] leading-[120%] font-bold": ""
+        },
+        ".type-desktop-h3": {
+          "@apply font-serif text-[2.5rem] leading-[120%] font-bold": ""
+        },
+        ".type-desktop-h4": {
+          "@apply font-serif text-[2rem] leading-[130%] font-bold": ""
+        },
+        ".type-desktop-h5": {
+          "@apply font-serif text-[1.5rem] leading-[140%] font-bold": ""
+        },
+        ".type-desktop-h6": {
+          "@apply font-serif text-[1.25rem] leading-[140%] font-bold": ""
+        },
+        ".type-mobile-h1": {
+          "@apply font-serif text-[2.5rem] leading-[120%] font-bold": ""
+        },
+        ".type-mobile-h2": {
+          "@apply font-serif text-[2.25rem] leading-[120%] font-bold": ""
+        },
+        ".type-mobile-h3": {
+          "@apply font-serif text-[2rem] leading-[120%] font-bold": ""
+        },
+        ".type-mobile-h4": {
+          "@apply font-serif text-[1.5rem] leading-[140%] font-bold": ""
+        },
+        ".type-mobile-h5": {
+          "@apply font-serif text-[1.25rem] leading-[140%] font-bold": ""
+        },
+        ".type-mobile-h6": {
+          "@apply font-serif text-[1.125rem] leading-[140%] font-bold": ""
+        },
+        ".type-large": {
+          "@apply font-sans text-[1.25rem] leading-[150%]": ""
+        },
+        ".type-medium": {
+          "@apply font-sans text-[1.125rem] leading-[150%]": ""
+        },
+        ".type-regular": {
+          "@apply font-sans text-[1rem] leading-[150%]": ""
+        },
+        ".type-small": {
+          "@apply font-sans text-[0.875rem] leading-[150%]": ""
+        },
+        ".type-tiny": {
+          "@apply font-sans text-[0.75rem] leading-[150%]": ""
+        },
+      });
+    }),
   ],
 } satisfies Config
 

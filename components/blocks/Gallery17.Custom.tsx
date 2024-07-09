@@ -133,8 +133,8 @@ export const Gallery17Defaults: Gallery17Props = {
           <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
             MyBio
           </Button>
-          <h1 className="font-serif text-4xl font-bold mt-2.5 leading-tight">Bio-Toilet</h1>
-          <p className="font-extrabold text-xs text-black">Zero sewage. Save Water.</p>
+          <h3 className="font-bold mt-2.5 type-mobile-h3">Bio-Toilet</h3>
+          <p className="font-extrabold type-tiny text-black">Zero sewage. Save Water.</p>
           <Button variant={"default"} className="mt-auto w-fit self-end">
             Coming Soon
           </Button>
@@ -156,8 +156,8 @@ export const Gallery17Defaults: Gallery17Props = {
           <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
             MyBio
           </Button>
-          <h1 className="font-serif text-4xl font-bold mt-2.5 leading-tight text-brand-200">Bio-Fertiliser</h1>
-          <p className="font-extrabold text-xs text-background">Maintain soil fertility for generations with zero sewage</p>
+          <h3 className="type-mobile-h3 font-bold mt-2.5 text-brand-200">Bio-Fertiliser</h3>
+          <p className="font-extrabold type-tiny text-background">Maintain soil fertility for generations with zero sewage</p>
           <Button variant={"default"} className="mt-auto w-fit self-end">
             Coming Soon
           </Button>
@@ -178,8 +178,8 @@ export const Gallery17Defaults: Gallery17Props = {
           <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
             MyBotany
           </Button>
-          <h1 className="font-serif text-4xl font-bold mt-2.5 leading-tight text-brand-naplesYellow">Pongamia Pinnata</h1>
-          <p className="font-extrabold text-background text-xs">The most natural bio-fuel source from tree seeds through our reforestation initiative.</p>
+          <h3 className="font-bold mt-2.5 type-mobile-h3 text-brand-naplesYellow">Pongamia Pinnata</h3>
+          <p className="font-extrabold text-background type-tiny">The most natural bio-fuel source from tree seeds through our reforestation initiative.</p>
           <Button variant={"default"} className="mt-auto w-fit self-end">
             Coming Soon
           </Button>
