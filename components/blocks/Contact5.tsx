@@ -8,6 +8,19 @@ import { Checkbox } from "../ui/checkbox";
 import { Button } from "../ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form"
+import { toast } from "sonner";
 
 type Props = {
   tagline: string;
@@ -32,15 +45,67 @@ export const Contact5 = (props: Contact5Props) => {
   const [messageInput, setMessageInput] = useState("");
   const [acceptTerms, setAcceptTerms] = useState<boolean | "indeterminate">(false);
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    console.log({
-      nameInput,
-      emailInput,
-      messageInput,
-      acceptTerms,
-    });
-  };
+  const formSchema = z.object({
+    name: z.string()
+      .min(1, "Please enter something longer than 1 characters.").max(100, "Please enter a shorter name."),
+    email: z.string().email(),
+    message: z.string().max(2000),
+    consent: z.boolean().refine(value => value === true, "We cannot contact you without your consent given."),
+  })
+
+  // 1. Define your form.
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+      consent: false,
+    },
+  })
+
+  const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+  // 2. Define a submit handler.
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    if (values.name === "bill") {
+      toast("Thank you for contacting us.", {
+        duration: 10000,
+        description: "We'll be in touch!",
+        closeButton: true
+      })
+    } else {
+      toast("Something went wrong.", {
+        duration: 10000,
+        description: "Please e-mail us directly instead!",
+        closeButton: true
+      })
+    }
+
+    // event.preventDefault();
+    // setResult("Sending....");
+    // const formData = new FormData(event.target);
+
+    // formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+
+    // const response = await fetch("https://api.web3forms.com/submit", {
+    //   method: "POST",
+    //   body: formData
+    // });
+
+    // const data = await response.json();
+
+    // if (data.success) {
+    //   setResult("Form Submitted Successfully");
+    //   event.target.reset();
+    // } else {
+    //   console.log("Error", data);
+    //   setResult(data.message);
+    // }
+
+  }
 
   return (
     <section id="contact-us" className="px-[5%] py-16 md:py-24 lg:py-28">
@@ -68,64 +133,79 @@ export const Contact5 = (props: Contact5Props) => {
           </div>
         </div>
 
-        <form className="grid grid-cols-1 grid-rows-[auto_auto] gap-6" onSubmit={handleSubmit}>
-          <div className="grid w-full items-center">
-            <Label htmlFor="name" className="mb-2 type-regular">
-              Name
-            </Label>
-            <Input
-              type="text"
-              id="name"
-              value={nameInput}
-              onChange={(e) => setNameInput(e.target.value)}
+        <Form {...form}>
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your name here" disabled={form.formState.isSubmitting} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-
-          <div className="grid w-full items-center">
-            <Label htmlFor="email" className="mb-2 type-regular">
-              Email
-            </Label>
-            <Input
-              type="email"
-              id="email"
-              value={emailInput}
-              onChange={(e) => setEmailInput(e.target.value)}
+            <FormField
+              control={form.control}
+              name="email"
+              // disabled={form.formState.isSubmitting}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your email here" disabled={form.formState.isSubmitting} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
-
-          <div className="grid w-full items-center">
-            <Label htmlFor="message" className="mb-2 type-regular">
-              Message
-            </Label>
-            <Textarea
-              id="message"
-              placeholder="Type your message..."
-              className="min-h-[11.25rem] overflow-auto"
-              value={messageInput}
-              onChange={(e) => setMessageInput(e.target.value)}
+            <FormField
+              control={form.control}
+              name="message"
+              // disabled={form.formState.isSubmitting}
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Message</FormLabel>
+                  <FormControl>
+                    <Textarea placeholder="Leave us a note or any other means of contacting you." disabled={form.formState.isSubmitting} {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
             />
-          </div>
+            <FormField
+              control={form.control}
+              name="consent"
+              render={({ field }) => (
+                <>
+                  <FormItem className="flex flex-row items-start space-x-3 space-y-0">
+                    <FormControl>
+                      <Checkbox
+                        checked={field.value}
+                        onCheckedChange={field.onChange}
+                        disabled={form.formState.isSubmitting}
+                      />
+                    </FormControl>
+                    <div className="space-y-1 leading-none">
+                      <FormLabel>
+                        Accept terms and conditions
+                      </FormLabel>
+                      <FormDescription>
+                        I consent to having DAIO International store my submitted information so they can respond to my inquiry. At any time I may revoke consent by contacting them.
+                      </FormDescription>
+                    </div>
+                  </FormItem>
+                  {/* <FormMessage className=""/> */}
+                </>
+              )}
+            />
+            <Button disabled={form.formState.isSubmitting} type="submit">Submit</Button>
+          </form>
+        </Form>
 
-          <div className="mb-3 flex items-center space-x-2 text-sm md:mb-4">
-            <Checkbox id="terms" className="" checked={acceptTerms} onCheckedChange={setAcceptTerms} />
-            <Label htmlFor="terms" className="cursor-pointer type-regular">
-              I consent to having DAIO International store my submitted information so they can respond to my inquiry.
-              {/* I accept the{" "} */}
-              {/* <a
-                className="text-link-primary underline focus-visible:outline-none"
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Terms
-              </a> */}
-            </Label>
-          </div>
-
-          <div>
-            <Button variant={"default"} size={"default"}>{button.title}</Button>
-          </div>
-        </form>
       </div>
     </section>
   );

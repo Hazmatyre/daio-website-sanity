@@ -110,7 +110,18 @@ export default function RootLayout({
         </section>
         {draftMode().isEnabled && <VisualEditing />}
         <SpeedInsights />
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            unstyled: false,
+            classNames: {
+              // toast: 'bg-blue-400',
+              // title: 'text-red-400',
+              // description: 'text-red-400',
+              // actionButton: 'bg-zinc-400',
+              // cancelButton: 'bg-background !bg-black border-foreground text-foreground',
+              closeButton: 'bg-primary border-secondary text-primary-foreground border-foreground hover:!bg-primary hover:!border-foreground hover:opacity-80 duration-100',
+            },
+          }} />
       </body>
     </html>
   );
