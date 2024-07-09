@@ -70,7 +70,27 @@ export const Contact5 = (props: Contact5Props) => {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    if (values.name === "bill") {
+
+    console.log(values)
+
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        access_key: "ed3135e1-0eb8-49e4-9272-45fb66ff65d6",
+        name: values.name,
+        email: values.email,
+        message: values.message,
+        consent: values.consent,
+      }),
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
       toast("Thank you for contacting us.", {
         duration: 10000,
         description: "We'll be in touch!",
@@ -83,28 +103,6 @@ export const Contact5 = (props: Contact5Props) => {
         closeButton: true
       })
     }
-
-    // event.preventDefault();
-    // setResult("Sending....");
-    // const formData = new FormData(event.target);
-
-    // formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
-
-    // const response = await fetch("https://api.web3forms.com/submit", {
-    //   method: "POST",
-    //   body: formData
-    // });
-
-    // const data = await response.json();
-
-    // if (data.success) {
-    //   setResult("Form Submitted Successfully");
-    //   event.target.reset();
-    // } else {
-    //   console.log("Error", data);
-    //   setResult(data.message);
-    // }
-
   }
 
   return (
