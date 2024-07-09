@@ -79,19 +79,10 @@ export const Gallery17 = (props: Gallery17Props) => {
         <div className="relative">
           <CarouselContent className="ml-2 xl:justify-center">
             {slides.map((slide, index) => (
-              <CarouselItem key={index} className="px-3 basis-[284px] md:basis-[376px] lg:basis-[406px] xxl:basis-[405px] md:px-4">
+              <CarouselItem key={index} className="px-3 basis-[284px] md:basis-[376px] md:py-6 lg:basis-[406px] xxl:basis-[405px] md:px-5">
                 <div className={cn("w-full aspect-[9/16] overflow-hidden rounded-lg border relative z-10", slide.containerClasses)}>
                   {slide.img}
                   {slide.gradient}
-                  {/* Card Content */}
-                  {/* <div className="size-full py-6 px-5 flex flex-col ">
-                    {slide.chevron}
-                    <h1 className="font-serif text-4xl font-bold mt-2.5 leading-tight">Bio-Toilet</h1>
-                    <p className="font-extrabold text-xs text-black">Zero sewage. Save Water.</p>
-                    <Button variant={"default"} className="mt-auto w-fit self-end">
-                      Coming Soon
-                    </Button>
-                  </div> */}
                   {slide.cardContent}
                 </div>
               </CarouselItem>
