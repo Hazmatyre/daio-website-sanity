@@ -57,7 +57,11 @@ export const Layout7 = (props: Layout7Props) => {
             <Image
               src={image.src}
               className="w-full object-cover"
-              alt={image.alt || ""} />
+              alt={image.alt || ""}
+              width={616}
+              height={640}
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            />
           </div>
         </div>
       </div>
@@ -87,7 +91,7 @@ export const Layout7Defaults: Layout7Props = {
     // <Button key={2}>Button 2</Button>
   ],
   image: {
-    src: imgPollution,    alt: "Woman looking through polluted glass by Trevor Lawrence. https://www.pexels.com/photo/woman-looking-through-polluted-glass-12906459/",
+    src: imgPollution, alt: "Woman looking through polluted glass by Trevor Lawrence. https://www.pexels.com/photo/woman-looking-through-polluted-glass-12906459/",
   },
 };
 

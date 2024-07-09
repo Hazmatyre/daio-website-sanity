@@ -185,6 +185,7 @@ export const Gallery17Defaults: Gallery17Props = {
           className="size-full absolute -z-20 object-cover position object-bottom"
           width={405}
           priority
+          sizes="(max-width: 768px) 80vw, 33vw"
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-black to-65% via size-full rounded-3xl" />,
