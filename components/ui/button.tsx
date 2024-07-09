@@ -19,14 +19,14 @@ const buttonVariants = cva(
         accent: "bg-accent text-accent-foreground hover:bg-accent/90",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        chevron: "pointer-events-none bg-background border-foreground"
+        chevron: "text-xs pointer-events-none bg-background border border-foreground font-extrabold"
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-9 rounded-3xl px-3",
         lg: "h-11 rounded-3xl px-8",
         icon: "h-10 w-10",
-        chevron: "py-2.5 px-1.5"
+        chevron: "px-2.5 py-1"
       },
     },
     defaultVariants: {

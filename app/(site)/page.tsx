@@ -28,8 +28,8 @@ export default async function Page() {
   return (
     <>
       <Gallery17></Gallery17>
-      <Layout90></Layout90>
-      <Layout245></Layout245>
+      {/* <Layout90></Layout90>
+      <Layout245></Layout245> */}
     </>
   );
 }
