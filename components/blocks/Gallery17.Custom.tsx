@@ -9,7 +9,6 @@ import imgSlider1 from '/public/img-bio-toilet-2068.jpg'
 import imgSlider2 from '/public/homepageSlide-bio-fertiliser-exported-2134.png'
 import imgSlider3 from '/public/homepageSlide-pongamia.jpg'
 import Image from "next/image";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
