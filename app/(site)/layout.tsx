@@ -97,7 +97,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${eb_garamond.variable} bg-white text-black`}>
-      <body>
+      <body className="">
         <section className="min-h-screen font-sans">
           {draftMode().isEnabled && <AlertBanner />}
           <Suspense>

@@ -137,8 +137,10 @@ export const Gallery17Defaults: Gallery17Props = {
           alt={"Picture of woman standing next to DAIO International Bio-Toilet urinal."}
           className="size-full absolute -z-20 object-cover object-bottom"
           width={405}
+          height={717}
           priority
-          sizes="(max-width: 768px) 80vw, 33vw"
+          sizes="(max-width: 768px) 69vw, 33vw"
+          quality={20}
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-white size-full via-25% via-white to-35% rounded-3xl" />,
@@ -163,8 +165,10 @@ export const Gallery17Defaults: Gallery17Props = {
           alt={"DAIO International's bio-fertiliser made from urine."}
           className="absolute bottom-1/4 -z-10 scale-150"
           width={405}
+          height={717}
           priority
-          sizes="(max-width: 768px) 80vw, 33vw"
+          quality={20}
+          sizes="(max-width: 768px) 69vw, 33vw"
         />,
       gradient:
         <div className="absolute -z-20 bg-gradient-to-b from-brand-700 to-brand-900  size-full rounded-3xl" />,
@@ -189,8 +193,10 @@ export const Gallery17Defaults: Gallery17Props = {
           alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
           className="size-full absolute -z-20 object-cover position object-bottom"
           width={405}
+          height={717}
+          quality={5}
           priority
-          sizes="(max-width: 768px) 80vw, 33vw"
+          sizes="(max-width: 768px) 69vw, 33vw"
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-black to-65% via size-full rounded-3xl" />,

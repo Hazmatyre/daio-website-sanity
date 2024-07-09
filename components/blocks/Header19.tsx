@@ -28,7 +28,11 @@ export const Header19 = (props: Header19Props) => {
       <div className="container">
         <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
           <div className="order-2 lg:order-1 overflow-hidden rounded-3xl block shadow-xxlarge">
-            <Image src={image.src} width={616} height={640}
+            <Image
+              src={image.src}
+              width={616}
+              height={640}
+              quality={40}
               className="w-full object-cover" alt={image.alt || ""}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
