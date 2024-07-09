@@ -4,6 +4,8 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { RxChevronRight } from "react-icons/rx";
 import Image from "next/image";
 import imgPollution from '/public/pexels-ellocofish-12906459.jpg'
+import iconRecycle from '/public/PhRecycleLight.svg'
+import iconEnergy from '/public/CarbonEnergyRenewable.svg'
 
 type ImageProps = {
   src: string | StaticImport;
@@ -11,6 +13,7 @@ type ImageProps = {
 };
 
 type SubHeadingProps = {
+  icon?: StaticImport
   title: string;
   description: string;
 };
@@ -42,7 +45,8 @@ export const Layout7 = (props: Layout7Props) => {
             <div className="grid grid-cols-1 gap-6 py-2 md:grid-cols-2">
               {subHeadings.map((subHeading, index) => (
                 <div key={index}>
-                  <h6 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6">
+                  <h6 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3">
+                    {subHeading.icon && <Image alt="" src={subHeading.icon} className="size-8"></Image>}
                     {subHeading.title}
                   </h6>
                   <p className="type-regular">{subHeading.description}</p>
@@ -77,11 +81,13 @@ export const Layout7Defaults: Layout7Props = {
     "At Daio International, our commitment lies in building a sustainable global future and striving for carbon neutrality by 2050. We strive to achieve a balance between financial success and social impact, envisioning a world where one does not have to choose between convenience and the well-being of the planet to pursue their goals and necessities.",
   subHeadings: [
     {
+      icon: iconRecycle,
       title: "Recycling Human Waste",
       description:
         "Our MyBio Toilets do not require any piping for sewage. We collect and process urine into bio-fertiliser.",
     },
     {
+      icon: iconEnergy,
       title: "Fuel From Trees",
       description:
         "We make eco-friendly bio-fuel from Pongamia tree seeds as an energy alternative to diesel and palm.",
