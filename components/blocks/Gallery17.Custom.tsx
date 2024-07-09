@@ -45,7 +45,7 @@ export const Gallery17 = (props: Gallery17Props) => {
 
   return (
     <section className="">
-      <div className="px-[5%] py-5 md:py-8 lg:py-8">
+      <div className="px-[5%] py-14 md:py-16 lg:py-16">
         <div className="container">
           <div className="mb-12 text-center md:mb-18 lg:mb-20 flex flex-col items-center">
             <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
