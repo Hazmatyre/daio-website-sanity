@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Input, Label, Checkbox, Textarea, Button } from "@relume_io/relume-ui";
+import { Input, Label, Textarea } from "@relume_io/relume-ui";
+import { Checkbox } from "../ui/checkbox";
+import { Button } from "../ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import { BiEnvelope, BiMap, BiPhone } from "react-icons/bi";
 
@@ -103,7 +105,7 @@ export const Contact5 = (props: Contact5Props) => {
           </div>
 
           <div className="mb-3 flex items-center space-x-2 text-sm md:mb-4">
-            <Checkbox id="terms" checked={acceptTerms} onCheckedChange={setAcceptTerms} />
+            <Checkbox className="" checked={acceptTerms} onCheckedChange={setAcceptTerms} />
             <Label htmlFor="terms" className="cursor-pointer">
               I accept the{" "}
               <a
@@ -118,7 +120,7 @@ export const Contact5 = (props: Contact5Props) => {
           </div>
 
           <div>
-            <Button {...button}>{button.title}</Button>
+            <Button variant={"default"} size={"default"}>{button.title}</Button>
           </div>
         </form>
       </div>
