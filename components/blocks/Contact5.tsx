@@ -46,10 +46,10 @@ export const Contact5 = (props: Contact5Props) => {
     <section id="contact-us" className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container grid grid-cols-1 items-start gap-y-12 md:grid-flow-row md:grid-cols-2 md:gap-x-12 lg:grid-flow-col lg:gap-x-20 lg:gap-y-16">
         <div>
-          <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
+          <p className="mb-3 type-regular font-semibold md:mb-4">{tagline}</p>
           <div className="mb-6 md:mb-8">
-            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
-            <p className="md:text-md">{description}</p>
+            <h2 className="mb-5 type-mobile-h2 md:type-desktop-h2 font-bold md:mb-6">{heading}</h2>
+            <p className="type-medium">{description}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 py-2">
@@ -70,7 +70,7 @@ export const Contact5 = (props: Contact5Props) => {
 
         <form className="grid grid-cols-1 grid-rows-[auto_auto] gap-6" onSubmit={handleSubmit}>
           <div className="grid w-full items-center">
-            <Label htmlFor="name" className="mb-2">
+            <Label htmlFor="name" className="mb-2 type-regular">
               Name
             </Label>
             <Input
@@ -82,7 +82,7 @@ export const Contact5 = (props: Contact5Props) => {
           </div>
 
           <div className="grid w-full items-center">
-            <Label htmlFor="email" className="mb-2">
+            <Label htmlFor="email" className="mb-2 type-regular">
               Email
             </Label>
             <Input
@@ -94,7 +94,7 @@ export const Contact5 = (props: Contact5Props) => {
           </div>
 
           <div className="grid w-full items-center">
-            <Label htmlFor="message" className="mb-2">
+            <Label htmlFor="message" className="mb-2 type-regular">
               Message
             </Label>
             <Textarea
@@ -107,17 +107,18 @@ export const Contact5 = (props: Contact5Props) => {
           </div>
 
           <div className="mb-3 flex items-center space-x-2 text-sm md:mb-4">
-            <Checkbox className="" checked={acceptTerms} onCheckedChange={setAcceptTerms} />
-            <Label htmlFor="terms" className="cursor-pointer">
-              I accept the{" "}
-              <a
+            <Checkbox id="terms" className="" checked={acceptTerms} onCheckedChange={setAcceptTerms} />
+            <Label htmlFor="terms" className="cursor-pointer type-regular">
+              I consent to having DAIO International store my submitted information so they can respond to my inquiry.
+              {/* I accept the{" "} */}
+              {/* <a
                 className="text-link-primary underline focus-visible:outline-none"
                 href="#"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Terms
-              </a>
+              </a> */}
             </Label>
           </div>
 

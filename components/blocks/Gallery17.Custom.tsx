@@ -57,8 +57,8 @@ export const Gallery17 = (props: Gallery17Props) => {
       <div className="px-[5%] py-14 md:py-16 lg:py-16">
         <div className="container">
           <div className="mb-12 text-center md:mb-18 lg:mb-20 flex flex-col items-center">
-            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
-            <p className="md:text-md max-w-md">{description}</p>
+            <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>
+            <p className="type-regular md:type-medium font-medium max-w-md">{description}</p>
           </div>
 
         </div>
@@ -134,7 +134,7 @@ export const Gallery17Defaults: Gallery17Props = {
       img:
         <Image
           src={imgSlider1}
-          alt={"Some alt text"}
+          alt={"Picture of woman standing next to DAIO International Bio-Toilet urinal."}
           className="size-full absolute -z-20 object-cover object-bottom"
           width={405}
           priority
@@ -157,11 +157,10 @@ export const Gallery17Defaults: Gallery17Props = {
         </div>
     },
     {
-      // containerClasses: "bg-brand-800",
       img:
         <Image
           src={imgSlider2}
-          alt={"Some alt"}
+          alt={"DAIO International's bio-fertiliser made from urine."}
           className="absolute bottom-1/4 -z-10 scale-150"
           width={405}
           priority
@@ -187,7 +186,7 @@ export const Gallery17Defaults: Gallery17Props = {
       img:
         <Image
           src={imgSlider3}
-          alt={"Some alt text"}
+          alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
           className="size-full absolute -z-20 object-cover position object-bottom"
           width={405}
           priority

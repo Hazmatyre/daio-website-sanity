@@ -72,12 +72,12 @@ export const Footer3 = (props: Footer3Props) => {
             </div>
             <div className="mb-6 md:mb-8">
               <div>
-                <p className="mb-1 text-sm font-semibold">{address.label}</p>
-                <a href="https://maps.app.goo.gl/vyJEuCpxbyDbGVdZ7" className=" underline mb-5 text-sm md:mb-6 whitespace-pre-line">{address.value}</a>
+                <p className="type-small mb-1 font-semibold">{address.label}</p>
+                <a href="https://maps.app.goo.gl/vyJEuCpxbyDbGVdZ7" className="underline mb-5 type-small md:mb-6 whitespace-pre-line">{address.value}</a>
               </div>
               <div className="mt-5">
-                <p className="mb-1 text-sm font-semibold">{contact.label}</p>
-                <p className="flex flex-col text-sm underline decoration-background underline-offset-1 md:mb-6">
+                <p className="mb-1 type-small font-semibold">{contact.label}</p>
+                <p className="flex flex-col type-small underline decoration-background underline-offset-1 md:mb-6">
                   <a href={`tel:${contact.phone}`} className="focus-visible:outline-none">
                     {contact.phone}
                   </a>
@@ -111,7 +111,7 @@ export const Footer3 = (props: Footer3Props) => {
         </div>
         <div className="h-px w-full bg-background" />
         <div className="flex flex-col-reverse items-start justify-between pb-4 pt-6 text-sm md:flex-row md:items-center md:pb-0 md:pt-8">
-          <p className="mt-8 md:mt-0">{footerText}</p>
+          <p className="mt-8 md:mt-0 text-small">{footerText}</p>
           <ul className="grid grid-flow-row grid-cols-[max-content] justify-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
             {footerLinks.map((link, index) => (
               <li key={index} className="underline">

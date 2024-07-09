@@ -34,8 +34,8 @@ export const Header19 = (props: Header19Props) => {
             />
           </div>
           <div className="order-1 lg:order-2">
-            <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">{heading}</h1>
-            <p className="md:text-md">{description}</p>
+            <h2 className="mb-5 type-mobile-h1 font-bold md:mb-6 md:type-desktop-h1">{heading}</h2>
+            <p className="type-medium">{description}</p>
             <div className="mt-6 flex gap-x-4 md:mt-8">
               {buttons}
             </div>

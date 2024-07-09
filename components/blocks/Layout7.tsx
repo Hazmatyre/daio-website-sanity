@@ -36,16 +36,16 @@ export const Layout7 = (props: Layout7Props) => {
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
-            <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-            <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
-            <p className="mb-6 md:mb-8 md:text-md">{description}</p>
+            <p className="mb-3 type-regular font-semibold md:mb-4">{tagline}</p>
+            <h2 className="mb-5 type-mobile-h2 lg:type-desktop-h2 font-bold md:mb-6">{heading}</h2>
+            <p className="mb-6 md:mb-8 type-regular font-medium md:type-medium">{description}</p>
             <div className="grid grid-cols-1 gap-6 py-2 md:grid-cols-2">
               {subHeadings.map((subHeading, index) => (
                 <div key={index}>
-                  <h6 className="mb-3 text-md font-bold leading-[1.4] md:mb-4 md:text-xl">
+                  <h6 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6">
                     {subHeading.title}
                   </h6>
-                  <p>{subHeading.description}</p>
+                  <p className="type-regular">{subHeading.description}</p>
                 </div>
               ))}
             </div>
