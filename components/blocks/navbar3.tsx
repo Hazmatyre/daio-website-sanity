@@ -64,6 +64,7 @@ export const Navbar3 = (props: Navbar3Props) => {
                 src={logo}
                 alt="DAIO International Logo"
                 className="h-6 w-auto"
+                priority
               />
             </div>
           </SheetHeader>
