@@ -30,10 +30,12 @@ export default async function Page() {
 
   return (
     <>
-      <Gallery17/>
-      <Layout7/>
-      <Header19/>
-      <Contact5/>
+      <Gallery17 />
+      <Layout7 />
+      <Header19 />
+      <Suspense>
+        <Contact5 />
+      </Suspense>
       {/* <Layout90></Layout90>
       <Layout245></Layout245> */}
     </>

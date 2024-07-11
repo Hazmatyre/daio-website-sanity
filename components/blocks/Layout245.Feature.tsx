@@ -43,7 +43,7 @@ export const Layout245 = (props: Layout245Props) => {
         </div>
         <div className="grid grid-cols-1 items-start gap-y-12 md:grid-cols-2 xl:grid-cols-4 md:gap-x-8 md:gap-y-16 lg:gap-x-12">
           {sections.map((section, index) => (
-            <div key={index}>
+            <div key={index} className="no-overflow-anchoring">
               <div className="mb-5 md:mb-6">
                 <img src={section.icon.src} className="size-12" alt={section.icon.alt} />
               </div>
@@ -62,6 +62,7 @@ export const Layout245 = (props: Layout245Props) => {
               size={button.size}
               iconRight={button.iconRight}
               iconLeft={button.iconLeft}
+              className="no-overflow-anchoring"
             >
               {button.title}
             </Button>

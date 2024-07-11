@@ -48,7 +48,7 @@ export const Navbar3 = (props: Navbar3Props) => {
               {Array(3)
                 .fill(null)
                 .map((_, index) => (
-                  <span key={index} className="my-[3px] h-0.5 w-6 bg-black md:hidden" />
+                  <span key={index} className=" no-overflow-anchoring my-[3px] h-0.5 w-6 bg-black md:hidden" />
                 ))}
             </Button>
           </div>

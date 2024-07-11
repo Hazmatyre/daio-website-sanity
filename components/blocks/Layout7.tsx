@@ -44,7 +44,7 @@ export const Layout7 = (props: Layout7Props) => {
             <p className="mb-6 md:mb-8 type-regular font-medium md:type-medium">{description}</p>
             <div className="grid grid-cols-1 gap-6 py-2 md:grid-cols-2">
               {subHeadings.map((subHeading, index) => (
-                <div key={index}>
+                <div key={index} className="no-overflow-anchoring">
                   <h6 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3">
                     {subHeading.icon && <Image alt="" src={subHeading.icon} className="size-8"></Image>}
                     {subHeading.title}
@@ -62,8 +62,6 @@ export const Layout7 = (props: Layout7Props) => {
               src={image.src}
               className="w-full object-cover"
               alt={image.alt || ""}
-              width={616}
-              height={640}
               quality={20}
               sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
             />
@@ -94,7 +92,7 @@ export const Layout7Defaults: Layout7Props = {
     },
   ],
   buttons: [
-    <a key={1} href="/#contact-us"><Button >Contact Us</Button></a>,
+    <a key={1} href="/#contact-us" className="no-overflow-anchoring"><Button >Contact Us</Button></a>,
     // <Button key={2}>Button 2</Button>
   ],
   image: {

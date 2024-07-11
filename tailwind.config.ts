@@ -100,6 +100,13 @@ const config = {
   plugins: [
     require("tailwindcss-animate"),
     typography,
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        ".no-overflow-anchoring": {
+          overflowAnchor: "none",
+        },
+      });
+    }),
     plugin(({ addComponents, addBase, }) => {
       addComponents({
         ".type-desktop-h1": {

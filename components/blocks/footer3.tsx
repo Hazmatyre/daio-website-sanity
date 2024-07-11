@@ -89,7 +89,7 @@ export const Footer3 = (props: Footer3Props) => {
             </div>
             <div className="grid grid-flow-col grid-cols-[max-content] items-start justify-start gap-x-3 gap-y-0">
               {socialMediaLinks.map((link, index) => (
-                <a key={index} href={link.url} className="focus-visible:outline-none">
+                <a key={index} href={link.url} className="focus-visible:outline-none no-overflow-anchoring">
                   {link.icon}
                 </a>
               ))}
@@ -97,9 +97,9 @@ export const Footer3 = (props: Footer3Props) => {
           </div>
           <div className="grid grid-cols-1 items-start gap-x-6 gap-y-10 md:grid-cols-2 md:gap-x-8 md:gap-y-4">
             {columnLinks.map((column, index) => (
-              <ul key={index}>
+              <ul key={index} className="no-overflow-anchoring">
                 {column.links.map((link, linkIndex) => (
-                  <li key={linkIndex} className="py-2 text-sm font-semibold">
+                  <li key={linkIndex} className="no-overflow-anchoring py-2 text-sm font-semibold">
                     <a href={link.url} className="focus-visible:outline-none">
                       {link.title}
                     </a>
@@ -114,7 +114,7 @@ export const Footer3 = (props: Footer3Props) => {
           <p className="mt-8 md:mt-0 text-small">{footerText}</p>
           <ul className="grid grid-flow-row grid-cols-[max-content] justify-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
             {footerLinks.map((link, index) => (
-              <li key={index} className="underline">
+              <li key={index} className="underline no-overflow-anchoring">
                 <a href={link.url} className="focus-visible:outline-none">
                   {link.title}
                 </a>

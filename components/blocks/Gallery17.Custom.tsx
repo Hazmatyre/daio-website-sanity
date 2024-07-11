@@ -96,7 +96,7 @@ export const Gallery17 = (props: Gallery17Props) => {
           >
             <CarouselContent className="ml-2 xl:justify-center">
               {slides.map((slide, index) => (
-                <CarouselItem key={index} className="px-3 basis-[284px] md:basis-[376px] md:py-6 lg:basis-[406px] xxl:basis-[405px] md:px-5">
+                <CarouselItem key={index} className="px-3 basis-[284px] md:basis-[376px] md:py-6 lg:basis-[406px] xxl:basis-[405px] md:px-5 no-overflow-anchoring">
                   <motion.div
                     className={cn("w-full aspect-[9/16] overflow-hidden rounded-lg border relative z-10", slide.containerClasses)}
                     variants={FADE_UP_ANIMATION_VARIANTS}
@@ -136,11 +136,9 @@ export const Gallery17Defaults: Gallery17Props = {
           src={imgSlider1}
           alt={"Picture of woman standing next to DAIO International Bio-Toilet urinal."}
           className="size-full absolute -z-20 object-cover object-bottom"
-          width={405}
-          height={717}
           priority
           sizes="(max-width: 768px) 69vw, 33vw"
-          quality={10}
+          quality={5}
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-white size-full via-25% via-white to-35% rounded-3xl" />,
@@ -164,8 +162,6 @@ export const Gallery17Defaults: Gallery17Props = {
           src={imgSlider2}
           alt={"DAIO International's bio-fertiliser made from urine."}
           className="absolute bottom-1/4 -z-10 scale-150"
-          width={405}
-          height={717}
           priority
           quality={30}
           sizes="(max-width: 768px) 69vw, 33vw"
@@ -192,8 +188,6 @@ export const Gallery17Defaults: Gallery17Props = {
           src={imgSlider3}
           alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
           className="size-full absolute -z-20 object-cover position object-bottom"
-          width={405}
-          height={717}
           quality={10}
           sizes="(max-width: 768px) 69vw, 33vw"
         />,

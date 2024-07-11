@@ -30,8 +30,6 @@ export const Header19 = (props: Header19Props) => {
           <div className="order-2 lg:order-1 overflow-hidden rounded-3xl block shadow-xxlarge">
             <Image
               src={image.src}
-              width={616}
-              height={640}
               quality={40}
               className="w-full object-cover" alt={image.alt || ""}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -55,7 +53,7 @@ export const Header19Defaults: Header19Props = {
   description:
     "We are looking for like-minded individuals and groups who care about the environment and want to make a difference. Together, we can create a sustainable future for generations to come.",
   buttons: [
-    <a key={1} href="/#contact-us" className="block"><Button>Contact Us</Button></a>
+    <a key={1} href="/#contact-us" className="block no-overflow-anchoring"><Button>Contact Us</Button></a>
   ],
   image: {
     src: imgTeam,
