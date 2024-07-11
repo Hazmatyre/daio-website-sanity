@@ -41,7 +41,7 @@
     "date-fns": "^3.6.0",
     "embla-carousel-react": "^8.1.6",
     "embla-carousel-wheel-gestures": "^8.0.1",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^11.3.0",
     "lucide-react": "^0.397.0",
     "next": "^14.2.3",
     "next-sanity": "^9.3.10",
