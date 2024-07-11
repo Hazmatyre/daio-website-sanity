@@ -140,7 +140,7 @@ export const Gallery17Defaults: Gallery17Props = {
           height={717}
           priority
           sizes="(max-width: 768px) 69vw, 33vw"
-          quality={20}
+          quality={10}
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-white size-full via-25% via-white to-35% rounded-3xl" />,
@@ -167,7 +167,7 @@ export const Gallery17Defaults: Gallery17Props = {
           width={405}
           height={717}
           priority
-          quality={20}
+          quality={30}
           sizes="(max-width: 768px) 69vw, 33vw"
         />,
       gradient:
@@ -194,8 +194,7 @@ export const Gallery17Defaults: Gallery17Props = {
           className="size-full absolute -z-20 object-cover position object-bottom"
           width={405}
           height={717}
-          quality={5}
-          priority
+          quality={10}
           sizes="(max-width: 768px) 69vw, 33vw"
         />,
       gradient:

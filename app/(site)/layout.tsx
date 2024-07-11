@@ -58,12 +58,6 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-  display: "swap",
-});
-
 const eb_garamond = EB_Garamond({
   variable: "--font-eb-garamond",
   subsets: ["latin"],
