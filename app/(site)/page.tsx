@@ -18,7 +18,14 @@ import { Gallery17 } from "@/components/blocks/Gallery17.Custom";
 import { Layout7 } from "@/components/blocks/Layout7";
 import { Header19 } from "@/components/blocks/Header19";
 import { Contact5 } from "@/components/blocks/Contact5";
+import { Metadata } from "next";
 
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Home | DAIO International",
+    description: "Engineered for Mother Nature.",
+  } satisfies Metadata;
+}
 
 export default async function Page() {
   // const [settings, heroPost] = await Promise.all([
