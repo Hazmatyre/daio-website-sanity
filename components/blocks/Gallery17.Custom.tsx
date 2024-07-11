@@ -160,7 +160,7 @@ export const Gallery17Defaults: Gallery17Props = {
       img:
         <Image
           src={imgSlider2}
-          alt={"DAIO International's bio-fertiliser made from urine."}
+          alt={"DAIO International's bio-fertiliser made from urine. Picture shows two vials of before and after processing."}
           className="absolute bottom-1/4 -z-10 scale-150"
           quality={30}
           sizes="(max-width: 768px) 69vw, 33vw"
