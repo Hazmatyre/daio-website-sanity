@@ -45,10 +45,10 @@ export const Layout7 = (props: Layout7Props) => {
             <div className="grid grid-cols-1 gap-6 py-2 md:grid-cols-2">
               {subHeadings.map((subHeading, index) => (
                 <div key={index} className="no-overflow-anchoring">
-                  <h6 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3">
+                  <h3 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3">
                     {subHeading.icon && <Image alt="" src={subHeading.icon} className="size-8"></Image>}
                     {subHeading.title}
-                  </h6>
+                  </h3>
                   <p className="type-regular">{subHeading.description}</p>
                 </div>
               ))}

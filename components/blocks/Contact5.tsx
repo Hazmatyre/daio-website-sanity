@@ -115,7 +115,7 @@ export const Contact5 = (props: Contact5Props) => {
             <p className="type-medium">{description}</p>
           </div>
 
-          <div className="grid grid-cols-1 gap-4 py-2">
+          <div className="grid grid-cols-1 gap-4 py-2 type-regular">
             <div className="flex items-center gap-4">
               <BiEnvelope className="size-6 flex-none" />
               <p>{email}</p>
@@ -185,6 +185,7 @@ export const Contact5 = (props: Contact5Props) => {
                         checked={field.value}
                         onCheckedChange={field.onChange}
                         disabled={form.formState.isSubmitting}
+                        aria-label="Consent button"
                       />
                     </FormControl>
                     <div className="space-y-1 leading-none">

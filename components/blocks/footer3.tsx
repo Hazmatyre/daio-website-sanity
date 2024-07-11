@@ -72,12 +72,12 @@ export const Footer3 = (props: Footer3Props) => {
             </div>
             <div className="mb-6 md:mb-8">
               <div>
-                <p className="type-small mb-1 font-semibold">{address.label}</p>
-                <a href="https://maps.app.goo.gl/vyJEuCpxbyDbGVdZ7" className="underline mb-5 type-small md:mb-6 whitespace-pre-line">{address.value}</a>
+                <p className="type-regular mb-1 font-semibold">{address.label}</p>
+                <a href="https://maps.app.goo.gl/vyJEuCpxbyDbGVdZ7" className="underline mb-5 type-regular md:mb-6 whitespace-pre-line">{address.value}</a>
               </div>
               <div className="mt-5">
                 <p className="mb-1 type-small font-semibold">{contact.label}</p>
-                <p className="flex flex-col type-small underline decoration-background underline-offset-1 md:mb-6">
+                <p className="flex flex-col type-regular underline decoration-background underline-offset-1 md:mb-6">
                   <a href={`tel:${contact.phone}`} className="focus-visible:outline-none">
                     {contact.phone}
                   </a>
