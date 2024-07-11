@@ -162,7 +162,6 @@ export const Gallery17Defaults: Gallery17Props = {
           src={imgSlider2}
           alt={"DAIO International's bio-fertiliser made from urine."}
           className="absolute bottom-1/4 -z-10 scale-150"
-          priority
           quality={30}
           sizes="(max-width: 768px) 69vw, 33vw"
         />,
