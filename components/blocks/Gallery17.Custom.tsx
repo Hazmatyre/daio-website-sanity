@@ -8,7 +8,7 @@ import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 import imgSlider1 from '/images/img-bio-toilet-2068.jpg'
 import imgSlider2 from '/images/homepageSlide-bio-fertiliser-exported-2134.png'
 import imgSlider3 from '/images/homepageSlide-pongamia-seed.jpg'
-import testimg from '/images/testimg.webp'
+
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
@@ -61,13 +61,6 @@ export const Gallery17 = (props: Gallery17Props) => {
           <div className="mb-12 text-center md:mb-18 lg:mb-20 flex flex-col items-center">
             <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>
             <p className="type-regular md:type-medium font-medium max-w-md">{description}</p>
-            <Image
-              src={testimg}
-              alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
-              className="size-full object-cover position object-bottom"
-              quality={1}
-              sizes="(max-width: 768px) 69vw, 33vw"
-            />,
           </div>
 
         </div>

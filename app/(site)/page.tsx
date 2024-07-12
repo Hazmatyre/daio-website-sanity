@@ -19,6 +19,8 @@ import { Layout7 } from "@/components/blocks/Layout7";
 import { Header19 } from "@/components/blocks/Header19";
 import { Contact5 } from "@/components/blocks/Contact5";
 import { Metadata } from "next";
+import Image from "next/image";
+import testimg from '/images/testimg.webp'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -37,6 +39,13 @@ export default async function Page() {
 
   return (
     <>
+      <Image
+        src={testimg}
+        alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
+        className="size-full object-cover position object-bottom"
+        quality={1}
+        sizes="(max-width: 768px) 69vw, 33vw"
+      />,
       <Gallery17 />
       <Layout7 />
       <Header19 />
