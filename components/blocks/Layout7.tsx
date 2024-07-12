@@ -67,6 +67,7 @@ export const Layout7 = (props: Layout7Props) => {
               sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
               width={338}
               height={422}
+              loading="eager"
             />
           </div>
         </div>

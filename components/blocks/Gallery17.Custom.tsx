@@ -170,7 +170,7 @@ export const Gallery17Defaults: Gallery17Props = {
           quality={35}
           width={258}
           height={460}
-          priority
+          loading="eager"
         />,
       gradient:
         <div className="absolute -z-20 bg-gradient-to-b from-brand-700 to-brand-900  size-full rounded-3xl" />,
@@ -198,7 +198,7 @@ export const Gallery17Defaults: Gallery17Props = {
           quality={10}
           width={258}
           height={460}
-          priority
+          loading="eager"
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-black to-65% via size-full rounded-3xl" />,
