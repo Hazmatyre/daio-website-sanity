@@ -59,13 +59,6 @@ export const Gallery17 = (props: Gallery17Props) => {
           <div className="mb-12 text-center md:mb-18 lg:mb-20 flex flex-col items-center">
             <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>
             <p className="type-regular md:type-medium font-medium max-w-md">{description}</p>
-            <Image
-              src={imgSlider3}
-              alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
-              className="size-full relative object-cover position object-bottom"
-              quality={10}
-              sizes="(max-width: 768px) 69vw, 33vw"
-            />
           </div>
 
         </div>
