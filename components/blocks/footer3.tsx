@@ -6,7 +6,7 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import Image from "next/image";
-import WebsiteLogo from '/public/daio-logo-white.svg'
+import WebsiteLogo from '/images/daio-logo-white.svg'
 
 type ImageProps = {
   url?: string;

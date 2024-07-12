@@ -3,9 +3,9 @@ import type { ButtonProps } from "@relume_io/relume-ui";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { RxChevronRight } from "react-icons/rx";
 import Image from "next/image";
-import imgPollution from '/public/pexels-ellocofish-12906459.jpg'
-import iconRecycle from '/public/PhRecycleLight.svg'
-import iconEnergy from '/public/CarbonEnergyRenewable.svg'
+import imgPollution from '/images/pexels-ellocofish-12906459.jpg'
+import iconRecycle from '/images/PhRecycleLight.svg'
+import iconEnergy from '/images/CarbonEnergyRenewable.svg'
 
 type ImageProps = {
   src: string | StaticImport;

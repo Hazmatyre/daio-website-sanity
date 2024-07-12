@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
-import imgTeam from '/public/homepage-team-2144.webp'
+import imgTeam from '/images/homepage-team-2144.webp'
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type ImageProps = {

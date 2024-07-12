@@ -5,9 +5,9 @@ import type { CarouselApi } from "@relume_io/relume-ui";
 import clsx from "clsx";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselProgress } from "../ui/carousel";
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
-import imgSlider1 from '/public/img-bio-toilet-2068.jpg'
-import imgSlider2 from '/public/homepageSlide-bio-fertiliser-exported-2134.png'
-import imgSlider3 from '/public/homepageSlide-pongamia-seed.jpg'
+import imgSlider1 from '/images/img-bio-toilet-2068.jpg'
+import imgSlider2 from '/images/homepageSlide-bio-fertiliser-exported-2134.png'
+import imgSlider3 from '/images/homepageSlide-pongamia-seed.jpg'
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";

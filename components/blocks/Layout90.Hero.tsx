@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import Image from "next/image";
-import imgHero from "/public/homepage-daio-international-nagoya.jpg"
+import imgHero from "/images/homepage-daio-international-nagoya.jpg"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type ImageProps = {

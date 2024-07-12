@@ -12,7 +12,7 @@ import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
 import Image from "next/image";
-import logo from '/public/daio-logo-green.svg'
+import logo from '/images/daio-logo-green.svg'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 
 type ImageProps = {
