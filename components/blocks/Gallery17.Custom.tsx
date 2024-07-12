@@ -141,8 +141,6 @@ export const Gallery17Defaults: Gallery17Props = {
           className="size-full absolute -z-20 object-cover object-bottom"
           priority
           quality={5}
-          width={258}
-          height={460}
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-white size-full via-25% via-white to-35% rounded-3xl" />,
@@ -168,8 +166,6 @@ export const Gallery17Defaults: Gallery17Props = {
           alt={"DAIO International's bio-fertiliser made from urine. Picture shows two vials of before and after processing."}
           className="absolute bottom-1/4 -z-10 scale-150"
           quality={35}
-          width={258}
-          height={460}
           loading="eager"
         />,
       gradient:
@@ -196,8 +192,6 @@ export const Gallery17Defaults: Gallery17Props = {
           alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
           className="size-full absolute -z-20 object-cover position object-bottom"
           quality={10}
-          width={258}
-          height={460}
           loading="eager"
         />,
       gradient:

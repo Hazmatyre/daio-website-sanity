@@ -36,6 +36,7 @@ export const Header19 = (props: Header19Props) => {
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               width={338}
               height={190}
+              loading="lazy"
             />
           </div>
           <div className="order-1 lg:order-2">
