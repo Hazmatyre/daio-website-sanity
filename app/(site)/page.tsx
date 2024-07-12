@@ -39,14 +39,6 @@ export default async function Page() {
 
   return (
     <>
-      <img src={testimg.src} crossOrigin="anonymous"></img>
-      <Image
-        src={testimg}
-        alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
-        className="size-full object-cover position object-bottom"
-        quality={1}
-        sizes="(max-width: 768px) 69vw, 33vw"
-      />,
       <Gallery17 />
       <Layout7 />
       <Header19 />
