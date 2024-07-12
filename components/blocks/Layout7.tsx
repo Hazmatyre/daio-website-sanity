@@ -6,6 +6,7 @@ import Image from "next/image";
 import imgPollution from '/images/pexels-ellocofish-12906459.jpg'
 import iconRecycle from '/images/PhRecycleLight.svg'
 import iconEnergy from '/images/CarbonEnergyRenewable.svg'
+import Link from "next/link";
 
 type ImageProps = {
   src: string | StaticImport;
@@ -92,7 +93,7 @@ export const Layout7Defaults: Layout7Props = {
     },
   ],
   buttons: [
-    <a key={1} href="/#contact-us" className="no-overflow-anchoring"><Button >Contact Us</Button></a>,
+    <Link key={1} href="/#contact-us" className="no-overflow-anchoring"><Button >Contact Us</Button></Link>,
     // <Button key={2}>Button 2</Button>
   ],
   image: {

@@ -12,6 +12,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type SlideProps = {
   containerClasses?: string
@@ -149,11 +150,11 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="font-bold mt-2.5 type-mobile-h3 md:type-desktop-h2 xxl:type-desktop-h1 md:mt-5">Bio-Toilet</h3>
           <p className="font-bold type-tiny text-black md:type-regular">Zero sewage. Save Water.</p>
-          <a href="/#contact-us" className="block mt-auto w-fit self-end">
+          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
               Contact Us
             </Button>
-          </a>
+          </Link>
         </div>
     },
     {
@@ -174,11 +175,11 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="type-mobile-h3 md:mt-5 font-bold mt-2.5 text-brand-200 xxl:type-desktop-h1 md:type-desktop-h2">Bio-Fertiliser</h3>
           <p className="font-bold md:type-regular type-tiny text-background">Maintain soil fertility for generations with zero sewage</p>
-          <a href="/#contact-us" className="block mt-auto w-fit self-end">
+          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
               Contact Us
             </Button>
-          </a>
+          </Link>
         </div>
     },
     {
@@ -199,11 +200,11 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="font-bold md:mt-5 mt-2.5 type-mobile-h3 md:type-desktop-h2 xxl:type-desktop-h1 text-brand-naplesYellow">Pongamia Pinnata</h3>
           <p className="font-bold md:type-regular text-background type-tiny">The most natural bio-fuel source from tree seeds through our reforestation initiative.</p>
-          <a href="/#contact-us" className="block mt-auto w-fit self-end">
+          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
               Contact Us
             </Button>
-          </a>
+          </Link>
         </div>
     },
   ],
