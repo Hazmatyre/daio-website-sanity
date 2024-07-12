@@ -65,7 +65,7 @@ export const Gallery17 = (props: Gallery17Props) => {
               src={testimg}
               alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
               className="size-full object-cover position object-bottom"
-              quality={100}
+              quality={1}
               sizes="(max-width: 768px) 69vw, 33vw"
             />,
           </div>
