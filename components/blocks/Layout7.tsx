@@ -65,6 +65,8 @@ export const Layout7 = (props: Layout7Props) => {
               alt={image.alt || ""}
               quality={25}
               sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
+              width={338}
+              height={422}
             />
           </div>
         </div>
