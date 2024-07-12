@@ -16,6 +16,6 @@ module.exports = {
         pathname: '/images/**',
       },
     ],
-    formats: ['image/jpg'],
+    formats: ['image/avif', 'image/webp'],
   },
 };
