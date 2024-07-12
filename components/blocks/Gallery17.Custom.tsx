@@ -187,7 +187,7 @@ export const Gallery17Defaults: Gallery17Props = {
           src={imgSlider3}
           alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
           className="size-full absolute -z-20 object-cover position object-bottom"
-          quality={15}
+          quality={10}
           sizes="(max-width: 768px) 69vw, 33vw"
         />,
       gradient:
