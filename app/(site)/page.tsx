@@ -39,7 +39,7 @@ export default async function Page() {
 
   return (
     <>
-      <img src={testimg.src}></img>
+      <img src={testimg.src} crossOrigin="anonymous"></img>
       <Image
         src={testimg}
         alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
