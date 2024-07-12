@@ -12,8 +12,9 @@ import { Input } from "../ui/input";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetClose, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "../ui/sheet";
 import Image from "next/image";
-import logo from '/public/daio-logo-green.svg'
+import logo from '/images/daio-logo-green.svg'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
+import Link from "next/link";
 
 type ImageProps = {
   url?: string;
@@ -94,11 +95,11 @@ export const Navbar3 = (props: Navbar3Props) => {
           priority
         />
       </a>
-      <a className="basis-0 grow flex justify-end block" href="/#contact-us">
+      <Link className="basis-0 grow flex justify-end block" href="/#contact-us">
         <Button variant={"outline"} className="">
           Contact
         </Button>
-      </a>
+      </Link>
     </nav>
   )
 

@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
-import imgTeam from '/public/homepage-team-2144.webp'
+import imgTeam from '/images/homepage-team-2144.webp'
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Link from "next/link";
 
 type ImageProps = {
   src: string | StaticImport;
@@ -33,6 +34,9 @@ export const Header19 = (props: Header19Props) => {
               quality={40}
               className="w-full object-cover" alt={image.alt || ""}
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              width={338}
+              height={190}
+              loading="lazy"
             />
           </div>
           <div className="order-1 lg:order-2">
@@ -53,7 +57,7 @@ export const Header19Defaults: Header19Props = {
   description:
     "We are looking for like-minded individuals and groups who care about the environment and want to make a difference. Together, we can create a sustainable future for generations to come.",
   buttons: [
-    <a key={1} href="/#contact-us" className="block no-overflow-anchoring"><Button>Contact Us</Button></a>
+    <Link key={1} href="/#contact-us" className="block no-overflow-anchoring"><Button>Contact Us</Button></Link>
   ],
   image: {
     src: imgTeam,

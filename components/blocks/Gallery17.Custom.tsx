@@ -5,13 +5,15 @@ import type { CarouselApi } from "@relume_io/relume-ui";
 import clsx from "clsx";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselProgress } from "../ui/carousel";
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
-import imgSlider1 from '/public/img-bio-toilet-2068.jpg'
-import imgSlider2 from '/public/homepageSlide-bio-fertiliser-exported-2134.png'
-import imgSlider3 from '/public/homepageSlide-pongamia-seed.jpg'
+import imgSlider1 from '/images/img-bio-toilet-2068.jpg'
+import imgSlider2 from '/images/homepageSlide-bio-fertiliser-exported-2134.png'
+import imgSlider3 from '/images/homepageSlide-pongamia-seed.jpg'
+
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type SlideProps = {
   containerClasses?: string
@@ -133,11 +135,11 @@ export const Gallery17Defaults: Gallery17Props = {
     {
       img:
         <Image
+          sizes="(max-width: 768px) 69vw, 33vw"
           src={imgSlider1}
           alt={"Picture of woman standing next to DAIO International Bio-Toilet urinal."}
           className="size-full absolute -z-20 object-cover object-bottom"
           priority
-          sizes="(max-width: 768px) 69vw, 33vw"
           quality={5}
         />,
       gradient:
@@ -149,21 +151,22 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="font-bold mt-2.5 type-mobile-h3 md:type-desktop-h2 xxl:type-desktop-h1 md:mt-5">Bio-Toilet</h3>
           <p className="font-bold type-tiny text-black md:type-regular">Zero sewage. Save Water.</p>
-          <a href="/#contact-us" className="block mt-auto w-fit self-end">
+          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
               Contact Us
             </Button>
-          </a>
+          </Link>
         </div>
     },
     {
       img:
         <Image
+          sizes="(max-width: 768px) 69vw, 33vw"
           src={imgSlider2}
           alt={"DAIO International's bio-fertiliser made from urine. Picture shows two vials of before and after processing."}
           className="absolute bottom-1/4 -z-10 scale-150"
           quality={35}
-          sizes="(max-width: 768px) 69vw, 33vw"
+          loading="eager"
         />,
       gradient:
         <div className="absolute -z-20 bg-gradient-to-b from-brand-700 to-brand-900  size-full rounded-3xl" />,
@@ -174,21 +177,22 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="type-mobile-h3 md:mt-5 font-bold mt-2.5 text-brand-200 xxl:type-desktop-h1 md:type-desktop-h2">Bio-Fertiliser</h3>
           <p className="font-bold md:type-regular type-tiny text-background">Maintain soil fertility for generations with zero sewage</p>
-          <a href="/#contact-us" className="block mt-auto w-fit self-end">
+          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
               Contact Us
             </Button>
-          </a>
+          </Link>
         </div>
     },
     {
       img:
         <Image
+        sizes="(max-width: 768px) 69vw, 33vw"
           src={imgSlider3}
           alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
           className="size-full absolute -z-20 object-cover position object-bottom"
-          quality={15}
-          sizes="(max-width: 768px) 69vw, 33vw"
+          quality={10}
+          loading="eager"
         />,
       gradient:
         <div className="absolute -z-10 bg-gradient-to-b from-black to-65% via size-full rounded-3xl" />,
@@ -199,11 +203,11 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="font-bold md:mt-5 mt-2.5 type-mobile-h3 md:type-desktop-h2 xxl:type-desktop-h1 text-brand-naplesYellow">Pongamia Pinnata</h3>
           <p className="font-bold md:type-regular text-background type-tiny">The most natural bio-fuel source from tree seeds through our reforestation initiative.</p>
-          <a href="/#contact-us" className="block mt-auto w-fit self-end">
+          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
               Contact Us
             </Button>
-          </a>
+          </Link>
         </div>
     },
   ],

@@ -6,7 +6,8 @@ import {
   BiLogoYoutube,
 } from "react-icons/bi";
 import Image from "next/image";
-import WebsiteLogo from '/public/daio-logo-white.svg'
+import WebsiteLogo from '/images/daio-logo-white.svg'
+import Link from "next/link";
 
 type ImageProps = {
   url?: string;
@@ -62,13 +63,13 @@ export const Footer3 = (props: Footer3Props) => {
         <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4 lg:pb-20">
           <div>
             <div className="mb-6 md:mb-8">
-              <a href={logo.url}>
+              <Link href="">
                 <Image
                   src={WebsiteLogo}
                   alt="DAIO International Logo"
                   className="h-6 w-auto"
                 />
-              </a>
+              </Link>
             </div>
             <div className="mb-6 md:mb-8">
               <div>
@@ -100,9 +101,9 @@ export const Footer3 = (props: Footer3Props) => {
               <ul key={index} className="no-overflow-anchoring">
                 {column.links.map((link, linkIndex) => (
                   <li key={linkIndex} className="no-overflow-anchoring py-2 text-sm font-semibold">
-                    <a href={link.url} className="focus-visible:outline-none">
+                    <Link href={link.url} className="focus-visible:outline-none">
                       {link.title}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -115,9 +116,9 @@ export const Footer3 = (props: Footer3Props) => {
           <ul className="grid grid-flow-row grid-cols-[max-content] justify-center gap-x-0 gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
             {footerLinks.map((link, index) => (
               <li key={index} className="underline no-overflow-anchoring">
-                <a href={link.url} className="focus-visible:outline-none">
+                <Link href={link.url} className="focus-visible:outline-none">
                   {link.title}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
@@ -129,7 +130,6 @@ export const Footer3 = (props: Footer3Props) => {
 
 export const Footer3Defaults: Footer3Props = {
   logo: {
-    url: "#",
     src: "https://relume-assets.s3.amazonaws.com/logo-image.svg",
     alt: "Logo image",
   },

@@ -19,6 +19,8 @@ import { Layout7 } from "@/components/blocks/Layout7";
 import { Header19 } from "@/components/blocks/Header19";
 import { Contact5 } from "@/components/blocks/Contact5";
 import { Metadata } from "next";
+import Image from "next/image";
+import testimg from '/images/testimg.webp'
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
