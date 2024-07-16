@@ -23,6 +23,7 @@ type SlideProps = {
 };
 
 type Props = {
+  headingTag: "h1" | "h2"
   heading: string;
   description: string;
   slides: SlideProps[];
@@ -31,7 +32,7 @@ type Props = {
 export type Gallery17Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Gallery17 = (props: Gallery17Props) => {
-  const { heading, description, slides } = {
+  const { heading, description, slides, headingTag } = {
     ...Gallery17Defaults,
     ...props,
   } as Props;
@@ -59,7 +60,10 @@ export const Gallery17 = (props: Gallery17Props) => {
       <div className="px-[5%] py-14 md:py-16 lg:py-16">
         <div className="container">
           <div className="mb-12 text-center md:mb-18 lg:mb-20 flex flex-col items-center">
-            <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>
+            {headingTag === "h1"
+              ? <h1 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h1>
+              : <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>
+            }
             <p className="type-regular md:type-medium font-medium max-w-md">{description}</p>
           </div>
 
@@ -187,7 +191,7 @@ export const Gallery17Defaults: Gallery17Props = {
     {
       img:
         <Image
-        sizes="(max-width: 768px) 69vw, 33vw"
+          sizes="(max-width: 768px) 69vw, 33vw"
           src={imgSlider3}
           alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
           className="size-full absolute -z-20 object-cover position object-bottom"
