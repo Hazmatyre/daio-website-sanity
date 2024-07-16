@@ -26,11 +26,9 @@ export default async function Page() {
 
   return (
     <>
+    {/* // * Remember to use layout 352 for timeline! */}
       <Layout90></Layout90> {/* Similar to layout 15 */}
-      {/* Custom gallery, see homepage */}
       <Layout245></Layout245>
-      {/* Layout 192 for bio-fertiliser section */}
-      {/* Layout 1 - generic for left content, right image. It's layout 18 on figma */}
     </>
   );
 }
