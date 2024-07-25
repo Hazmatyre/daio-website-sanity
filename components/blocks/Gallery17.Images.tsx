@@ -5,7 +5,6 @@ import type { CarouselApi } from "@relume_io/relume-ui";
 import clsx from "clsx";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselProgress } from "../ui/carousel";
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
-import AutoHeight from 'embla-carousel-auto-height'
 import imgSlider1 from '/images/img-bio-toilet-2068.jpg'
 import imgSlider2 from '/images/homepageSlide-bio-fertiliser-exported-2134.png'
 import imgSlider3 from '/images/homepageSlide-pongamia-seed.jpg'
