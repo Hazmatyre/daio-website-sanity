@@ -45,7 +45,7 @@ export default async function Page() {
       <Layout90></Layout90> {/* Similar to layout 15 */}
       <Gallery17 {...PropsLayout90} />
       {/* Custom gallery, see homepage */}
-      <Layout245></Layout245>
+      <Layout245 className="bg-brand-naplesYellow text-brand-900" />
       {/* Layout 192 for bio-fertiliser section */}
       {/* Layout 1 - generic for left content, right image. It's layout 18 on figma */}
     </>

@@ -84,7 +84,7 @@ export const Gallery17 = (props: Gallery17Props) => {
           skipSnaps: true,
         }}
         plugins={[WheelGesturesPlugin()]}
-        className="relative mt-12 md:mt-18 lg:mt-20"
+        className="relative mt-12 md:mt-18 lg:mt-20 mb-14 md:mb-16 lg:mb-16 xl:mb-28"
       >
         <div className="relative ">
           <motion.div
@@ -102,7 +102,7 @@ export const Gallery17 = (props: Gallery17Props) => {
           >
             <CarouselContent className="ml-2 items-start /xl:justify-center transition-[height] duration-75 ease-in ">
               {slides.map((slide, index) => (
-                <CarouselItem key={index} className="px-3 basis-auto min-w-0 max-w-full md:py-6 md:px-5 no-overflow-anchoring">
+                <CarouselItem key={index} className="px-3 basis-auto min-w-0 max-w-[90%] md:py-6 md:px-5 no-overflow-anchoring">
                   <motion.div
                     className={cn("w-full overflow-hidden rounded-lg relative z-10 shadow-xxlarge")}
                     variants={FADE_UP_ANIMATION_VARIANTS}
