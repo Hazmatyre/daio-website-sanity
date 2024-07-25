@@ -17,7 +17,7 @@ import Link from "next/link";
 
 type SlideProps = {
   containerClasses?: string
-  img: React.ReactNode
+  img?: React.ReactNode
   gradient?: React.ReactNode
   cardContent: React.ReactNode
 };
@@ -104,7 +104,7 @@ export const Gallery17 = (props: Gallery17Props) => {
               {slides.map((slide, index) => (
                 <CarouselItem key={index} className="px-3 basis-[284px] md:basis-[376px] md:py-6 lg:basis-[406px] xxl:basis-[405px] md:px-5 no-overflow-anchoring">
                   <motion.div
-                    className={cn("w-full aspect-[9/16] overflow-hidden rounded-lg border relative z-10 shadow-xxlarge", slide.containerClasses)}
+                    className={cn("w-full overflow-hidden rounded-lg border relative z-10 shadow-xxlarge", slide.containerClasses)}
                     variants={FADE_UP_ANIMATION_VARIANTS}
                   >
                     {slide.img}
@@ -137,6 +137,7 @@ export const Gallery17Defaults: Gallery17Props = {
   description: "Do your part for the environment with our eco-friendly products. We help to reduce human waste pollution and provide sustainable low-cost fuel alternatives.",
   slides: [
     {
+      containerClasses: "aspect-[9/16]",
       img:
         <Image
           sizes="(max-width: 768px) 69vw, 33vw"
@@ -163,6 +164,7 @@ export const Gallery17Defaults: Gallery17Props = {
         </div>
     },
     {
+      containerClasses: "aspect-[9/16]",
       img:
         <Image
           sizes="(max-width: 768px) 69vw, 33vw"
@@ -189,6 +191,7 @@ export const Gallery17Defaults: Gallery17Props = {
         </div>
     },
     {
+      containerClasses: "aspect-[9/16]",
       img:
         <Image
           sizes="(max-width: 768px) 69vw, 33vw"

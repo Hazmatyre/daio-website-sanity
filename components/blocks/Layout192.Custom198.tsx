@@ -32,9 +32,9 @@ export const Layout192 = (props: Layout192Props) => {
     <header className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
-          <div className="order-2 md:order-1 h-full rounded-lg overflow-hidden shadow-xxlarge">
+          <div className="order-2 md:order-1 rounded-lg overflow-hidden">
             <Image
-              className="w-full object-fit" {...image}
+              className="w-full object-cover shadow-xxlarge rounded-lg" {...image}
               alt={image.alt || ""}
             />
           </div>
