@@ -64,7 +64,7 @@ export const Gallery17 = (props: Gallery17Props) => {
               ? <h1 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h1>
               : <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>
             }
-            <p className="type-regular md:type-medium font-medium max-w-md">{description}</p>
+            <p className="type-medium max-w-md">{description}</p>
           </div>
 
         </div>
