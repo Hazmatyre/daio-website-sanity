@@ -16,6 +16,7 @@ import { Layout90 } from "@/components/blocks/Layout90.Hero";
 import { Layout245 } from "@/components/blocks/Layout245.Feature";
 import { Gallery17 } from "@/components/blocks/Gallery17.Images";
 import { Props_biotoilet_gallery17, Props_biotoilet_gallery17_other } from "./props";
+import { Layout192 } from "@/components/blocks/Layout192.Custom198";
 
 
 export default async function Page() {
@@ -33,8 +34,12 @@ export default async function Page() {
       {/* Custom gallery, see homepage */}
       <Layout245 className="bg-brand-naplesYellow text-brand-900" />
       <Gallery17 {...Props_biotoilet_gallery17_other} />
-      {/* Layout 192 for bio-fertiliser section */}
+      <Layout192 />
       {/* Layout 1 - generic for left content, right image. It's layout 18 on figma */}
     </>
   );
+}
+
+const Props_biotoilet_layout192 = {
+
 }
