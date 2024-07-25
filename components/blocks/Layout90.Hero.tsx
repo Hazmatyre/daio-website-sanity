@@ -1,6 +1,6 @@
 import { Button } from "../ui/button";
 import Image from "next/image";
-import imgHero from "/images/homepage-daio-international-nagoya.jpg"
+import imgHero from "/images/mybio-bio-toilet/homepage-daio-international-nagoya.webp"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 type ImageProps = {
@@ -34,7 +34,7 @@ export const Layout90 = (props: Layout90Props) => {
         </div>
         <div className="">
           <p className="md:text-md max-md:text-justify">{description}</p>
-          <div className="flex mt-8 gap-x-3 justify-start">
+          <div className="flex mt-8 gap-3 justify-start flex-wrap">
             <Button size={"lg"} variant={"secondary"}>Learn More</Button>
             <Button size={"lg"} variant={"default"}>Get In Touch</Button>
           </div>
@@ -47,6 +47,7 @@ export const Layout90 = (props: Layout90Props) => {
             // className="w-full object-cover hover:scale-105 transition-transform ease-linear duration-2000"
             className="w-full object-cover "
             alt={image.alt}
+            priority
             fill
           />
         </div>

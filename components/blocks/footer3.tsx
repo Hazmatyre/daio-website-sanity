@@ -82,7 +82,7 @@ export const Footer3 = (props: Footer3Props) => {
                   <a href={`tel:${contact.phone}`} className="focus-visible:outline-none">
                     {contact.phone}
                   </a>
-                  <a href={`mailto:${contact.email}`} className="focus-visible:outline-none">
+                  <a href={`mailto:${contact.email}`} className="focus-visible:outline-none truncate">
                     {contact.email}
                   </a>
                 </p>

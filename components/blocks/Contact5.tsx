@@ -116,9 +116,9 @@ export const Contact5 = (props: Contact5Props) => {
           </div>
 
           <div className="grid grid-cols-1 gap-4 py-2 type-regular">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 text-ellipsis">
               <BiEnvelope className="size-6 flex-none" />
-              <p>{email}</p>
+              <p className="truncate">{email}</p>
             </div>
             <div className="flex items-center gap-4">
               <BiPhone className="size-6 flex-none" />

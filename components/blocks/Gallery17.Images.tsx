@@ -5,6 +5,7 @@ import type { CarouselApi } from "@relume_io/relume-ui";
 import clsx from "clsx";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious, CarouselProgress } from "../ui/carousel";
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
+import AutoHeight from 'embla-carousel-auto-height'
 import imgSlider1 from '/images/img-bio-toilet-2068.jpg'
 import imgSlider2 from '/images/homepageSlide-bio-fertiliser-exported-2134.png'
 import imgSlider3 from '/images/homepageSlide-pongamia-seed.jpg'
@@ -16,9 +17,9 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 
 type SlideProps = {
-  containerClasses?: string
-  img: React.ReactNode
-  gradient?: React.ReactNode
+  // containerClasses?: string
+  // img: React.ReactNode
+  // gradient?: React.ReactNode
   cardContent: React.ReactNode
 };
 
@@ -77,7 +78,7 @@ export const Gallery17 = (props: Gallery17Props) => {
           align: "start",
 
           breakpoints: {
-            '(min-width: 1280px)': { active: false },
+            // '(min-width: 1280px)': { active: false },
             // '(min-width: 768px)': { slidesToScroll: 1 },
           },
           dragFree: false,
@@ -100,15 +101,15 @@ export const Gallery17 = (props: Gallery17Props) => {
               },
             }}
           >
-            <CarouselContent className="ml-2 xl:justify-center">
+            <CarouselContent className="ml-2 items-start /xl:justify-center transition-[height] duration-75 ease-in ">
               {slides.map((slide, index) => (
-                <CarouselItem key={index} className="px-3 basis-[284px] md:basis-[376px] md:py-6 lg:basis-[406px] xxl:basis-[405px] md:px-5 no-overflow-anchoring">
+                <CarouselItem key={index} className="px-3 basis-auto min-w-0 max-w-full md:py-6 md:px-5 no-overflow-anchoring">
                   <motion.div
-                    className={cn("w-full aspect-[9/16] overflow-hidden rounded-lg border relative z-10 shadow-xxlarge", slide.containerClasses)}
+                    className={cn("w-full overflow-hidden rounded-lg relative z-10 shadow-xxlarge")}
                     variants={FADE_UP_ANIMATION_VARIANTS}
                   >
-                    {slide.img}
-                    {slide.gradient}
+                    {/* {slide.img} */}
+                    {/* {slide.gradient} */}
                     {slide.cardContent}
                   </motion.div>
                 </CarouselItem>
@@ -116,7 +117,7 @@ export const Gallery17 = (props: Gallery17Props) => {
             </CarouselContent>
           </motion.div>
         </div>
-        <div className="mt-8 flex items-center justify-end px-[5%] md:mt-[46px] gap-x-2 container xl:hidden">
+        <div className="mt-8 flex items-center justify-end px-[5%] md:mt-[46px] gap-x-2 container /xl:hidden relative z-10">
           {/* <CarouselProgress></CarouselProgress> */}
           <CarouselPrevious className="bg-white flex md:size-12 lg:size-14" />
           <CarouselNext className="bg-white flex md:size-12 lg:size-14" />
@@ -137,82 +138,37 @@ export const Gallery17Defaults: Gallery17Props = {
   description: "Do your part for the environment with our eco-friendly products. We help to reduce human waste pollution and provide sustainable low-cost fuel alternatives.",
   slides: [
     {
-      img:
+      cardContent:
         <Image
           sizes="(max-width: 768px) 69vw, 33vw"
           src={imgSlider1}
           alt={"Picture of woman standing next to DAIO International Bio-Toilet urinal."}
-          className="size-full absolute -z-20 object-cover object-bottom"
+          className="size-full object-fit"
           priority
           quality={5}
-        />,
-      gradient:
-        <div className="absolute -z-10 bg-gradient-to-b from-white size-full via-25% via-white to-35% rounded-3xl" />,
-      cardContent:
-        <div className="size-full py-6 px-5 flex flex-col ">
-          <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
-            MyBio
-          </Button>
-          <h3 className="font-bold mt-2.5 type-mobile-h3 md:type-desktop-h2 xxl:type-desktop-h1 md:mt-5">Bio-Toilet</h3>
-          <p className="font-bold type-tiny text-black md:type-regular">Zero sewage. Save Water.</p>
-          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
-            <Button variant={"default"} className="mt-auto w-fit self-end">
-              Contact Us
-            </Button>
-          </Link>
-        </div>
+        />
     },
     {
-      img:
+      cardContent:
         <Image
           sizes="(max-width: 768px) 69vw, 33vw"
-          src={imgSlider2}
-          alt={"DAIO International's bio-fertiliser made from urine. Picture shows two vials of before and after processing."}
-          className="absolute bottom-1/4 -z-10 scale-150"
-          quality={35}
-          loading="eager"
-        />,
-      gradient:
-        <div className="absolute -z-20 bg-gradient-to-b from-brand-700 to-brand-900  size-full rounded-3xl" />,
-      cardContent:
-        <div className="size-full py-6 px-5 flex flex-col ">
-          <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
-            MyBio
-          </Button>
-          <h3 className="type-mobile-h3 md:mt-5 font-bold mt-2.5 text-brand-200 xxl:type-desktop-h1 md:type-desktop-h2">Bio-Fertiliser</h3>
-          <p className="font-bold md:type-regular type-tiny text-background">Maintain soil fertility for generations with zero sewage</p>
-          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
-            <Button variant={"default"} className="mt-auto w-fit self-end">
-              Contact Us
-            </Button>
-          </Link>
-        </div>
+          src={imgSlider1}
+          alt={"Picture of woman standing next to DAIO International Bio-Toilet urinal."}
+          className="size-full object-fit"
+          priority
+          quality={5}
+        />
     },
     {
-      img:
+      cardContent:
         <Image
           sizes="(max-width: 768px) 69vw, 33vw"
-          src={imgSlider3}
-          alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
-          className="size-full absolute -z-20 object-cover position object-bottom"
-          quality={10}
-          loading="eager"
-        />,
-      gradient:
-        <div className="absolute -z-10 bg-gradient-to-b from-black to-65% via size-full rounded-3xl" />,
-      cardContent:
-        <div className="size-full py-6 px-5 flex flex-col ">
-          <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
-            MyBotany
-          </Button>
-          <h3 className="font-bold md:mt-5 mt-2.5 type-mobile-h3 md:type-desktop-h2 xxl:type-desktop-h1 text-brand-naplesYellow">Pongamia Pinnata</h3>
-          <p className="font-bold md:type-regular text-background type-tiny">The most natural bio-fuel source from tree seeds through our reforestation initiative.</p>
-          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
-            <Button variant={"default"} className="mt-auto w-fit self-end">
-              Contact Us
-            </Button>
-          </Link>
-        </div>
+          src={imgSlider1}
+          alt={"Picture of woman standing next to DAIO International Bio-Toilet urinal."}
+          className="size-full object-fit"
+          priority
+          quality={5}
+        />
     },
   ],
 };
