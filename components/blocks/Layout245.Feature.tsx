@@ -1,5 +1,4 @@
-import { Button } from "@relume_io/relume-ui";
-import type { ButtonProps } from "@relume_io/relume-ui";
+import { Button } from "../ui/button";
 import { RxChevronRight } from "react-icons/rx";
 
 type ImageProps = {
@@ -18,7 +17,7 @@ type Props = {
   heading: string;
   description: string;
   sections: SectionProps[];
-  buttons: ButtonProps[];
+  buttons?: React.ReactNode[];
 };
 
 export type Layout245Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
@@ -55,18 +54,7 @@ export const Layout245 = (props: Layout245Props) => {
           ))}
         </div>
         <div className="mt-10 flex items-center gap-4 md:mt-14 lg:mt-16">
-          {buttons.map((button, index) => (
-            <Button
-              key={index}
-              variant={button.variant}
-              size={button.size}
-              iconRight={button.iconRight}
-              iconLeft={button.iconLeft}
-              className="no-overflow-anchoring"
-            >
-              {button.title}
-            </Button>
-          ))}
+          {buttons}
         </div>
       </div>
     </section>
@@ -117,14 +105,17 @@ export const Layout245Defaults: Layout245Props = {
     },
   ],
   buttons: [
-    { title: "Button", variant: "secondary" },
-    {
-      title: "Button",
-      variant: "link",
-      size: "link",
-      iconRight: <RxChevronRight className="size-6" />,
-    },
-  ],
+    <Button key={"button1"} variant={"secondary"}>Our Models</Button>
+  ]
+  // buttons: [
+  //   { title: "Button", variant: "secondary" },
+  //   {
+  //     title: "Button",
+  //     variant: "link",
+  //     size: "link",
+  //     iconRight: <RxChevronRight className="size-6" />,
+  //   },
+  // ],
 };
 
 Layout245.displayName = "Layout245";

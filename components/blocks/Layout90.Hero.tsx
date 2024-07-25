@@ -25,7 +25,7 @@ export const Layout90 = (props: Layout90Props) => {
   } as Props;
   return (
     <section className="px-[5%] py-16 md:pb-24 lg:pb-28">
-      <div className="container xl:max-w-xl grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
+      <div className="container grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
         <div className=" flex md:items-start flex-col w-fit md:ml-auto">
           {subtitle &&
             <h1 className="text-left block type-regular font-semibold mb-3 md-4">{subtitle}</h1>
@@ -35,8 +35,8 @@ export const Layout90 = (props: Layout90Props) => {
         <div className="">
           <p className="md:text-md max-md:text-justify">{description}</p>
           <div className="flex mt-8 gap-3 justify-start flex-wrap">
-            <Button size={"lg"} variant={"secondary"}>Learn More</Button>
-            <Button size={"lg"} variant={"default"}>Get In Touch</Button>
+            <Button size={"lg"} variant={"default"}>Contact Us</Button>
+            <Button size={"lg"} variant={"secondary"}>View Models</Button>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@ export const Layout90 = (props: Layout90Props) => {
 
 export const Layout90Defaults: Layout90Props = {
   subtitle: "MyBio Bio-Toilet",
-  heading: "Engineered for\nMother Nature.",
+  heading: "Nature's call answered sustainably.",
   description:
     "We offer self-sustainable bio-toilets that do not require sewage. Our MyBio toilets, designed with Japanese technology, are installed in various prefectures in Japan including Mount. Fuji.",
   image: {
