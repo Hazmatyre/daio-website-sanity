@@ -23,6 +23,10 @@ import { Button } from "@/components/ui/button";
 import imgBioToilet1 from "/images/mybio-bio-toilet/pk2b/img2-pk2b.png"
 import imgBioToilet2 from "/images/mybio-bio-toilet/pk2.jpg"
 import imgBioToilet3 from "/images/mybio-bio-toilet/pk1.jpg"
+import { Pricing21 } from "@/components/blocks/Pricing21";
+import { Faq3 } from "@/components/blocks/Faq3";
+import { Header76 } from "@/components/blocks/Heading76";
+import { Contact5 } from "@/components/blocks/Contact5";
 
 
 export default async function Page() {
@@ -43,6 +47,12 @@ export default async function Page() {
       <Layout192 />
       {/* Layout 1 - generic for left content, right image. It's layout 18 on figma. This was for the UN SDG part. */}
       <Gallery17Custom {...Props_biotoilet_Gallery17Custom} />
+      <Pricing21 />
+      <Faq3 />
+      <Header76 />
+      <Suspense>
+        <Contact5 />
+      </Suspense>
     </>
   );
 }
@@ -123,7 +133,7 @@ const Props_biotoilet_Gallery17Custom: React.ComponentProps<typeof Gallery17Cust
               MyBio
             </Button>
             <h3 className="mt-2.5 type-mobile-h1 md:type-desktop-h1 md:mt-5 text-background">PK1</h3>
-            <p className="font-bold type-tiny text-background md:type-regular">The bare necessities..</p>
+            <p className="font-bold type-tiny text-background md:type-regular">The bare necessities.</p>
             <Link href="/#contact-us" className="block mt-auto w-fit self-end">
               <Button variant={"default"} className="mt-auto w-fit self-end">
                 View Specs
