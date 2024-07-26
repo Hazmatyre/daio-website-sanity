@@ -1,11 +1,12 @@
 import {
-  Button,
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@relume_io/relume-ui";
+} from "@/components/ui/accordion";
+import { Button } from "../ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Link from "next/link";
 
 type QuestionsProps = {
   title: string;
@@ -15,7 +16,7 @@ type QuestionsProps = {
 type Props = {
   heading: string;
   description: string;
-  button: ButtonProps;
+  button: React.ReactNode
   questions: QuestionsProps[];
 };
 
@@ -33,7 +34,7 @@ export const Faq3 = (props: Faq3Props) => {
           <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
           <p className="md:text-md">{description}</p>
           <div className="mt-6 md:mt-8">
-            <Button {...button}>{button.title}</Button>
+            {button}
           </div>
         </div>
         <Accordion type="multiple">
@@ -53,10 +54,7 @@ export const Faq3Defaults: Faq3Props = {
   heading: "FAQs",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
-  button: {
-    title: "Contact",
-    variant: "secondary",
-  },
+  button: <Link href=""><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
   questions: [
     {
       title: "Question text goes here",
