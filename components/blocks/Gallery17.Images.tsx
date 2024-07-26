@@ -83,7 +83,13 @@ export const Gallery17 = (props: Gallery17Props) => {
           dragFree: false,
           skipSnaps: true,
         }}
-        plugins={[WheelGesturesPlugin()]}
+        plugins={[
+          WheelGesturesPlugin(
+            {
+              forceWheelAxis: "x"
+            }
+          )
+        ]}
         className="relative mt-12 md:mt-18 lg:mt-20 mb-14 md:mb-16 lg:mb-16 xl:mb-28"
       >
         <div className="relative ">
