@@ -107,7 +107,7 @@ export const Layout245Defaults: Layout245Props = {
     },
   ],
   buttons: [
-    <Button key={"button1"} variant={"secondary"}>Our Models</Button>
+    <Button key={"button1"} variant={"secondary"}>View Bio-Toilet Models</Button>
   ]
   // buttons: [
   //   { title: "Button", variant: "secondary" },

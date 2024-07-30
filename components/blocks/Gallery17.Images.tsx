@@ -64,7 +64,7 @@ export const Gallery17 = (props: Gallery17Props) => {
               ? <h1 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h1>
               : <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>
             }
-            <p className="type-medium max-w-md">{description}</p>
+            <p className="type-regular max-w-md">{description}</p>
           </div>
 
         </div>
@@ -110,7 +110,7 @@ export const Gallery17 = (props: Gallery17Props) => {
               {slides.map((slide, index) => (
                 <CarouselItem key={index} className="px-3 basis-auto min-w-0 max-w-[90%] md:py-6 md:px-5 no-overflow-anchoring">
                   <motion.div
-                    className={cn("w-full overflow-hidden rounded-lg relative z-10 shadow-xxlarge")}
+                    className={cn("w-full rounded-lg relative z-10")}
                     variants={FADE_UP_ANIMATION_VARIANTS}
                   >
                     {/* {slide.img} */}

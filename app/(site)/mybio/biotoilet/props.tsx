@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import Image, { StaticImageData } from "next/image";
 import imgFuji1 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan01.jpg"
 import imgFuji2 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan02.jpg"
@@ -28,6 +29,7 @@ import imgOther12 from "/images/mybio-bio-toilet/toilets-other/Tsurutoge, Kosuge
 import imgOther13 from "/images/mybio-bio-toilet/toilets-other/Wakayama prefecture, Tanabe City, Kumano Kodo Kokumotorikoe.webp"
 import imgOther14 from "/images/mybio-bio-toilet/toilets-other/Yunosawa Pass Parking Lot, Koshu City, Yamanashi Prefecture.jpg"
 import { Gallery17 } from "@/components/blocks/Gallery17.Images";
+import { description } from '../../../../sanity/lib/demo';
 
 
 const imagesFuji: React.ComponentProps<typeof Image>[] = [
@@ -111,114 +113,133 @@ const imagesFuji: React.ComponentProps<typeof Image>[] = [
   },
 ]
 
+const otherSizes = " 80vw, (min-width: 767px) 60vw, (min-width: 1000px) 46vw, (min-width: 1279px) 37vw, (min-width: 1439px) 33vw, (min-width: 1919px) 25vw"
+
 const imagesOther: React.ComponentProps<typeof Image>[] = [
   {
     src: imgOther1,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Matsuhime Pass, Kosuge Village, Yamanashi Prefecture",
+    "aria-description": "Matsuhime Pass, Kosuge Village, Yamanashi Prefecture.",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther2,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Mountain trail of Mt. Tamine, Hanno City, Saitama Prefecture.",
+    "aria-description": "Mountain trail of Mt. Tamine, Hanno City, Saitama Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther3,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Mt. Sodai, Tomioka City, Gunma Prefecture",
+    "aria-description": "Mt. Sodai, Tomioka City, Gunma Prefecture",
+    sizes: otherSizes,    
     quality: 10,
   },
   {
     src: imgOther4,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Mt. Hirao summit, Saku City, Nagano Prefecture.",
+    "aria-description": "Mt. Hirao summit, Saku City, Nagano Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther5,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Mt. Tateshina trailhead parking lot, Suzuran Pass, Chino City, Nagano Prefecture.",
+    "aria-description": "Mt. Tateshina trailhead parking lot, Suzuran Pass, Chino City, Nagano Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther6,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Napara Golf Club Ipponmatsu Course, Nara City, Nara Prefecture.",
+    "aria-description": "Napara Golf Club Ipponmatsu Course, Nara City, Nara Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther7,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Oku-Kirigamine, Suwa City, Nagano Prefecture.",
+    "aria-description": "Oku-Kirigamine, Suwa City, Nagano Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther8,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Otome Kogen, Yamanashi City, Yamanashi Prefecture.",
+    "aria-description": "Otome Kogen, Yamanashi City, Yamanashi Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther9,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Shogen Pass, Koshu City, Yamanashi Prefecture.",
+    "aria-description": "Shogen Pass, Koshu City, Yamanashi Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther10,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Mt. Kirigamine, Suwa City, Nagano Prefecture.",
+    "aria-description": "Mt. Kirigamine, Suwa City, Nagano Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther11,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Taroyama no Sato, Yotsukaido City, Chiba Prefecture",
+    "aria-description": "Taroyama no Sato, Yotsukaido City, Chiba Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther12,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Tsurutoge, Kosuge Village, Yamanashi Prefecture.",
+    "aria-description": "Tsurutoge, Kosuge Village, Yamanashi Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
   {
     src: imgOther14,
-    alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    alt: "Bio-Toilet in Yunosawa Pass Parking Lot, Koshu City, Yamanashi Prefecture.",
+    "aria-description":"Yunosawa Pass Parking Lot, Koshu City, Yamanashi Prefecture",
+    sizes: otherSizes,
     quality: 10,
   },
 ]
 
-export const Props_biotoilet_gallery17:React.ComponentProps<typeof Gallery17> = {
+export const Props_biotoilet_gallery17: React.ComponentProps<typeof Gallery17> = {
   headingTag: "h2",
   heading: "Bio-Toilet in Mount Fuji, Japan",
   description: "Installed 2.640m above sea level at the 7th station of Mt. Fuji on the Yoshida route descent. It features automatic urine separation up to 2400 litres. Urine is transported down to be processed into bio-fertiliser.",
   slides: imagesFuji.map((img, index) => ({
-    // eslint-disable-next-line jsx-a11y/alt-text
-    cardContent: <Image
-      key={index}
-      className="size-full object-cover h-80"
-      quality={5}
-      {...img}
-    />
+    cardContent:
+      // eslint-disable-next-line jsx-a11y/alt-text
+      <Image
+        key={index}
+        className="size-full object-cover h-80 rounded-lg shadow-xxlarge"
+        quality={5}
+        {...img}
+      />
   }))
 }
 
-export const Props_biotoilet_gallery17_other:React.ComponentProps<typeof Gallery17> = {
+export const Props_biotoilet_gallery17_other: React.ComponentProps<typeof Gallery17> = {
   headingTag: "h2",
   heading: "Bio-Toilets in Japanese prefectures",
   description: "Our toilets have been manufactured for several local governments and private companies in the past two decades. Whether on mountanous landscapes to busy indoor factories, our toilets fit anywhere.",
   slides: imagesOther.map((img, index) => ({
-    // eslint-disable-next-line jsx-a11y/alt-text
-    cardContent: <Image
-      key={index}
-      className="size-full object-cover h-80"
-      quality={5}
-      {...img}
-    />
+    cardContent:
+      <>
+        <Image
+          key={index}
+          className="size-full object-cover h-80 rounded-lg shadow-xxsmall"
+          quality={5}
+          {...img}
+        />
+        <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{img["aria-description"]}</p>
+      </>
   }))
 }
 

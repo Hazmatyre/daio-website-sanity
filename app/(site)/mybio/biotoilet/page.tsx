@@ -25,7 +25,7 @@ import imgBioToilet2 from "/images/mybio-bio-toilet/pk2.jpg"
 import imgBioToilet3 from "/images/mybio-bio-toilet/pk1.jpg"
 import { Pricing21 } from "@/components/blocks/Pricing21";
 import { Faq3 } from "@/components/blocks/Faq3";
-import { Header76 } from "@/components/blocks/Heading76";
+import { Header76 } from "@/components/blocks/Header76";
 import { Contact5 } from "@/components/blocks/Contact5";
 
 

@@ -33,7 +33,7 @@ export const Layout90 = (props: Layout90Props) => {
           <h2 className="/leading-[1.2] type-mobile-h1 md:type-desktop-h1 whitespace-pre-line tracking-normal flex md:justify-end w-full">{heading}</h2>
         </div>
         <div className="">
-          <p className="type-regular max-md:text-justify">{description}</p>
+          <p className="type-regular max-md:text-left">{description}</p>
           <div className="flex mt-8 gap-3 justify-start flex-wrap">
             <Button size={"lg"} variant={"default"}>Contact Us</Button>
             <Button size={"lg"} variant={"secondary"}>View Models</Button>
@@ -60,7 +60,7 @@ export const Layout90Defaults: Layout90Props = {
   subtitle: "MyBio Bio-Toilet",
   heading: "Nature's call\nanswered sustainably.",
   description:
-    "Self-sustainable bio-toilets that do not require sewage. Our MyBio toilets, designed with Japanese technology, are installed in various prefectures in Japan including Mount. Fuji.",
+    "Acquire self-sustainable bio-toilets that do not require sewage. Our MyBio toilets, designed with Japanese technology, are installed in various prefectures in Japan including Mount. Fuji.",
   image: {
     src: imgHero,
     alt: "DAIO International MyBio toilet in Nagoya, Japan.",
