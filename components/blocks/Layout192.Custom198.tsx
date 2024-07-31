@@ -29,7 +29,7 @@ export const Layout192 = (props: Layout192Props) => {
     ...props,
   } as Props;
   return (
-    <header className="px-[5%] py-16 md:py-24 lg:py-28">
+    <header className="px-[5%] py-16 md:py-24 lg:py-28 bg-brand-50">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div className="order-2 md:order-1 rounded-lg overflow-hidden≈">
@@ -41,7 +41,7 @@ export const Layout192 = (props: Layout192Props) => {
           <div className="order-1 lg:order-2">
             <p className="mb-3 type-regular font-semibold md:mb-4">{tagline}</p>
             <h2 className="mb-5 type-mobile-h2 lg:type-desktop-h2 font-bold md:mb-6">{heading}</h2>
-            <p className="mb-6 md:mb-8 type-regular font-medium md:type-medium">{description}</p>
+            <p className="mb-6 md:mb-8 type-regular font-medium md:type-medium whitespace-pre-line">{description}</p>
             <div className="grid grid-cols-1 gap-5 py-2 md:grid-cols-2 ">
               {subHeadings.map((subHeading, index) => (
                 <div key={index} className="no-overflow-anchoring">
@@ -65,10 +65,12 @@ export const Layout192 = (props: Layout192Props) => {
 
 
 export const Layout192Defaults: Layout192Props = {
-  tagline: "Tagline",
-  heading: "Medium length section heading goes here",
+  tagline: "MyBio Bio-Fertiliser",
+  heading: "Urine-Based Organic Bio-Fertiliser: A Sustainable Solution for Crop Growth.",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    `We handle collection of human and animal waste urine to process into odourless bio-fertiliser available in both liquid and powdered forms.
+
+    The 400L to 500L of urine excreted per year per person contains sufficient plant nutrients to grow 250kg of grain, which is sufficient to support one person for a year.`,
   subHeadings: [
     {
       icon: iconRecycle,

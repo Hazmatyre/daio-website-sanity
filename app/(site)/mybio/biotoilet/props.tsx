@@ -227,7 +227,7 @@ export const Props_biotoilet_gallery17: React.ComponentProps<typeof Gallery17> =
 
 export const Props_biotoilet_gallery17_other: React.ComponentProps<typeof Gallery17> = {
   headingTag: "h2",
-  heading: "Bio-Toilets in Japanese prefectures",
+  heading: "Bio-Toilets in Japanese Prefectures",
   description: "Our toilets have been manufactured for several local governments and private companies in the past two decades. Whether on mountanous landscapes to busy indoor factories, our toilets fit anywhere.",
   slides: imagesOther.map((img, index) => ({
     cardContent:

@@ -1,6 +1,8 @@
 import { Button } from "../ui/button";
 import clsx from "clsx";
 import Image from "next/image";
+import img1 from "/images/mybio-bio-toilet/man-overlooking-r21.webp"
+import img2 from "/images/mybio-bio-toilet/model-opening-r21.webp"
 
 type ImageProps = {
   src: string;
@@ -23,12 +25,12 @@ export const Header110 = (props: Header110Props) => {
   } as Props;
   return (
     <header className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container grid grid-cols-1 gap-12 md:grid-cols-[0.5fr_1fr] md:gap-16">
-        <div className="flex h-full flex-col justify-between">
-          <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h1>
+      <div className="container grid grid-cols-1 gap-12 lg:grid-cols-[0.5fr_1fr] lg:gap-16">
+        <div className="flex h-full flex-col justify-start">
+          <h2 className="mb-5 md:mb-6 type-mobile-h2 md:desktop-h2">{heading}</h2>
           <div className="ml-[7.5%]">
-            <p className="md:text-md">{description}</p>
-            <div className="mt-6 flex gap-4 md:mt-8 md:flex-wrap">
+            <p className="type-regular whitespace-pre-line">{description}</p>
+            <div className="mt-6 flex gap-4 md:mt-8 flex-wrap">
               {buttons}
             </div>
           </div>
@@ -54,11 +56,15 @@ export const Header110 = (props: Header110Props) => {
 };
 
 export const Header110Defaults: Header110Props = {
-  heading: "Medium length hero heading goes here",
+  heading: "How does it work?",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    `The core of our toilets is the Bio R-21 unit the size of a small car engine.  It maintains the perfect balance of temperature, water content, and oxygen for the fermenting and decomposition of solid human waste. The bacteria is added once for the lifetime of the toilet, and only needs to be topped up at most a few times year.
+
+    Reach out to us for more technical specifications.`,
   buttons: [
-    <Button key={1}> Some Button</Button>
+    <a key={1} href=""><Button key={1}>Contact Us</Button></a>,
+    <a key={2} href=""><Button key={1} variant={"secondary"}>View Models</Button></a>
+
   ],
   // buttons: [
   //   { title: "Button" },
@@ -68,12 +74,12 @@ export const Header110Defaults: Header110Props = {
   //   }],
   images: [
     {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
-      alt: "Placeholder image 1",
+      src: img1.src,
+      alt: "DAIO Director standing beside Bio R-21 core unit skewer.",
     },
     {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image-landscape.svg",
-      alt: "Placeholder image 2",
+      src: img2.src,
+      alt: "Model standing beside Bio R-21 core unit holding its top lid.",
     },
   ],
 };
