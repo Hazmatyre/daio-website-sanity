@@ -42,6 +42,8 @@ export const Header76 = (props: Header76Props) => {
                   <Image
                     className="absolute inset-0 size-full object-cover rounded-lg shadow-xxlarge"
                     {...image}
+                    sizes="(max-width: 999px) 43vw, 21vw"
+                    quality={30}
                   />
                 </div>
               </div>
