@@ -7,6 +7,7 @@ import icon1 from "/images/mybio-bio-toilet/BxTrophy.svg";
 import icon2 from "/images/mybio-bio-toilet/BxHappyBeaming.svg";
 import icon3 from "/images/mybio-bio-toilet/TablerDropletOff.svg";
 import icon4 from "/images/mybio-bio-toilet/CarbonEnergyRenewable.svg";
+import Link from "next/link";
 
 type ImageProps = {
   src: string;
@@ -112,7 +113,7 @@ export const Layout245Defaults: Layout245Props = {
     },
   ],
   buttons: [
-    <Button key={"button1"} variant={"secondary"}>View Bio-Toilet Models</Button>
+    <Link key={"button1"} href={"#bio-toilet-models"}><Button variant={"secondary"}>View Bio-Toilet Models</Button></Link>
   ]
   // buttons: [
   //   { title: "Button", variant: "secondary" },

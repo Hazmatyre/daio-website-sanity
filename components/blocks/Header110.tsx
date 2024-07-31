@@ -3,6 +3,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import img1 from "/images/mybio-bio-toilet/man-overlooking-r21.webp"
 import img2 from "/images/mybio-bio-toilet/model-opening-r21.webp"
+import Link from "next/link";
 
 type ImageProps = {
   src: string;
@@ -62,8 +63,8 @@ export const Header110Defaults: Header110Props = {
 
     Reach out to us for more technical specifications.`,
   buttons: [
-    <a key={1} href=""><Button key={1}>Contact Us</Button></a>,
-    <a key={2} href=""><Button key={1} variant={"secondary"}>View Models</Button></a>
+    <Link key={1} href="#contact-us"><Button key={1}>Contact Us</Button></Link>,
+    <Link key={2} href="#bio-toilet-models"><Button key={1} variant={"secondary"}>View Models</Button></Link>
 
   ],
   // buttons: [

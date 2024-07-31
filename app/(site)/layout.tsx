@@ -91,7 +91,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${eb_garamond.variable} bg-white text-black`}>
+    <html lang="en" className={`${montserrat.variable} ${eb_garamond.variable} bg-white text-black scroll-smooth`}>
       <body className="">
         <section className="min-h-screen font-sans">
           {draftMode().isEnabled && <AlertBanner />}

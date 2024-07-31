@@ -5,6 +5,7 @@ import img1 from "/images/mybio-bio-fertiliser/bio-fertiliser-samples.webp"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import iconRecycle from '/images/PhRecycleLight.svg'
 import iconEnergy from '/images/CarbonEnergyRenewable.svg'
+import Link from "next/link";
 
 type SubHeadingProps = {
   icon?: StaticImport
@@ -86,7 +87,9 @@ export const Layout192Defaults: Layout192Props = {
     },
   ],
   buttons: [
-    <Button key={"button1"} variant={"default"} size={"lg"}>Learn about Bio-Fertiliser</Button>
+    // <Link href="/#contact-us" key={"button1"}><Button variant={"default"} size={"lg"}>Learn about Bio-Fertiliser</Button></Link>
+    <Link href="/#contact-us" key={"button1"}><Button variant={"default"} size={"lg"}>Conact Us</Button></Link>
+
   ],
   // buttons: [
   //   { title: "Button", variant: "secondary" },

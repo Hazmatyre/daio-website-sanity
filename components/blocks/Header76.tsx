@@ -6,6 +6,7 @@ import img3 from "/images/mybio-bio-toilet/work-with-us/toilet-closed.webp"
 import img4 from "/images/mybio-bio-toilet/work-with-us/toilet-employee-sitting.webp"
 import img5 from "/images/mybio-bio-toilet/work-with-us/toilet-employee-thumbs-up.webp"
 import img6 from "/images/mybio-bio-toilet/work-with-us/toilet-urinal.webp"
+import Link from "next/link";
 
 type ImageProps = {
   src: string;
@@ -77,7 +78,7 @@ export const Header76Defaults: Header76Props = {
   description:
     "We are looking for collaborators who care about the environment and want to make a difference. Together, we can create a sustainable future for generations to come.",
   buttons: [
-    <a key={1} href=""><Button variant={"default"} size={"lg"}>Contact Us</Button></a>,
+    <Link key={1} href="#contact-us"><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
     // <a key={1} href=""><Button variant={"secondary"} size={"lg"}>Our Team</Button></a>
   ],
   images: [

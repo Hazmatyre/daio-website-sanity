@@ -2,6 +2,7 @@ import { Button } from "../ui/button";
 import Image from "next/image";
 import imgHero from "/images/mybio-bio-toilet/homepage-daio-international-nagoya.webp"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Link from "next/link";
 
 type ImageProps = {
   src: string | StaticImport;
@@ -35,8 +36,8 @@ export const Layout90 = (props: Layout90Props) => {
         <div className="">
           <p className="type-regular max-md:text-left">{description}</p>
           <div className="flex mt-8 gap-3 justify-start flex-wrap">
-            <Button size={"lg"} variant={"default"}>Contact Us</Button>
-            <Button size={"lg"} variant={"secondary"}>View Models</Button>
+            <Link href="#contact-us"><Button size={"lg"} variant={"default"}>Contact Us</Button></Link>
+            <Link href="#bio-toilet-models"><Button size={"lg"} variant={"secondary"}>View Models</Button></Link>
           </div>
         </div>
       </div>

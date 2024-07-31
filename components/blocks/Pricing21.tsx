@@ -1,5 +1,6 @@
 import { Button } from "../ui/button";
 import clsx from "clsx";
+import Link from "next/link";
 import { BiCheck } from "react-icons/bi";
 
 type Feature = {
@@ -35,7 +36,7 @@ export const Pricing21 = (props: Pricing21Props) => {
     ...props,
   } as Props;
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="px-[5%] py-16 md:py-24 lg:py-28" id={props.id}>
       <div className="container">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
           {tagline && <p className="mb-3 font-semibold md:mb-4">{tagline}</p>}
@@ -141,19 +142,19 @@ export const Pricing21Defaults: Pricing21Props = {
       planName: "Premium",
       monthlyPrice: "PK2B",
       description: "One room with toilet, one with urinal.",
-      button: <Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button>
+      button: <Link href={"#contact-us"}><Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button></Link>
     },
     {
       planName: "Essential",
       monthlyPrice: "PK2",
       description: "Comes with urinal in the same room.",
-      button: <Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button>
+      button: <Link href={"#contact-us"}><Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button></Link>
     },
     {
       planName: "Basic",
       monthlyPrice: "PK1",
       description: "Basic unit.",
-      button: <Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button>
+      button: <Link href={"#contact-us"}><Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button></Link>
     },
   ],
   featureCategories: [

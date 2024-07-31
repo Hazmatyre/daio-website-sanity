@@ -54,7 +54,7 @@ export const Faq3Defaults: Faq3Props = {
   heading: "FAQs",
   description:
     "Find answers to commonly asked questions about our MyBio toilets.",
-  button: <Link href=""><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
+  button: <Link href="#contact-us"><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
   questions: [
     {
       title: "Question text goes here",

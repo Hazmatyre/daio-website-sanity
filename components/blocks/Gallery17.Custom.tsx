@@ -56,7 +56,7 @@ export const Gallery17 = (props: Gallery17Props) => {
   };
 
   return (
-    <section className="">
+    <section className="" id={props.id}>
       <div className="px-[5%] pt-14 md:pt-16 lg:pt-16 xl:pt-28">
         <div className="container">
           <div className="text-center flex flex-col items-center">

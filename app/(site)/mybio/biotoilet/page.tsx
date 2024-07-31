@@ -47,8 +47,8 @@ export default async function Page() {
       <Gallery17 {...Props_biotoilet_gallery17_other} />
       <Layout192 />
       {/* Layout 1 - generic for left content, right image. It's layout 18 on figma. This was for the UN SDG part. */}
-      <Gallery17Custom {...Props_biotoilet_Gallery17Custom} />
-      <Pricing21 />
+      <Gallery17Custom id="bio-toilet-models" {...Props_biotoilet_Gallery17Custom} />
+      <Pricing21 id="bio-toilet-pricing"/>
       <Faq3 />
       <Header76 />
       <Suspense>
@@ -76,12 +76,12 @@ const Props_biotoilet_Gallery17Custom: React.ComponentProps<typeof Gallery17Cust
             />
           </div>
           <div className="size-full py-6 px-5 flex flex-col ">
-            <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
-              MyBio
+            <Button asChild variant="chevron" size={'chevron'} className="font-sans w-fit">
+              <p>MyBio</p>
             </Button>
             <h3 className="mt-2.5 type-mobile-h1 md:type-desktop-h1 md:mt-5 text-background">PK2B</h3>
             <p className="font-bold type-tiny text-background md:type-regular">The complete set. Comes with a urinal in a separate room.</p>
-            <Link href="/#contact-us" className="block mt-auto w-fit self-end">
+            <Link href="#bio-toilet-pricing" className="block mt-auto w-fit self-end">
               <Button variant={"default"} className="mt-auto w-fit self-end">
                 View Specs
               </Button>
@@ -103,12 +103,12 @@ const Props_biotoilet_Gallery17Custom: React.ComponentProps<typeof Gallery17Cust
             />
           </div>
           <div className="size-full py-6 px-5 flex flex-col ">
-            <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
-              MyBio
+            <Button asChild variant="chevron" size={'chevron'} className="font-sans w-fit">
+              <p>MyBio</p>
             </Button>
             <h3 className="mt-2.5 type-mobile-h1 md:type-desktop-h1 md:mt-5 text-background">PK2</h3>
             <p className="font-bold type-tiny text-background md:type-regular">For the average user. Comes with a urinal in the same room.</p>
-            <Link href="/#contact-us" className="block mt-auto w-fit self-end">
+            <Link href="#bio-toilet-pricing" className="block mt-auto w-fit self-end">
               <Button variant={"default"} className="mt-auto w-fit self-end">
                 View Specs
               </Button>
@@ -130,12 +130,12 @@ const Props_biotoilet_Gallery17Custom: React.ComponentProps<typeof Gallery17Cust
             />
           </div>
           <div className="size-full py-6 px-5 flex flex-col ">
-            <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
-              MyBio
+            <Button asChild variant="chevron" size={'chevron'} className="font-sans w-fit">
+              <p>MyBio</p>
             </Button>
             <h3 className="mt-2.5 type-mobile-h1 md:type-desktop-h1 md:mt-5 text-background">PK1</h3>
             <p className="font-bold type-tiny text-background md:type-regular">The bare necessities.</p>
-            <Link href="/#contact-us" className="block mt-auto w-fit self-end">
+            <Link href="#bio-toilet-pricing" className="block mt-auto w-fit self-end">
               <Button variant={"default"} className="mt-auto w-fit self-end">
                 View Specs
               </Button>
