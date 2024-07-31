@@ -60,7 +60,7 @@ export default async function Page() {
 
 const Props_biotoilet_Gallery17Custom: React.ComponentProps<typeof Gallery17Custom> = {
   heading: "Bio-Toilet Models",
-  description: "Available models for sale or leasing",
+  description: "Available models for sale or leasing.",
   slides: [
     {
       containerClasses: "aspect-[1/1.618] bg-[#1E3348]",

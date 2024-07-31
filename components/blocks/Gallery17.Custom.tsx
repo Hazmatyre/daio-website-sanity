@@ -95,8 +95,9 @@ export const Gallery17 = (props: Gallery17Props) => {
         <div className="relative">
           <motion.div
             initial="hidden"
-            animate="show"
+            // animate="show"
             viewport={{ once: true }}
+            whileInView="show"
             variants={{
               hidden: {},
               show: {

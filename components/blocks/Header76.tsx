@@ -1,5 +1,4 @@
-import { Button } from "@relume_io/relume-ui";
-import type { ButtonProps } from "@relume_io/relume-ui";
+import { Button } from "../ui/button";
 import Image from "next/image";
 import img1 from "/images/img-bio-toilet-2068.jpg"
 import img2 from "/images/mybio-bio-toilet/work-with-us/img-toilet-director.webp"
@@ -16,7 +15,7 @@ type ImageProps = {
 type Props = {
   heading: string;
   description: string;
-  buttons: ButtonProps[];
+  buttons: React.ReactNode
   images: ImageProps[];
   images2: ImageProps[];
 };
@@ -29,26 +28,22 @@ export const Header76 = (props: Header76Props) => {
     ...props,
   } as Props;
   return (
-    <header className="grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0">
-      <div className="mx-[5%] max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end">
-        <h1 className="mb-5 text-6xl font-bold md:mb-6 md:text-9xl lg:text-10xl">{heading}</h1>
-        <p className="md:text-md">{description}</p>
+    <div className="grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0">
+      <div className="mx-[5%] max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end relative">
+        <h2 className="mb-5 md:mb-6 type-mobile-h2 md:type-desktop-h2">{heading}</h2>
+        <p className="type-regular font-medium md:type-medium ">{description}</p>
         <div className="mt-6 flex gap-x-4 md:mt-8">
-          {buttons.map((button, index) => (
-            <Button key={index} {...button}>
-              {button.title}
-            </Button>
-          ))}
+          {buttons}
         </div>
       </div>
-      <div className="h-[30rem] overflow-hidden pl-[5vw] pr-[5vw] md:h-[40rem] lg:h-screen lg:pl-0">
+      <div className="h-[30rem] overflow-y-clip pl-[5vw] pr-[5vw] md:h-[40rem] lg:h-screen lg:pl-0 border-border">
         <div className="grid w-full grid-cols-2 gap-x-4">
           <div className="-mt-[120%] grid size-full animate-loop-vertically2 columns-2 grid-cols-1 gap-4 self-center">
             {images.map((image, index) => (
               <div key={index} className="grid size-full grid-cols-1 gap-4">
                 <div className="relative w-full pt-[120%]">
                   <Image
-                    className="absolute inset-0 size-full object-cover"
+                    className="absolute inset-0 size-full object-cover rounded-lg shadow-xxlarge"
                     src={image.src}
                     alt={image.alt || ""}
                     fill
@@ -62,7 +57,7 @@ export const Header76 = (props: Header76Props) => {
               <div key={index} className="grid size-full grid-cols-1 gap-4">
                 <div className="relative w-full pt-[120%]">
                   <Image
-                    className="absolute inset-0 size-full object-cover"
+                    className="absolute inset-0 size-full object-cover rounded-lg shadow-xxlarge"
                     src={image.src}
                     alt={image.alt || ""}
                     fill
@@ -73,15 +68,18 @@ export const Header76 = (props: Header76Props) => {
           </div>
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 
 export const Header76Defaults: Header76Props = {
-  heading: "Medium length hero heading goes here",
+  heading: "Join us in preserving the planet’s future.",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-  buttons: [{ title: "Button" }, { title: "Button", variant: "secondary" }],
+    "We are looking for collaborators who care about the environment and want to make a difference. Together, we can create a sustainable future for generations to come.",
+  buttons: [
+    <a key={1} href=""><Button variant={"default"} size={"lg"}>Contact Us</Button></a>,
+    // <a key={1} href=""><Button variant={"secondary"} size={"lg"}>Our Team</Button></a>
+  ],
   images: [
     {
       src: img1.src,
