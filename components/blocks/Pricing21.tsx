@@ -43,7 +43,7 @@ export const Pricing21 = (props: Pricing21Props) => {
           {description && <p className="md:text-md">{description}</p>}
         </div>
         <div className="w-full">
-          <div className="sticky top-5 grid grid-cols-3 border-border bg-white md:grid-cols-[1.5fr_1fr_1fr_1fr] rounded-lg shadow-xxlarge z-20 w-full border">
+          <div className="max-lg:sticky top-5 grid grid-cols-3 border-border bg-white md:grid-cols-[1.5fr_1fr_1fr_1fr] rounded-lg shadow-medium z-20 w-full border">
             <div className="hidden md:block" />
             {pricingPlans.map((plan, index) => (
               <PricingPlan key={index} {...plan} index={index} />
@@ -134,8 +134,8 @@ const FeaturesSection = ({ featureCategories }: { featureCategories: FeatureCate
 
 export const Pricing21Defaults: Pricing21Props = {
   // tagline: "Tagline",
-  heading: "Pricing plan",
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  heading: "Bio-Toilet Specification",
+  description: "",
   pricingPlans: [
     {
       planName: "Premium",
@@ -158,106 +158,50 @@ export const Pricing21Defaults: Pricing21Props = {
   ],
   featureCategories: [
     {
-      title: "Feature Category",
+      title: "Features",
       features: [
         {
-          text: "Feature text goes here",
-          items: ["10", "25", "Unlimited"],
+          text: "Digestive Basin / Urine Tank Capacity",
+          items: ["619L / 200L", "619L / 200L,", "619L / 100L"]
         },
         {
-          text: "Feature text goes here",
+          text: "Dimensions",
+          items: ["w300cm * d190cm * h280cm", "w190cm * d291cm * h280cm", "w135cm * d290cm * h280cm"]
+        },
+        {
+          text: "Weight",
+          items: ["1250kg", "1100kg,", "950kg"]
+        },
+        {
+          text: "Power Supply",
+          items: ["AC 100V", "AC 100V", "AC 100V"]
+        },
+        {
+          text: "Startup Power Consumption",
+          items: ["880w", "880w", "880w"]
+        },
+        {
+          text: "Constant Power Consumption",
+          items: ["260w", "260w", "260w"]
+        },
+        {
+          text: "Capacity (uses per day)",
+          items: ["80 - 100", "80 - 100", "80 - 100"]
+        },
+        {
+          text: "Optional Bidet/Washlet",
+          items: ["Add on built-in washlet", "Add on built-in washlet", "External pump for washlet"]
+        },
+        {
+          text: "Optional sink available",
           items: [
             <BiCheck key={1} className="size-6" />,
             <BiCheck key={2} className="size-6" />,
             <BiCheck key={3} className="size-6" />,
-          ],
-        },
-        {
-          text: "Feature text goes here",
-          items: [
-            <BiCheck key={1} className="size-6" />,
-            <BiCheck key={2} className="size-6" />,
-            <BiCheck key={3} className="size-6" />,
-          ],
-        },
-        {
-          text: "Feature text goes here",
-          items: ["", <BiCheck key={1} className="size-6" />, <BiCheck key={2} className="size-6" />],
-        },
-        {
-          text: "Feature text goes here",
-          items: ["", "", <BiCheck key={1} className="size-6" />],
-        },
-      ],
-    },
-
-    {
-      title: "Feature Category",
-      features: [
-        {
-          text: "Feature text goes here",
-          items: ["10", "25", "Unlimited"],
-        },
-        {
-          text: "Feature text goes here",
-          items: [
-            <BiCheck key={1} className="size-6" />,
-            <BiCheck key={2} className="size-6" />,
-            <BiCheck key={3} className="size-6" />,
-          ],
-        },
-        {
-          text: "Feature text goes here",
-          items: [
-            <BiCheck key={1} className="size-6" />,
-            <BiCheck key={2} className="size-6" />,
-            <BiCheck key={3} className="size-6" />,
-          ],
-        },
-        {
-          text: "Feature text goes here",
-          items: ["", <BiCheck key={1} className="size-6" />, <BiCheck key={2} className="size-6" />],
-        },
-        {
-          text: "Feature text goes here",
-          items: ["", "", <BiCheck key={1} className="size-6" />],
-        },
-      ],
-    },
-
-    {
-      title: "Feature Category",
-      features: [
-        {
-          text: "Feature text goes here",
-          items: ["10", "25", "Unlimited"],
-        },
-        {
-          text: "Feature text goes here",
-          items: [
-            <BiCheck key={1} className="size-6" />,
-            <BiCheck key={2} className="size-6" />,
-            <BiCheck key={3} className="size-6" />,
-          ],
-        },
-        {
-          text: "Feature text goes here",
-          items: [
-            <BiCheck key={1} className="size-6" />,
-            <BiCheck key={2} className="size-6" />,
-            <BiCheck key={3} className="size-6" />,
-          ],
-        },
-        {
-          text: "Feature text goes here",
-          items: ["", <BiCheck key={1} className="size-6" />, <BiCheck key={2} className="size-6" />],
-        },
-        {
-          text: "Feature text goes here",
-          items: ["", "", <BiCheck key={1} className="size-6" />],
-        },
-      ],
-    },
+          ]
+        }
+      ]
+    }
   ],
 };
 
