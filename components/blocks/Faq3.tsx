@@ -31,8 +31,8 @@ export const Faq3 = (props: Faq3Props) => {
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container grid grid-cols-1 gap-y-12 md:grid-cols-2 md:gap-x-12 lg:grid-cols-[.75fr,1fr] lg:gap-x-20">
         <div>
-          <h2 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h2>
-          <p className="md:text-md">{description}</p>
+          <h2 className="mb-5 md:mb-6 type-mobile-h2 md:type-desktop-h2">{heading}</h2>
+          <p className="type-regular">{description}</p>
           <div className="mt-6 md:mt-8">
             {button}
           </div>
@@ -40,8 +40,8 @@ export const Faq3 = (props: Faq3Props) => {
         <Accordion type="multiple">
           {questions.map((question, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="md:py-5 md:text-md">{question.title}</AccordionTrigger>
-              <AccordionContent className="md:pb-6">{question.answer}</AccordionContent>
+              <AccordionTrigger className="md:py-5 type-regular font-bold md:type-medium">{question.title}</AccordionTrigger>
+              <AccordionContent className="md:pb-6 type-regular">{question.answer}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
@@ -53,7 +53,7 @@ export const Faq3 = (props: Faq3Props) => {
 export const Faq3Defaults: Faq3Props = {
   heading: "FAQs",
   description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique.",
+    "Find answers to commonly asked questions about our MyBio toilets.",
   button: <Link href=""><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
   questions: [
     {
