@@ -49,6 +49,8 @@ export const Layout90 = (props: Layout90Props) => {
             className="w-full object-cover rounded-lg shadow-xxsmall"
             alt={image.alt}
             priority
+            sizes="(max-width: 1440px) 89vw, 75vw"
+            quality={60}
           />
           <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">MT. TATESHINA TRAILHEAD PARKING LOT, SUZURAN PASS, CHINO CITY, NAGANO PREFECTURE</p>
         </div>
