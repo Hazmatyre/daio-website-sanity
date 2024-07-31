@@ -31,89 +31,93 @@ import imgOther14 from "/images/mybio-bio-toilet/toilets-other/Yunosawa Pass Par
 import { Gallery17 } from "@/components/blocks/Gallery17.Images";
 import { description } from '../../../../sanity/lib/demo';
 
+const fujiSizes = "80vw, (min-width: 767px) 55vw, (min-width: 1000px) 42vw, (min-width: 1279px) 33vw, (min-width: 1439px) 30vw, (min-width: 1919px) 22vw"
+
+const fujiSizesPortrait = "64vw, (min-width: 767px) 31vw, (min-width: 1000px) 23vw, (min-width: 1279px) 19vw, (min-width: 1439px) 16vw, (min-width: 1919px) 12vw"
+
 
 const imagesFuji: React.ComponentProps<typeof Image>[] = [
   {
     src: imgFuji1,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji2,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji3,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji4,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizesPortrait,
     quality: 10,
   },
   {
     src: imgFuji6,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizesPortrait,
     quality: 10,
   },
   {
     src: imgFuji7,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizesPortrait,
     quality: 10,
   },
   {
     src: imgFuji8,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji10,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji11,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji12,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji13,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji14,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
   {
     src: imgFuji15,
     alt: "",
-    sizes: "(max-width: 768px) 69vw, 33vw",
+    sizes: fujiSizes,
     quality: 10,
   },
 ]
 
-const otherSizes = " 80vw, (min-width: 767px) 60vw, (min-width: 1000px) 46vw, (min-width: 1279px) 37vw, (min-width: 1439px) 33vw, (min-width: 1919px) 25vw"
+const otherSizes = "80vw, (min-width: 767px) 60vw, (min-width: 1000px) 46vw, (min-width: 1279px) 37vw, (min-width: 1439px) 33vw, (min-width: 1919px) 25vw"
 
 const imagesOther: React.ComponentProps<typeof Image>[] = [
   {
