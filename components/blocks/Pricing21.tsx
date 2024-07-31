@@ -1,5 +1,4 @@
-import { Button } from "@relume_io/relume-ui";
-import type { ButtonProps } from "@relume_io/relume-ui";
+import { Button } from "../ui/button";
 import clsx from "clsx";
 import { BiCheck } from "react-icons/bi";
 
@@ -17,7 +16,7 @@ type PricingPlan = {
   planName: string;
   monthlyPrice: string;
   description: string;
-  button: ButtonProps;
+  button: React.ReactNode
 };
 
 type Props = {
@@ -39,12 +38,12 @@ export const Pricing21 = (props: Pricing21Props) => {
     <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
-          <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-          <h1 className="mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl">{heading}</h1>
-          <p className="md:text-md">{description}</p>
+          {tagline && <p className="mb-3 font-semibold md:mb-4">{tagline}</p>}
+          <h2 className="mb-5 md:mb-6 type-mobile-h2 md:type-desktop-h2">{heading}</h2>
+          {description && <p className="md:text-md">{description}</p>}
         </div>
         <div className="w-full">
-          <div className="sticky top-0 grid grid-cols-3 border-b border-border-primary bg-white md:grid-cols-[1.5fr_1fr_1fr_1fr]">
+          <div className="sticky top-5 grid grid-cols-3 border-border bg-white md:grid-cols-[1.5fr_1fr_1fr_1fr] rounded-lg shadow-xxlarge z-20 w-full border">
             <div className="hidden md:block" />
             {pricingPlans.map((plan, index) => (
               <PricingPlan key={index} {...plan} index={index} />
@@ -53,7 +52,7 @@ export const Pricing21 = (props: Pricing21Props) => {
           <FeaturesSection featureCategories={featureCategories} />
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
@@ -67,7 +66,7 @@ const PricingPlan = ({
   return (
     <div
       className={clsx(
-        "flex h-full flex-col justify-between border-border-primary px-2 py-4 sm:px-4 sm:py-6 lg:px-6 lg:py-8",
+        "flex h-full flex-col justify-start border-border px-4 py-4 sm:px-4 sm:py-6 lg:px-6 lg:py-8",
         {
           "border-0 md:border-l": index === 0,
           "border-l": index > 0,
@@ -75,19 +74,17 @@ const PricingPlan = ({
       )}
     >
       <div>
-        <h2 className="text-md font-bold leading-[1.4] md:text-xl">{planName}</h2>
+        <h2 className="type-mobile-h6 md:type-desktop-h6">{planName}</h2>
         <div className="my-3 md:my-4">
-          <p className="text-2xl font-bold leading-[1.2] sm:text-6xl md:text-9xl lg:text-10xl">
+          <p className="type-mobile-h4 md:type-mobile-h1">
             {monthlyPrice}
           </p>
-          <p className="font-bold">Per month</p>
+          {/* <p className="font-bold">Per month</p> */}
         </div>
-        <p>{description}</p>
       </div>
-      <div className="mt-6 md:mt-8">
-        <Button {...button} className="w-full whitespace-normal px-3 py-1 sm:px-4 sm:py-3">
-          {button.title}
-        </Button>
+      <p className="type-tiny font-medium tracking-wider lg:type-regular md:tracking-normal">{description}</p>
+      <div className="pt-6 md:pt-8 mt-auto">
+        {button}
       </div>
     </div>
   );
@@ -108,7 +105,7 @@ const FeaturesSection = ({ featureCategories }: { featureCategories: FeatureCate
           {featureCategory.features.map((feature, index) => (
             <div
               key={index}
-              className="grid grid-cols-3 items-stretch border-b border-border-primary md:grid-cols-[1.5fr_1fr_1fr_1fr]"
+              className="grid grid-cols-3 items-stretch border-l border-r border-l-transparent border-r-transparent border-b border-border md:grid-cols-[1.5fr_1fr_1fr_1fr]"
             >
               <p className="col-span-3 row-span-1 border-b border-border-primary py-4 pr-4 md:col-span-1 md:border-0 md:pr-6">
                 {feature.text}
@@ -136,33 +133,27 @@ const FeaturesSection = ({ featureCategories }: { featureCategories: FeatureCate
 };
 
 export const Pricing21Defaults: Pricing21Props = {
-  tagline: "Tagline",
+  // tagline: "Tagline",
   heading: "Pricing plan",
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   pricingPlans: [
     {
+      planName: "Premium",
+      monthlyPrice: "PK2B",
+      description: "One room with toilet, one with urinal.",
+      button: <Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button>
+    },
+    {
+      planName: "Essential",
+      monthlyPrice: "PK2",
+      description: "Comes with urinal in the same room.",
+      button: <Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button>
+    },
+    {
       planName: "Basic",
-      monthlyPrice: "$19",
-      description: "Lorem ipsum dolor sit amet",
-      button: {
-        title: "Get started",
-      },
-    },
-    {
-      planName: "Business",
-      monthlyPrice: "$29",
-      description: "Lorem ipsum dolor sit amet",
-      button: {
-        title: "Get started",
-      },
-    },
-    {
-      planName: "Enterprise",
-      monthlyPrice: "$49",
-      description: "Lorem ipsum dolor sit amet",
-      button: {
-        title: "Get started",
-      },
+      monthlyPrice: "PK1",
+      description: "Basic unit.",
+      button: <Button size={"sm"} className="max-md:type-tiny max-w-full">Contact Us</Button>
     },
   ],
   featureCategories: [
@@ -184,9 +175,9 @@ export const Pricing21Defaults: Pricing21Props = {
         {
           text: "Feature text goes here",
           items: [
-            <BiCheck key={1}className="size-6" />,
-            <BiCheck key={2}className="size-6" />,
-            <BiCheck key={3}className="size-6" />,
+            <BiCheck key={1} className="size-6" />,
+            <BiCheck key={2} className="size-6" />,
+            <BiCheck key={3} className="size-6" />,
           ],
         },
         {
