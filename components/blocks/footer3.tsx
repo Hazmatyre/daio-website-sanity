@@ -145,9 +145,9 @@ export const Footer3Defaults: Footer3Props = {
   columnLinks: [
     {
       links: [
-        // { title: "Home", url: "/" },
+        { title: "Home", url: "/" },
         // { title: "About", url: "#" },
-        // { title: "MyBio Bio-Toilet", url: "#" },
+        { title: "MyBio Bio-Toilet", url: "/mybio/biotoilet" },
         // { title: "MyBio Bio-Fertiliser", url: "#" },
         // { title: "MyBotany Pongamia", url: "#" },
       ],
