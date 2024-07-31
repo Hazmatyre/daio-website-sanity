@@ -59,7 +59,7 @@ export const Gallery17 = (props: Gallery17Props) => {
     <section className="">
       <div className="px-[5%] pt-14 md:pt-16 lg:pt-16 xl:pt-28">
         <div className="container">
-          <div className=" text-left  flex flex-col items-start">
+          <div className=" text-left flex flex-col items-start">
             {headingTag === "h1"
               ? <h1 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h1>
               : <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>

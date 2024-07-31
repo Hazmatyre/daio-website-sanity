@@ -97,7 +97,7 @@ const FeaturesSection = ({ featureCategories }: { featureCategories: FeatureCate
         <div key={index}>
           {featureCategory.title && (
             <div className="border-b border-border-primary py-5">
-              <h3 className="text-md font-bold leading-[1.4] md:text-xl">
+              <h3 className="type-mobile-h6 md:type-desktop-h6">
                 {featureCategory.title}
               </h3>
             </div>
@@ -107,21 +107,21 @@ const FeaturesSection = ({ featureCategories }: { featureCategories: FeatureCate
               key={index}
               className="grid grid-cols-3 items-stretch border-l border-r border-l-transparent border-r-transparent border-b border-border md:grid-cols-[1.5fr_1fr_1fr_1fr]"
             >
-              <p className="col-span-3 row-span-1 border-b border-border-primary py-4 pr-4 md:col-span-1 md:border-0 md:pr-6">
+              <p className="col-span-3 row-span-1 border-b border-border-primary py-4 pr-4 md:col-span-1 md:border-0 md:pr-6 type-regular">
                 {feature.text}
               </p>
               {feature.items.map((item, index) => (
                 <div
                   key={index}
                   className={clsx(
-                    "flex items-center justify-center border-border-primary px-4 py-4 text-center font-semibold md:px-6",
+                    "flex items-center justify-center border-border-primary px-4 py-4 text-center md:px-6",
                     {
                       "border-0 md:border-l": index === 0,
                       "border-l": index > 0,
                     },
                   )}
                 >
-                  <p>{item}</p>
+                  <p className="font-semibold type-regular">{item}</p>
                 </div>
               ))}
             </div>
