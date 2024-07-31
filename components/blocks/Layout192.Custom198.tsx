@@ -37,6 +37,8 @@ export const Layout192 = (props: Layout192Props) => {
             <Image
               className="w-full object-cover shadow-xxlarge rounded-lg" {...image}
               alt={image.alt || ""}
+              quality={30}
+              sizes="(max-width: 767px) 90vw, (max-width: 1439px) 34vw, 680px"
             />
           </div>
           <div className="order-1 lg:order-2">
