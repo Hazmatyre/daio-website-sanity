@@ -36,7 +36,7 @@ export const Header110 = (props: Header110Props) => {
             </div>
           </div>
         </div>
-        <div className="grid grid-cols-[1fr_0.75fr] items-start gap-6 sm:gap-8">
+        <div className="grid grid-cols-[1fr_0.75fr] items-start gap-2 md:gap-8">
           {images.map((image, index) => (
             <div key={index} className={clsx("w-full relative", {
               "aspect-[2/3]": index === 0,
@@ -46,7 +46,12 @@ export const Header110 = (props: Header110Props) => {
                 src={image.src}
                 alt={image.alt || ""}
                 className={clsx("size-full object-cover rounded-lg")}
+                quality={60}
                 fill
+                sizes={index == 0
+                  ? "(max-width: 999px) 50vw, (max-width: 1439px) 30vw, 505px"
+                  : "(max-width: 999px) 37vw,  (max-width: 1439px) 22vw, 375px"
+                }
               />
             </div>
           ))}
