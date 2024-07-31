@@ -32,7 +32,7 @@ export const Layout192 = (props: Layout192Props) => {
     <header className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
-          <div className="order-2 md:order-1 rounded-lg overflow-hidden">
+          <div className="order-2 md:order-1 rounded-lg overflow-hidden≈">
             <Image
               className="w-full object-cover shadow-xxlarge rounded-lg" {...image}
               alt={image.alt || ""}
@@ -42,10 +42,10 @@ export const Layout192 = (props: Layout192Props) => {
             <p className="mb-3 type-regular font-semibold md:mb-4">{tagline}</p>
             <h2 className="mb-5 type-mobile-h2 lg:type-desktop-h2 font-bold md:mb-6">{heading}</h2>
             <p className="mb-6 md:mb-8 type-regular font-medium md:type-medium">{description}</p>
-            <div className="grid grid-cols-1 gap-6 py-2 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-5 py-2 md:grid-cols-2 ">
               {subHeadings.map((subHeading, index) => (
                 <div key={index} className="no-overflow-anchoring">
-                  <h3 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3">
+                  <h3 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3 md:max-lg:flex-wrap gap-y-2">
                     {subHeading.icon && <Image alt="" src={subHeading.icon} className="size-8"></Image>}
                     {subHeading.title}
                   </h3>
