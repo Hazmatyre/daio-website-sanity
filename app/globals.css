@@ -108,8 +108,19 @@
     bottom: 0;
     left: -100%;
   } */
-  
 
+  @keyframes loop-vertically {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%);
+    }
+  }
+  .animate-loop-vertically {
+    animation: loop-vertically 30s linear infinite;
+  }
+  
   @layer base {
     * {
       @apply border-border;

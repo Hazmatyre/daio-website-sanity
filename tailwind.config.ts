@@ -90,10 +90,15 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "loop-vertically": {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(-50 %)" }
+        }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "loop-vertically2": "loop-vertically 15s linear infinite;"
       },
     },
   },

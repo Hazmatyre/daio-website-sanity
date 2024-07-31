@@ -1,5 +1,12 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
+import img1 from "/images/img-bio-toilet-2068.jpg"
+import img2 from "/images/mybio-bio-toilet/work-with-us/img-toilet-director.webp"
+import img3 from "/images/mybio-bio-toilet/work-with-us/toilet-closed.webp"
+import img4 from "/images/mybio-bio-toilet/work-with-us/toilet-employee-sitting.webp"
+import img5 from "/images/mybio-bio-toilet/work-with-us/toilet-employee-thumbs-up.webp"
+import img6 from "/images/mybio-bio-toilet/work-with-us/toilet-urinal.webp"
 
 type ImageProps = {
   src: string;
@@ -11,12 +18,13 @@ type Props = {
   description: string;
   buttons: ButtonProps[];
   images: ImageProps[];
+  images2: ImageProps[];
 };
 
 export type Header76Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Header76 = (props: Header76Props) => {
-  const { heading, description, buttons, images } = {
+  const { heading, description, buttons, images, images2 } = {
     ...Header76Defaults,
     ...props,
   } as Props;
@@ -35,27 +43,29 @@ export const Header76 = (props: Header76Props) => {
       </div>
       <div className="h-[30rem] overflow-hidden pl-[5vw] pr-[5vw] md:h-[40rem] lg:h-screen lg:pl-0">
         <div className="grid w-full grid-cols-2 gap-x-4">
-          <div className="-mt-[120%] grid size-full animate-loop-vertically columns-2 grid-cols-1 gap-4 self-center">
+          <div className="-mt-[120%] grid size-full animate-loop-vertically2 columns-2 grid-cols-1 gap-4 self-center">
             {images.map((image, index) => (
               <div key={index} className="grid size-full grid-cols-1 gap-4">
                 <div className="relative w-full pt-[120%]">
-                  <img
+                  <Image
                     className="absolute inset-0 size-full object-cover"
                     src={image.src}
-                    alt={image.alt}
+                    alt={image.alt || ""}
+                    fill
                   />
                 </div>
               </div>
             ))}
           </div>
-          <div className="grid size-full animate-loop-vertically grid-cols-1 gap-4">
-            {images.map((image, index) => (
+          <div className="grid size-full animate-loop-vertically2 grid-cols-1 gap-4">
+            {images2.map((image, index) => (
               <div key={index} className="grid size-full grid-cols-1 gap-4">
                 <div className="relative w-full pt-[120%]">
-                  <img
+                  <Image
                     className="absolute inset-0 size-full object-cover"
                     src={image.src}
-                    alt={image.alt}
+                    alt={image.alt || ""}
+                    fill
                   />
                 </div>
               </div>
@@ -74,30 +84,56 @@ export const Header76Defaults: Header76Props = {
   buttons: [{ title: "Button" }, { title: "Button", variant: "secondary" }],
   images: [
     {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
+      src: img1.src,
       alt: "Placeholder image 1",
     },
     {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
+      src: img2.src,
       alt: "Placeholder image 2",
     },
     {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
+      src: img3.src,
       alt: "Placeholder image 3",
     },
     {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
+      src: img4.src,
       alt: "Placeholder image 4",
     },
     {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
+      src: img5.src,
       alt: "Placeholder image 5",
     },
     {
-      src: "https://relume-assets.s3.amazonaws.com/placeholder-image.svg",
+      src: img6.src,
       alt: "Placeholder image 6",
     },
   ],
+  images2: [
+    {
+      src: img5.src,
+      alt: "Placeholder image 1",
+    },
+    {
+      src: img6.src,
+      alt: "Placeholder image 6",
+    },
+    {
+      src: img1.src,
+      alt: "Placeholder image 2",
+    },
+    {
+      src: img2.src,
+      alt: "Placeholder image 3",
+    },
+    {
+      src: img3.src,
+      alt: "Placeholder image 1",
+    },
+    {
+      src: img4.src,
+      alt: "Placeholder image 1",
+    },
+  ]
 };
 
 Header76.displayName = "Header76";
