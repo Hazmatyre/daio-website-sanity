@@ -90,7 +90,7 @@ export const Layout192Defaults: Layout192Props = {
   ],
   buttons: [
     // <Link href="/#contact-us" key={"button1"}><Button variant={"default"} size={"lg"}>Learn about Bio-Fertiliser</Button></Link>
-    <Link href="/#contact-us" key={"button1"}><Button variant={"default"} size={"lg"}>Conact Us</Button></Link>
+    <Link href="/#contact-us" key={"button1"}><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>
 
   ],
   // buttons: [
