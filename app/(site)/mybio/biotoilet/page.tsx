@@ -41,7 +41,6 @@ export default async function Page() {
     <>
       <Layout90></Layout90> {/* Similar to layout 15 */}
       <Gallery17 {...Props_biotoilet_gallery17} />
-      {/* Custom gallery, see homepage */}
       <Layout245 className="bg-brand-naplesYellow text-brand-900" />
       <Gallery17 {...Props_biotoilet_gallery17_other} />
       <Layout192 />

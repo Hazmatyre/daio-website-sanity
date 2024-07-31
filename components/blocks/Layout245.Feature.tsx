@@ -2,6 +2,11 @@ import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { RxChevronRight } from "react-icons/rx";
 import parse from 'html-react-parser';
+import Image from "next/image";
+import icon1 from "/images/mybio-bio-toilet/BxTrophy.svg";
+import icon2 from "/images/mybio-bio-toilet/BxHappyBeaming.svg";
+import icon3 from "/images/mybio-bio-toilet/TablerDropletOff.svg";
+import icon4 from "/images/mybio-bio-toilet/CarbonEnergyRenewable.svg";
 
 type ImageProps = {
   src: string;
@@ -46,7 +51,7 @@ export const Layout245 = (props: Layout245Props) => {
           {sections.map((section, index) => (
             <div key={index} className="no-overflow-anchoring">
               <div className="mb-5 md:mb-6">
-                <img src={section.icon.src} className="size-12" alt={section.icon.alt} />
+                <Image src={section.icon.src} className="size-12" alt={section.icon.alt || ""} />
               </div>
               <h3 className="mb-5 md:mb-6 type-mobile-h5 md:type-desktop-h5 tracking-tight">
                 {section.heading}
@@ -71,7 +76,7 @@ export const Layout245Defaults: Layout245Props = {
   sections: [
     {
       icon: {
-        src: "https://relume-assets.s3.amazonaws.com/relume-icon.svg",
+        src: icon1,
         alt: "Relume logo 1",
       },
       heading: "No need to empty the toilet.",
@@ -80,7 +85,7 @@ export const Layout245Defaults: Layout245Props = {
     },
     {
       icon: {
-        src: "https://relume-assets.s3.amazonaws.com/relume-icon.svg",
+        src: icon2,
         alt: "Relume logo 2",
       },
       heading: "No unpleasant smells.",
@@ -89,7 +94,7 @@ export const Layout245Defaults: Layout245Props = {
     },
     {
       icon: {
-        src: "https://relume-assets.s3.amazonaws.com/relume-icon.svg",
+        src: icon3,
         alt: "Relume logo 3",
       },
       heading: "Water not needed.",
@@ -98,7 +103,7 @@ export const Layout245Defaults: Layout245Props = {
     },
     {
       icon: {
-        src: "https://relume-assets.s3.amazonaws.com/relume-icon.svg",
+        src: icon4,
         alt: "Relume logo 4",
       },
       heading: "Electricity without the guilt.",

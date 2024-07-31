@@ -41,15 +41,15 @@ export const Layout90 = (props: Layout90Props) => {
         </div>
       </div>
       <div className="relative aspect-video container mt-14 md:mt-18 lg:mt-20">
-        <div className="overflow-hidden relative w-full h-full rounded-lg">
+        <div className="overflow-hidden relative w-full h-fit">
           <Image
             src={image.src}
             // className="w-full object-cover hover:scale-105 transition-transform ease-linear duration-2000"
-            className="w-full object-cover "
+            className="w-full object-cover rounded-lg shadow-xxsmall"
             alt={image.alt}
             priority
-            fill
           />
+          <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">MT. TATESHINA TRAILHEAD PARKING LOT, SUZURAN PASS, CHINO CITY, NAGANO PREFECTURE</p>
         </div>
       </div>
     </section>
