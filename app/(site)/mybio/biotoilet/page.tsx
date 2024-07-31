@@ -27,6 +27,7 @@ import { Pricing21 } from "@/components/blocks/Pricing21";
 import { Faq3 } from "@/components/blocks/Faq3";
 import { Header76 } from "@/components/blocks/Header76";
 import { Contact5 } from "@/components/blocks/Contact5";
+import { Header110 } from "@/components/blocks/Header110";
 
 
 export default async function Page() {
@@ -42,6 +43,7 @@ export default async function Page() {
       <Layout90></Layout90> {/* Similar to layout 15 */}
       <Gallery17 {...Props_biotoilet_gallery17} />
       <Layout245 className="bg-brand-naplesYellow text-brand-900" />
+      <Header110></Header110>
       <Gallery17 {...Props_biotoilet_gallery17_other} />
       <Layout192 />
       {/* Layout 1 - generic for left content, right image. It's layout 18 on figma. This was for the UN SDG part. */}

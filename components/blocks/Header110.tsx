@@ -35,14 +35,15 @@ export const Header110 = (props: Header110Props) => {
         </div>
         <div className="grid grid-cols-[1fr_0.75fr] items-start gap-6 sm:gap-8">
           {images.map((image, index) => (
-            <div key={index} className="w-full">
+            <div key={index} className={clsx("w-full relative", {
+              "aspect-[2/3]": index === 0,
+              "aspect-square": index !== 0,
+            })}>
               <Image
                 src={image.src}
                 alt={image.alt || ""}
-                className={clsx("size-full object-cover", {
-                  "aspect-[2/3]": index === 0,
-                  "aspect-square": index !== 0,
-                })}
+                className={clsx("size-full object-cover rounded-lg")}
+                fill
               />
             </div>
           ))}
@@ -56,9 +57,9 @@ export const Header110Defaults: Header110Props = {
   heading: "Medium length hero heading goes here",
   description:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
-    buttons: [
-      <Button key={1}> Some Button</Button>
-    ],
+  buttons: [
+    <Button key={1}> Some Button</Button>
+  ],
   // buttons: [
   //   { title: "Button" },
   //   {
