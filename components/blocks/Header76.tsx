@@ -65,6 +65,45 @@ export const Header76 = (props: Header76Props) => {
   );
 };
 
+const defaultImages = [
+  {
+    src: img1.src,
+    width: img1.width,
+    height: img1.height,
+    alt: "Placeholder image 1",
+  },
+  {
+    src: img2.src,
+    width: img2.width,
+    height: img2.height,
+    alt: "Placeholder image 2",
+  },
+  {
+    src: img3.src,
+    width: img3.width,
+    height: img3.height,
+    alt: "Placeholder image 3",
+  },
+  {
+    src: img4.src,
+    width: img4.width,
+    height: img4.height,
+    alt: "Placeholder image 4",
+  },
+  {
+    src: img5.src,
+    width: img5.width,
+    height: img5.height,
+    alt: "Placeholder image 5",
+  },
+  {
+    src: img6.src,
+    width: img6.width,
+    height: img6.height,
+    alt: "Placeholder image 6",
+  },
+]
+
 export const Header76Defaults: Header76Props = {
   heading: "Join us in preserving the planet’s future.",
   description:
@@ -73,57 +112,14 @@ export const Header76Defaults: Header76Props = {
     <Link key={1} href="#contact-us"><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
     // <a key={1} href=""><Button variant={"secondary"} size={"lg"}>Our Team</Button></a>
   ],
-  images: [
-    {
-      ...img1,
-      alt: "Placeholder image 1",
-    },
-    {
-      ...img2,
-      alt: "Placeholder image 2",
-    },
-    {
-      ...img3,
-      alt: "Placeholder image 3",
-    },
-    {
-      ...img4,
-      alt: "Placeholder image 4",
-    },
-    {
-      ...img5,
-      alt: "Placeholder image 5",
-    },
-    {
-      ...img5,
-      alt: "Placeholder image 6",
-    },
-  ],
+  images: defaultImages,
   images2: [
-    {
-      ...img5,
-      alt: "Placeholder image 1",
-    },
-    {
-      ...img6,
-      alt: "Placeholder image 6",
-    },
-    {
-      ...img1,
-      alt: "Placeholder image 2",
-    },
-    {
-      ...img2,
-      alt: "Placeholder image 3",
-    },
-    {
-      ...img2,
-      alt: "Placeholder image 1",
-    },
-    {
-      ...img3,
-      alt: "Placeholder image 1",
-    },
+    { ...defaultImages[4]},
+    { ...defaultImages[5]},
+    { ...defaultImages[0]},
+    { ...defaultImages[1]},
+    { ...defaultImages[2]},
+    { ...defaultImages[3]},
   ]
 };
 
