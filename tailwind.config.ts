@@ -91,14 +91,16 @@ const config = {
           to: { height: "0" },
         },
         "loop-vertically": {
-          from: { transform: "translateY(0)" },
+          // from: { transform: "translateY(40%)" },
+          // to: { transform: "translateY(-100%)" }
+          from: { transform: "translateY(0%)" },
           to: { transform: "translateY(-50%)" }
         }
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "loop-vertically2": "loop-vertically 30s linear infinite;"
+        "loop-vertically2": "loop-vertically 20s linear infinite;"
       },
     },
   },

@@ -114,14 +114,20 @@ export const Header76Defaults: Header76Props = {
     <Link key={1} href="#contact-us"><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
     // <a key={1} href=""><Button variant={"secondary"} size={"lg"}>Our Team</Button></a>
   ],
-  images: defaultImages,
+  images: [...defaultImages, ...defaultImages],
   images2: [
-    { ...defaultImages[4]},
-    { ...defaultImages[5]},
-    { ...defaultImages[0]},
-    { ...defaultImages[1]},
-    { ...defaultImages[2]},
-    { ...defaultImages[3]},
+    { ...defaultImages[4] },
+    { ...defaultImages[5] },
+    { ...defaultImages[0] },
+    { ...defaultImages[1] },
+    { ...defaultImages[2] },
+    { ...defaultImages[3] },
+    { ...defaultImages[4] },
+    { ...defaultImages[5] },
+    { ...defaultImages[0] },
+    { ...defaultImages[1] },
+    { ...defaultImages[2] },
+    { ...defaultImages[3] },
   ]
 };
 
