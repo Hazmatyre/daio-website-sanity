@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import { Button } from "../ui/button";
 import Image from "next/image";
 import img1 from "/images/img-bio-toilet-2068.jpg"
@@ -8,17 +9,12 @@ import img5 from "/images/mybio-bio-toilet/work-with-us/toilet-employee-thumbs-u
 import img6 from "/images/mybio-bio-toilet/work-with-us/toilet-urinal.webp"
 import Link from "next/link";
 
-type ImageProps = {
-  src: string;
-  alt?: string;
-};
-
 type Props = {
   heading: string;
   description: string;
   buttons: React.ReactNode
-  images: ImageProps[];
-  images2: ImageProps[];
+  images: React.ComponentProps<typeof Image>[]
+  images2: React.ComponentProps<typeof Image>[]
 };
 
 export type Header76Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
@@ -41,13 +37,11 @@ export const Header76 = (props: Header76Props) => {
         <div className="grid w-full grid-cols-2 gap-x-4">
           <div className="-mt-[120%] grid size-full animate-loop-vertically2 columns-2 grid-cols-1 gap-4 self-center">
             {images.map((image, index) => (
-              <div key={index} className="grid size-full grid-cols-1 gap-4">
+              <div key={index} className="grid size-full grid-cols-1 gap-4 no-overflow-anchoring">
                 <div className="relative w-full pt-[120%]">
                   <Image
                     className="absolute inset-0 size-full object-cover rounded-lg shadow-xxlarge"
-                    src={image.src}
-                    alt={image.alt || ""}
-                    fill
+                    {...image}
                   />
                 </div>
               </div>
@@ -55,13 +49,11 @@ export const Header76 = (props: Header76Props) => {
           </div>
           <div className="grid size-full animate-loop-vertically2 grid-cols-1 gap-4">
             {images2.map((image, index) => (
-              <div key={index} className="grid size-full grid-cols-1 gap-4">
+              <div key={index} className="grid size-full grid-cols-1 gap-4 no-overflow-anchoring">
                 <div className="relative w-full pt-[120%]">
                   <Image
                     className="absolute inset-0 size-full object-cover rounded-lg shadow-xxlarge"
-                    src={image.src}
-                    alt={image.alt || ""}
-                    fill
+                    {...image}
                   />
                 </div>
               </div>
@@ -83,53 +75,53 @@ export const Header76Defaults: Header76Props = {
   ],
   images: [
     {
-      src: img1.src,
+      ...img1,
       alt: "Placeholder image 1",
     },
     {
-      src: img2.src,
+      ...img2,
       alt: "Placeholder image 2",
     },
     {
-      src: img3.src,
+      ...img3,
       alt: "Placeholder image 3",
     },
     {
-      src: img4.src,
+      ...img4,
       alt: "Placeholder image 4",
     },
     {
-      src: img5.src,
+      ...img5,
       alt: "Placeholder image 5",
     },
     {
-      src: img6.src,
+      ...img5,
       alt: "Placeholder image 6",
     },
   ],
   images2: [
     {
-      src: img5.src,
+      ...img5,
       alt: "Placeholder image 1",
     },
     {
-      src: img6.src,
+      ...img6,
       alt: "Placeholder image 6",
     },
     {
-      src: img1.src,
+      ...img1,
       alt: "Placeholder image 2",
     },
     {
-      src: img2.src,
+      ...img2,
       alt: "Placeholder image 3",
     },
     {
-      src: img3.src,
+      ...img2,
       alt: "Placeholder image 1",
     },
     {
-      src: img4.src,
+      ...img3,
       alt: "Placeholder image 1",
     },
   ]
