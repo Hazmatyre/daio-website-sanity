@@ -40,7 +40,7 @@ export const Faq3 = (props: Faq3Props) => {
         <Accordion type="multiple">
           {questions.map((question, index) => (
             <AccordionItem key={index} value={`item-${index}`}>
-              <AccordionTrigger className="md:py-5 type-regular font-bold md:type-medium">{question.title}</AccordionTrigger>
+              <AccordionTrigger className="md:py-5 type-regular font-bold md:type-medium text-left">{question.title}</AccordionTrigger>
               <AccordionContent className="md:pb-6 type-regular">{question.answer}</AccordionContent>
             </AccordionItem>
           ))}
@@ -57,29 +57,44 @@ export const Faq3Defaults: Faq3Props = {
   button: <Link href="#contact-us"><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
   questions: [
     {
-      title: "Question text goes here",
+      title: "My users have a habit of washing up with excess water splashing everywhere. Would it disturb the bacteria in the tank?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "Our toilet systems are capable of both redirecting and evaporating away excess water within the tank to ensure the proper homeostatic environment for the waste-consuming bacteria inside the tank.",
     },
     {
-      title: "Question text goes here",
+      title: "Can I throw waste toilet paper into the bio-toilet?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "Yes, as long as they are rated for to be thrown into toilets. Other types of products like wet wipes are not recommended to be disposed into the bio-toilet",
     },
     {
-      title: "Question text goes here",
+      title: "I do not like any of the designs. Can I have a custom unit built to my needs?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "Yes! We welcome any custom requests. Our engineers have experience building for both the outdoors and indoors with space constraints.",
     },
     {
-      title: "Question text goes here",
+      title: "How easy is maintaining the bio-toilet?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        "Compared to our competitors, our bio-toilets only require an initial batch of bacteria added to the tank. For hot climates without winters such as Malaysia, we recommend a yearly topup of the waste-consuming bacteria. For general cleaning of the toilet bowl we advise to use organic cleaning products. We also offer maintenance visits particularly for operational safety and sanitary purposes. ",
     },
     {
-      title: "Question text goes here",
+      title: "Do these toilets smell bad?",
       answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat. Aenean faucibus nibh et justo cursus id rutrum lorem imperdiet. Nunc ut sem vitae risus tristique posuere.",
+        `Our bacteria is known to kill odours and the units do not have foul odours (our company staff can personally testify on this!). Excess urine is also evaporated away through special vents.`,
+    },
+    {
+      title: "How easy is it to use a bio-toilet? How would I educate my users?",
+      answer:
+        "You can expect to use the bio-toilets like any other restroom. You simply step into the booth, do your business, wash yourself up, and press flush. The only thing people have to be wary of is when the toilet's red hazard light is on for instances like when the tank is full etc.",
+    },
+    {
+      title: "Are these bio-toilets portable?",
+      answer:
+        "All of our prebuilt models are portable and made as standalone units ready for transport to be deployed anywhere. ",
+    },
+    {
+      title: "Can I claim personal or business tax deductions for purchasing a MyBio Bio-Toilet?",
+      answer:
+        "We may be able to point you to your local government's website for your legal counsel to peruse. We are not tax advisors and anything on this website should not be taken as legal/accounting advice.",
     },
   ],
 };

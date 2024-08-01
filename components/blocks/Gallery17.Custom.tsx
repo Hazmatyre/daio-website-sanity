@@ -163,9 +163,9 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="font-bold mt-2.5 type-mobile-h3 md:type-desktop-h2 xxl:type-desktop-h1 md:mt-5">Bio-Toilet</h3>
           <p className="font-bold type-tiny text-black md:type-regular">Zero sewage. Save Water.</p>
-          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
+          <Link href="/mybio/biotoilet" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
-              Contact Us
+              Learn More
             </Button>
           </Link>
         </div>
