@@ -84,12 +84,12 @@ export const Faq3Defaults: Faq3Props = {
     {
       title: "How easy is it to use a bio-toilet? How would I educate my users?",
       answer:
-        "You can expect to use the bio-toilets like any other restroom. You simply step into the booth, do your business, wash yourself up, and press flush. The only thing people have to be wary of is when the toilet's red hazard light is on for instances like when the tank is full etc. We ",
+        "You can expect to use the bio-toilets like any other restroom. You simply step into the booth, do your business, wash yourself up, and press flush. The only thing people have to be wary of is when the toilet's red hazard light is on for instances like when the tank is full etc.",
     },
     {
       title: "Are these bio-toilets portable?",
       answer:
-        "Our PK1 unit the most portable unit we offer and can be transported as a singular unit suitable for outdoor events. Otherwise we recommended contacting us for a custom solution as we have experience in engineering ultra-portable units for clients in Japan.",
+        "All of our prebuilt models are portable and made as standalone units ready for transport to be deployed anywhere. ",
     },
     {
       title: "Can I claim personal or business tax deductions for purchasing a MyBio Bio-Toilet?",
