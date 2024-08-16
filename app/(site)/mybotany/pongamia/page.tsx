@@ -14,6 +14,10 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import { Layout90 } from "@/components/blocks/Layout90.Hero";
 import { Layout245 } from "@/components/blocks/Layout245.Feature";
+import { Layout7 } from "@/components/blocks/Layout7";
+import { Gallery17 } from "@/components/blocks/Gallery17.Custom";
+import { Contact5 } from "@/components/blocks/Contact5";
+import { Header5 } from "@/components/blocks/Header5";
 
 
 export default async function Page() {
@@ -26,9 +30,27 @@ export default async function Page() {
 
   return (
     <>
-    {/* // * Remember to use layout 352 for timeline! */}
-      <Layout90></Layout90> {/* Similar to layout 15 */}
-      <Layout245></Layout245>
+      {/* //todo <Header5/> */}
+      <Header5 />
+      {/* //todo <Layout48/>  */}
+      {/* //todo  redo layout7' colors */}
+      <Layout7 />
+      {/* //todo <Layout458/> */}
+      {/* //todo <Layout417/> */}
+      {/* Below Similar to layout 15 //todo content */}
+      <Layout90></Layout90>
+      {/* // todo make below have no padding */}
+      <Gallery17 />
+      {/* //todo add two more bullet points that wrap */}
+      <Layout7 />
+      {/* // todo custom <Timeline6/> */}
+      <Suspense>
+        {/* //todo content for contact form */}
+        <Contact5 />
+      </Suspense>
+
+
+      {/* // * Remember to use layout 352 for timeline! */}
     </>
   );
 }
