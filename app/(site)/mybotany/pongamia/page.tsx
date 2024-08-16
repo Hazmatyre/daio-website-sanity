@@ -18,6 +18,7 @@ import { Layout7 } from "@/components/blocks/Layout7";
 import { Gallery17 } from "@/components/blocks/Gallery17.Custom";
 import { Contact5 } from "@/components/blocks/Contact5";
 import { Header5 } from "@/components/blocks/Header5";
+import { Layout48 } from "@/components/blocks/Layout48";
 
 
 export default async function Page() {
@@ -30,9 +31,9 @@ export default async function Page() {
 
   return (
     <>
-      {/* //todo <Header5/> */}
-      <Header5 />
+      <Header5 /> {/* //todo Setup buttons, optimise image */}
       {/* //todo <Layout48/>  */}
+      <Layout48/>
       {/* //todo  redo layout7' colors */}
       <Layout7 />
       {/* //todo <Layout458/> */}

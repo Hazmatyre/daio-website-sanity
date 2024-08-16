@@ -30,7 +30,7 @@ export const Header5 = (props: Header5Props) => {
         <div className="flex max-h-[60rem] min-h-svh items-center py-16 md:py-24 lg:py-28">
           <div className="max-w-md">
             {subtitle &&
-              <p className="text-left block type-regular text-background font-semibold mb-3 md-4">{subtitle}</p>
+              <p className="text-left block type-regular text-background md:type-large mb-3 md-4">{subtitle}</p>
             }
             <h1 className="mb-5 type-mobile-h1 md:type-desktop-h1 text-primary md:mb-6">
               {heading}
