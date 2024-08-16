@@ -29,11 +29,13 @@ export default async function Page() {
   //   sanityFetch<HeroQueryResult>({ query: heroQuery }),
   // ]);
 
+  //todo: citation component
+  //todo: apply citations throughout the page
+
   return (
     <>
       <Header5 /> {/* //todo Setup buttons, optimise image */}
-      {/* //todo <Layout48/>  */}
-      <Layout48/>
+      <Layout48 />
       {/* //todo  redo layout7' colors */}
       <Layout7 />
       {/* //todo <Layout458/> */}
