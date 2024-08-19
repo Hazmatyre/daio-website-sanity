@@ -22,8 +22,13 @@ import { Layout48 } from "@/components/blocks/Layout48";
 
 import iconListItem from "/images/mybotany-pongamia/IconListItemGreen.svg"
 import { Button } from "@/components/ui/button";
+import imgPlaceholder from "/images/placeholder.png"
 
 import img_layout7 from "/images/mybotany-pongamia/layout7-pongamia-seeds-in-hand.webp"
+import { Layout458 } from "@/components/blocks/Layout458";
+import img_layout458_1 from "/images/mybotany-pongamia/layout458-man-holding-pongamia-roots.webp"
+import img_layout458_2 from "/images/mybotany-pongamia/layout458-pongamia-roots.webp"
+import img_layout458_3 from "/images/mybotany-pongamia/layout458-pongamia-roots-on-fingers.webp"
 
 
 export default async function Page() {
@@ -45,6 +50,7 @@ export default async function Page() {
       {/* //done redo layout7' colors */}
       <Layout7 {...PropsLayout7} />
       {/* //todo <Layout458/> */}
+      <Layout458 {...PropsLayout458} />
       {/* //todo <Layout417/> */}
       {/* Below Similar to layout 15 //todo content */}
       <Layout90></Layout90>
@@ -94,4 +100,43 @@ const PropsLayout7: ComponentPropsWithoutRef<typeof Layout7> = {
     src: img_layout7,
     alt: "Closeup of open hand presenting several Pongamia seeds."
   }
+}
+
+const PropsLayout458: ComponentPropsWithoutRef<typeof Layout458> = {
+  tagline: "Why this tree specifically?",
+  heading: "Pongamia Pinnata restores your degraded land at low cost.",
+  description: "Locally known as Poko Mempair, Malapari, or Kayu Laut, the Pongamia tree is able to restore your land through a process called Nitrogen-fixing which heals your land.",
+  buttons: [
+    <a key={1}><Button>Partner With Us</Button></a>,
+    <a key={2}><Button className="dark">Pongamia In Malaysia</Button></a>
+  ],
+  features: [
+    {
+      image: {
+        src: img_layout458_1,
+        alt: "Man holding Pongamia roots.",
+      },
+      heading: "1. Pongamia gets Nitrogen from the air.",
+      description:
+        "Pongamia synergises well with Rhizobium bacteria to convert Nitrogen in the air into compounds that plants can absorb, reducing the need for fertiliser when growing Pongamia.",
+    },
+    {
+      image: {
+        src: img_layout458_2,
+        alt: "Pongamia tree roots with nitrogen fixing nodules.",
+      },
+      heading: "2. Nitrogen is stored in round nodules in the roots.",
+      description:
+        "The Nitrogen compounds generated also transfer to the soil around the Pongamia tree, restoring the surrounding land.",
+    },
+    {
+      image: {
+        src: img_layout458_3,
+        alt: "Pongamia tree roots on fingertips with nitrogen fixing nodules.",
+      },
+      heading: "3. Sustains your crops and removes CO2 from the air.",
+      description:
+        "Alongside fertilising any crops planted within its vicinity, the Pongamia tree is also capable of `sequestering` CO2 from the air and storing it in its roots, reducing carbon emissions and cooling its surroundings.",
+    },
+  ]
 }
