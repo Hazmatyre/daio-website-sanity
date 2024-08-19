@@ -1,3 +1,4 @@
+"use client"
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 
@@ -41,23 +42,29 @@ export const Timeline6 = (props: Timeline6Props) => {
         {/* //* TIMELINE */}
         <div className="mt-12 md:mt-20 flex">
           {/* // * progress */}
-          <div className="bg-red-500 basis-8 relative">
+          <div className="basis-8 shrink-0 relative flex flex-col items-center overflow-y-clip">
             {/* fade overlay top */}
-            <div className=""></div>
+            <div className="absolute h-16 w-1 z-10 bg-gradient-to-b from-white"></div>
             {/* progress line */}
-            <div className=""></div>
+            <div className="h-[50vh] w-1 bg-black sticky top-0 mt-[-50vh]"></div>
             {/* line */}
-            <div className=""></div>
+            <div className="w-1 h-full bg-black/20"></div>
             {/* fade overlay bottom */}
-            <div className=""></div>
-            <div className=""></div>
-            woah
+            <div className="absolute h-16 w-1 z-10 bottom-0 bg-gradient-to-t from-white"></div>
+            {/* progress line cover */}
+            {/* <div className="absolute h-[50vh] top-[-50vh] w-8 bg-background"></div> */}
           </div>
           {/* // * content */}
           <div className="grow flex flex-col gap-y-16 md:gap-y-12">
             {features.map((feature, index) => (
-              <div className="bg-white py-8 px-7 border border-border rounded-lg ml-4 md:ml-12" key={index}>
-                {feature}
+              <div key={index} className="relative">
+                {/* circle wrapper */}
+                <div className="absolute h-full w-8 -ml-8 flex justify-center items-center">
+                  <div className="w-4 h-4 bg-black rounded-full"></div>
+                </div>
+                <div className="bg-white py-8 px-7 border border-border rounded-lg ml-4 md:ml-12" key={index}>
+                  {feature}
+                </div>
               </div>
             ))}
           </div>
