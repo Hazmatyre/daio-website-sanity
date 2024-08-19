@@ -1,8 +1,9 @@
 "use client"
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { motion, useScroll } from "framer-motion";
-import { useRef } from "react";
+import { motion, scroll, useAnimate, useMotionValueEvent, usePresence, useScroll } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { RxOpacity } from "react-icons/rx";
 
 type Props = {
   tagline?: string;
@@ -46,28 +47,23 @@ export const Timeline6 = (props: Timeline6Props) => {
           {/* // * progress */}
           <div className="basis-8 shrink-0 relative flex flex-col items-center overflow-y-clip">
             {/* fade overlay top */}
-            <div className="absolute h-16 w-1 z-10 bg-gradient-to-b from-white"></div>
+            <div className="absolute h-16 w-1 z-10 bg-gradient-to-b from-background"></div>
             {/* progress line */}
-            <div className="h-[50vh] w-1 bg-black sticky top-0 mt-[-50vh]"></div>
+            <div className="h-[50vh] w-1 bg-brand-700 sticky top-0 mt-[-50vh]"></div>
             {/* line */}
-            <div className="w-1 h-full bg-black/20"></div>
+            <div className="w-1 h-full bg-brand-700/20"></div>
             {/* fade overlay bottom */}
-            <div className="absolute h-16 w-1 z-10 bottom-0 bg-gradient-to-t from-white"></div>
+            <div className="absolute h-16 w-1 z-10 bottom-0 bg-gradient-to-t from-background"></div>
             {/* progress line cover */}
             {/* <div className="absolute h-[50vh] top-[-50vh] w-8 bg-background"></div> */}
           </div>
           {/* // * content */}
           <div className="grow flex flex-col gap-y-16 md:gap-y-12">
             {features.map((feature, index) => {
-              const ref = useRef(null);
-              const { scrollYProgress } = useScroll({
-                target: ref,
-                offset: ["end end", "start start"]
-              });
               return (
                 <FeatureCard
-                  index={index}
                   feature={feature}
+                  key={index}
                 />
               )
             })}
@@ -79,26 +75,72 @@ export const Timeline6 = (props: Timeline6Props) => {
 };
 
 type CardProps = {
-  index: number
   feature: React.ReactNode
 }
 
 function FeatureCard(props: CardProps) {
-  const { index, feature } = props as CardProps;
+  const { feature } = props as CardProps;
 
+  // scroll progress
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["end end", "start start"]
   });
+  
+  // animate dot
+  // const [scrollValue, setScrollValue] = useState<number>()
+  // const [scope, animate] = useAnimate()
+  // const [isPresent, safeToRemove] = usePresence()
+
+  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
+  //   setScrollValue(scrollYProgress.get())
+  // })
+
+  // useEffect(() => {
+  //   console.log("Page scroll: ", scrollValue)
+  //   if (scrollYProgress.get() > 0.33) {
+  //     const enterAnimation = async () => {
+  //       await animate(scope.current, { opacity: 1 })
+  //     }
+  //     enterAnimation()
+
+  //   } else {
+  //     const exitAnimation = async () => {
+  //       await animate(scope.current, { opacity: 0.2 })
+  //       // safeToRemove()
+  //     }
+  //     exitAnimation()
+  //   }
+  // }, [scrollValue])
+
+
   return (
-    <div key={index} className="relative" ref={ref}>
+    <div className="relative">
       {/* circle wrapper */}
-      <div className="absolute h-full w-8 -ml-8 flex justify-center items-start">
-        <div className="w-4 h-4 bg-black rounded-full z-20 mt-9" />
+      <div className="absolute h-full w-8 -ml-8 flex justify-center items-start" ref={ref}>
+        <motion.div
+          className="w-4 h-4 bg-brand-naplesYellow rounded-lg border-brand-900 border z-20 mt-9"
+          // ref={scope}
+
+        // style={{
+        //   opacity: scrollYProgress
+        // }}
+        
+        // animate={{ opacity: 1 }}
+        initial={{ opacity: 0.2 }}
+        whileInView={{ opacity: 1, scale: 1.2 }}
+        transition={{ duration: 0.1 }}
+        exit={{ opacity: 0.2 }}
+        viewport={{
+          root: ref,
+          margin: "0% 0px -50% 0px",
+          // amount: "all"
+        }}
+        />
       </div>
       {/* content */}
-      <div className="bg-white py-8 px-7 border border-border rounded-lg ml-4 md:ml-12" key={index}>
+      <div className="bg-white py-8 px-7 border border-border rounded-lg ml-4 md:ml-12">
         {feature}
       </div>
     </div>
@@ -118,7 +160,7 @@ export const Contact5Defaults: Timeline6Props = {
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </p>,
     <>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</>,
+      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</>,
     <>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
     </>
