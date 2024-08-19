@@ -71,9 +71,9 @@ export default async function Page() {
 }
 
 const PropsLayout7: ComponentPropsWithoutRef<typeof Layout7> = {
+  className: "text-background bg-[#241c00] [&_div:has(>img)]:border-brand-naplesYellow [&_div:has(>img)]:border",
   tagline: "Cheaper than fossil fuels.",
   heading: "The energy crisis solved.",
-  className: "text-background bg-[#241c00] [&_div:has(>img)]:border-brand-naplesYellow [&_div:has(>img)]:border",
   classNameHeaders: "text-primary",
   description:
     <>Pongamia seeds can be used to produce bio-fuel through the extraction of its oils[1], or bio-coke by crushing husks of the plant into cubes and can used similar to coal[1].
@@ -103,6 +103,7 @@ const PropsLayout7: ComponentPropsWithoutRef<typeof Layout7> = {
 }
 
 const PropsLayout458: ComponentPropsWithoutRef<typeof Layout458> = {
+  className: "[&_div:has(>img)]:border-brand-naplesYellow [&_div:has(>img)]:border bg-brand-900 text-background [&_:is(h1,h2,h3)]:text-primary",
   tagline: "Why this tree specifically?",
   heading: "Pongamia Pinnata restores your degraded land at low cost.",
   description: "Locally known as Poko Mempair, Malapari, or Kayu Laut, the Pongamia tree is able to restore your land through a process called Nitrogen-fixing which heals your land.",
@@ -138,5 +139,5 @@ const PropsLayout458: ComponentPropsWithoutRef<typeof Layout458> = {
       description:
         "Alongside fertilising any crops planted within its vicinity, the Pongamia tree is also capable of `sequestering` CO2 from the air and storing it in its roots, reducing carbon emissions and cooling its surroundings.",
     },
-  ]
+  ],
 }
