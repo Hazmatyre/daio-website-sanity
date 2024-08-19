@@ -59,9 +59,10 @@ export const Timeline6 = (props: Timeline6Props) => {
             {features.map((feature, index) => (
               <div key={index} className="relative">
                 {/* circle wrapper */}
-                <div className="absolute h-full w-8 -ml-8 flex justify-center items-center">
-                  <div className="w-4 h-4 bg-black rounded-full"></div>
+                <div className="absolute h-full w-8 -ml-8 flex justify-center items-start">
+                  <div className="w-4 h-4 bg-black rounded-full z-20 mt-9" />
                 </div>
+                {/* content */}
                 <div className="bg-white py-8 px-7 border border-border rounded-lg ml-4 md:ml-12" key={index}>
                   {feature}
                 </div>
