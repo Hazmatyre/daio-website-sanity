@@ -3,19 +3,22 @@
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 type ImageProps = {
-  src: string;
+  src: string | StaticImport;
   alt?: string;
 };
 
 type FeatureSectionProps = {
   icon: ImageProps;
   title: string;
-  description: string;
+  description: React.ReactNode;
 };
 
-type Props = {
+type Props = HTMLDivElement & {
   heading: string;
   featureSections: FeatureSectionProps[];
 };
@@ -23,10 +26,10 @@ type Props = {
 export type Layout417Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Layout417 = (props: Layout417Props) => {
-  const { heading, featureSections } = {
+  const { heading, featureSections, className } = {
     ...Layout417Defaults,
     ...props,
-  } as Props;
+  };
 
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -34,16 +37,22 @@ export const Layout417 = (props: Layout417Props) => {
   });
 
   return (
-    <section ref={containerRef}>
+    <section
+      ref={containerRef}
+      className={cn(
+        className,
+        "bg-gradient-to-b from-brand-900 to-brand-500"
+      )}
+    >
       <div className="container relative h-[300svh] lg:h-[300vh]">
         <div className="sticky top-0 grid h-[100svh] grid-cols-1 content-center items-center justify-center px-[5%] md:flex md:content-normal md:px-0 lg:h-screen">
           <div className="absolute bottom-auto left-0 right-0 top-0 flex w-full justify-center overflow-hidden pt-20 md:inset-auto md:pt-0">
-            <h1 className="whitespace-nowrap text-9xl font-bold sm:text-[5.5rem] md:text-[7.5rem] lg:text-[10rem]">
+            <h2 className="text-5xl font-bold sm:text-8xl md:text-[7.5rem] lg:text-[10rem] text-brand-naplesYellow type-desktop-h1 text-center">
               {heading}
-            </h1>
+            </h2>
           </div>
           <div className="sticky top-0 mx-auto mt-12 flex min-h-[24.5rem] w-full max-w-sm flex-col items-center justify-center sm:mt-24 md:relative lg:mt-0">
-            {featureSections.map((section, index) => (
+            {featureSections?.map((section, index) => (
               <FeatureSection
                 key={index}
                 section={section}
@@ -89,7 +98,7 @@ const FeatureSection = ({
 
   return (
     <motion.div
-      className="absolute mx-6 flex flex-col justify-between border border-border-primary bg-background-primary p-8 md:mx-0"
+      className="absolute mx-6 flex flex-col justify-between border border-border bg-white p-8 md:mx-0 rounded-lg shadow-xxlarge"
       style={{
         rotate: isMobile && index === totalSections - 1 ? "9deg" : rotate,
         translateY: isMobile && index === totalSections - 1 ? undefined : translateY,
@@ -97,7 +106,11 @@ const FeatureSection = ({
       }}
     >
       <div className="mb-6 md:mb-8">
-        <img src={section.icon.src} alt={section.icon.alt} className="size-12" />
+        <Image
+          src={section.icon.src}
+          alt={section.icon.alt || ""}
+          className="size-12"
+        />
       </div>
       <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">{section.title}</h3>
       <p>{section.description}</p>

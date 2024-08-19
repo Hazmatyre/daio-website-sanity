@@ -12,15 +12,16 @@ type ImageProps = {
 type Props = {
   subtitle?: string;
   heading: string;
-  description: string;
+  description: React.ReactNode;
   image: ImageProps;
+  buttons: React.ReactNode[]
 };
 
 export type Layout90Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 
 export const Layout90 = (props: Layout90Props) => {
-  const { subtitle, heading, description, image } = {
+  const { subtitle, heading, description, image, buttons} = {
     ...Layout90Defaults,
     ...props,
   } as Props;
@@ -34,10 +35,9 @@ export const Layout90 = (props: Layout90Props) => {
           <h2 className="/leading-[1.2] type-mobile-h1 md:type-desktop-h1 whitespace-pre-line tracking-normal flex md:justify-end w-full">{heading}</h2>
         </div>
         <div className="">
-          <p className="type-regular max-md:text-left">{description}</p>
+          <p className="type-regular max-md:text-left whitespace-pre-line">{description}</p>
           <div className="flex mt-8 gap-3 justify-start flex-wrap">
-            <Link href="#contact-us"><Button size={"lg"} variant={"default"}>Contact Us</Button></Link>
-            <Link href="#bio-toilet-models"><Button size={"lg"} variant={"secondary"}>View Models</Button></Link>
+            {buttons}
           </div>
         </div>
       </div>
@@ -68,6 +68,10 @@ export const Layout90Defaults: Layout90Props = {
     src: imgHero,
     alt: "DAIO International MyBio toilet in Nagoya, Japan.",
   },
+  buttons: [
+    <Link key={1} href="#contact-us"><Button size={"lg"} variant={"default"}>Contact Us</Button></Link>,
+    <Link key={2} href="#bio-toilet-models"><Button size={"lg"} variant={"secondary"}>View Models</Button></Link>
+  ]
 };
 
 Layout90.displayName = "Layout90";

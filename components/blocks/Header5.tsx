@@ -44,7 +44,7 @@ export const Header5 = (props: Header5Props) => {
       </div>
       <div className="absolute inset-0">
         <Image src={image.src} className="size-full object-cover" alt={image.alt || ""} />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/65" />
       </div>
     </header>
   );

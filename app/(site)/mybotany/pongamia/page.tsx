@@ -29,6 +29,7 @@ import { Layout458 } from "@/components/blocks/Layout458";
 import img_layout458_1 from "/images/mybotany-pongamia/layout458-man-holding-pongamia-roots.webp"
 import img_layout458_2 from "/images/mybotany-pongamia/layout458-pongamia-roots.webp"
 import img_layout458_3 from "/images/mybotany-pongamia/layout458-pongamia-roots-on-fingers.webp"
+import { Layout417 } from "@/components/blocks/Layout417";
 
 
 export default async function Page() {
@@ -51,9 +52,11 @@ export default async function Page() {
       <Layout7 {...PropsLayout7} />
       {/* //done <Layout458/> type and images done*/}
       <Layout458 {...PropsLayout458} />
-      {/* //todo <Layout417/> */}
+      {/* //done <Layout417/> */}
+      {/* //todo content for other uses of pongamia */}
+      <Layout417 {...PropsLayout417} />
       {/* Below Similar to layout 15 //todo content */}
-      <Layout90></Layout90>
+      <Layout90 {...PropsLayout90} />
       {/* // todo make below have no padding */}
       <Gallery17 />
       {/* //todo add two more bullet points that wrap */}
@@ -140,4 +143,55 @@ const PropsLayout458: ComponentPropsWithoutRef<typeof Layout458> = {
         "Alongside fertilising any crops planted within its vicinity, the Pongamia tree is also capable of `sequestering` CO2 from the air and storing it in its roots, reducing carbon emissions and cooling its surroundings.",
     },
   ],
+}
+
+const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
+  className: "",
+  heading: "It's not just about the environment.",
+  featureSections: [
+    {
+      icon: {
+        src: imgPlaceholder,
+        alt: "Relume logo 1",
+      },
+      title: "Subheading one",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    },
+    {
+      icon: {
+        src: imgPlaceholder,
+        alt: "Relume logo 2",
+      },
+      title: "Subheading two",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    },
+    {
+      icon: {
+        src: imgPlaceholder,
+        alt: "Relume logo 3",
+      },
+      title: "Subheading three",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    },
+    {
+      icon: {
+        src: imgPlaceholder,
+        alt: "Relume logo 4",
+      },
+      title: "Subheading four",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+    },
+  ],
+}
+
+const PropsLayout90:ComponentPropsWithoutRef<typeof Layout90> = {
+  subtitle: "Our first experiment on Malaysian soil.",
+  heading: "The Green Trees Program (TGT)",
+  description: <>Located in <b>Kota Tinggi, Johor Bahru</b>, we have begun planting  300 seedlings to test the viability of Pongamia on Malaysian soil while remaining carbon neutral.<br/><br/>The <b>Green Trees Program</b> was established to explore local and international ventures in Pongamia plantation, aligning with the Malaysian government&apos;s goal of achieving net-zero carbon emissions by 2050. This initiative is supported by our partners at <a href="https://p2x-japan.co.jp/our-bases/" className="underline">P2X Japan</a>, along with their subsidiaries, P2X Thailand and P2X Indonesia.</>,
+
+  // image: img obj,
 }
