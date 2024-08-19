@@ -7,6 +7,7 @@ import imgPollution from '/images/pexels-ellocofish-12906459.jpg'
 import iconRecycle from '/images/PhRecycleLight.svg'
 import iconEnergy from '/images/CarbonEnergyRenewable.svg'
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type ImageProps = {
   src: string | StaticImport;
@@ -16,37 +17,39 @@ type ImageProps = {
 type SubHeadingProps = {
   icon?: StaticImport
   title: string;
-  description: string;
+  description: React.ReactNode;
 };
 
-type Props = {
+type Props = HTMLDivElement & {
   tagline: string;
   heading: string;
-  description: string;
+  description: React.ReactNode;
   subHeadings: SubHeadingProps[];
   buttons: React.ReactNode[];
   image: ImageProps;
+  classNameHeaders: string;
+  
 };
 
 export type Layout7Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Layout7 = (props: Layout7Props) => {
-  const { tagline, heading, description, buttons, image, subHeadings } = {
+  const { tagline, heading, description, buttons, image, subHeadings, className, classNameHeaders } = {
     ...Layout7Defaults,
     ...props,
-  } as Props;
+  };
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className={cn("px-[5%] py-16 md:py-24 lg:py-28", className)}>
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
             <p className="mb-3 type-regular font-semibold md:mb-4">{tagline}</p>
-            <h2 className="mb-5 type-mobile-h2 lg:type-desktop-h2 font-bold md:mb-6">{heading}</h2>
+            <h2 className={cn("mb-5 type-mobile-h2 lg:type-desktop-h2 font-bold md:mb-6", classNameHeaders)}>{heading}</h2>
             <p className="mb-6 md:mb-8 type-regular font-medium md:type-medium">{description}</p>
             <div className="grid grid-cols-1 gap-6 py-2 md:grid-cols-2">
-              {subHeadings.map((subHeading, index) => (
+              {subHeadings?.map((subHeading, index) => (
                 <div key={index} className="no-overflow-anchoring">
-                  <h3 className="mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3">
+                  <h3 className={cn("mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3", classNameHeaders)}>
                     {subHeading.icon && <Image alt="" src={subHeading.icon} className="size-8"></Image>}
                     {subHeading.title}
                   </h3>
@@ -58,18 +61,20 @@ export const Layout7 = (props: Layout7Props) => {
               {buttons}
             </div>
           </div>
-          <div className="rounded-3xl overflow-hidden shadow-xxlarge">
-            <Image
-              src={image.src}
-              className="w-full object-cover"
-              alt={image.alt || ""}
-              quality={25}
-              sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
-              width={338}
-              height={422}
-              loading="lazy"
-            />
-          </div>
+          {image &&
+            <div data= className="rounded-3xl overflow-hidden shadow-xxlarge">
+              <Image
+                src={image.src}
+                className="w-full object-cover"
+                alt={image.alt || ""}
+                quality={25}
+                sizes="(max-width: 768px) 90vw, (max-width: 1200px) 50vw, 33vw"
+                width={338}
+                height={422}
+                loading="lazy"
+              />
+            </div>
+          }
         </div>
       </div>
     </section>
