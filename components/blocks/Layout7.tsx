@@ -62,7 +62,7 @@ export const Layout7 = (props: Layout7Props) => {
             </div>
           </div>
           {image &&
-            <div data= className="rounded-3xl overflow-hidden shadow-xxlarge">
+            <div className="rounded-3xl overflow-hidden shadow-xxlarge">
               <Image
                 src={image.src}
                 className="w-full object-cover"
