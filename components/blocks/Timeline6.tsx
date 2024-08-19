@@ -1,6 +1,8 @@
 "use client"
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
+import { motion, useScroll } from "framer-motion";
+import { useRef } from "react";
 
 type Props = {
   tagline?: string;
@@ -56,24 +58,52 @@ export const Timeline6 = (props: Timeline6Props) => {
           </div>
           {/* // * content */}
           <div className="grow flex flex-col gap-y-16 md:gap-y-12">
-            {features.map((feature, index) => (
-              <div key={index} className="relative">
-                {/* circle wrapper */}
-                <div className="absolute h-full w-8 -ml-8 flex justify-center items-start">
-                  <div className="w-4 h-4 bg-black rounded-full z-20 mt-9" />
-                </div>
-                {/* content */}
-                <div className="bg-white py-8 px-7 border border-border rounded-lg ml-4 md:ml-12" key={index}>
-                  {feature}
-                </div>
-              </div>
-            ))}
+            {features.map((feature, index) => {
+              const ref = useRef(null);
+              const { scrollYProgress } = useScroll({
+                target: ref,
+                offset: ["end end", "start start"]
+              });
+              return (
+                <FeatureCard
+                  index={index}
+                  feature={feature}
+                />
+              )
+            })}
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+type CardProps = {
+  index: number
+  feature: React.ReactNode
+}
+
+function FeatureCard(props: CardProps) {
+  const { index, feature } = props as CardProps;
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"]
+  });
+  return (
+    <div key={index} className="relative" ref={ref}>
+      {/* circle wrapper */}
+      <div className="absolute h-full w-8 -ml-8 flex justify-center items-start">
+        <div className="w-4 h-4 bg-black rounded-full z-20 mt-9" />
+      </div>
+      {/* content */}
+      <div className="bg-white py-8 px-7 border border-border rounded-lg ml-4 md:ml-12" key={index}>
+        {feature}
+      </div>
+    </div>
+  )
+}
 
 export const Contact5Defaults: Timeline6Props = {
   tagline: "Roadmap",
