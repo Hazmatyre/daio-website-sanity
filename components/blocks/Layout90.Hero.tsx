@@ -3,13 +3,14 @@ import Image from "next/image";
 import imgHero from "/images/mybio-bio-toilet/homepage-daio-international-nagoya.webp"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type ImageProps = {
   src: string | StaticImport;
   alt: string;
 };
 
-type Props = {
+type Props = HTMLDivElement & {
   subtitle?: string;
   heading: string;
   description: React.ReactNode;
@@ -22,12 +23,12 @@ export type Layout90Props = React.ComponentPropsWithoutRef<"section"> & Partial<
 
 
 export const Layout90 = (props: Layout90Props) => {
-  const { subtitle, heading, description, image, buttons, imageCaption } = {
+  const { subtitle, heading, description, image, buttons, imageCaption, className } = {
     ...Layout90Defaults,
     ...props,
-  } as Props;
+  };
   return (
-    <section className="px-[5%] py-16 md:pb-24 lg:pb-28">
+    <section className={cn("px-[5%] py-16 md:pb-24 lg:pb-28", className)}>
       <div className="container grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
         <div className=" flex md:items-start flex-col w-fit md:ml-auto">
           {subtitle &&
@@ -44,15 +45,15 @@ export const Layout90 = (props: Layout90Props) => {
       </div>
       <div className="relative aspect-video container mt-14 md:mt-18 lg:mt-20">
         <div className="overflow-hidden relative w-full h-fit">
-          <Image
-            src={image.src}
+          {image && <Image
+            src={image?.src}
             // className="w-full object-cover hover:scale-105 transition-transform ease-linear duration-2000"
             className="w-full object-cover rounded-lg shadow-xxsmall"
-            alt={image.alt}
+            alt={image?.alt || ""}
             priority
             sizes="(max-width: 1440px) 89vw, 75vw"
             quality={30}
-          />
+          />}
           {imageCaption && <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{imageCaption}</p>}
         </div>
       </div>

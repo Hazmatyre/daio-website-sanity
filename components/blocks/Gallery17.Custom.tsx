@@ -27,12 +27,13 @@ type Props = {
   heading: string;
   description: string;
   slides: SlideProps[];
+  headingClassName?: string
 };
 
 export type Gallery17Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Gallery17 = (props: Gallery17Props) => {
-  const { heading, description, slides, headingTag } = {
+  const { heading, description, slides, headingTag, headingClassName } = {
     ...Gallery17Defaults,
     ...props,
   } as Props;

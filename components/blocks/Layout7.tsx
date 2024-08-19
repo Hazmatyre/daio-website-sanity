@@ -44,12 +44,12 @@ export const Layout7 = (props: Layout7Props) => {
         <div className="grid grid-cols-1 gap-y-12 md:grid-flow-row md:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
           <div>
             <p className="mb-3 type-regular font-semibold md:mb-4">{tagline}</p>
-            <h2 className={cn("mb-5 type-mobile-h2 lg:type-desktop-h2 font-bold md:mb-6", classNameHeaders)}>{heading}</h2>
+            <h2 className={cn("mb-5 type-mobile-h2 lg:type-desktop-h2 font-bold md:mb-6 bg-clip-text bg-gradient-to-r from-blue-500 to-brand-500 text-transparent", classNameHeaders)}>{heading}</h2>
             <p className="mb-6 md:mb-8 type-regular font-medium md:type-medium">{description}</p>
             <div className="grid grid-cols-1 gap-6 py-2 lg:grid-cols-2">
               {subHeadings?.map((subHeading, index) => (
                 <div key={index} className="no-overflow-anchoring">
-                  <h3 className={cn("mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3", classNameHeaders)}>
+                  <h3 className={cn("mb-3 type-mobile-h6 font-bold leading-[1.4] md:mb-4 md:type-desktop-h6 flex gap-x-3 md:flex-col gap-y-2 text-brand-700", classNameHeaders)}>
                     {subHeading.icon && <Image alt="" src={subHeading.icon} className="size-8"></Image>}
                     {subHeading.title}
                   </h3>

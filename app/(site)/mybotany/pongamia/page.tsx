@@ -31,7 +31,11 @@ import img_layout458_2 from "/images/mybotany-pongamia/layout458-pongamia-roots.
 import img_layout458_3 from "/images/mybotany-pongamia/layout458-pongamia-roots-on-fingers.webp"
 import { Layout417 } from "@/components/blocks/Layout417";
 import img_layout90 from "/images/mybotany-pongamia/layout90-pongamia-johor.webp"
-
+import Image from "next/image";
+import imgFuji1 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan01.jpg"
+import imgFuji2 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan02.jpg"
+import imgFuji3 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan03.jpg"
+import img_layout7_2 from "/images/mybotany-pongamia/three-people-examining-pongamia.webp"
 
 export default async function Page() {
   // const [settings, heroPost] = await Promise.all([
@@ -56,12 +60,13 @@ export default async function Page() {
       {/* //done <Layout417/> */}
       {/* //todo content for other uses of pongamia */}
       <Layout417 {...PropsLayout417} />
-      {/* Below Similar to layout 15 //todo content */}
+      {/* //done content */}
       <Layout90 {...PropsLayout90} />
-      {/* // todo make below have no padding */}
-      <Gallery17 />
+      {/* //done make below have no padding */}
+      {/* //todo pick out photos */}
+      <Gallery17 {...PropsGallery17} />
       {/* //todo add two more bullet points that wrap */}
-      <Layout7 />
+      <Layout7 {...PropsLayout7_2}/>
       {/* // todo custom <Timeline6/> */}
       <Suspense>
         {/* //todo content for contact form */}
@@ -190,12 +195,13 @@ const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
 }
 
 const PropsLayout90: ComponentPropsWithoutRef<typeof Layout90> = {
+  className: "!pb-8",
   subtitle: "Our first experiment on Malaysian soil.",
   heading: "The Green Trees Program (TGT)",
   description: <>Located in <b>Kota Tinggi, Johor Bahru</b>, we have begun planting  300 seedlings to test the viability of Pongamia on Malaysian soil while remaining carbon neutral.<br /><br />The <b>Green Trees Program</b> was established to explore local and international ventures in Pongamia plantation, aligning with the Malaysian government&apos;s goal of achieving net-zero carbon emissions by 2050. This initiative is supported by our partners at <a href="https://p2x-japan.co.jp/our-bases/" className="underline">P2X Japan</a>, along with their subsidiaries, P2X Thailand and P2X Indonesia.</>,
   buttons: [
     <Link key={1} href="#contact-us"><Button size={"lg"} variant={"default"}>Partner With US</Button></Link>,
-    <a key={2} href="#green-trees-program"><Button size={"lg"} variant={"secondary"}>GPS Coordinates</Button></a>
+    <a key={2} href="https://maps.app.goo.gl/FEhmXQtdurQjXHpE7"><Button size={"lg"} variant={"secondary"}>GPS Coordinates</Button></a>
   ],
   imageCaption: undefined,
   image: {
@@ -203,3 +209,86 @@ const PropsLayout90: ComponentPropsWithoutRef<typeof Layout90> = {
     alt: "Landscape shot of Pongamia Plantation in Johor with a line of people walking foward with their backs turned to the viewer,"
   },
 }
+
+const gallerySizes = "80vw, (min-width: 767px) 55vw, (min-width: 1000px) 42vw, (min-width: 1279px) 33vw, (min-width: 1439px) 30vw, (min-width: 1919px) 22vw"
+
+const ImagesGallery17 = [
+  {
+    src: imgFuji1,
+    alt: "",
+    sizes: gallerySizes,
+    quality: 10,
+  },
+  {
+    src: imgFuji2,
+    alt: "",
+    sizes: gallerySizes,
+    quality: 10,
+  },
+  {
+    src: imgFuji3,
+    alt: "",
+    sizes: gallerySizes,
+    quality: 10,
+  },
+]
+
+const PropsGallery17: ComponentPropsWithoutRef<typeof Gallery17> = {
+  headingTag: "h2",
+  heading: null,
+  description: null,
+  topSectionClassName: "!pt-0",
+  bottomSectionClassName: "!my-0",
+  slides: ImagesGallery17.map((img, index) => ({
+    cardContent:
+      // eslint-disable-next-line jsx-a11y/alt-text
+      <Image
+        key={index}
+        className="size-full object-cover h-80 rounded-lg shadow-xxlarge"
+        {...img}
+      />
+  }))
+}
+
+const PropsLayout7_2: ComponentPropsWithoutRef<typeof Layout7> = {
+  tagline: "How we at DAIO help you.",
+  heading: "Malaysia stands to benefit the most from Pongamia.",
+  description:
+    <>We have the expertise to help Malaysia generate economic productivity while achieving its goal of net-zero emissions thanks to its suitable climate for planting Pongamia trees.
+    </>,
+  subHeadings: [
+    {
+      icon: iconListItem,
+      title: "Lucrative exports",
+      description:
+        <>Worldwide increased demand for alternative fuel such as the recent G7 Summit, and the Japanese government prioritising Pongamia seeds for aviation fuel. </>
+    },
+    {
+      icon: iconListItem,
+      title: "Generate domestic jobs",
+      description:
+        <>Made by Malaysians, Pongamia creates job and skill opportunities thanks to the sheer amount of products that can be made from it.</>
+    },
+    {
+      icon: iconListItem,
+      title: "Revenue from unused land",
+      description:
+        <>Pongamia grows even in land that is non-fertile, making it the perfect opportunity for hectares of land that lay unused or damaged.</>
+    },
+    {
+      icon: iconListItem,
+      title: "Win the peoples' hearts",
+      description:
+        <>Going green leads to more than just profits. Remove carbon emissions with Pongamia and make the land colder for your citizens.</>
+    },
+  ],
+  buttons: [
+    <a key={1}><Button>Partner With Us</Button></a>,
+    // <a key={2}><Button variant={"outline"}>Our Team</Button></a>
+  ],
+  image: {
+    src: img_layout7_2,
+    alt: "Closeup of open hand presenting several Pongamia seeds."
+  }
+}
+
