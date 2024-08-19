@@ -36,13 +36,11 @@ export const Timeline6 = (props: Timeline6Props) => {
           <div className="mt-6 md:mt-8">
             {buttons}
           </div>
-
-
         </div>
-      </div>
-      {/* //* TIMELINE */}
-      <div>
-
+        {/* //* TIMELINE */}
+        <div>
+            
+        </div>
       </div>
     </section>
   );
