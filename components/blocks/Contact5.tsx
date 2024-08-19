@@ -111,8 +111,8 @@ export const Contact5 = (props: Contact5Props) => {
         <div>
           <p className="mb-3 type-regular font-semibold md:mb-4">{tagline}</p>
           <div className="mb-6 md:mb-8">
-            <h2 className="mb-5 type-mobile-h2 md:type-desktop-h2 font-bold md:mb-6">{heading}</h2>
-            <p className="type-medium">{description}</p>
+            <h2 className="mb-5 type-mobile-h2 md:type-desktop-h2 font-bold md:mb-6 bg-clip-text bg-gradient-to-r from-brand-500 to-blue-500 text-transparent">{heading}</h2>
+            <p className="type-medium whitespace-pre-line">{description}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 py-2 type-regular">

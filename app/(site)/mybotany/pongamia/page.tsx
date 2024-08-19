@@ -65,12 +65,12 @@ export default async function Page() {
       {/* //done make below have no padding */}
       {/* //todo pick out photos */}
       <Gallery17 {...PropsGallery17} />
-      {/* //todo add two more bullet points that wrap */}
-      <Layout7 {...PropsLayout7_2}/>
+      {/* //done add two more bullet points that wrap */}
+      <Layout7 {...PropsLayout7_2} />
       {/* // todo custom <Timeline6/> */}
       <Suspense>
-        {/* //todo content for contact form */}
-        <Contact5 />
+        {/* //done content for contact form */}
+        <Contact5 {...PropsContact5} />
       </Suspense>
 
 
@@ -258,25 +258,25 @@ const PropsLayout7_2: ComponentPropsWithoutRef<typeof Layout7> = {
     </>,
   subHeadings: [
     {
-      icon: iconListItem,
+      // icon: iconListItem,
       title: "Lucrative exports",
       description:
         <>Worldwide increased demand for alternative fuel such as the recent G7 Summit, and the Japanese government prioritising Pongamia seeds for aviation fuel. </>
     },
     {
-      icon: iconListItem,
+      // icon: iconListItem,
       title: "Generate domestic jobs",
       description:
         <>Made by Malaysians, Pongamia creates job and skill opportunities thanks to the sheer amount of products that can be made from it.</>
     },
     {
-      icon: iconListItem,
+      // icon: iconListItem,
       title: "Revenue from unused land",
       description:
         <>Pongamia grows even in land that is non-fertile, making it the perfect opportunity for hectares of land that lay unused or damaged.</>
     },
     {
-      icon: iconListItem,
+      // icon: iconListItem,
       title: "Win the peoples' hearts",
       description:
         <>Going green leads to more than just profits. Remove carbon emissions with Pongamia and make the land colder for your citizens.</>
@@ -290,5 +290,14 @@ const PropsLayout7_2: ComponentPropsWithoutRef<typeof Layout7> = {
     src: img_layout7_2,
     alt: "Closeup of open hand presenting several Pongamia seeds."
   }
+}
+
+const PropsContact5: React.ComponentPropsWithoutRef<typeof Contact5> = {
+  tagline: "Contact Us",
+  heading: "Invest and partner with our initiative.",
+  description: `We help federal and state governments restore damaged land with Pongamia and generate better yields the sustainable way.
+  
+  We are also seeking collaboration and partnership opportunities with green-conscious research institutions, government-linked companies and local authorities to make Pongamia Pinnata accessible to everyone.`,
+
 }
 
