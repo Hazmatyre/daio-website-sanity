@@ -58,14 +58,6 @@ export default async function Page() {
   );
 }
 
-const PropsLayout90: React.ComponentPropsWithoutRef<typeof Layout90> = {
-  buttons: [
-    <Link key={1} href="#contact-us"><Button size={"lg"} variant={"default"}>Contact Us</Button></Link>,
-    <Link key={2} href="#bio-toilet-models"><Button size={"lg"} variant={"secondary"}>View Models</Button></Link>
-
-  ]
-}
-
 const Props_biotoilet_Gallery17Custom: React.ComponentProps<typeof Gallery17Custom> = {
   heading: "Bio-Toilet Models",
   description: "Available models for sale or leasing.",

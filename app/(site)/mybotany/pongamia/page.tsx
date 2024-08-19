@@ -30,6 +30,7 @@ import img_layout458_1 from "/images/mybotany-pongamia/layout458-man-holding-pon
 import img_layout458_2 from "/images/mybotany-pongamia/layout458-pongamia-roots.webp"
 import img_layout458_3 from "/images/mybotany-pongamia/layout458-pongamia-roots-on-fingers.webp"
 import { Layout417 } from "@/components/blocks/Layout417";
+import img_layout90 from "/images/mybotany-pongamia/layout90-pongamia-johor.webp"
 
 
 export default async function Page() {
@@ -188,10 +189,17 @@ const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
   ],
 }
 
-const PropsLayout90:ComponentPropsWithoutRef<typeof Layout90> = {
+const PropsLayout90: ComponentPropsWithoutRef<typeof Layout90> = {
   subtitle: "Our first experiment on Malaysian soil.",
   heading: "The Green Trees Program (TGT)",
-  description: <>Located in <b>Kota Tinggi, Johor Bahru</b>, we have begun planting  300 seedlings to test the viability of Pongamia on Malaysian soil while remaining carbon neutral.<br/><br/>The <b>Green Trees Program</b> was established to explore local and international ventures in Pongamia plantation, aligning with the Malaysian government&apos;s goal of achieving net-zero carbon emissions by 2050. This initiative is supported by our partners at <a href="https://p2x-japan.co.jp/our-bases/" className="underline">P2X Japan</a>, along with their subsidiaries, P2X Thailand and P2X Indonesia.</>,
-
-  // image: img obj,
+  description: <>Located in <b>Kota Tinggi, Johor Bahru</b>, we have begun planting  300 seedlings to test the viability of Pongamia on Malaysian soil while remaining carbon neutral.<br /><br />The <b>Green Trees Program</b> was established to explore local and international ventures in Pongamia plantation, aligning with the Malaysian government&apos;s goal of achieving net-zero carbon emissions by 2050. This initiative is supported by our partners at <a href="https://p2x-japan.co.jp/our-bases/" className="underline">P2X Japan</a>, along with their subsidiaries, P2X Thailand and P2X Indonesia.</>,
+  buttons: [
+    <Link key={1} href="#contact-us"><Button size={"lg"} variant={"default"}>Partner With US</Button></Link>,
+    <a key={2} href="#green-trees-program"><Button size={"lg"} variant={"secondary"}>GPS Coordinates</Button></a>
+  ],
+  imageCaption: undefined,
+  image: {
+    src: img_layout90,
+    alt: "Landscape shot of Pongamia Plantation in Johor with a line of people walking foward with their backs turned to the viewer,"
+  },
 }

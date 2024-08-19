@@ -14,6 +14,7 @@ type Props = {
   heading: string;
   description: React.ReactNode;
   image: ImageProps;
+  imageCaption?: string
   buttons: React.ReactNode[]
 };
 
@@ -21,7 +22,7 @@ export type Layout90Props = React.ComponentPropsWithoutRef<"section"> & Partial<
 
 
 export const Layout90 = (props: Layout90Props) => {
-  const { subtitle, heading, description, image, buttons} = {
+  const { subtitle, heading, description, image, buttons, imageCaption } = {
     ...Layout90Defaults,
     ...props,
   } as Props;
@@ -52,7 +53,7 @@ export const Layout90 = (props: Layout90Props) => {
             sizes="(max-width: 1440px) 89vw, 75vw"
             quality={30}
           />
-          <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">MT. TATESHINA TRAILHEAD PARKING LOT, SUZURAN PASS, CHINO CITY, NAGANO PREFECTURE</p>
+          {imageCaption && <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{imageCaption}</p>}
         </div>
       </div>
     </section>
@@ -68,6 +69,7 @@ export const Layout90Defaults: Layout90Props = {
     src: imgHero,
     alt: "DAIO International MyBio toilet in Nagoya, Japan.",
   },
+  imageCaption: "MT. TATESHINA TRAILHEAD PARKING LOT, SUZURAN PASS, CHINO CITY, NAGANO PREFECTURE",
   buttons: [
     <Link key={1} href="#contact-us"><Button size={"lg"} variant={"default"}>Contact Us</Button></Link>,
     <Link key={2} href="#bio-toilet-models"><Button size={"lg"} variant={"secondary"}>View Models</Button></Link>
