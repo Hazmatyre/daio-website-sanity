@@ -56,8 +56,8 @@ export const Header5Defaults: Header5Props = {
   description:
     "The cleanest source of bio-fuel comes from the seeds of the versatile Pongamia Pinnata tree. We plant them non-invasively on your land with little nutritional maintenance to improve and restore infertile and damaged soil no matter how extreme environmental conditions may be [1].",
   buttons: [
-    <Button key={1}>Partner With Us</Button>,
-    <Button key={2} className="dark">Pongamia In Malaysia</Button>
+    <Button key={1} size={"lg"}>Partner With Us</Button>,
+    <Button key={2} size={"lg"} className="dark">Pongamia In Malaysia</Button>
   ],
   image: {
     src: img,

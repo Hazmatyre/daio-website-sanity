@@ -36,6 +36,7 @@ import imgFuji1 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fuji
 import imgFuji2 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan02.jpg"
 import imgFuji3 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan03.jpg"
 import img_layout7_2 from "/images/mybotany-pongamia/three-people-examining-pongamia.webp"
+import { Timeline6 } from "@/components/blocks/Timeline6";
 
 export default async function Page() {
   // const [settings, heroPost] = await Promise.all([
@@ -68,6 +69,7 @@ export default async function Page() {
       {/* //done add two more bullet points that wrap */}
       <Layout7 {...PropsLayout7_2} />
       {/* // todo custom <Timeline6/> */}
+      <Timeline6 />
       <Suspense>
         {/* //done content for contact form */}
         <Contact5 {...PropsContact5} />
@@ -102,8 +104,8 @@ const PropsLayout7: ComponentPropsWithoutRef<typeof Layout7> = {
     }
   ],
   buttons: [
-    <a key={1}><Button>Partner With Us</Button></a>,
-    <a key={2}><Button className="dark">Pongamia In Malaysia</Button></a>
+    <a key={1}><Button size={"lg"}>Partner With Us</Button></a>,
+    <a key={2}><Button size={"lg"} className="dark">Pongamia In Malaysia</Button></a>
   ],
   image: {
     src: img_layout7,
@@ -117,8 +119,8 @@ const PropsLayout458: ComponentPropsWithoutRef<typeof Layout458> = {
   heading: "Pongamia Pinnata restores your degraded land at low cost.",
   description: "Locally known as Poko Mempair, Malapari, or Kayu Laut, the Pongamia tree is able to restore your land through a process called Nitrogen-fixing which heals your land.",
   buttons: [
-    <a key={1}><Button>Partner With Us</Button></a>,
-    <a key={2}><Button className="dark">Pongamia In Malaysia</Button></a>
+    <a key={1}><Button size={"lg"}>Partner With Us</Button></a>,
+    <a key={2}><Button size={"lg"} className="dark">Pongamia In Malaysia</Button></a>
   ],
   features: [
     {
@@ -283,7 +285,7 @@ const PropsLayout7_2: ComponentPropsWithoutRef<typeof Layout7> = {
     },
   ],
   buttons: [
-    <a key={1}><Button>Partner With Us</Button></a>,
+    <a key={1}><Button size={"lg"}>Partner With Us</Button></a>,
     // <a key={2}><Button variant={"outline"}>Our Team</Button></a>
   ],
   image: {
