@@ -47,10 +47,10 @@ export const Layout458 = (props: Layout458Props) => {
         <div className="mb-12 grid auto-cols-fr grid-cols-1 items-start gap-x-5 gap-y-5 md:mb-18 md:grid-cols-2 md:gap-x-12 lg:mb-20 lg:gap-x-20 lg:gap-y-20">
           <div className="flex h-full flex-col">
             <p className="mb-3 font-semibold md:mb-4">{tagline}</p>
-            <h2 className="text-5xl font-bold md:text-7xl lg:text-8xl">{heading}</h2>
+            <h2 className="type-mobile-h1 md:type-desktop-h2">{heading}</h2>
           </div>
           <div className="mx-[7.5%] flex flex-col justify-end md:mt-40">
-            <p className="md:text-md">{description}</p>
+            <p className="type-medium font-medium">{description}</p>
             <div className="mt-6 flex items-center gap-x-4 md:mt-8 flex-wrap gap-4">
               {buttons}
             </div>
@@ -85,12 +85,14 @@ export const Layout458 = (props: Layout458Props) => {
                   src={feature.image.src}
                   alt={feature.image.alt || ""}
                   className="aspect-[3/2] w-full object-cover"
+                  sizes="(max-width: 768px) 89vw, 27vw"
+                  quality={50}
                 />
               </div>
-              <h3 className="mb-3 text-2xl font-bold md:mb-4 md:text-3xl md:leading-[1.3] lg:text-4xl">
+              <h3 className="mb-3 md:mb-4 type-mobile-h4 xl:type-desktop-h4">
                 {feature.heading}
               </h3>
-              <p>{feature.description}</p>
+              <p className="type-regular">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>
