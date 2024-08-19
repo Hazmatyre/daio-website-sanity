@@ -49,7 +49,7 @@ export default async function Page() {
       <Layout48 />
       {/* //done redo layout7' colors */}
       <Layout7 {...PropsLayout7} />
-      {/* //todo <Layout458/> */}
+      {/* //done <Layout458/> type and images done*/}
       <Layout458 {...PropsLayout458} />
       {/* //todo <Layout417/> */}
       {/* Below Similar to layout 15 //todo content */}
