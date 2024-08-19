@@ -7,6 +7,7 @@ import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import imgPlaceholder from "/images/placeholder.png"
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 type ImageProps = {
   src: string | StaticImport;
@@ -35,6 +36,11 @@ export const Layout458 = (props: Layout458Props) => {
     ...props,
   };
 
+  const FADE_UP_ANIMATION_VARIANTS = {
+    hidden: { opacity: 0, y: 10 },
+    show: { opacity: 1, y: 0, transition: { type: "tween" } },
+  };
+
   return (
     <section className={cn("overflow-hidden px-[5%] py-16 md:py-24 lg:py-28", className)}>
       <div className="container">
@@ -45,19 +51,34 @@ export const Layout458 = (props: Layout458Props) => {
           </div>
           <div className="mx-[7.5%] flex flex-col justify-end md:mt-40">
             <p className="md:text-md">{description}</p>
-            <div className="mt-6 flex items-center gap-x-4 md:mt-8">
+            <div className="mt-6 flex items-center gap-x-4 md:mt-8 flex-wrap gap-4">
               {buttons}
             </div>
           </div>
         </div>
-        <div className="grid auto-cols-fr grid-cols-1 items-start gap-x-12 gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-8 lg:gap-x-12 lg:gap-y-12">
+        <motion.div
+          className="grid auto-cols-fr grid-cols-1 items-start gap-x-12 gap-y-12 md:grid-cols-3 md:gap-x-8 md:gap-y-8 lg:gap-x-12 lg:gap-y-12"
+          initial="hidden"
+          // animate="show"
+          viewport={{ once: true }}
+          whileInView="show"
+          variants={{
+            hidden: {},
+            show: {
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+          }}
+        >
           {features?.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
               className={clsx("w-full", {
                 "md:mt-[25%]": index === 1,
                 "md:mt-[50%]": index === 2,
               })}
+              variants={FADE_UP_ANIMATION_VARIANTS}
             >
               <div className="mb-6 w-full md:mb-8 rounded-lg overflow-hidden">
                 <Image
@@ -70,9 +91,9 @@ export const Layout458 = (props: Layout458Props) => {
                 {feature.heading}
               </h3>
               <p>{feature.description}</p>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

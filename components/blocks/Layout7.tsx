@@ -57,7 +57,7 @@ export const Layout7 = (props: Layout7Props) => {
                 </div>
               ))}
             </div>
-            <div className="mt-6 flex items-center gap-x-4 md:mt-8">
+            <div className="mt-6 flex items-center gap-x-4 md:mt-8 flex-wrap gap-4">
               {buttons}
             </div>
           </div>
