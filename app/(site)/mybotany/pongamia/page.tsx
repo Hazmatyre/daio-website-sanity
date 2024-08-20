@@ -37,6 +37,7 @@ import imgFuji2 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fuji
 import imgFuji3 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan03.jpg"
 import img_layout7_2 from "/images/mybotany-pongamia/three-people-examining-pongamia.webp"
 import { Timeline6 } from "@/components/blocks/Timeline6";
+import { Props_Pongamia_Gallery17 } from "./props";
 
 export default async function Page() {
   // const [settings, heroPost] = await Promise.all([
@@ -65,7 +66,7 @@ export default async function Page() {
       <Layout90 {...PropsLayout90} />
       {/* //done make below have no padding */}
       {/* //todo pick out photos */}
-      <Gallery17 {...PropsGallery17} />
+      <Gallery17 {...Props_Pongamia_Gallery17} />
       {/* //done add two more bullet points that wrap */}
       <Layout7 {...PropsLayout7_2} />
       {/* // done custom <Timeline6/> */}
@@ -211,46 +212,6 @@ const PropsLayout90: ComponentPropsWithoutRef<typeof Layout90> = {
     alt: "Landscape shot of Pongamia Plantation in Johor with a line of people walking foward with their backs turned to the viewer,"
   },
   id: "tgt-program"
-}
-
-const gallerySizes = "80vw, (min-width: 767px) 55vw, (min-width: 1000px) 42vw, (min-width: 1279px) 33vw, (min-width: 1439px) 30vw, (min-width: 1919px) 22vw"
-
-const ImagesGallery17 = [
-  {
-    src: imgFuji1,
-    alt: "",
-    sizes: gallerySizes,
-    quality: 10,
-  },
-  {
-    src: imgFuji2,
-    alt: "",
-    sizes: gallerySizes,
-    quality: 10,
-  },
-  {
-    src: imgFuji3,
-    alt: "",
-    sizes: gallerySizes,
-    quality: 10,
-  },
-]
-
-const PropsGallery17: ComponentPropsWithoutRef<typeof Gallery17> = {
-  headingTag: "h2",
-  heading: null,
-  description: null,
-  topSectionClassName: "!pt-0",
-  bottomSectionClassName: "!my-0",
-  slides: ImagesGallery17.map((img, index) => ({
-    cardContent:
-      // eslint-disable-next-line jsx-a11y/alt-text
-      <Image
-        key={index}
-        className="size-full object-cover h-80 rounded-lg shadow-xxlarge"
-        {...img}
-      />
-  }))
 }
 
 const PropsLayout7_2: ComponentPropsWithoutRef<typeof Layout7> = {
