@@ -53,12 +53,12 @@ export const Layout417 = (props: Layout417Props) => {
     >
       <div className="container relative h-[300svh] lg:h-[300vh]">
         <div className="sticky top-0 grid h-[100svh] grid-cols-1 content-center items-center justify-center px-[5%] md:flex md:content-normal md:px-0 lg:h-screen">
-          <div className="absolute bottom-auto left-0 right-0 top-0 flex w-full justify-center overflow-hidden pt-20 md:inset-auto md:pt-0">
+          <div className="absolute bottom-auto left-0 right-0 top-0 flex w-full justify-center overflow-hidden pt-8 md:inset-auto md:pt-0">
             <h2 className="text-5xl font-bold sm:text-8xl md:text-[7.5rem] lg:text-[10rem] text-brand-naplesYellow type-desktop-h1 text-center">
               {heading}
             </h2>
           </div>
-          <div className="sticky top-0 mx-auto mt-12 flex min-h-[24.5rem] w-full max-w-sm flex-col items-center justify-center sm:mt-24 md:relative lg:mt-0">
+          <div className="sticky top-0 mx-auto mt-20 flex min-h-[24.5rem] w-full max-w-sm flex-col items-center justify-center sm:mt-24 md:relative lg:mt-0">
             {featureSections?.map((section, index) => (
               <FeatureSection
                 key={index}
@@ -123,7 +123,7 @@ const FeatureSection = ({
         />
       </div>
       <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">{section.title}</h3>
-      <p>{section.description}</p>
+      <p className="break-words max-md:tracking-tighter">{section.description}</p>
     </motion.div>
   );
 };

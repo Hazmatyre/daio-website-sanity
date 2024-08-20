@@ -164,9 +164,15 @@ const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
         src: icon417placeholder,
         alt: "A speech bubble with a heart.",
       },
-      title: "Subheading one",
+      title: "Medicinal",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        <>
+          <span>“Its anthelmintic nature helps in treating ophthalmic, dermal, and vaginal ulcers. P. pinnata leaves are digestive, laxative, and anthelmintic, and they can help in treating diarrhea, leprosy, dyspepsia, and cough. Flowers are useful in diabetes dypsia, as well as vata and Kapha imbalances.”</span>
+          <br/><br/>
+          <a className="type-regular underline bold" href="https://doi.org/10.2174/0118741045240484231009141434">Click here for source</a>
+
+        </>
+      ,
     },
     {
       icon: {
