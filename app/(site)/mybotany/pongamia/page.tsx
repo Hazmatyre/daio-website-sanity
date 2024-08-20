@@ -168,38 +168,48 @@ const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
       description:
         <>
           <span>“Its anthelmintic nature helps in treating ophthalmic, dermal, and vaginal ulcers. P. pinnata leaves are digestive, laxative, and anthelmintic, and they can help in treating diarrhea, leprosy, dyspepsia, and cough. Flowers are useful in diabetes dypsia, as well as vata and Kapha imbalances.”</span>
-          <br/><br/>
-          <a className="type-regular underline bold" href="https://doi.org/10.2174/0118741045240484231009141434">Click here for source</a>
-
-        </>
-      ,
+          <br /><br />
+          <a className="type-regular underline font-semibold" href="https://www.researchgate.net/publication/376005129_Pongamia_Pinnata_An_Heirloom_Herbal_Medicine">Click here for source</a>
+        </>,
     },
     {
       icon: {
         src: icon417placeholder,
         alt: "A speech bubble with a heart.",
       },
-      title: "Subheading two",
+      title: "Delicious food",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        <>
+          <span>Terviva makes <a href="https://ponovafoods.com/" className="type-regular underline font-semibold">foods from pongamia oils</a> based on research that shows it has no toxicological difference in rats[<a href="https://www.sciencedirect.com/science/article/pii/S0278691522004112?via%3Dihub" className="type-regular underline font-semibold">source</a>].
+            <br /><br />
+            One of their first products is their <a href="https://aloha.com/pages/the-paakai-protein-bar?utm_source=partners&utm_campaign=ponova-paakai" className="type-regular underline font-semibold">Aloha special edition chocolate bar.</a></span>
+        </>,
     },
     {
       icon: {
         src: icon417placeholder,
         alt: "A speech bubble with a heart.",
       },
-      title: "Subheading three",
+      title: "As nutritious as soybean",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        <>
+          <span>A 2016 study fed extracted pongamia cake to dairy cattle at a 50% protein replacement for soybean meal (5% of the total ration) in their diet for 90 days. The study used methanol as a solvent for extraction of the meal.</span>
+          <br /><br />
+          <a className="type-regular underline font-semibold" href="https://www.researchgate.net/publication/https://epubs.icar.org.in/index.php/IJAnS/article/view/57809">Click here for source</a>
+        </>,
     },
     {
       icon: {
         src: icon417placeholder,
         alt: "A speech bubble with a heart.",
       },
-      title: "Subheading four",
+      title: "Animal feed",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+        <>
+          <span>A 2020 study fed extracted pongamia cake to lambs at a 50% protein replacement for de-oiled groundnut (peanut) meal in their diet for 98 days.</span>
+          <br /><br />
+          <a className="type-regular underline semi-bold" href="https://www.researchgate.net/publication/https://www.sciencedirect.com/science/article/abs/pii/S0377840100001735?via%3Dihub">Click here for source</a>
+        </>,
     },
   ],
 }
