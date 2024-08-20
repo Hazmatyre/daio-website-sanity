@@ -23,7 +23,7 @@ export const Timeline6 = (props: Timeline6Props) => {
 
   return (
     <section id="contact-us" className="px-[5%] py-16 md:py-24 lg:py-28">
-      <div className="container max-w-lg">
+      <div className="container max-w-md">
         {/* //* INTRO */}
         <div>
           {tagline &&
@@ -49,7 +49,7 @@ export const Timeline6 = (props: Timeline6Props) => {
             {/* fade overlay top */}
             <div className="absolute h-16 w-1 z-10 bg-gradient-to-b from-background"></div>
             {/* progress line */}
-            <div className="h-[50vh] w-1 /bg-brand-900 bg-gradient-to-b from-brand-500 to-brand-500 sticky top-0 mt-[-50vh]"></div>
+            <div className="h-[50vh] w-1 /bg-brand-900 bg-gradient-to-b from-brand-900 to-brand-900 sticky top-0 mt-[-50vh]"></div>
             {/* line */}
             <div className="w-1 h-full bg-brand-900/20"></div>
             {/* fade overlay bottom */}
@@ -88,12 +88,12 @@ function FeatureCard(props: CardProps) {
       {/* circle wrapper */}
       <div className="absolute h-full w-8 -ml-8 flex justify-center items-start" ref={ref}>
         <motion.div
-          className="w-4 h-4 bg-brand-naplesYellow rounded-lg border-brand-900 border z-20 mt-9"
+          className="w-4 h-4 bg-brand-naplesYellow rounded-lg border-brand-900 border-2 z-20 mt-12"
 
-          initial={{ opacity: 0.2 }}
+          initial={{ opacity: 0 }}
           whileInView={{ opacity: 1, scale: 1.3 }}
           transition={{ duration: 0.1 }}
-          exit={{ opacity: 0.2 }}
+          exit={{ opacity: 0 }}
           viewport={{
             root: ref,
             margin: "0% 0px -50% 0px",
@@ -101,7 +101,9 @@ function FeatureCard(props: CardProps) {
         />
       </div>
       {/* content */}
-      <div className="bg-white py-8 px-7 border border-border rounded-lg ml-4 md:ml-12">
+      <div className={cn(
+        "bg-white py-8 px-6 border border-border rounded-lg /ml-4 md:ml-12 shadow-xlarge",
+      )}>
         {feature}
       </div>
     </div>
@@ -117,13 +119,44 @@ export const Contact5Defaults: Timeline6Props = {
     // <a key={2}><Button variant={"outline"}>Our Team</Button></a>
   ],
   features: [
-    <p>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </p>,
     <>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</>,
+      <h3 className="type-mobile-h3 md:type-desktop-h3 tracking-wider text-brand-900 mb-2">2024</h3>
+      <h4 className="type-mobile-h5 md:type-desktop-h5 mt-8 max-md:tracking-tighter text-brand-600">Land Acquisition</h4>
+      <ul className="list-disc list-inside mt-3 flex flex-col gap-y-3 tracking-tighter type-regular leading-tight">
+        <li>Establish 5,000 hectars state or federal land.</li>
+        <li>Nominal-leased land or JV with major plantations conglomerate/GLCs.</li>
+        <li>Preliminary mini plantation site set-up in Kota Tinggi, Johor.</li>
+      </ul>
+      <h4 className="type-mobile-h5 md:type-desktop-h5 mt-8 max-md:tracking-tighter text-brand-600">Funding</h4>
+      <ul className="list-disc list-inside mt-3 flex flex-col gap-y-3 tracking-tighter type-regular leading-tight">
+        <li>Promoting the initiative to get project grants/funding.</li>
+      </ul>
+    </>,
     <>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+      <h3 className="type-mobile-h3 md:type-desktop-h3 tracking-wider text-brand-900 mb-2">2025 / 2026</h3>
+      <h4 className="type-mobile-h5 md:type-desktop-h5 mt-8 max-md:tracking-tighter text-brand-600">Cultivation</h4>
+      <ul className="list-disc list-inside mt-3 flex flex-col gap-y-3 tracking-tighter type-regular leading-tight">
+        <li>Land clearing / landscaping Logistic set-up.</li>
+        <li>Planting 3 million trees in 3 years time.</li>
+      </ul>
+      <h4 className="type-mobile-h5 md:type-desktop-h5 mt-8 max-md:tracking-tighter text-brand-600">CSR</h4>
+      <ul className="list-disc list-inside mt-3 flex flex-col gap-y-3 tracking-tighter type-regular leading-tight">
+        <li>Initiate local research programs for biofuel domestic usage.</li>
+        <li>Promoting environmental campaigns such as reforestation and land regeneration by planting Pongamia.</li>
+      </ul>
+    </>,
+    <>
+      <h3 className="type-mobile-h3 md:type-desktop-h3 tracking-wider text-brand-900 mb-2">2030</h3>
+      <h4 className="type-mobile-h5 md:type-desktop-h5 mt-8 max-md:tracking-tighter text-brand-600">Harvest</h4>
+      <ul className="list-disc list-inside mt-3 flex flex-col gap-y-3 tracking-tighter type-regular leading-tight">
+        <li>Establish 5,000 hectars state or federal land</li>
+        <li>Nominal-leased land or JV with major plantations conglomerate / GLCs</li>
+        <li>Preliminary mini plantation site set-up in Kota Tinggi, Johor</li>
+      </ul>
+      <h4 className="type-mobile-h5 md:type-desktop-h5 mt-8 max-md:tracking-tighter text-brand-600">Future projects</h4>
+      <ul className="list-disc list-inside mt-3 flex flex-col gap-y-3 tracking-tighter type-regular leading-tight">
+        <li>Promoting the initiative to get project grants / funding</li>
+      </ul>
     </>
   ]
 };
