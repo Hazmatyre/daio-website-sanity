@@ -119,8 +119,8 @@ const PropsLayout458: ComponentPropsWithoutRef<typeof Layout458> = {
   heading: "Pongamia Pinnata restores your degraded land at low cost.",
   description: "Locally known as Poko Mempair, Malapari, or Kayu Laut, the Pongamia tree is able to restore your land through a process called Nitrogen-fixing which heals your land.",
   buttons: [
-    <a key={1}><Button size={"lg"}>Partner With Us</Button></a>,
-    <a key={2}><Button size={"lg"} className="dark">Pongamia In Malaysia</Button></a>
+    <Link href="#contact-us" key={1}><Button size={"lg"}>Partner With Us</Button></Link>,
+    <Link href="#tgt-program" key={2}><Button size={"lg"} className="dark">Pongamia In Malaysia</Button></Link>
   ],
   features: [
     {
