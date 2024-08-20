@@ -30,6 +30,7 @@ import img_layout458_1 from "/images/mybotany-pongamia/layout458-man-holding-pon
 import img_layout458_2 from "/images/mybotany-pongamia/layout458-pongamia-roots.webp"
 import img_layout458_3 from "/images/mybotany-pongamia/layout458-pongamia-roots-on-fingers.webp"
 import { Layout417 } from "@/components/blocks/Layout417";
+import icon417placeholder from "/images/mybotany-pongamia/CarbonPhraseSentiment.svg"
 import img_layout90 from "/images/mybotany-pongamia/layout90-pongamia-johor.webp"
 import Image from "next/image";
 import imgFuji1 from "/images/mybio-bio-toilet/toilet-mount-fuji/bio-toilet-fujisan01.jpg"
@@ -160,8 +161,8 @@ const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
   featureSections: [
     {
       icon: {
-        src: imgPlaceholder,
-        alt: "Relume logo 1",
+        src: icon417placeholder,
+        alt: "A speech bubble with a heart.",
       },
       title: "Subheading one",
       description:
@@ -169,8 +170,8 @@ const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
     },
     {
       icon: {
-        src: imgPlaceholder,
-        alt: "Relume logo 2",
+        src: icon417placeholder,
+        alt: "A speech bubble with a heart.",
       },
       title: "Subheading two",
       description:
@@ -178,8 +179,8 @@ const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
     },
     {
       icon: {
-        src: imgPlaceholder,
-        alt: "Relume logo 3",
+        src: icon417placeholder,
+        alt: "A speech bubble with a heart.",
       },
       title: "Subheading three",
       description:
@@ -187,8 +188,8 @@ const PropsLayout417: ComponentPropsWithoutRef<typeof Layout417> = {
     },
     {
       icon: {
-        src: imgPlaceholder,
-        alt: "Relume logo 4",
+        src: icon417placeholder,
+        alt: "A speech bubble with a heart.",
       },
       title: "Subheading four",
       description:
