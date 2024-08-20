@@ -176,33 +176,6 @@ export const Gallery17Defaults: Gallery17Props = {
       img:
         <Image
           sizes="(max-width: 768px) 69vw, 33vw"
-          src={imgSlider2}
-          alt={"DAIO International's bio-fertiliser made from urine. Picture shows two vials of before and after processing."}
-          className="absolute bottom-1/4 -z-10 scale-150"
-          quality={35}
-          loading="eager"
-        />,
-      gradient:
-        <div className="absolute -z-20 bg-gradient-to-b from-brand-700 to-brand-900  size-full rounded-3xl" />,
-      cardContent:
-        <div className="size-full py-6 px-5 flex flex-col ">
-          <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
-            MyBio
-          </Button>
-          <h3 className="type-mobile-h3 md:mt-5 font-bold mt-2.5 text-brand-200 xxl:type-desktop-h1 md:type-desktop-h2">Bio-Fertiliser</h3>
-          <p className="font-bold md:type-regular type-tiny text-background">Maintain soil fertility for generations with zero sewage</p>
-          <Link href="/#contact-us" className="block mt-auto w-fit self-end">
-            <Button variant={"default"} className="mt-auto w-fit self-end">
-              Contact Us
-            </Button>
-          </Link>
-        </div>
-    },
-    {
-      containerClasses: "aspect-[9/16]",
-      img:
-        <Image
-          sizes="(max-width: 768px) 69vw, 33vw"
           src={imgSlider3}
           alt={"Picture of Pongamia Pinnata seeds by @rawjeev / Rawlife / Rajeev B - Own work, CC BY-SA 4.0"}
           className="size-full absolute -z-20 object-cover position object-bottom"
@@ -218,6 +191,33 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="font-bold md:mt-5 mt-2.5 type-mobile-h3 md:type-desktop-h2 xxl:type-desktop-h1 text-brand-naplesYellow">Pongamia Pinnata</h3>
           <p className="font-bold md:type-regular text-background type-tiny">The most natural bio-fuel source from tree seeds through our reforestation initiative.</p>
+          <Link href="/mybotany/pongamia" className="block mt-auto w-fit self-end">
+            <Button variant={"default"} className="mt-auto w-fit self-end">
+              Learn More
+            </Button>
+          </Link>
+        </div>
+    },
+    {
+      containerClasses: "aspect-[9/16]",
+      img:
+        <Image
+          sizes="(max-width: 768px) 69vw, 33vw"
+          src={imgSlider2}
+          alt={"DAIO International's bio-fertiliser made from urine. Picture shows two vials of before and after processing."}
+          className="absolute bottom-1/4 -z-10 scale-150"
+          quality={35}
+          loading="eager"
+        />,
+      gradient:
+        <div className="absolute -z-20 bg-gradient-to-b from-brand-700 to-brand-900  size-full rounded-3xl" />,
+      cardContent:
+        <div className="size-full py-6 px-5 flex flex-col ">
+          <Button variant="chevron" size={'chevron'} className="font-sans w-fit">
+            MyBio
+          </Button>
+          <h3 className="type-mobile-h3 md:mt-5 font-bold mt-2.5 text-brand-200 xxl:type-desktop-h1 md:type-desktop-h2">Bio-Fertiliser</h3>
+          <p className="font-bold md:type-regular type-tiny text-background">Maintain soil fertility for generations with zero sewage</p>
           <Link href="/#contact-us" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
               Contact Us

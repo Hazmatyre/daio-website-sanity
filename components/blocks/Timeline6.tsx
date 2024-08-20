@@ -85,9 +85,9 @@ function FeatureCard(props: CardProps) {
   const ref = useRef(null);
 
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       {/* circle wrapper */}
-      <div className="absolute h-full w-8 -ml-8 flex justify-center items-start" ref={ref}>
+      <div className="absolute h-full w-8 -ml-8 flex justify-center items-start">
         <motion.div
           className="w-4 h-4 bg-brand-naplesYellow rounded-lg border-brand-900 border-2 z-20 mt-12"
 

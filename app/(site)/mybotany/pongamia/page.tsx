@@ -48,7 +48,7 @@ export default async function Page() {
 
   //todo: citation component
   //todo: apply citations throughout the page
-  //todo: check that all CTA's link up
+  //done: check that all CTA's link up
 
   return (
     <>
