@@ -203,7 +203,7 @@ const PropsLayout90: ComponentPropsWithoutRef<typeof Layout90> = {
   description: <>Located in <b>Kota Tinggi, Johor Bahru</b>, we have begun planting  300 seedlings to test the viability of Pongamia on Malaysian soil while remaining carbon neutral.<br /><br />The <b>Green Trees Program</b> was established to explore local and international ventures in Pongamia plantation, aligning with the Malaysian government&apos;s goal of achieving net-zero carbon emissions by 2050. This initiative is supported by our partners at <a href="https://p2x-japan.co.jp/our-bases/" className="underline">P2X Japan</a>, along with their subsidiaries, P2X Thailand and P2X Indonesia.</>,
   buttons: [
     <Link key={1} href="#contact-us"><Button size={"lg"} variant={"default"}>Partner With US</Button></Link>,
-    <a key={2} href="https://maps.app.goo.gl/FEhmXQtdurQjXHpE7"><Button size={"lg"} variant={"secondary"}>GPS Coordinates</Button></a>
+    <a key={2} target="_blank" href="https://maps.app.goo.gl/FEhmXQtdurQjXHpE7"><Button size={"lg"} variant={"secondary"}>GPS Coordinates</Button></a>
   ],
   imageCaption: undefined,
   image: {
@@ -286,7 +286,7 @@ const PropsLayout7_2: ComponentPropsWithoutRef<typeof Layout7> = {
     },
   ],
   buttons: [
-    <a key={1}><Button size={"lg"}>Partner With Us</Button></a>,
+    <Link href="#contact-us" key={1}><Button size={"lg"}>Partner With Us</Button></Link>
     // <a key={2}><Button variant={"outline"}>Our Team</Button></a>
   ],
   image: {

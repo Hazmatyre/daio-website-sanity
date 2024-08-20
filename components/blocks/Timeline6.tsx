@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { motion, scroll, useAnimate, useMotionValueEvent, usePresence, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { RxOpacity } from "react-icons/rx";
+import Link from "next/link";
 
 type Props = {
   tagline?: string;
@@ -115,7 +116,7 @@ export const Contact5Defaults: Timeline6Props = {
   heading: "TGT Program Timeline",
   description: "We are conducting 3-5 years worth of experiments to determine the best cultivation methods for the highest yield and quality of Pongamia seeds.",
   buttons: [
-    <a key={1}><Button size={"lg"}>Partner With Us</Button></a>,
+    <Link href="#contact-us" key={1}><Button size={"lg"}>Partner With Us</Button></Link>
     // <a key={2}><Button variant={"outline"}>Our Team</Button></a>
   ],
   features: [
