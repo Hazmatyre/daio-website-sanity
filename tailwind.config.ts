@@ -3,7 +3,7 @@ import typography from '@tailwindcss/typography';
 import plugin from 'tailwindcss/plugin';
 
 const config = {
-  darkMode: ["class"],
+  darkMode: ["selector"],
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
@@ -120,10 +120,10 @@ const config = {
           "@apply font-serif text-[3.5rem] leading-[120%] font-bold": ""
         },
         ".type-desktop-h2": {
-          "@apply font-serif text-[3rem] leading-[120%] font-bold": ""
+          "@apply font-serif text-[3rem] leading-[130%] font-bold": ""
         },
         ".type-desktop-h3": {
-          "@apply font-serif text-[2.5rem] leading-[120%] font-bold": ""
+          "@apply font-serif text-[2.5rem] leading-[130%] font-bold": ""
         },
         ".type-desktop-h4": {
           "@apply font-serif text-[2rem] leading-[130%] font-bold": ""
@@ -138,10 +138,10 @@ const config = {
           "@apply font-serif text-[2.5rem] leading-[120%] font-bold": ""
         },
         ".type-mobile-h2": {
-          "@apply font-serif text-[2.25rem] leading-[120%] font-bold": ""
+          "@apply font-serif text-[2.25rem] leading-[130%] font-bold": ""
         },
         ".type-mobile-h3": {
-          "@apply font-serif text-[2rem] leading-[120%] font-bold": ""
+          "@apply font-serif text-[2rem] leading-[130%] font-bold": ""
         },
         ".type-mobile-h4": {
           "@apply font-serif text-[1.5rem] leading-[140%] font-bold": ""

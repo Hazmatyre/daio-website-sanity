@@ -39,7 +39,7 @@ export default async function Page() {
 
   return (
     <>
-      <Gallery17 />
+      <Gallery17 headingClassName="bg-clip-text bg-gradient-to-r from-blue-500 to-brand-500 text-transparent"/>
       <Layout7 />
       <Header19 />
       <Suspense>

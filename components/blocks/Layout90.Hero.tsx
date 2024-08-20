@@ -3,29 +3,32 @@ import Image from "next/image";
 import imgHero from "/images/mybio-bio-toilet/homepage-daio-international-nagoya.webp"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type ImageProps = {
   src: string | StaticImport;
   alt: string;
 };
 
-type Props = {
+type Props = HTMLDivElement & {
   subtitle?: string;
   heading: string;
-  description: string;
+  description: React.ReactNode;
   image: ImageProps;
+  imageCaption?: string
+  buttons: React.ReactNode[]
 };
 
 export type Layout90Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 
 export const Layout90 = (props: Layout90Props) => {
-  const { subtitle, heading, description, image } = {
+  const { subtitle, heading, description, image, buttons, imageCaption, className } = {
     ...Layout90Defaults,
     ...props,
-  } as Props;
+  };
   return (
-    <section className="px-[5%] py-16 md:pb-24 lg:pb-28">
+    <section id={props.id} className={cn("px-[5%] py-16 md:pb-24 lg:pb-28", className)}>
       <div className="container grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
         <div className=" flex md:items-start flex-col w-fit md:ml-auto">
           {subtitle &&
@@ -34,25 +37,24 @@ export const Layout90 = (props: Layout90Props) => {
           <h2 className="/leading-[1.2] type-mobile-h1 md:type-desktop-h1 whitespace-pre-line tracking-normal flex md:justify-end w-full">{heading}</h2>
         </div>
         <div className="">
-          <p className="type-regular max-md:text-left">{description}</p>
+          <p className="type-regular max-md:text-left whitespace-pre-line">{description}</p>
           <div className="flex mt-8 gap-3 justify-start flex-wrap">
-            <Link href="#contact-us"><Button size={"lg"} variant={"default"}>Contact Us</Button></Link>
-            <Link href="#bio-toilet-models"><Button size={"lg"} variant={"secondary"}>View Models</Button></Link>
+            {buttons}
           </div>
         </div>
       </div>
       <div className="relative aspect-video container mt-14 md:mt-18 lg:mt-20">
         <div className="overflow-hidden relative w-full h-fit">
-          <Image
-            src={image.src}
+          {image && <Image
+            src={image?.src}
             // className="w-full object-cover hover:scale-105 transition-transform ease-linear duration-2000"
             className="w-full object-cover rounded-lg shadow-xxsmall"
-            alt={image.alt}
+            alt={image?.alt || ""}
             priority
             sizes="(max-width: 1440px) 89vw, 75vw"
             quality={30}
-          />
-          <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">MT. TATESHINA TRAILHEAD PARKING LOT, SUZURAN PASS, CHINO CITY, NAGANO PREFECTURE</p>
+          />}
+          {imageCaption && <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{imageCaption}</p>}
         </div>
       </div>
     </section>
@@ -68,6 +70,11 @@ export const Layout90Defaults: Layout90Props = {
     src: imgHero,
     alt: "DAIO International MyBio toilet in Nagoya, Japan.",
   },
+  imageCaption: "MT. TATESHINA TRAILHEAD PARKING LOT, SUZURAN PASS, CHINO CITY, NAGANO PREFECTURE",
+  buttons: [
+    <Link key={1} href="#contact-us"><Button size={"lg"} variant={"default"}>Contact Us</Button></Link>,
+    <Link key={2} href="#bio-toilet-models"><Button size={"lg"} variant={"secondary"}>View Models</Button></Link>
+  ]
 };
 
 Layout90.displayName = "Layout90";

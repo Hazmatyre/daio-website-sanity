@@ -1,7 +1,7 @@
 import "../globals.css";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   VisualEditing,
   toPlainText,
@@ -25,6 +25,13 @@ import { Button } from "@/components/ui/button";
 import { Footer3 } from "@/components/blocks/footer3";
 import { Toaster } from "@/components/ui/sonner";
 import { Navbar3 } from "@/components/blocks/navbar3";
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#FFFDF5' },
+    { media: '(prefers-color-scheme: dark)', color: '#FFFDF5' },
+  ],
+}
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await sanityFetch<SettingsQueryResult>({
@@ -92,7 +99,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${montserrat.variable} ${eb_garamond.variable} bg-white text-black scroll-smooth`}>
-      <body className="">
+      <body className="bg-background">
         <section className="min-h-screen font-sans">
           {draftMode().isEnabled && <AlertBanner />}
           <Suspense>

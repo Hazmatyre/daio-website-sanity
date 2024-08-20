@@ -60,7 +60,7 @@ export const Footer3 = (props: Footer3Props) => {
   return (
     <footer className="px-[5%] py-12 md:py-18 lg:py-20 bg-foreground text-white">
       <div className="container">
-        <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[1fr_0.5fr] lg:gap-y-4 lg:pb-20">
+        <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[1fr_0.7fr] lg:gap-y-4 lg:pb-20">
           <div>
             <div className="mb-6 md:mb-8">
               <Link href="">
@@ -149,7 +149,7 @@ export const Footer3Defaults: Footer3Props = {
         // { title: "About", url: "#" },
         { title: "MyBio Bio-Toilet", url: "/mybio/biotoilet" },
         // { title: "MyBio Bio-Fertiliser", url: "#" },
-        // { title: "MyBotany Pongamia", url: "#" },
+        { title: "MyBotany Pongamia", url: "/mybotany/pongamia" },
       ],
     },
     {

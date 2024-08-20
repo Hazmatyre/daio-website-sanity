@@ -24,15 +24,17 @@ type SlideProps = {
 
 type Props = {
   headingTag: "h1" | "h2"
-  heading: string;
-  description: string;
+  heading: string | null;
+  description: string | null;
   slides: SlideProps[];
+  topSectionClassName?: string
+  bottomSectionClassName?: string
 };
 
 export type Gallery17Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Gallery17 = (props: Gallery17Props) => {
-  const { heading, description, slides, headingTag } = {
+  const { heading, description, slides, headingTag, topSectionClassName, bottomSectionClassName } = {
     ...Gallery17Defaults,
     ...props,
   } as Props;
@@ -57,14 +59,14 @@ export const Gallery17 = (props: Gallery17Props) => {
 
   return (
     <section className="">
-      <div className="px-[5%] pt-14 md:pt-16 lg:pt-16 xl:pt-28">
+      <div className={cn("px-[5%] pt-14 md:pt-16 lg:pt-16 xl:pt-28", topSectionClassName)}>
         <div className="container">
           <div className=" text-left flex flex-col items-start">
-            {headingTag === "h1"
+            {heading && (headingTag === "h1"
               ? <h1 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h1>
               : <h2 className="mb-5 type-mobile-h2 font-bold md:mb-6 md:type-desktop-h2">{heading}</h2>
-            }
-            <p className="type-regular max-w-md">{description}</p>
+            )}
+            {description && <p className="type-regular max-w-md">{description}</p>}
           </div>
 
         </div>
@@ -90,7 +92,7 @@ export const Gallery17 = (props: Gallery17Props) => {
             }
           )
         ]}
-        className="relative mt-12 md:mt-18 lg:mt-20 mb-14 md:mb-16 lg:mb-16 xl:mb-28"
+        className={cn("relative mt-12 md:mt-18 lg:mt-20 mb-14 md:mb-16 lg:mb-16 xl:mb-28", bottomSectionClassName)}
       >
         <div className="relative ">
           <motion.div
