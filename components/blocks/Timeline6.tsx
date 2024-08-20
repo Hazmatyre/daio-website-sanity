@@ -49,9 +49,9 @@ export const Timeline6 = (props: Timeline6Props) => {
             {/* fade overlay top */}
             <div className="absolute h-16 w-1 z-10 bg-gradient-to-b from-background"></div>
             {/* progress line */}
-            <div className="h-[50vh] w-1 bg-brand-700 sticky top-0 mt-[-50vh]"></div>
+            <div className="h-[50vh] w-1 /bg-brand-900 bg-gradient-to-b from-brand-500 to-brand-500 sticky top-0 mt-[-50vh]"></div>
             {/* line */}
-            <div className="w-1 h-full bg-brand-700/20"></div>
+            <div className="w-1 h-full bg-brand-900/20"></div>
             {/* fade overlay bottom */}
             <div className="absolute h-16 w-1 z-10 bottom-0 bg-gradient-to-t from-background"></div>
             {/* progress line cover */}
@@ -81,39 +81,7 @@ type CardProps = {
 function FeatureCard(props: CardProps) {
   const { feature } = props as CardProps;
 
-  // scroll progress
   const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["end end", "start start"]
-  });
-  
-  // animate dot
-  // const [scrollValue, setScrollValue] = useState<number>()
-  // const [scope, animate] = useAnimate()
-  // const [isPresent, safeToRemove] = usePresence()
-
-  // useMotionValueEvent(scrollYProgress, "change", (latest) => {
-  //   setScrollValue(scrollYProgress.get())
-  // })
-
-  // useEffect(() => {
-  //   console.log("Page scroll: ", scrollValue)
-  //   if (scrollYProgress.get() > 0.33) {
-  //     const enterAnimation = async () => {
-  //       await animate(scope.current, { opacity: 1 })
-  //     }
-  //     enterAnimation()
-
-  //   } else {
-  //     const exitAnimation = async () => {
-  //       await animate(scope.current, { opacity: 0.2 })
-  //       // safeToRemove()
-  //     }
-  //     exitAnimation()
-  //   }
-  // }, [scrollValue])
-
 
   return (
     <div className="relative">
@@ -121,22 +89,15 @@ function FeatureCard(props: CardProps) {
       <div className="absolute h-full w-8 -ml-8 flex justify-center items-start" ref={ref}>
         <motion.div
           className="w-4 h-4 bg-brand-naplesYellow rounded-lg border-brand-900 border z-20 mt-9"
-          // ref={scope}
 
-        // style={{
-        //   opacity: scrollYProgress
-        // }}
-        
-        // animate={{ opacity: 1 }}
-        initial={{ opacity: 0.2 }}
-        whileInView={{ opacity: 1, scale: 1.2 }}
-        transition={{ duration: 0.1 }}
-        exit={{ opacity: 0.2 }}
-        viewport={{
-          root: ref,
-          margin: "0% 0px -50% 0px",
-          // amount: "all"
-        }}
+          initial={{ opacity: 0.2 }}
+          whileInView={{ opacity: 1, scale: 1.3 }}
+          transition={{ duration: 0.1 }}
+          exit={{ opacity: 0.2 }}
+          viewport={{
+            root: ref,
+            margin: "0% 0px -50% 0px",
+          }}
         />
       </div>
       {/* content */}

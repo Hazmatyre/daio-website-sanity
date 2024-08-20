@@ -7,6 +7,13 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
+import dynamic from 'next/dynamic'
+const MediaQuery = dynamic(() => import('react-responsive'), {
+  ssr: false
+})
+
+MediaQuery
+
 type ImageProps = {
   src: string | StaticImport;
   alt?: string;
@@ -80,7 +87,10 @@ const FeatureSection = ({
   totalSections: number;
   scrollYProgress: MotionValue<number>;
 }) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 767px)" });
+  const isMobile = useMediaQuery(
+    { query: "(max-width: 767px)" },
+    { deviceWidth: 375 }
+  );
 
   const sectionScrollStart = index / totalSections;
   const sectionScrollEnd = (index + 1) / totalSections;
