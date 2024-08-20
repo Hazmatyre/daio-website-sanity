@@ -46,7 +46,7 @@ export const Layout48Defaults: Layout48Props = {
       <span className="type-mobile-h3 xl:type-desktop-h3">solves it all.</span>
     </h2>,
   description:
-    "DAIO has a clear mission. We want a sustainable future for our children. We believe that Pongamia Pinnata is one of nature’s most beneficial gifts, not only does it reduce carbon emissions, but it solves two big problems that countries face.",
+    "DAIO has a clear mission. We want a sustainable future for our children. We believe that Pongamia Pinnata is one of nature's most beneficial gifts, not only does it reduce carbon emissions, but it solves two big problems that countries face.",
   subHeadings: [
     {
       title: "Fossil fuels are finite",
@@ -56,7 +56,7 @@ export const Layout48Defaults: Layout48Props = {
     {
       title: "Hectares of degraded land unused",
       description:
-        "Plantations use up a lot of nutrients[cite], and excess non-sustainable chemical fertilisers put a heavy stress on soil fertility[cite]. All of which lead to ‘slash-and-burn’ tactics to destructively make land fertile again at the cost of CO2 emissions and deforestation[cite].",
+        "Plantations use up a lot of nutrients, and excess non-sustainable chemical fertilisers put a heavy stress on soil fertility. All of which lead to 'slash-and-burn' tactics to destructively make land fertile again at the cost of CO2 emissions and deforestation.",
     },
   ],
 };

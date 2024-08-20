@@ -62,7 +62,7 @@ export const Header5Defaults: Header5Props = {
   heading: "Harvest bio-fuel from trees that heal your land.",
   subtitle: "MyBotany Pongamia Pinnata",
   description:
-    "The cleanest source of bio-fuel comes from the seeds of the versatile Pongamia Pinnata tree. We plant them non-invasively on your land with little nutritional maintenance to improve and restore infertile and damaged soil no matter how extreme environmental conditions may be [1].",
+    "The cleanest source of bio-fuel comes from the seeds of the versatile Pongamia Pinnata tree. We plant them non-invasively on your land with little nutritional maintenance to improve and restore infertile and damaged soil no matter how extreme environmental conditions may be.",
   buttons: [
     <Link href="#contact-us" key={1}><Button size={"lg"}>Partner With Us</Button></Link>,
     <Link href="#tgt-program" key={2}><Button size={"lg"} className="dark">Pongamia In Malaysia</Button></Link>

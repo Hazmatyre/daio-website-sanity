@@ -50,6 +50,7 @@ export default async function Page() {
   //todo: citation component
   //todo: apply citations throughout the page
   //done: check that all CTA's link up
+  //todo: clean up citation placeholders
 
   return (
     <>
@@ -65,7 +66,7 @@ export default async function Page() {
       {/* //done content */}
       <Layout90 {...PropsLayout90} />
       {/* //done make below have no padding */}
-      {/* //todo pick out photos */}
+      {/* //done pick out photos */}
       <Gallery17 {...Props_Pongamia_Gallery17} />
       {/* //done add two more bullet points that wrap */}
       <Layout7 {...PropsLayout7_2} />
@@ -88,14 +89,13 @@ const PropsLayout7: ComponentPropsWithoutRef<typeof Layout7> = {
   heading: "The energy crisis solved.",
   classNameHeaders: "text-primary",
   description:
-    <>Pongamia seeds can be used to produce bio-fuel through the extraction of its oils[1], or bio-coke by crushing husks of the plant into cubes and can used similar to coal[1].
-      <span>test</span></>,
+    <>Pongamia seeds can be used to produce bio-fuel through the extraction of its oils, or bio-coke by crushing husks of the plant into cubes and can used similar to coal.</>,
   subHeadings: [
     {
       icon: iconListItem,
       title: "As good a pure diesel with less CO2 emissions.",
       description:
-        <>Studies have shown that when blended with other fuel, it is as efficient as pure diesel[cite]. When combusted, it shows lower harmful emissions such as carbon monoxide and smoke[cite].</>
+        <>Studies have shown that when blended with other fuel, it is as efficient as pure diesel. When combusted, it shows lower harmful emissions such as carbon monoxide and smoke.</>
     },
     {
       icon: iconListItem,

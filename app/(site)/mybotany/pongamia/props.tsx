@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Image, { StaticImageData } from "next/image";
-import img1 from "/images/mybotany-pongamia/img2.webp"
-import img2 from "/images/mybotany-pongamia/img1.webp"
-import img3 from "/images/mybotany-pongamia/img3.webp"
+import img1 from "/images/mybotany-pongamia/img3.webp"
+import img2 from "/images/mybotany-pongamia/img2.webp"
+import img3 from "/images/mybotany-pongamia/img1.webp"
 import img4 from "/images/mybotany-pongamia/img4.webp"
 import img5 from "/images/mybotany-pongamia/img5.webp"
 import img6 from "/images/mybotany-pongamia/img6.webp"
