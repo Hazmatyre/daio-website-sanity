@@ -52,7 +52,7 @@ export default async function Page() {
 
   return (
     <>
-      <Header5 /> {/* //todo Setup buttons, optimise image */}
+      <Header5 /> {/* //done Setup buttons, optimise image */}
       <Layout48 />
       {/* //done redo layout7' colors */}
       <Layout7 {...PropsLayout7} />
@@ -104,8 +104,8 @@ const PropsLayout7: ComponentPropsWithoutRef<typeof Layout7> = {
     }
   ],
   buttons: [
-    <a key={1}><Button size={"lg"}>Partner With Us</Button></a>,
-    <a key={2}><Button size={"lg"} className="dark">Pongamia In Malaysia</Button></a>
+    <Link href="#contact-us" key={1}><Button size={"lg"}>Partner With Us</Button></Link>,
+    <Link href="#tgt-program" key={2}><Button size={"lg"} className="dark">Pongamia In Malaysia</Button></Link>
   ],
   image: {
     src: img_layout7,
