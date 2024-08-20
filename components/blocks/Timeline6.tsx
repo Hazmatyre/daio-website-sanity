@@ -22,7 +22,7 @@ export const Timeline6 = (props: Timeline6Props) => {
   } as Props;
 
   return (
-    <section id="contact-us" className="px-[5%] py-16 md:py-24 lg:py-28">
+    <section className="px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container max-w-md">
         {/* //* INTRO */}
         <div>

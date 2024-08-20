@@ -3,6 +3,7 @@ import type { ButtonProps } from "@relume_io/relume-ui";
 import Image from "next/image";
 import img from "/images/mybotany-pongamia/header5-pongamia-seeds.webp"
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import Link from "next/link";
 
 type ImageProps = {
   src: string | StaticImport;
@@ -43,7 +44,14 @@ export const Header5 = (props: Header5Props) => {
         </div>
       </div>
       <div className="absolute inset-0">
-        <Image src={image.src} className="size-full object-cover" alt={image.alt || ""} />
+        <Image
+          src={image.src}
+          className="size-full object-cover"
+          alt={image.alt || ""}
+          sizes="100vw"
+          quality={5}
+          priority
+        />
         <div className="absolute inset-0 bg-black/65" />
       </div>
     </header>
@@ -56,8 +64,8 @@ export const Header5Defaults: Header5Props = {
   description:
     "The cleanest source of bio-fuel comes from the seeds of the versatile Pongamia Pinnata tree. We plant them non-invasively on your land with little nutritional maintenance to improve and restore infertile and damaged soil no matter how extreme environmental conditions may be [1].",
   buttons: [
-    <Button key={1} size={"lg"}>Partner With Us</Button>,
-    <Button key={2} size={"lg"} className="dark">Pongamia In Malaysia</Button>
+    <Link href="#contact-us" key={1}><Button size={"lg"}>Partner With Us</Button></Link>,
+    <Link href="#tgt-program" key={1}><Button size={"lg"} className="dark">Pongamia In Malaysia</Button></Link>
   ],
   image: {
     src: img,

@@ -68,7 +68,7 @@ export default async function Page() {
       <Gallery17 {...PropsGallery17} />
       {/* //done add two more bullet points that wrap */}
       <Layout7 {...PropsLayout7_2} />
-      {/* // todo custom <Timeline6/> */}
+      {/* // done custom <Timeline6/> */}
       <Timeline6 />
       <Suspense>
         {/* //done content for contact form */}
@@ -210,6 +210,7 @@ const PropsLayout90: ComponentPropsWithoutRef<typeof Layout90> = {
     src: img_layout90,
     alt: "Landscape shot of Pongamia Plantation in Johor with a line of people walking foward with their backs turned to the viewer,"
   },
+  id: "tgt-program"
 }
 
 const gallerySizes = "80vw, (min-width: 767px) 55vw, (min-width: 1000px) 42vw, (min-width: 1279px) 33vw, (min-width: 1439px) 30vw, (min-width: 1919px) 22vw"
