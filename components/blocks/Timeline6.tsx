@@ -150,13 +150,15 @@ export const Contact5Defaults: Timeline6Props = {
       <h3 className="type-mobile-h3 md:type-desktop-h3 tracking-wider text-brand-900 mb-2">2030</h3>
       <h4 className="type-mobile-h5 md:type-desktop-h5 mt-8 max-md:tracking-tighter text-brand-600">Harvest</h4>
       <ul className="list-disc list-inside mt-3 flex flex-col gap-y-3 tracking-tighter type-regular leading-tight">
-        <li>Establish 5,000 hectars state or federal land</li>
-        <li>Nominal-leased land or JV with major plantations conglomerate / GLCs</li>
-        <li>Preliminary mini plantation site set-up in Kota Tinggi, Johor</li>
+        <li>Weeding and top-dressing.</li>
+        <li>Gathering and processing of Pongamia seeds twice a year </li>
+        <li>No replanting needed for future harvest cycle</li>
+        <li>Exporting the seeds to Japan, Singapore and Australia</li>
       </ul>
       <h4 className="type-mobile-h5 md:type-desktop-h5 mt-8 max-md:tracking-tighter text-brand-600">Future projects</h4>
       <ul className="list-disc list-inside mt-3 flex flex-col gap-y-3 tracking-tighter type-regular leading-tight">
-        <li>Promoting the initiative to get project grants / funding</li>
+        <li>Scale up the plantation land</li>
+        <li>Manufacture own biofuel in Malaysia</li>
       </ul>
     </>
   ]
