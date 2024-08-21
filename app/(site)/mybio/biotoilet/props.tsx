@@ -31,7 +31,7 @@ import imgOther14 from "/images/mybio-bio-toilet/toilets-other/Yunosawa Pass Par
 import { Gallery17 } from "@/components/blocks/Gallery17.Images";
 import { description } from '../../../../sanity/lib/demo';
 
-const fujiSizes = "80vw, (min-width: 767px) 55vw, (min-width: 1000px) 42vw, (min-width: 1279px) 33vw, (min-width: 1439px) 30vw, (min-width: 1919px) 22vw"
+const fujiSizes = "80vw, (min-width: 767px) 60vw, (min-width: 1000px) 46vw, (min-width: 1279px) 37vw, (min-width: 1439px) 33vw, (min-width: 1919px) 25vw"
 
 const fujiSizesPortrait = "64vw, (min-width: 767px) 31vw, (min-width: 1000px) 23vw, (min-width: 1279px) 19vw, (min-width: 1439px) 16vw, (min-width: 1919px) 12vw"
 
@@ -138,7 +138,7 @@ const imagesOther: React.ComponentProps<typeof Image>[] = [
     src: imgOther3,
     alt: "Bio-Toilet in Mt. Sodai, Tomioka City, Gunma Prefecture",
     "aria-description": "Mt. Sodai, Tomioka City, Gunma Prefecture",
-    sizes: otherSizes,    
+    sizes: otherSizes,
     quality: 10,
   },
   {
@@ -207,7 +207,7 @@ const imagesOther: React.ComponentProps<typeof Image>[] = [
   {
     src: imgOther14,
     alt: "Bio-Toilet in Yunosawa Pass Parking Lot, Koshu City, Yamanashi Prefecture.",
-    "aria-description":"Yunosawa Pass Parking Lot, Koshu City, Yamanashi Prefecture",
+    "aria-description": "Yunosawa Pass Parking Lot, Koshu City, Yamanashi Prefecture",
     sizes: otherSizes,
     quality: 10,
   },
@@ -220,12 +220,14 @@ export const Props_biotoilet_gallery17: React.ComponentProps<typeof Gallery17> =
   slides: imagesFuji.map((img, index) => ({
     cardContent:
       // eslint-disable-next-line jsx-a11y/alt-text
-      <Image
-        key={index}
-        className="size-full object-cover h-80 rounded-lg shadow-xxlarge"
-        quality={5}
-        {...img}
-      />
+      <div className=" h-80">
+        <Image
+          key={index}
+          className="size-full object-cover rounded-lg shadow-xxlarge"
+          quality={5}
+          {...img}
+        />
+      </div>
   }))
 }
 
@@ -236,12 +238,14 @@ export const Props_biotoilet_gallery17_other: React.ComponentProps<typeof Galler
   slides: imagesOther.map((img, index) => ({
     cardContent:
       <>
-        <Image
-          key={index}
-          className="size-full object-cover h-80 rounded-lg shadow-xxsmall"
-          quality={5}
-          {...img}
-        />
+        <div className=" h-80">
+          <Image
+            key={index}
+            className="size-full object-cover rounded-lg shadow-xxsmall"
+            quality={5}
+            {...img}
+          />
+        </div>
         <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{img["aria-description"]}</p>
       </>
   }))
