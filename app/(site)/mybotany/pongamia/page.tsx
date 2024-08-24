@@ -100,9 +100,9 @@ const PropsLayout7: ComponentPropsWithoutRef<typeof Layout7> = {
     },
     {
       icon: iconListItem,
-      title: "Already used as aviation fuel by the Japanese government.",
+      title: "Shortlisted as aviation fuel by the Japanese government.",
       description:
-        <>Japan is among the first to use Pongamia as fuel for aviation. Other countries are soon to follow as crude oil becomes more scarce and expensive.</>
+        <>Japan is among the first to shortlist Pongamia as fuel for aviation. Other countries are soon to follow as crude oil becomes more scarce and expensive.</>
     }
   ],
   buttons: [
