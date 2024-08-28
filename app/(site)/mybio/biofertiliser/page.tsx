@@ -14,6 +14,11 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import { Layout90 } from "@/components/blocks/Layout90.Hero";
 import { Layout245 } from "@/components/blocks/Layout245.Feature";
+import { Header76 } from "@/components/blocks/Header76";
+import { Contact5 } from "@/components/blocks/Contact5";
+import { Layout353 } from "@/components/blocks/Layout353";
+import testimg from "/images/mybio-bio-fertiliser/IMG_2132.webp"
+import Image from "next/image";
 
 
 export default async function Page() {
@@ -27,6 +32,18 @@ export default async function Page() {
   return (
     <>
       {/* Header 5.... or 33 */}
+      <div>
+        <div className="container">
+          <div className="w-full">
+            <Image src={testimg} alt=""></Image>
+          </div>
+        </div>
+      </div>
+      <Layout353/>
+      <Header76 />
+      <Suspense>
+        <Contact5 />
+      </Suspense>
     </>
   );
 }
