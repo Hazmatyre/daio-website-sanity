@@ -14,6 +14,8 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
 import { Layout90 } from "@/components/blocks/Layout90.Hero";
 import { Layout245 } from "@/components/blocks/Layout245.Feature";
+import { Layout484 } from "@/components/blocks/Layout484";
+import { Team18 } from "@/components/blocks/Team18";
 
 
 export default async function Page() {
@@ -26,9 +28,10 @@ export default async function Page() {
 
   return (
     <>
-      {/* Layout 484 for our vision */}
-      <Layout90></Layout90> {/* Similar to layout 15 */}
-      <Layout245></Layout245>
+      <Layout484></Layout484>
+      <Team18></Team18>
+      <Team18></Team18>
+      <Team18></Team18>
     </>
   );
 }
