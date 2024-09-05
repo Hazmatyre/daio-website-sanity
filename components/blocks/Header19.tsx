@@ -57,7 +57,8 @@ export const Header19Defaults: Header19Props = {
   description:
     "We are looking for collaborators and organisations who care about the environment and want to make a difference. Together, we can create a sustainable future for generations to come.",
   buttons: [
-    <Link key={1} href="/#contact-us" className="block no-overflow-anchoring"><Button variant={"default"} size={"lg"} className="shadow-xxlarge">Contact Us</Button></Link>
+    <Link key={1} href="/#contact-us" className="no-overflow-anchoring"><Button size={"lg"}>Contact Us</Button></Link>,
+    <Link key={2} href="/about" className="no-overflow-anchoring"><Button size={"lg"} variant={"secondary"}>Our Team</Button></Link>,
   ],
   image: {
     src: imgTeam,

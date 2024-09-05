@@ -113,9 +113,8 @@ export const Header76Defaults: Header76Props = {
   description:
     "We are looking for collaborators and organisations who care about the environment and want to make a difference. Together, we can create a sustainable future for generations to come.",
   buttons: [
-    <Link key={1} href="#contact-us"><Button variant={"default"} size={"lg"}>Contact Us</Button></Link>,
-    // <a key={1} href=""><Button variant={"secondary"} size={"lg"}>Our Team</Button></a>
-  ],
+    <Link key={1} href="#contact-us" className="no-overflow-anchoring"><Button size={"lg"}>Contact Us</Button></Link>,
+    <Link key={2} href="/about" className="no-overflow-anchoring"><Button size={"lg"} variant={"secondary"}>Our Team</Button></Link>,  ],
   images: [...defaultImages, ...defaultImages],
   images2: [
     { ...defaultImages[4] },

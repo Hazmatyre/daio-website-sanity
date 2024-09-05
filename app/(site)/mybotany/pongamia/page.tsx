@@ -264,9 +264,8 @@ const PropsLayout7_2: ComponentPropsWithoutRef<typeof Layout7> = {
     },
   ],
   buttons: [
-    <Link href="#contact-us" key={1}><Button size={"lg"}>Partner With Us</Button></Link>
-    // <a key={2}><Button variant={"outline"}>Our Team</Button></a>
-  ],
+    <Link key={1} href="#contact-us" className="no-overflow-anchoring"><Button size={"lg"}>Partner With Us</Button></Link>,
+    <Link key={2} href="/about" className="no-overflow-anchoring"><Button size={"lg"} variant={"secondary"}>Our Team</Button></Link>,  ],
   image: {
     src: img_layout7_2,
     alt: "Closeup of open hand presenting several Pongamia seeds."

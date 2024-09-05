@@ -106,7 +106,7 @@ export const Navbar3 = (props: Navbar3Props) => {
           <NavigationMenuItem>
             <Link href="/about" legacyBehavior passHref>
               <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About
+                About Us
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
