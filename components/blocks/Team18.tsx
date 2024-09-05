@@ -4,8 +4,8 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { RxChevronRight } from "react-icons/rx";
 import Link from "next/link";
-import img_kazyuki from "/images/about-us/IMG_0603.webp"
-import img_thiaku from "/images/about-us/IMG_0604.jpg"
+import img_kazyuki from "/images/about-us/img0603.webp"
+import img_thiaku from "/images/about-us/img0604.jpg"
 import { cn } from "@/lib/utils";
 
 type Props = {

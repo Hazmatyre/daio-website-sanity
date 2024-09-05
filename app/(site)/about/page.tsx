@@ -1,14 +1,14 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import Image from "next/image";
-import img_kazyuki from "/images/about-us/IMG_0603.webp"
-import img_thiaku from "/images/about-us/IMG_0604.jpg"
+import img_kazyuki from "/images/about-us/img0603.webp"
+import img_thiaku from "/images/about-us/img0604.jpg"
 import imgBioNad from "/images/about-us/nad.webp"
-import imgBioZam from "/images/about-us/IMG_0606.jpg"
-import imgBioGpr from "/images/about-us/IMG_0610.jpg"
+import imgBioZam from "/images/about-us/img0606.jpg"
+import imgBioGpr from "/images/about-us/img0610.jpg"
 import imgBotRaymi from "/images/about-us/raymi.jpeg"
 import imgBotVV from "/images/about-us/viveghan-vinod.webp"
-import imgBotEmb from "/images/about-us/IMG_0616.png"
+import imgBotEmb from "/images/about-us/img0616.png"
 import imgHaz from "/images/about-us/haz.webp"
 
 import { Layout484 } from "@/components/blocks/Layout484";
