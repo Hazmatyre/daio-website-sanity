@@ -15,6 +15,9 @@ import Image from "next/image";
 import logo from '/images/daio-logo-green.svg'
 import * as VisuallyHidden from '@radix-ui/react-visually-hidden';
 import Link from "next/link";
+import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "../ui/navigation-menu";
+import React from "react";
 
 type ImageProps = {
   url?: string;
@@ -37,14 +40,17 @@ type Props = {
 export type Navbar3Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Navbar3 = (props: Navbar3Props) => {
+  const wait = () => new Promise((resolve) => setTimeout(resolve, 1000));
+
+  const [open, setOpen] = React.useState(false);
 
   return (
     <nav className="flex items-center justify-between border-b-0 border-border-primary bg-background-primary px-[5%] min-h-20 basis-0 grow">
-      <Sheet>
-        <SheetTrigger asChild className="hidden">
+      <Sheet open={open} onOpenChange={setOpen}>
+        <SheetTrigger asChild className="md:hidden">
           <div className="basis-0 grow md:basis-auto md:grow-0">
             <Button
-              className="flex size-12 flex-col justify-center md:hidden bg-transparent hover:bg-transparent relative -left-4 "
+              className="flex size-12 flex-col justify-center md:hidden bg-transparent hover:bg-transparent relative -left-4 border-0"
             >
               {Array(3)
                 .fill(null)
@@ -69,25 +75,91 @@ export const Navbar3 = (props: Navbar3Props) => {
               />
             </div>
           </SheetHeader>
-            <ul>
-              <li>Home</li>
-              <li>About</li>
-              <li>Pongamia</li>
-            </ul>
+          <ul className="flex flex-col gap-y-8 mt-8 tracking-tighter">
+            <li
+              onClick={() => { setOpen(false) }}
+              className="type-mobile-h4"
+            >
+              <Link href="/">Home</Link>
+            </li>
+            <li
+              onClick={() => { setOpen(false) }}
+              className="type-mobile-h4">
+              <Link href="/about">About Us</Link>
+            </li>
+            <li
+              onClick={() => { setOpen(false) }}
+              className="type-mobile-h4">
+              <Link href="/mybio/biotoilet">MyBio Bio-Toilet</Link>
+            </li>
+            <li
+              onClick={() => { setOpen(false) }}
+              className="type-mobile-h4">
+              <Link href="/mybotany/pongamia">MyBotany Pongamia</Link>
+            </li>
+          </ul>
         </SheetContent>
       </Sheet>
-      <ul className="hidden /md:flex basis-0 grow gap-x-5">
+      <NavigationMenu className="hidden md:flex ">
+        <NavigationMenuList>
+
+          <NavigationMenuItem>
+            <Link href="/about" legacyBehavior passHref>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                About Us
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>MyBio</NavigationMenuTrigger>
+            <NavigationMenuContent className="shadow-xxlarge">
+              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] /lg:grid-cols-[.75fr_1fr]">
+                <ListItem href="/mybio/biotoilet" title="Bio-Toilet">
+                  Zero sewage. Save water.
+                </ListItem>
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>MyBotany</NavigationMenuTrigger>
+            <NavigationMenuContent>
+              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] /lg:grid-cols-[.75fr_1fr]">
+                <ListItem
+                  title={"Pongamia Plantation"}
+                  href={"/mybotany/pongamia"}
+                >
+                  {"The most natural bio-fuel source from tree seeds through our reforestation initiative."}
+                </ListItem>
+                {/* {components.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                  >
+                    {component.description}
+                  </ListItem>
+                ))} */}
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+
+        </NavigationMenuList>
+      </NavigationMenu>
+      {/* <ul className="hidden md:flex basis-0 grow gap-x-5">
+        <li className="type-regular"><Link href="/about">About</Link></li>
+        <Popover>
+          <PopoverTrigger className="flex items-center">MyBio <RxChevronDown/></PopoverTrigger>
+          <PopoverContent className="border-0 shadow-xxlarge bg-brand-900 text-brand-naplesYellow" align="start">
+            <li className="type-regular list-none"><Link href="/mybio/biotoilet">MyBio Bio-Toilet</Link></li>
+          </PopoverContent>
+        </Popover>
         <a href="#">
-          <li>Home</li>
+          <li>MyBotany</li>
         </a>
-        <a href="#">
-          <li>Pongamia</li>
-        </a>
-        <a href="#">
-          <li>About</li>
-        </a>
-      </ul>
-      <a href="/"  className="block">
+      </ul> */}
+      <a href="/" className="block">
         <Image
           src={logo}
           alt="DAIO International Logo"
@@ -178,21 +250,32 @@ export const Navbar3 = (props: Navbar3Props) => {
 
 };
 
-function ProfileForm({ className }: React.ComponentProps<"form">) {
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
   return (
-    <form className={cn("grid items-start gap-4", className)}>
-      <div className="grid gap-2">
-        <Label htmlFor="email">Email</Label>
-        <Input type="email" id="email" defaultValue="shadcn@example.com" />
-      </div>
-      <div className="grid gap-2">
-        <Label htmlFor="username">Username</Label>
-        <Input id="username" defaultValue="@shadcn" />
-      </div>
-      <Button type="submit">Save changes</Button>
-    </form>
+    <li>
+      <NavigationMenuLink asChild>
+        <Link
+          ref={ref}
+          href={props.href || "#"}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-brand-800 focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="type-regular font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </Link>
+      </NavigationMenuLink>
+    </li>
   )
-}
+})
+ListItem.displayName = "ListItem"
 
 export const Navbar3Defaults: Navbar3Props = {
   logo: {

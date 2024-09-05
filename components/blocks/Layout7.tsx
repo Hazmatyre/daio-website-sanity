@@ -101,8 +101,9 @@ export const Layout7Defaults: Layout7Props = {
     },
   ],
   buttons: [
-    <Link key={1} href="/#contact-us" className="no-overflow-anchoring"><Button >Contact Us</Button></Link>,
-    // <Button key={2}>Button 2</Button>
+    <Link key={1} href="/#contact-us" className="no-overflow-anchoring"><Button size={"lg"}>Contact Us</Button></Link>,
+    <Link key={2} href="/about" className="no-overflow-anchoring"><Button size={"lg"} variant={"secondary"}>Our Team</Button></Link>,
+
   ],
   image: {
     src: imgPollution, alt: "Woman looking through polluted glass by Trevor Lawrence. https://www.pexels.com/photo/woman-looking-through-polluted-glass-12906459/",
