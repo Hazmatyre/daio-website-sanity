@@ -85,7 +85,7 @@ export const Navbar3 = (props: Navbar3Props) => {
             <li
               onClick={() => { setOpen(false) }}
               className="type-mobile-h4">
-              <Link href="/about">About</Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li
               onClick={() => { setOpen(false) }}
