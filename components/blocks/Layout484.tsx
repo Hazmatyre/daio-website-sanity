@@ -38,7 +38,7 @@ export const Layout484Defaults: Layout484Props = {
   heading:
     "We delight our customers with how easy it is to preserve the planet without sacrificing financial success or personal convenience.",
   buttons: [
-    <Link href={"#"} key={1}><Button size={"lg"}>Contact Us</Button></Link>,
-    <Link href={"#"} key={2}><Button variant={"secondary"} size={"lg"}>Our Team</Button></Link>,
+    <Link href={"#team"} key={1}><Button size={"lg"}>Our Team</Button></Link>,
+    // <Link href={"#"} key={2}><Button variant={"secondary"} size={"lg"}>Our Team</Button></Link>,
   ],
 };
