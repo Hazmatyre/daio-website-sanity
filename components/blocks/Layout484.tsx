@@ -22,7 +22,7 @@ export const Layout484 = (props: Layout484Props) => {
     <section id="relume" className="overflow-hidden px-[5%] py-16 md:py-24 lg:py-28">
       <div className="container max-w-lg">
         <h1 className="type-regular font-semibold">{tagline}</h1>
-        <h2 className="type-desktop-h3 tracking-tighter">
+        <h2 className="type-desktop-h3 tracking-tighter leading-tight mt-3 md:mt-4">
           {heading}
         </h2>
         <div className="mt-6 flex items-center gap-x-4 md:mt-8">
@@ -40,6 +40,5 @@ export const Layout484Defaults: Layout484Props = {
   buttons: [
     <Link href={"#"} key={1}><Button size={"lg"}>Contact Us</Button></Link>,
     <Link href={"#"} key={2}><Button variant={"secondary"} size={"lg"}>Our Team</Button></Link>,
-
   ],
 };

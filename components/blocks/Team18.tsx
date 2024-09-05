@@ -31,12 +31,12 @@ export const Team18 = (props: Team18Props) => {
   } as Props;
 
   return (
-    <section id="relume" className={cn("overflow-hidden px-[5%] py-16 md:py-24 lg:py-28", props.className)}>
+    <section id="relume" className={cn("overflow-hidden px-[5%] py-16 md:py-24 lg:py-28 text-brand-900", props.className)}>
       <div className="max-w-xxl mx-auto flex flex-col md:flex-row md:justify-between md:gap-x-10 xl:gap-x-20">
         {/* Description */}
         <div className="md:basis-1/2">
           <p className="type-regular font-semibold">{tagline}</p>
-          <h2 className="type-mobile-h2 md:type-desktop-h2">{heading}</h2>
+          <h2 className="type-mobile-h2 md:type-desktop-h2 mt-3">{heading}</h2>
           {productChips &&
             <div className="flex gap-x-2">
               {productChips.map((name, index) =>
@@ -46,23 +46,23 @@ export const Team18 = (props: Team18Props) => {
               )}
             </div>
           }
-          <p className="type-medium">{description}</p>
+          <p className="type-medium mt-5">{description}</p>
         </div>
         {/* People */}
-        <div className="md:basis-1/2 flex flex-col gap-16">
+        <div className="max-md:mt-12 md:basis-1/2 flex flex-col gap-16">
           {people.map((person, index) => {
             return (
               <div key={index} className="lg:flex lg:gap-x-8">
-                <div className="lg:basis-5/12 aspect-square rounded-lg overflow-hidden max-md:w-1/2 max-md:mx-auto border-2 border-border">
+                <div className="lg:basis-5/12 aspect-square rounded-lg overflow-hidden  border-2 border-border h-fit max-md:w-2/3 max-md:mx-auto">
                   {person.image}
                 </div>
                 <div className="basis-0">
-                  <h3>{person.name}</h3>
+                  <h3 className="mt-5 type-mobile-h3 md:type-desktop-h4">{person.name}</h3>
                   {person.title &&
-                    <p>{person.title}</p>
+                    <p className="type-regular font-bold">{person.title}</p>
                   }
                   {person.email &&
-                    <p className="truncate">{person.email}</p>
+                    <a href={`mailto:${person.email}`} className="truncate mt-3 block type-regular underline">{person.email}</a>
                   }
                   {person.description &&
                     <p>{person.description}</p>
@@ -91,7 +91,8 @@ export const Team18Defaults: Team18Props = {
       />,
       name: "Kazuyuki Iinuma",
       title: "PRESIDENT, CO-FOUNDER",
-      email: "iinuma@daiointernational.com"
+      email: "iinuma@daiointernational.com",
+      // description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     },
     {
       image: <Image
@@ -101,7 +102,8 @@ export const Team18Defaults: Team18Props = {
       />,
       name: "Thiagku Marimuthu",
       title: "MANAGING DIRECTOR, CO-FOUNDER",
-      email: "thiaku@daiointernational.com"
+      email: "thiaku@daiointernational.com",
+      // description: ""
     },
   ]
 };

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Suspense } from "react";
+import Image from "next/image";
+import img_kazyuki from "/images/about-us/IMG_0603.webp"
+import img_thiaku from "/images/about-us/IMG_0604.jpg"
 
 // import Avatar from "./avatar";
 // import CoverImage from "./cover-image";
@@ -29,9 +32,39 @@ export default async function Page() {
   return (
     <>
       <Layout484></Layout484>
-      <Team18></Team18>
+      <Team18 {...team18Leadership}></Team18>
       <Team18></Team18>
       <Team18></Team18>
     </>
   );
+}
+
+const team18Leadership: React.ComponentPropsWithoutRef<typeof Team18> = {
+  tagline: "About Us",
+  heading:
+    "Board of Directors",
+  description: "From co-workers to good friends with decades of engineering experience, we build products engineered to give back to mother nature.",
+  people: [
+    {
+      image: <Image
+        src={img_kazyuki}
+        alt="Portrait of Kazuyuki Iinuma"
+        className="size-full object-cover"
+      />,
+      name: "Kazuyuki Iinuma",
+      title: "PRESIDENT, CO-FOUNDER",
+      email: "iinuma@daiointernational.com",
+    },
+    {
+      image: <Image
+        src={img_thiaku}
+        alt="Portrait of Kazuyuki Iinuma"
+        className="size-full object-cover"
+      />,
+      name: "Thiagku Marimuthu",
+      title: "MANAGING DIRECTOR, CO-FOUNDER",
+      email: "thiaku@daiointernational.com",
+    },
+  ],
+  className: "bg-brand-naplesYellow"
 }
