@@ -1,5 +1,6 @@
 import { Button } from "@relume_io/relume-ui";
 import type { ButtonProps } from "@relume_io/relume-ui";
+import Image from "next/image";
 import { RxChevronRight } from "react-icons/rx";
 
 type ImageProps = {
@@ -53,7 +54,7 @@ export const Layout353 = (props: Layout353Props) => {
                 style={{ top: `${30 + index * 2}%` }}
               >
                 <div className="mb-3 md:mb-4">
-                  <img src={section.icon.src} alt={section.icon.alt} className="size-12" />
+                  <Image src={section.icon.src} alt={section.icon.alt || ""} className="size-12" />
                 </div>
                 <h3 className="mb-3 text-xl font-bold md:mb-4 md:text-2xl">{section.title}</h3>
                 <p>{section.description}</p>
