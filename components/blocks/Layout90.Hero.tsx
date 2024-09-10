@@ -54,8 +54,8 @@ export const Layout90 = (props: Layout90Props) => {
             sizes="(max-width: 1440px) 89vw, 75vw"
             quality={30}
           />}
-          {imageCaption && <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{imageCaption}</p>}
         </div>
+        {imageCaption && <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{imageCaption}</p>}
       </div>
     </section>
   );
