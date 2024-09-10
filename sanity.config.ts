@@ -18,6 +18,8 @@ import { pageStructure, singletonPlugin } from "@/sanity/plugins/settings";
 import { assistWithPresets } from "@/sanity/plugins/assist";
 import author from "@/sanity/schemas/documents/author";
 import post from "@/sanity/schemas/documents/post";
+import tag from "@/sanity/schemas/documents/tag";
+import category from "./sanity/schemas/documents/category";
 import settings from "@/sanity/schemas/singletons/settings";
 import { resolveHref } from "@/sanity/lib/utils";
 import {media} from 'sanity-plugin-media'
@@ -38,6 +40,8 @@ export default defineConfig({
       // Documents
       post,
       author,
+      tag,
+      category,
     ],
   },
   plugins: [
