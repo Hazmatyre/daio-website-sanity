@@ -110,7 +110,7 @@ export default function RootLayout({
             <Footer3 />
           </Suspense>
         </section>
-        {draftMode().isEnabled && <VisualEditing />}
+        {draftMode().isEnabled && <VisualEditing zIndex={1000} />}
         <SpeedInsights />
         <Toaster
           toastOptions={{

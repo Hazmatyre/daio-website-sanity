@@ -3,6 +3,7 @@ import { format, parseISO } from "date-fns";
 import { defineField, defineType } from "sanity";
 
 import authorType from "./author";
+import { title } from '../../lib/demo';
 
 /**
  * This file is the schema definition for a post.
@@ -46,7 +47,27 @@ export default defineType({
       type: "array",
       of: [
         { type: "block" },
-        { type: "image" },
+        {
+          name: "image",
+          title: "Inline Image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
+              validation: (rule) => {
+                return rule.custom((alt, context) => {
+                  if ((context.document?.coverImage as any)?.asset?._ref && !alt) {
+                    return "Required";
+                  }
+                  return true;
+                });
+              },
+            },
+          ],
+        },
       ],
     }),
     defineField({

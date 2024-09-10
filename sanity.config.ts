@@ -20,6 +20,7 @@ import author from "@/sanity/schemas/documents/author";
 import post from "@/sanity/schemas/documents/post";
 import settings from "@/sanity/schemas/singletons/settings";
 import { resolveHref } from "@/sanity/lib/utils";
+import {media} from 'sanity-plugin-media'
 
 const homeLocation = {
   title: "Home",
@@ -40,6 +41,7 @@ export default defineConfig({
     ],
   },
   plugins: [
+    // media(),
     presentationTool({
       resolve: {
         mainDocuments: defineDocuments([
