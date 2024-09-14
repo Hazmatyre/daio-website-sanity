@@ -127,6 +127,11 @@ export default defineType({
       type: "array",
       of: [{ type: "reference", to: { type: "tags" } }],
     }),
+    defineField({
+      title: "Seo",
+      name: "seo",
+      type: "seoMetaFields",
+    }),
   ],
   preview: {
     select: {

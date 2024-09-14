@@ -8,10 +8,10 @@ import MoreStories from "../more-stories";
 import Onboarding from "../onboarding";
 import PortableText from "../portable-text";
 
-import type { HeroQueryResult, SettingsQueryResult } from "@/sanity.types";
+import type { HeroQueryResult, PostsQueryResult, SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { heroQuery, settingsQuery } from "@/sanity/lib/queries";
+import { heroQuery, postsQuery, settingsQuery } from "@/sanity/lib/queries";
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -78,8 +78,15 @@ export default async function Page() {
     sanityFetch<SettingsQueryResult>({
       query: settingsQuery,
     }),
-    sanityFetch<HeroQueryResult>({ query: heroQuery }),
+    sanityFetch<HeroQueryResult>({
+      query: heroQuery
+    }),
+    sanityFetch<PostsQueryResult>({
+      query: postsQuery
+    }),
   ]);
+
+  console.log(postsQuery)
 
   return (
     <div className="container mx-auto px-5">

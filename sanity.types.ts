@@ -162,6 +162,7 @@ export type Post = {
     _key: string;
     [internalGroqTypeReferenceTo]?: "tags";
   }>;
+  seo?: SeoMetaFields;
 };
 
 export type Author = {
@@ -249,6 +250,82 @@ export type Settings = {
   };
 };
 
+export type MetaTag = {
+  _type: "metaTag";
+  metaAttributes?: Array<{
+    _key: string;
+  } & MetaAttribute>;
+};
+
+export type MetaAttribute = {
+  _type: "metaAttribute";
+  attributeKey?: string;
+  attributeType?: "string" | "image";
+  attributeValueImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  attributeValueString?: string;
+};
+
+export type SeoMetaFields = {
+  _type: "seoMetaFields";
+  nofollowAttributes?: boolean;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  seoKeywords?: Array<string>;
+  openGraph?: OpenGraph;
+  additionalMetaTags?: Array<{
+    _key: string;
+  } & MetaTag>;
+  twitter?: Twitter;
+};
+
+export type Twitter = {
+  _type: "twitter";
+  cardType?: string;
+  creator?: string;
+  site?: string;
+  handle?: string;
+};
+
+export type OpenGraph = {
+  _type: "openGraph";
+  url?: string;
+  image?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  title?: string;
+  description?: string;
+  siteName?: string;
+};
+
 export type SanityImageCrop = {
   _type: "sanity.imageCrop";
   top?: number;
@@ -306,128 +383,7 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type SanityAssistInstructionTask = {
-  _type: "sanity.assist.instructionTask";
-  path?: string;
-  instructionKey?: string;
-  started?: string;
-  updated?: string;
-  info?: string;
-};
-
-export type SanityAssistTaskStatus = {
-  _type: "sanity.assist.task.status";
-  tasks?: Array<{
-    _key: string;
-  } & SanityAssistInstructionTask>;
-};
-
-export type SanityAssistSchemaTypeAnnotations = {
-  _type: "sanity.assist.schemaType.annotations";
-  title?: string;
-  fields?: Array<{
-    _key: string;
-  } & SanityAssistSchemaTypeField>;
-};
-
-export type SanityAssistOutputType = {
-  _type: "sanity.assist.output.type";
-  type?: string;
-};
-
-export type SanityAssistOutputField = {
-  _type: "sanity.assist.output.field";
-  path?: string;
-};
-
-export type SanityAssistInstructionContext = {
-  _type: "sanity.assist.instruction.context";
-  reference?: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "assist.instruction.context";
-  };
-};
-
-export type AssistInstructionContext = {
-  _id: string;
-  _type: "assist.instruction.context";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  context?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal";
-    listItem?: never;
-    markDefs?: null;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-};
-
-export type SanityAssistInstructionUserInput = {
-  _type: "sanity.assist.instruction.userInput";
-  message?: string;
-  description?: string;
-};
-
-export type SanityAssistInstructionPrompt = Array<{
-  children?: Array<{
-    marks?: Array<string>;
-    text?: string;
-    _type: "span";
-    _key: string;
-  } | {
-    _key: string;
-  } & SanityAssistInstructionFieldRef | {
-    _key: string;
-  } & SanityAssistInstructionContext | {
-    _key: string;
-  } & SanityAssistInstructionUserInput>;
-  style?: "normal";
-  listItem?: never;
-  markDefs?: null;
-  level?: number;
-  _type: "block";
-  _key: string;
-}>;
-
-export type SanityAssistInstructionFieldRef = {
-  _type: "sanity.assist.instruction.fieldRef";
-  path?: string;
-};
-
-export type SanityAssistInstruction = {
-  _type: "sanity.assist.instruction";
-  prompt?: SanityAssistInstructionPrompt;
-  icon?: string;
-  title?: string;
-  userId?: string;
-  createdById?: string;
-  output?: Array<{
-    _key: string;
-  } & SanityAssistOutputField | {
-    _key: string;
-  } & SanityAssistOutputType>;
-};
-
-export type SanityAssistSchemaTypeField = {
-  _type: "sanity.assist.schemaType.field";
-  path?: string;
-  instructions?: Array<{
-    _key: string;
-  } & SanityAssistInstruction>;
-};
-
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Category | Tags | Post | Author | Slug | Settings | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | SanityAssistInstructionTask | SanityAssistTaskStatus | SanityAssistSchemaTypeAnnotations | SanityAssistOutputType | SanityAssistOutputField | SanityAssistInstructionContext | AssistInstructionContext | SanityAssistInstructionUserInput | SanityAssistInstructionPrompt | SanityAssistInstructionFieldRef | SanityAssistInstruction | SanityAssistSchemaTypeField;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Category | Tags | Post | Author | Slug | Settings | MetaTag | MetaAttribute | SeoMetaFields | Twitter | OpenGraph | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: settingsQuery
@@ -660,6 +616,43 @@ export type PostQueryResult = {
     } | null;
   } | null;
 } | null;
+// Variable: postsQuery
+// Query: *[_type == "post"] | order(date desc, _updatedAt desc) {    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},}
+export type PostsQueryResult = Array<{
+  _id: string;
+  status: "draft" | "published";
+  title: string | "Untitled";
+  slug: string | null;
+  excerpt: string | null;
+  coverImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    _type: "image";
+  } | null;
+  date: string;
+  author: {
+    name: string | "Anonymous";
+    picture: {
+      asset?: {
+        _ref: string;
+        _type: "reference";
+        _weak?: boolean;
+        [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+      };
+      hotspot?: SanityImageHotspot;
+      crop?: SanityImageCrop;
+      alt?: string;
+      _type: "image";
+    } | null;
+  } | null;
+}>;
 
 // Source: ./app/(site)/blog/[slug]/page.tsx
 // Variable: postSlugs
@@ -676,6 +669,7 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": HeroQueryResult;
     "*[_type == \"post\" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": MoreStoriesQueryResult;
     "*[_type == \"post\" && slug.current == $slug] [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": PostQueryResult;
+    "*[_type == \"post\"] | order(date desc, _updatedAt desc) {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": PostsQueryResult;
     "*[_type == \"post\"]{slug}": PostSlugsResult;
   }
 }
