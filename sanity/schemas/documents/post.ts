@@ -74,10 +74,12 @@ export default defineType({
       name: "excerpt",
       title: "Excerpt",
       type: "text",
+      description: "What do display on blog home listing page and other pages e.g. featured blogs. This is capped to a few lines if left too long!"
     }),
     defineField({
       name: "coverImage",
       title: "Cover Image",
+      description:"Mandatory!",
       type: "image",
       options: {
         hotspot: true,

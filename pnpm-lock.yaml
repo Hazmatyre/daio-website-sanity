@@ -101,6 +101,9 @@ dependencies:
   embla-carousel-wheel-gestures:
     specifier: ^8.0.1
     version: 8.0.1(@babel/core@7.24.7)(embla-carousel@8.1.7)
+  filesize:
+    specifier: ^10.1.6
+    version: 10.1.6
   framer-motion:
     specifier: ^11.3.0
     version: 11.3.0(react-dom@18.3.1)(react@18.3.1)
@@ -7510,6 +7513,11 @@ packages:
   /file-url@2.0.2:
     resolution: {integrity: sha512-x3989K8a1jM6vulMigE8VngH7C5nci0Ks5d9kVjUXmNF28gmiZUNujk5HjwaS8dAzN2QmUfX56riJKgN00dNRw==}
     engines: {node: '>=4'}
+    dev: false
+
+  /filesize@10.1.6:
+    resolution: {integrity: sha512-sJslQKU2uM33qH5nqewAwVB2QgR6w1aMNsYUp3aN5rMRyXEwJGmZvaWzeJFNTOXWlHQyBFCWrdj3fV/fsTOX8w==}
+    engines: {node: '>= 10.4.0'}
     dev: false
 
   /filesize@9.0.11:
