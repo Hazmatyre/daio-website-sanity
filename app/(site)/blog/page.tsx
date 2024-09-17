@@ -12,6 +12,64 @@ import type { HeroQueryResult, PostsQueryResult, SettingsQueryResult } from "@/s
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, postsQuery, settingsQuery } from "@/sanity/lib/queries";
+import { cn } from "@/lib/utils";
+import { BlogHeader1 } from "@/components/blocks/blog/BlogHeader1";
+import { useSearchParams } from 'next/navigation';
+
+export default async function Page() {
+  const [settings, heroPost, posts] = await Promise.all([
+    sanityFetch<SettingsQueryResult>({
+      query: settingsQuery,
+    }),
+    sanityFetch<HeroQueryResult>({
+      query: heroQuery
+    }),
+    sanityFetch<PostsQueryResult>({
+      query: postsQuery
+    }),
+  ]);
+
+  // console.log(posts)
+
+  return (
+    <>
+      <BlogHeader1
+
+      />
+    </>
+  );
+
+
+
+}
+
+// return (
+//   <div className="container mx-auto px-5">
+//     <Intro title={settings?.title} description={settings?.description} />
+//     {heroPost ? (
+//       <HeroPost
+//         title={heroPost.title}
+//         slug={heroPost.slug}
+//         coverImage={heroPost.coverImage}
+//         excerpt={heroPost.excerpt}
+//         date={heroPost.date}
+//         author={heroPost.author}
+//       />
+//     ) : (
+//       <Onboarding />
+//     )}
+//     {heroPost?._id && (
+//       <aside>
+//         <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
+//           More Stories
+//         </h2>
+//         <Suspense>
+//           <MoreStories skip={heroPost._id} limit={100} />
+//         </Suspense>
+//       </aside>
+//     )}
+//   </div>
+// );
 
 function Intro(props: { title: string | null | undefined; description: any }) {
   const title = props.title || demo.title;
@@ -73,47 +131,4 @@ function HeroPost({
   );
 }
 
-export default async function Page() {
-  const [settings, heroPost, posts] = await Promise.all([
-    sanityFetch<SettingsQueryResult>({
-      query: settingsQuery,
-    }),
-    sanityFetch<HeroQueryResult>({
-      query: heroQuery
-    }),
-    sanityFetch<PostsQueryResult>({
-      query: postsQuery
-    }),
-  ]);
 
-  // console.log(posts)
-
-
-  return (
-    <div className="container mx-auto px-5">
-      <Intro title={settings?.title} description={settings?.description} />
-      {heroPost ? (
-        <HeroPost
-          title={heroPost.title}
-          slug={heroPost.slug}
-          coverImage={heroPost.coverImage}
-          excerpt={heroPost.excerpt}
-          date={heroPost.date}
-          author={heroPost.author}
-        />
-      ) : (
-        <Onboarding />
-      )}
-      {heroPost?._id && (
-        <aside>
-          <h2 className="mb-8 text-6xl font-bold leading-tight tracking-tighter md:text-7xl">
-            More Stories
-          </h2>
-          <Suspense>
-            <MoreStories skip={heroPost._id} limit={100} />
-          </Suspense>
-        </aside>
-      )}
-    </div>
-  );
-}
