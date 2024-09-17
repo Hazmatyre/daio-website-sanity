@@ -62,7 +62,7 @@ export default async function Page({
       excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       author: post?.author
         ? {
-          image: <Image className="size-full" src={authorImage || imgPlaceholder} alt={post?.author?.name || ""} fill />,
+          image: <Image className="size-full object-cover !relative" src={authorImage || imgPlaceholder} alt={post?.author?.name || ""} fill />,
           name: post.author.name,
         }
         : undefined

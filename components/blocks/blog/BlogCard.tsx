@@ -30,23 +30,25 @@ export const BlogCard = (props: BlogCardProps) => {
     ...props,
   } as Props;
   return (
-    <div className="rounded-lg bg-white border border-border flex flex-col overflow-hidden">
-      <Link href={"blog/" + post.slug} className="relative aspect-video">
-        {post.image}
-      </Link>
-      <div className="py-7 px-[5%]">
-        <div>{post.category}</div>
-        <Link href={"blog/" + post.slug}>
-          <h2>{post.title}</h2>
+    <div className="@container">
+      <div className="size-full rounded-lg bg-white border border-border flex flex-col overflow-hidden @2xl:flex-row">
+        <Link href={"blog/" + post.slug} className="relative aspect-video block shrink-0 grow-0 basis-1/2 @2xl:aspect-[656/500]">
+          {post.image}
         </Link>
-        <p>{post.excerpt}</p>
-        <div className="flex">
-          <div className="relative">
-            {post.author?.image}
-          </div>
-          <div>
-            <div>{post.author?.name}</div>
-            <p>{post.date}</p>
+        <div className="py-7 px-[5%] @md:py-10 @md:px-10">
+          <div>{post.category}</div>
+          <Link href={"blog/" + post.slug}>
+            <h2>{post.title}</h2>
+          </Link>
+          <p>{post.excerpt}</p>
+          <div className="flex">
+            <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
+              {post.author?.image}
+            </div>
+            <div>
+              <div>{post.author?.name}</div>
+              <p>{post.date}</p>
+            </div>
           </div>
         </div>
       </div>
