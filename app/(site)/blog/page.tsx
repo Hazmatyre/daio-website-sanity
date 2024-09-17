@@ -52,9 +52,9 @@ export default async function Page({
 
   const BlogHeader1Props: React.ComponentPropsWithoutRef<typeof BlogHeader1> = {
     subtitle: "Blog",
-    heading: "DAIO Blog & Newsroom",
-    description: "Learn how to save the environment with DAIO.",
-    postItem: {
+    heading: settings?.title,
+    description: settings?.description,
+    post: {
       image: <Image className="size-full" src={coverImageUrl || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
       category: "Category",
       title: "Blog title heading will go here or some really obnoxiously long tile",

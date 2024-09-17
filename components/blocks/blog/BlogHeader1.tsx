@@ -12,10 +12,10 @@ type Props = {
   subtitle?: string;
   heading: string;
   description: React.ReactNode;
-  postItem: PostItem
+  post: Post
 };
 
-type PostItem = {
+type Post = {
   image: React.ReactNode
   category?: string
   title: string
@@ -32,7 +32,7 @@ type PostItem = {
 export type BlogHeader1Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const BlogHeader1 = (props: BlogHeader1Props) => {
-  const { heading, subtitle, description, postItem } = {
+  const { heading, subtitle, description, post } = {
     ...BlogHeader1Defaults,
     ...props,
   } as Props;
@@ -46,12 +46,12 @@ export const BlogHeader1 = (props: BlogHeader1Props) => {
           <p>{description}</p>
         </div>
         {/* card */}
-        <div className="rounded-lg bg-white flex flex-col">
+        <div className="rounded-lg bg-white flex flex-col overflow-hidden">
           <div className="relative aspect-video">
-            {postItem.image}
+            {post.image}
           </div>
           <div className="">
-
+            {post.category}
           </div>
         </div>
       </div>
@@ -63,7 +63,7 @@ export const BlogHeader1Defaults: BlogHeader1Props = {
   subtitle: "Blog",
   heading: "DAIO Blog & Newsroom",
   description: "Learn how to save the environment with DAIO.",
-  postItem: {
+  post: {
     image: <Image className="size-full" src={img} alt="nagoya" />,
     category: "Category",
     title: "Blog title heading will go here or some really obnoxiously long tile",

@@ -29,33 +29,33 @@ export default defineType({
       description:
         "Used both for the <meta> description tag for SEO, and the blog subheader.",
       title: "Description",
-      type: "array",
-      initialValue: demo.description,
-      of: [
-        defineArrayMember({
-          type: "block",
-          options: {},
-          styles: [],
-          lists: [],
-          marks: {
-            decorators: [],
-            annotations: [
-              defineField({
-                type: "object",
-                name: "link",
-                fields: [
-                  {
-                    type: "string",
-                    name: "href",
-                    title: "URL",
-                    validation: (rule) => rule.required(),
-                  },
-                ],
-              }),
-            ],
-          },
-        }),
-      ],
+      type: "string",
+      initialValue: "Welcome to our blog",
+      // of: [
+      //   defineArrayMember({
+      //     type: "block",
+      //     options: {},
+      //     styles: [],
+      //     lists: [],
+      //     marks: {
+      //       decorators: [],
+      //       annotations: [
+      //         defineField({
+      //           type: "object",
+      //           name: "link",
+      //           fields: [
+      //             {
+      //               type: "string",
+      //               name: "href",
+      //               title: "URL",
+      //               validation: (rule) => rule.required(),
+      //             },
+      //           ],
+      //         }),
+      //       ],
+      //     },
+      //   }),
+      // ],
     }),
     // defineField({
     //   name: "footer",
