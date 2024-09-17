@@ -17,7 +17,7 @@ type Props = {
   }
   title: string
   slug: string
-  excerpt: string
+  excerpt: string | null
   author?: {
     image: React.ReactNode
     name: string
@@ -35,9 +35,9 @@ export const BlogCard = (props: BlogCardProps) => {
   const { ...post } = {
     ...BlogCardDefaults,
     ...props,
-  } as Props;
+  };
   return (
-    <div className="@container">
+    <div className={cn("@container", post.className)}>
       <div className="size-full rounded-lg bg-white border border-border flex flex-col overflow-hidden @2xl:flex-row">
         {/* // * IMAGE */}
         <Link href={"blog/" + post.slug} className="relative aspect-video block shrink-0 grow-0 basis-1/2 @2xl:aspect-[656/500]">
@@ -48,15 +48,17 @@ export const BlogCard = (props: BlogCardProps) => {
 
         {/* //* CATEGORY + TITLE + EXCERPT */}
           <div>
-            {post.category &&
-              <Link href={"blog/category/" + post.category.slug?.current}>
+            {post.category ?
+              <Link className="" href={"blog/category/" + post.category.slug?.current}>
                 <p>{post.category.title}</p>
               </Link>
+              :
+              <div></div>
             }
             <Link href={"blog/" + post.slug}>
               <h2>{post.title}</h2>
             </Link>
-            <p>{post.excerpt}</p>
+            <p className="line-clamp-3 @2xl:line-clamp-6">{post.excerpt}</p>
           </div>
 
           {/* //* AUTHOR + DATE + TAGS */}
@@ -68,13 +70,13 @@ export const BlogCard = (props: BlogCardProps) => {
               <div>{post.author?.name}</div>
               <p>{post.date}</p>
             </div>
-            {post.tags &&
+            {/* {post.tags &&
               <div className="basis-full">
                 {post.tags.map((tag, index) => {
                   return <Link key={index} href={tag.slug?.current || "#"}>{tag.title}</Link>
                 })}
               </div>
-            }
+            } */}
           </div>
         </div>
       </div>

@@ -14,10 +14,11 @@ import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, postsQuery, settingsQuery } from "@/sanity/lib/queries";
 import { cn } from "@/lib/utils";
-import { BlogHeader1 } from "@/components/blocks/blog/BlogHeader1";
+import { Blog7 } from "@/components/blocks/blog/Blog7";
 import { useSearchParams } from 'next/navigation';
 import { urlForImage } from '@/sanity/lib/utils';
 import imgPlaceholder from "/images/placeholder.png"
+import { Blog7List } from "@/components/blocks/blog/Blog7.List";
 
 export default async function Page({
   searchParams,
@@ -50,7 +51,7 @@ export default async function Page({
   const coverImageUrl = urlForImage(post?.coverImage)?.url()
   const authorImage = urlForImage(post?.author)?.url()
 
-  const BlogHeader1Props: React.ComponentPropsWithoutRef<typeof BlogHeader1> = {
+  const Blog7Props: React.ComponentPropsWithoutRef<typeof Blog7> = {
     subtitle: "Blog",
     heading: settings?.title,
     description: settings?.description,
@@ -59,7 +60,7 @@ export default async function Page({
       category: post?.categories?.at(0),
       title: post?.title || "Learn More",
       slug: post?.slug || "",
-      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      excerpt: post?.excerpt,
       author: post?.author
         ? {
           image: <Image className="size-full object-cover !relative" src={authorImage || imgPlaceholder} alt={post?.author?.name || ""} fill />,
@@ -73,27 +74,29 @@ export default async function Page({
   };
 
   // Posts
-  const postsListing = posts.map((post) => {
+  const Blog7ListProps = posts.map((post) => {
     return {
-      image: <Image className="size-full" src={coverImageUrl || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
-      category: "Category",
+      image: <Image className="size-full object-cover" src={urlForImage(post?.coverImage)?.url() || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
+      category: post?.categories?.at(0),
       title: post?.title || "Learn More",
       slug: post?.slug || "",
-      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      excerpt: post.excerpt,
       author: post?.author
         ? {
-          image: <Image className="size-full object-cover !relative" src={authorImage || imgPlaceholder} alt={post?.author?.name || ""} fill />,
+          image: <Image className="object-cover !relative" src={urlForImage(post?.author)?.url() || imgPlaceholder} alt={post?.author?.name || ""} fill />,
           name: post.author.name,
         }
         : undefined
       ,
-      date: post.date
+      date: post?.date,
+      tags: post?.tags,
     }
   })
 
   return (
     <>
-      <BlogHeader1 {...BlogHeader1Props} />
+      <Blog7 {...Blog7Props} />
+      <Blog7List posts={Blog7ListProps}/>
     </>
   );
 }

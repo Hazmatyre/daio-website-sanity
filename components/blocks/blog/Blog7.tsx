@@ -16,9 +16,9 @@ type Props = {
   post: React.ComponentPropsWithoutRef<typeof BlogCard>
 };
 
-export type BlogHeader1Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Blog7Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
-export const BlogHeader1 = (props: BlogHeader1Props) => {
+export const Blog7 = (props: Blog7Props) => {
   const { heading, subtitle, description, post } = {
     ...BlogHeader1Defaults,
     ...props,
@@ -39,13 +39,13 @@ export const BlogHeader1 = (props: BlogHeader1Props) => {
   );
 };
 
-export const BlogHeader1Defaults: BlogHeader1Props = {
+export const BlogHeader1Defaults: Blog7Props = {
   subtitle: "Blog",
   heading: "DAIO Blog & Newsroom",
   description: "Learn how to save the environment with DAIO.",
   post: {
     image: <Image className="size-full" src={img} alt="nagoya" />,
-    category: "Category",
+    category: { title: "Category", slug: { _type: "slug", current: "category1" } },
     title: "Blog title heading will go here or some really obnoxiously long tile",
     slug: "",
     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
