@@ -7,14 +7,17 @@ import DateComponent from "../date";
 import MoreStories from "../more-stories";
 import Onboarding from "../onboarding";
 import PortableText from "../portable-text";
+import Image from "next/image";
 
-import type { HeroQueryResult, PostsQueryResult, SettingsQueryResult } from "@/sanity.types";
+import { internalGroqTypeReferenceTo, type HeroQueryResult, type PostsQueryResult, type SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { heroQuery, postsQuery, settingsQuery } from "@/sanity/lib/queries";
 import { cn } from "@/lib/utils";
 import { BlogHeader1 } from "@/components/blocks/blog/BlogHeader1";
 import { useSearchParams } from 'next/navigation';
+import { urlForImage } from '@/sanity/lib/utils';
+import imgPlaceholder from "/images/placeholder.png"
 
 export default async function Page({
   searchParams,
@@ -25,9 +28,11 @@ export default async function Page({
   };
 }) {
 
+  // Pagination
   const query = searchParams?.query || '';
   const currentPage = Number(searchParams?.page) || 1;
 
+  //Fetched data
   const [settings, heroPost, posts] = await Promise.all([
     sanityFetch<SettingsQueryResult>({
       query: settingsQuery,
@@ -40,18 +45,37 @@ export default async function Page({
     }),
   ]);
 
-  // console.log(posts)
+  // Featured post
+  const post = settings?.featuredPost
+  const coverImageUrl = urlForImage(post?.coverImage)?.url()
+  const authorImage = urlForImage(post?.author)?.url()
+
+  const BlogHeader1Props: React.ComponentPropsWithoutRef<typeof BlogHeader1> = {
+    subtitle: "Blog",
+    heading: "DAIO Blog & Newsroom",
+    description: "Learn how to save the environment with DAIO.",
+    postItem: {
+      image: <Image className="size-full" src={coverImageUrl || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
+      category: "Category",
+      title: "Blog title heading will go here or some really obnoxiously long tile",
+      slug: post?.slug || "",
+      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      author: post?.author
+        ? {
+          image: <Image className="size-full" src={authorImage || imgPlaceholder} alt={post?.author?.name || ""} fill />,
+          name: post.author.name,
+        }
+        : undefined
+      ,
+      date: "11 Jan 2022 "
+    }
+  };
 
   return (
     <>
-      <BlogHeader1
-
-      />
+      <BlogHeader1 {...BlogHeader1Props} />
     </>
   );
-
-
-
 }
 
 // return (

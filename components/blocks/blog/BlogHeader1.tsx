@@ -19,6 +19,7 @@ type PostItem = {
   image: React.ReactNode
   category?: string
   title: string
+  slug: string
   excerpt: string
   author?: {
     image: React.ReactNode
@@ -46,7 +47,7 @@ export const BlogHeader1 = (props: BlogHeader1Props) => {
         </div>
         {/* card */}
         <div className="rounded-lg bg-white flex flex-col">
-          <div className="">
+          <div className="relative aspect-video">
             {postItem.image}
           </div>
           <div className="">
@@ -66,6 +67,7 @@ export const BlogHeader1Defaults: BlogHeader1Props = {
     image: <Image className="size-full" src={img} alt="nagoya" />,
     category: "Category",
     title: "Blog title heading will go here or some really obnoxiously long tile",
+    slug: "",
     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
     author: {
       image: <Image className="size-full" src={imgAuthor} alt="author" />,

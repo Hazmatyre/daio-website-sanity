@@ -1,13 +1,6 @@
 import { groq } from "next-sanity";
 import { seo } from "./queries-seo";
 
-export const settingsQuery = groq`*[_type == "settings"][0] 
-{
-  ...,
-  featuredPost->
-}
-`;
-
 const postFields = /* groq */ `
   _id,
   "status": select(_originalId in path("drafts.**") => "draft", "published"),
@@ -17,6 +10,13 @@ const postFields = /* groq */ `
   coverImage,
   "date": coalesce(date, _updatedAt),
   "author": author->{"name": coalesce(name, "Anonymous"), picture},
+`;
+
+export const settingsQuery = groq`*[_type == "settings"][0] 
+{
+  ...,
+  featuredPost->{${postFields}},
+}
 `;
 
 export const heroQuery = groq`*[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {
