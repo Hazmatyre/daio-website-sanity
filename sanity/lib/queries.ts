@@ -1,7 +1,12 @@
 import { groq } from "next-sanity";
 import { seo } from "./queries-seo";
 
-export const settingsQuery = groq`*[_type == "settings"][0]`;
+export const settingsQuery = groq`*[_type == "settings"][0] 
+{
+  ...,
+  featuredPost->
+}
+`;
 
 const postFields = /* groq */ `
   _id,
@@ -44,3 +49,10 @@ export const postsQuery = groq`*[_type == "post"]
   ${postFields}
   ${seo}
 }`;
+
+// Featured Post
+// export const featuredPostQuery = groq`
+// *[_type == "post" && slug.current == $slug] [0] {
+
+// }
+// `
