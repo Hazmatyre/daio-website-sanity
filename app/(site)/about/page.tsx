@@ -60,7 +60,7 @@ const team18Leadership: React.ComponentPropsWithoutRef<typeof Team18> = {
         alt="Portrait of Kazuyuki Iinuma"
         className="size-full object-cover"
       />,
-      name: "Thiagku Marimuthu",
+      name: "Thiaku Marimuthu",
       title: "MANAGING DIRECTOR, CO-FOUNDER",
       email: {
         address: "mailto:thiaku@daiointernational.com",
