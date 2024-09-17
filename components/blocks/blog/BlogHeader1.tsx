@@ -6,28 +6,15 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import img from "/images/mybio-bio-toilet/homepage-daio-international-nagoya.webp"
 import imgAuthor from "/images/placeholder.png"
+import { BlogCard } from "./BlogCard";
 
 
 type Props = {
   subtitle?: string;
   heading: string;
   description: React.ReactNode;
-  post: Post
+  post: React.ComponentPropsWithoutRef<typeof BlogCard>
 };
-
-type Post = {
-  image: React.ReactNode
-  category?: string
-  title: string
-  slug: string
-  excerpt: string
-  author?: {
-    image: React.ReactNode
-    name: string
-  }
-  tags?: string[]
-  date: string
-}
 
 export type BlogHeader1Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
@@ -46,14 +33,7 @@ export const BlogHeader1 = (props: BlogHeader1Props) => {
           <p>{description}</p>
         </div>
         {/* card */}
-        <div className="rounded-lg bg-white flex flex-col overflow-hidden">
-          <div className="relative aspect-video">
-            {post.image}
-          </div>
-          <div className="">
-            {post.category}
-          </div>
-        </div>
+        <BlogCard {...post} />
       </div>
     </section>
   );

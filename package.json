@@ -32,6 +32,7 @@
     "@sanity/image-url": "^1.0.2",
     "@sanity/preview-url-secret": "^1.6.7",
     "@sanity/vision": "^3.44.0",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/typography": "^0.5.13",
     "@types/node": "^20.14.1",
     "@types/react": "^18.3.3",

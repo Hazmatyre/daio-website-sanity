@@ -57,7 +57,7 @@ export default async function Page({
     post: {
       image: <Image className="size-full" src={coverImageUrl || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
       category: "Category",
-      title: "Blog title heading will go here or some really obnoxiously long tile",
+      title: post?.title || "Learn More",
       slug: post?.slug || "",
       excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
       author: post?.author
