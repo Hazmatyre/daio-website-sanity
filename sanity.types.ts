@@ -345,7 +345,7 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: settingsQuery
-// Query: *[_type == "settings"][0] {  ...,  featuredPost->{  _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},},}
+// Query: *[_type == "settings"][0] {  ...,  featuredPost->{  _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},  "categories": categories[]-> {title,slug},  "tags": tags[]-> {title,slug},},}
 export type SettingsQueryResult = {
   _id: string;
   _type: "settings";
@@ -386,12 +386,20 @@ export type SettingsQueryResult = {
         _type: "image";
       } | null;
     } | null;
+    categories: Array<{
+      title: string | null;
+      slug: Slug | null;
+    }> | null;
+    tags: Array<{
+      title: string | null;
+      slug: Slug | null;
+    }> | null;
   } | null;
   title?: string;
   description?: string;
 } | null;
 // Variable: heroQuery
-// Query: *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {  content,    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},}
+// Query: *[_type == "post" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {  content,    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},  "categories": categories[]-> {title,slug},  "tags": tags[]-> {title,slug},}
 export type HeroQueryResult = {
   content: Array<{
     children?: Array<{
@@ -456,9 +464,17 @@ export type HeroQueryResult = {
       _type: "image";
     } | null;
   } | null;
+  categories: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
+  tags: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
 } | null;
 // Variable: moreStoriesQuery
-// Query: *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},}
+// Query: *[_type == "post" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},  "categories": categories[]-> {title,slug},  "tags": tags[]-> {title,slug},}
 export type MoreStoriesQueryResult = Array<{
   _id: string;
   status: "draft" | "published";
@@ -493,9 +509,17 @@ export type MoreStoriesQueryResult = Array<{
       _type: "image";
     } | null;
   } | null;
+  categories: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
+  tags: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
 }>;
 // Variable: postQuery
-// Query: *[_type == "post" && slug.current == $slug] [0] {  content,    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},}
+// Query: *[_type == "post" && slug.current == $slug] [0] {  content,    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},  "categories": categories[]-> {title,slug},  "tags": tags[]-> {title,slug},}
 export type PostQueryResult = {
   content: Array<{
     children?: Array<{
@@ -560,9 +584,17 @@ export type PostQueryResult = {
       _type: "image";
     } | null;
   } | null;
+  categories: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
+  tags: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
 } | null;
 // Variable: postsQuery
-// Query: *[_type == "post"] | order(date desc, _updatedAt desc) {    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},  seo{      _type,  metaTitle,  nofollowAttributes,  seoKeywords,  metaDescription,  openGraph{    _type,  siteName,  url,  description,  title,  image{    _type,  crop{  _type,  right,  top,  left,  bottom  },  hotspot{  _type,  x,  y,  height,  width,  },  asset->{...}    }    },  twitter{    _type,  site,  creator,  cardType,  handle    },  additionalMetaTags[]{  _type,  metaAttributes[]{    _type,  attributeValueString,  attributeType,  attributeKey,  attributeValueImage{    _type,  crop{  _type,  right,  top,  left,  bottom  },  hotspot{  _type,  x,  y,  height,  width,  },  asset->{...}    }    }  }      }}
+// Query: *[_type == "post"] | order(date desc, _updatedAt desc) {    _id,  "status": select(_originalId in path("drafts.**") => "draft", "published"),  "title": coalesce(title, "Untitled"),  "slug": slug.current,  excerpt,  coverImage,  "date": coalesce(date, _updatedAt),  "author": author->{"name": coalesce(name, "Anonymous"), picture},  "categories": categories[]-> {title,slug},  "tags": tags[]-> {title,slug},  seo{      _type,  metaTitle,  nofollowAttributes,  seoKeywords,  metaDescription,  openGraph{    _type,  siteName,  url,  description,  title,  image{    _type,  crop{  _type,  right,  top,  left,  bottom  },  hotspot{  _type,  x,  y,  height,  width,  },  asset->{...}    }    },  twitter{    _type,  site,  creator,  cardType,  handle    },  additionalMetaTags[]{  _type,  metaAttributes[]{    _type,  attributeValueString,  attributeType,  attributeKey,  attributeValueImage{    _type,  crop{  _type,  right,  top,  left,  bottom  },  hotspot{  _type,  x,  y,  height,  width,  },  asset->{...}    }    }  }      }}
 export type PostsQueryResult = Array<{
   _id: string;
   status: "draft" | "published";
@@ -597,6 +629,14 @@ export type PostsQueryResult = Array<{
       _type: "image";
     } | null;
   } | null;
+  categories: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
+  tags: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
   seo: {
     _type: "seoMetaFields";
     metaTitle: string | null;
@@ -718,11 +758,11 @@ export type PostSlugsResult = Array<{
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
-    "*[_type == \"settings\"][0] \n{\n  ...,\n  featuredPost->{\n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n},\n}\n": SettingsQueryResult;
-    "*[_type == \"post\" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": HeroQueryResult;
-    "*[_type == \"post\" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": MoreStoriesQueryResult;
-    "*[_type == \"post\" && slug.current == $slug] [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n}": PostQueryResult;
-    "*[_type == \"post\"] \n| order(date desc, _updatedAt desc) {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n\n  seo{\n    \n  _type,\n  metaTitle,\n  nofollowAttributes,\n  seoKeywords,\n  metaDescription,\n  openGraph{\n  \n  _type,\n  siteName,\n  url,\n  description,\n  title,\n  image{\n  \n  _type,\n  crop{\n  _type,\n  right,\n  top,\n  left,\n  bottom\n  },\n  hotspot{\n  _type,\n  x,\n  y,\n  height,\n  width,\n  },\n  asset->{...}\n  \n  }\n  \n  },\n  twitter{\n  \n  _type,\n  site,\n  creator,\n  cardType,\n  handle\n  \n  },\n  additionalMetaTags[]{\n  _type,\n  metaAttributes[]{\n  \n  _type,\n  attributeValueString,\n  attributeType,\n  attributeKey,\n  attributeValueImage{\n  \n  _type,\n  crop{\n  _type,\n  right,\n  top,\n  left,\n  bottom\n  },\n  hotspot{\n  _type,\n  x,\n  y,\n  height,\n  width,\n  },\n  asset->{...}\n  \n  }\n  \n  }\n  }\n  \n    }\n}": PostsQueryResult;
+    "*[_type == \"settings\"][0] \n{\n  ...,\n  featuredPost->{\n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n  \"categories\": categories[]-> {title,slug},\n  \"tags\": tags[]-> {title,slug},\n},\n}\n": SettingsQueryResult;
+    "*[_type == \"post\" && defined(slug.current)] | order(date desc, _updatedAt desc) [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n  \"categories\": categories[]-> {title,slug},\n  \"tags\": tags[]-> {title,slug},\n\n}": HeroQueryResult;
+    "*[_type == \"post\" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n  \"categories\": categories[]-> {title,slug},\n  \"tags\": tags[]-> {title,slug},\n\n}": MoreStoriesQueryResult;
+    "*[_type == \"post\" && slug.current == $slug] [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n  \"categories\": categories[]-> {title,slug},\n  \"tags\": tags[]-> {title,slug},\n\n}": PostQueryResult;
+    "*[_type == \"post\"] \n| order(date desc, _updatedAt desc) {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n  \"categories\": categories[]-> {title,slug},\n  \"tags\": tags[]-> {title,slug},\n\n  seo{\n    \n  _type,\n  metaTitle,\n  nofollowAttributes,\n  seoKeywords,\n  metaDescription,\n  openGraph{\n  \n  _type,\n  siteName,\n  url,\n  description,\n  title,\n  image{\n  \n  _type,\n  crop{\n  _type,\n  right,\n  top,\n  left,\n  bottom\n  },\n  hotspot{\n  _type,\n  x,\n  y,\n  height,\n  width,\n  },\n  asset->{...}\n  \n  }\n  \n  },\n  twitter{\n  \n  _type,\n  site,\n  creator,\n  cardType,\n  handle\n  \n  },\n  additionalMetaTags[]{\n  _type,\n  metaAttributes[]{\n  \n  _type,\n  attributeValueString,\n  attributeType,\n  attributeKey,\n  attributeValueImage{\n  \n  _type,\n  crop{\n  _type,\n  right,\n  top,\n  left,\n  bottom\n  },\n  hotspot{\n  _type,\n  x,\n  y,\n  height,\n  width,\n  },\n  asset->{...}\n  \n  }\n  \n  }\n  }\n  \n    }\n}": PostsQueryResult;
     "*[_type == \"post\"]{slug}": PostSlugsResult;
   }
 }

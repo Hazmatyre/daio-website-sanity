@@ -56,6 +56,26 @@ export default async function Page({
     description: settings?.description,
     post: {
       image: <Image className="size-full" src={coverImageUrl || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
+      category: post?.categories?.at(0),
+      title: post?.title || "Learn More",
+      slug: post?.slug || "",
+      excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      author: post?.author
+        ? {
+          image: <Image className="size-full object-cover !relative" src={authorImage || imgPlaceholder} alt={post?.author?.name || ""} fill />,
+          name: post.author.name,
+        }
+        : undefined
+      ,
+      date: post?.date,
+      tags: post?.tags,
+    }
+  };
+
+  // Posts
+  const postsListing = posts.map((post) => {
+    return {
+      image: <Image className="size-full" src={coverImageUrl || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
       category: "Category",
       title: post?.title || "Learn More",
       slug: post?.slug || "",
@@ -67,9 +87,9 @@ export default async function Page({
         }
         : undefined
       ,
-      date: "11 Jan 2022 "
+      date: post.date
     }
-  };
+  })
 
   return (
     <>
