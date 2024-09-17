@@ -68,6 +68,17 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Category = {
+  _id: string;
+  _type: "category";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  meta_description?: string;
+};
+
 export type Tags = {
   _id: string;
   _type: "tags";
@@ -77,6 +88,70 @@ export type Tags = {
   title?: string;
   slug?: Slug;
   meta_description?: string;
+};
+
+export type Settings = {
+  _id: string;
+  _type: "settings";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  featuredPost?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "post";
+  };
+  title?: string;
+  description?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal";
+    listItem?: never;
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  footer?: Array<{
+    children?: Array<{
+      marks?: Array<string>;
+      text?: string;
+      _type: "span";
+      _key: string;
+    }>;
+    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
+    listItem?: "bullet" | "number";
+    markDefs?: Array<{
+      href?: string;
+      _type: "link";
+      _key: string;
+    }>;
+    level?: number;
+    _type: "block";
+    _key: string;
+  }>;
+  ogImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    alt?: string;
+    metadataBase?: string;
+    _type: "image";
+  };
 };
 
 export type Post = {
@@ -137,12 +212,13 @@ export type Post = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "author";
   };
-  categories?: {
+  categories?: Array<{
     _ref: string;
     _type: "reference";
     _weak?: boolean;
+    _key: string;
     [internalGroqTypeReferenceTo]?: "category";
-  };
+  }>;
   tags?: Array<{
     _ref: string;
     _type: "reference";
@@ -151,17 +227,6 @@ export type Post = {
     [internalGroqTypeReferenceTo]?: "tags";
   }>;
   seo?: SeoMetaFields;
-};
-
-export type Category = {
-  _id: string;
-  _type: "category";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  slug?: Slug;
-  meta_description?: string;
 };
 
 export type Author = {
@@ -189,71 +254,6 @@ export type Slug = {
   _type: "slug";
   current?: string;
   source?: string;
-};
-
-export type Settings = {
-  _id: string;
-  _type: "settings";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  featuredPost?: Array<{
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    _key: string;
-    [internalGroqTypeReferenceTo]?: "post";
-  }>;
-  title?: string;
-  description?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal";
-    listItem?: never;
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  footer?: Array<{
-    children?: Array<{
-      marks?: Array<string>;
-      text?: string;
-      _type: "span";
-      _key: string;
-    }>;
-    style?: "normal" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "blockquote";
-    listItem?: "bullet" | "number";
-    markDefs?: Array<{
-      href?: string;
-      _type: "link";
-      _key: string;
-    }>;
-    level?: number;
-    _type: "block";
-    _key: string;
-  }>;
-  ogImage?: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    metadataBase?: string;
-    _type: "image";
-  };
 };
 
 export type MetaTag = {
@@ -389,7 +389,7 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Tags | Post | Category | Author | Slug | Settings | MetaTag | MetaAttribute | SeoMetaFields | Twitter | OpenGraph | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Category | Tags | Settings | Post | Author | Slug | MetaTag | MetaAttribute | SeoMetaFields | Twitter | OpenGraph | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: settingsQuery
@@ -400,13 +400,12 @@ export type SettingsQueryResult = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  featuredPost?: Array<{
+  featuredPost?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "post";
-  }>;
+  };
   title?: string;
   description?: Array<{
     children?: Array<{
