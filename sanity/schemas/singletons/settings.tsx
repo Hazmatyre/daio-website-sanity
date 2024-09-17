@@ -13,8 +13,8 @@ export default defineType({
       name: "featuredPost",
       description: "The first post to be featured on the homepage",
       title: "Featured Post",
-      type: "array",
-      of: [{ type: "reference", to: { type: "post" } }],
+      type: "reference",
+      to: { type: "post" },
     }),
     defineField({
       name: "title",

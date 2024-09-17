@@ -79,7 +79,7 @@ export default defineType({
     defineField({
       name: "coverImage",
       title: "Cover Image",
-      description: "Mandatory!",
+      description:"Mandatory!",
       type: "image",
       options: {
         hotspot: true,
@@ -120,8 +120,8 @@ export default defineType({
     defineField({
       name: "categories",
       title: "Categories",
-      type: "reference",
-      to: { type: "category" },
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
     }),
     defineField({
       name: "tags",
