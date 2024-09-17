@@ -68,17 +68,6 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type Category = {
-  _id: string;
-  _type: "category";
-  _createdAt: string;
-  _updatedAt: string;
-  _rev: string;
-  title?: string;
-  slug?: Slug;
-  meta_description?: string;
-};
-
 export type Tags = {
   _id: string;
   _type: "tags";
@@ -148,13 +137,12 @@ export type Post = {
     _weak?: boolean;
     [internalGroqTypeReferenceTo]?: "author";
   };
-  categories?: Array<{
+  categories?: {
     _ref: string;
     _type: "reference";
     _weak?: boolean;
-    _key: string;
     [internalGroqTypeReferenceTo]?: "category";
-  }>;
+  };
   tags?: Array<{
     _ref: string;
     _type: "reference";
@@ -163,6 +151,17 @@ export type Post = {
     [internalGroqTypeReferenceTo]?: "tags";
   }>;
   seo?: SeoMetaFields;
+};
+
+export type Category = {
+  _id: string;
+  _type: "category";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  meta_description?: string;
 };
 
 export type Author = {
@@ -198,6 +197,13 @@ export type Settings = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  featuredPost?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "post";
+  }>;
   title?: string;
   description?: Array<{
     children?: Array<{
@@ -383,7 +389,7 @@ export type SanityImageMetadata = {
   isOpaque?: boolean;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Category | Tags | Post | Author | Slug | Settings | MetaTag | MetaAttribute | SeoMetaFields | Twitter | OpenGraph | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Tags | Post | Category | Author | Slug | Settings | MetaTag | MetaAttribute | SeoMetaFields | Twitter | OpenGraph | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata;
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: settingsQuery
@@ -394,6 +400,13 @@ export type SettingsQueryResult = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
+  featuredPost?: Array<{
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    _key: string;
+    [internalGroqTypeReferenceTo]?: "post";
+  }>;
   title?: string;
   description?: Array<{
     children?: Array<{

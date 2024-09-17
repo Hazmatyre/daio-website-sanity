@@ -10,6 +10,13 @@ export default defineType({
   icon: CogIcon,
   fields: [
     defineField({
+      name: "featuredPost",
+      description: "The first post to be featured on the homepage",
+      title: "Featured Post",
+      type: "array",
+      of: [{ type: "reference", to: { type: "post" } }],
+    }),
+    defineField({
       name: "title",
       description: "This field is the title of your blog.",
       title: "Title",

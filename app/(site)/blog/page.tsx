@@ -16,7 +16,18 @@ import { cn } from "@/lib/utils";
 import { BlogHeader1 } from "@/components/blocks/blog/BlogHeader1";
 import { useSearchParams } from 'next/navigation';
 
-export default async function Page() {
+export default async function Page({
+  searchParams,
+}: {
+  searchParams?: {
+    query?: string;
+    page?: string;
+  };
+}) {
+
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 1;
+
   const [settings, heroPost, posts] = await Promise.all([
     sanityFetch<SettingsQueryResult>({
       query: settingsQuery,
