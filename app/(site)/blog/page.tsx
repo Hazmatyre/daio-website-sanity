@@ -15,7 +15,7 @@ import { sanityFetch } from "@/sanity/lib/fetch";
 import { categoriesQuery, heroQuery, postsQuery, settingsQuery } from "@/sanity/lib/queries";
 import { cn } from "@/lib/utils";
 import { Blog7 } from "@/components/blocks/blog/Blog7";
-import { useSearchParams } from 'next/navigation';
+import { notFound, useSearchParams } from 'next/navigation';
 import { urlForImage } from '@/sanity/lib/utils';
 import imgPlaceholder from "/images/placeholder.png"
 import { Blog7List } from "@/components/blocks/blog/Blog7.List";
@@ -45,8 +45,13 @@ export default async function Page({
 
   // Pagination
   const query = searchParams?.query || '';
+  const postsPerPage = 6
   const currentPage = Number(searchParams?.page) || 1;
-  const pages = Math.ceil(posts.length / 6)
+  console.log("page: " + currentPage)
+  const pages = Math.ceil(posts.length / postsPerPage)
+  if ((currentPage > pages) || (currentPage < 1)) {
+    return notFound()
+  }
 
   // Featured post
   const post = settings?.featuredPost
@@ -76,6 +81,8 @@ export default async function Page({
   };
 
   // Posts
+  const startIndex = (currentPage - 1) * postsPerPage
+  const endIndex = startIndex + postsPerPage
   const Blog7ListProps = posts.map((post) => {
     return {
       image: <Image className="size-full object-cover" src={urlForImage(post?.coverImage)?.url() || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
@@ -94,6 +101,7 @@ export default async function Page({
       tags: post?.tags,
     }
   })
+    .slice(startIndex, endIndex)
 
   return (
     <>

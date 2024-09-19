@@ -38,24 +38,53 @@ export const Blog7List = (props: BlogListProps) => {
         </div>
       </div>
       {/* // ? PAGINATION */}
-      <Pagination className=" mt-5 md:mt-8 sticky bottom-5 bg-brand-50 border border-border p-1 rounded-lg drop-shadow-2xl w-fit text-brand-900">
+      <Pagination className=" mt-5 md:mt-8 sticky bottom-5 bg-brand-50 border border-border p-1 rounded-lg drop-shadow-2xl w-fit">
         <PaginationContent>
-          <PaginationItem>
-            <PaginationPrevious href="#blog-list" />
-          </PaginationItem>
+
+          {/* //* PREVIOUS BUTTON */}
+          {/* if at start, disable. */}
+          {currentPage > 1 &&
+            <PaginationItem>
+              <PaginationPrevious
+                isActive={currentPage > 1}
+                href={"?page=" + (currentPage - 1) + "#blog-list"}
+                className=""
+              />
+            </PaginationItem>
+          }
 
           {/* // * PREVIOUS PAGE */}
           {/* what happens if we're at the start? */}
           {/* we shouldn't display this. */}
           {currentPage > 1 &&
             <PaginationItem>
-              <PaginationLink href="#">{currentPage - 1}</PaginationLink>
+              <PaginationLink
+                href={"?page=" + (currentPage - 1) + "#blog-list"}
+              >
+                {currentPage - 1}
+              </PaginationLink>
+            </PaginationItem>
+          }
+
+          {/* what happens if we're at the end? */}
+          {/* we should display one more page */}
+          {/* we shouldn't display this. */}
+          {currentPage > 1 && currentPage + 1 <= pages &&
+            <PaginationItem>
+              <PaginationLink
+                href={"?page=" + (currentPage - 1) + "#blog-list"}
+              >
+                {currentPage - 1}
+              </PaginationLink>
             </PaginationItem>
           }
 
           {/* // * CURRENT PAGE */}
           <PaginationItem>
-            <PaginationLink href="#" isActive>
+            <PaginationLink
+              href={"?page=" + (currentPage) + "#blog-list"}
+              isActive
+            >
               {currentPage}
             </PaginationLink>
           </PaginationItem>
@@ -66,7 +95,11 @@ export const Blog7List = (props: BlogListProps) => {
           {/* do no display if we hit the cap */}
           {currentPage + 1 <= pages &&
             <PaginationItem>
-              <PaginationLink href="#">{currentPage + 1}</PaginationLink>
+              <PaginationLink
+                href={"?page=" + (currentPage + 1) + "#blog-list"}
+              >
+                {currentPage + 1}
+              </PaginationLink>
             </PaginationItem>
           }
 
@@ -75,13 +108,22 @@ export const Blog7List = (props: BlogListProps) => {
           {/* do not display if we've hit the cap */}
           {(currentPage === 1) && (currentPage + 2 <= pages) &&
             <PaginationItem>
-              <PaginationLink href="#">{currentPage + 2}</PaginationLink>
+              <PaginationLink href="#">
+                {currentPage + 2}
+              </PaginationLink>
             </PaginationItem>
           }
 
-          <PaginationItem>
-            <PaginationNext href="#blog-list" />
-          </PaginationItem>
+          {/* //* NEXT BUTTON */}
+          {currentPage + 1 <= pages &&
+            <PaginationItem>
+              <PaginationNext
+                isActive={currentPage + 1 <= pages}
+                href={"?page=" + (currentPage + 1) + "#blog-list"}
+                className=""
+              />
+            </PaginationItem>
+          }
 
         </PaginationContent>
       </Pagination>
