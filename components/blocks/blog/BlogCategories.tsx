@@ -1,3 +1,4 @@
+"use client"
 import { Button } from "@/components/ui/button";
 import type { ButtonProps } from "@relume_io/relume-ui";
 import Image from "next/image";
@@ -14,43 +15,37 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 
 
 type Props = {
-  posts: React.ComponentPropsWithoutRef<typeof BlogCard>[]
+  categories?: Array<{
+    title: string | null;
+    slug: Slug | null;
+  }> | null;
+  activeSlug: string | null
 };
 
 export type BlogCategoriesProps = React.ComponentPropsWithoutRef<"div"> & Partial<Props>;
 
 export const BlogCategories = (props: BlogCategoriesProps) => {
-  const { posts } = {
+  const { categories, activeSlug } = {
     ...BlogListDefaults,
     ...props,
   };
+
+  console.log(categories)
+
   return (
     <div className="px-[5%] md:px-16 overflow-x-visible">
       <div className="container">
         <NavigationMenu className="!justify-start overflow-x-scroll py-2" >
-          {/* // ? CATEGORY SELECTOR */}
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink active className={navigationMenuTriggerStyle()}>
-                  All News
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Newsroom
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/about" legacyBehavior passHref>
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Stories
-                </NavigationMenuLink>
-              </Link>
-            </NavigationMenuItem>
+            {categories?.map((category, index) => (
+              <NavigationMenuItem key={index}>
+                <Link href="/about" legacyBehavior passHref>
+                  <NavigationMenuLink active={activeSlug === category.slug} className={navigationMenuTriggerStyle()}>
+                    <span className="type-regular">{category.title}</span>
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
           </NavigationMenuList>
         </NavigationMenu>
       </div>
@@ -59,7 +54,13 @@ export const BlogCategories = (props: BlogCategoriesProps) => {
 };
 
 export const BlogListDefaults: BlogCategoriesProps = {
-
+  categories: [
+    {
+      title: "All News",
+      slug: { _type: "slug", current: "blog/all-news" }
+    }
+  ],
+  activeSlug: undefined
 };
 
 

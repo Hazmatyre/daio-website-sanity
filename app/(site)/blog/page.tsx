@@ -57,7 +57,7 @@ export default async function Page({
     heading: settings?.title,
     description: settings?.description,
     post: {
-      image: <Image className="size-full" src={coverImageUrl || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
+      image: <Image priority className="size-full" src={coverImageUrl || imgPlaceholder} alt={post?.coverImage?.alt || ""} fill />,
       category: post?.categories?.at(0),
       title: post?.title || "Learn More",
       slug: post?.slug || "",
@@ -97,7 +97,7 @@ export default async function Page({
   return (
     <>
       <Blog7 {...Blog7Props} />
-      <BlogCategories />
+      <BlogCategories categories={categories} />
       <Blog7List posts={Blog7ListProps} />
     </>
   );

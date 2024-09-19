@@ -52,7 +52,7 @@ export const postsQuery = groq`*[_type == "post"]
   ${seo}
 }`;
 
-export const categoriesQuery = groq`*[_type == "post"] 
+export const categoriesQuery = groq`*[_type == "category"] 
 | order(date desc, _updatedAt desc) {
   title,
   slug,
