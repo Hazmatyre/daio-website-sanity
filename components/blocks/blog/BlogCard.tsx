@@ -52,31 +52,32 @@ export const BlogCard = (props: BlogCardProps) => {
           {post.image}
         </Link>
         {/* // * CONTENT */}
-        <div className="py-7 px-[5%] @md:py-10 @md:px-10 basis-1/2 flex flex-col gap-y-6">
+        <div className="py-7 px-[5%] @md:py-10 @md:px-10 @xl:basis-1/2 flex flex-col gap-y-6 h-full @xl:h-auto">
 
           {/* //* CATEGORY + TITLE + EXCERPT */}
           <div>
             {post.category ?
               <Link className="" href={"blog/category/" + post.category.slug?.current}>
-                <p className="">{post.category.title}</p>
+                <p className="type-small font-semibold">{post.category.title}</p>
               </Link>
               :
-              <div></div>
+              <p className="h-6"></p>
             }
-            <Link href={"blog/" + post.slug}>
-              <h2 className="mt-2">{post.title}</h2>
+            <Link href={"/blog/" + post.slug}>
+              <h2 className="mt-2 type-mobile-h4 md:type-desktop-h4">{post.title}</h2>
             </Link>
-            <p className="line-clamp-3 @xl:line-clamp-6 mt-2 @5xl:line-clamp-[10]">{post.excerpt}</p>
+            <p className="line-clamp-3 @xl:line-clamp-6 mt-2 @5xl:line-clamp-[10] type-regular">{post.excerpt}</p>
+            <Link className="mt-2 block font-semibold underline type-regular" href={"/blog/" + post.slug}>Read more</Link>
           </div>
 
           {/* //* AUTHOR + DATE + TAGS */}
-          <div className="flex mt-auto">
+          <div className="flex mt-auto gap-x-4">
             {post.author && <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
               {post.author?.image}
             </div>}
             <div>
-              <div>{post.author?.name}</div>
-              <p>{postDate}</p>
+              <div className="type-small font-semibold">{post.author?.name}</div>
+              <p className="type-regular">{postDate}</p>
             </div>
             {/* {post.tags &&
               <div className="basis-full">
