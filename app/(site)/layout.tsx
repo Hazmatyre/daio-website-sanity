@@ -44,24 +44,24 @@ export async function generateMetadata(): Promise<Metadata> {
   const description = settings?.description || demo.description;
   
 
-  const ogImage = resolveOpenGraphImage(settings?.ogImage);
+  // const ogImage = resolveOpenGraphImage(settings?.ogImage);
   let metadataBase: URL | undefined = undefined;
-  try {
-    metadataBase = settings?.ogImage?.metadataBase
-      ? new URL(settings.ogImage.metadataBase)
-      : undefined;
-  } catch {
-    // ignore
-  }
+  // try {
+  //   metadataBase = settings?.ogImage?.metadataBase
+  //     ? new URL(settings.ogImage.metadataBase)
+  //     : undefined;
+  // } catch {
+  //   // ignore
+  // }
   return {
     metadataBase,
     title: {
       template: `%s | ${title}`,
       default: title,
     },
-    description: toPlainText(description),
+    // description: toPlainText(description),
     openGraph: {
-      images: ogImage ? [ogImage] : [],
+      // images: ogImage ? [ogImage] : [],
     },
   };
 }
@@ -77,20 +77,6 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
 });
-
-async function Footer() {
-  const data = await sanityFetch<SettingsQueryResult>({
-    query: settingsQuery,
-  });
-  const footer = data?.footer || [];
-
-  return (
-    <footer className="bg-accent-1 border-accent-2 border-t">
-      This is the footer.
-      <Button>Wow!</Button>
-    </footer>
-  );
-}
 
 export default function RootLayout({
   children,

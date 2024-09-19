@@ -24,16 +24,16 @@ export const Blog7 = (props: Blog7Props) => {
     ...props,
   } as Props;
   return (
-    <section className={cn("px-[5%] md:px-16 py-16 md:py-24 lg:py-28")}>
+    <section className={cn("px-[5%] md:px-16 pt-16 md:pt-24 lg:pt-28 pb-12 md:pb-20")}>
       <div className="container">
         {/* header */}
         <div>
-          <p>{subtitle}</p>
-          <h1>{heading}</h1>
-          <p>{description}</p>
+          <p className="type-regular font-semibold">{subtitle}</p>
+          <h1 className="type-mobile-h1 md:type-desktop-h1 mt-3 md:mt-4">{heading}</h1>
+          <p className="type-regular md:type-medium mt-5 md:mt-6">{description}</p>
         </div>
         {/* card */}
-        <BlogCard {...post} />
+        <BlogCard className="mt-12 md:mt-20" {...post} />
       </div>
     </section>
   );

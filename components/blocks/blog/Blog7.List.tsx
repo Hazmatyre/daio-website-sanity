@@ -25,7 +25,7 @@ export const Blog7List = (props: BlogListProps) => {
     ...props,
   };
   return (
-    <section id="blog-list" className={cn("px-[5%] md:px-16 pt-12 pb-16 md:pt-16 md:pb-24 lg:py-28 relative")}>
+    <section id="blog-list" className={cn("px-[5%] md:px-16 pt-10 pb-16 md:pt-14 md:pb-24 lg:py-28 relative")}>
       <div className="container">
         {/* // ? LIST */}
         <div className="gap-y-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-x-5 md:gap-y-12 xl:gap-x-8 xl:gap-y-16">
@@ -35,7 +35,7 @@ export const Blog7List = (props: BlogListProps) => {
         </div>
       </div>
       {/* // ? PAGINATION */}
-      <Pagination className=" mt-5 md:mt-8 sticky bottom-5 bg-background border border-border p-1 rounded-lg drop-shadow-2xl w-fit">
+      <Pagination className=" mt-5 md:mt-8 sticky bottom-5 bg-brand-50 border border-border p-1 rounded-lg drop-shadow-2xl w-fit text-brand-900">
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious href="#" />
@@ -50,9 +50,6 @@ export const Blog7List = (props: BlogListProps) => {
           </PaginationItem>
           <PaginationItem>
             <PaginationLink href="#">3</PaginationLink>
-          </PaginationItem>
-          <PaginationItem>
-            <PaginationEllipsis />
           </PaginationItem>
           <PaginationItem>
             <PaginationNext href="#" />

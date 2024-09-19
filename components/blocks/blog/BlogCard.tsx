@@ -36,39 +36,47 @@ export const BlogCard = (props: BlogCardProps) => {
     ...BlogCardDefaults,
     ...props,
   };
+
+  const postDate = new Intl.DateTimeFormat('en-GB', {
+    day: "numeric",
+    month: "short",
+    year: "numeric"
+  }
+  ).format(Date.parse(post.date || ""))
+
   return (
     <div className={cn("@container overflow-hidden shadow-xxlarge rounded-lg bg-white border border-border", post.className)}>
-      <div className="size-full  flex flex-col  @2xl:flex-row">
+      <div className="size-full  flex flex-col  @xl:flex-row">
         {/* // * IMAGE */}
-        <Link href={"blog/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @2xl:basis-1/2">
+        <Link href={"blog/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @xl:basis-1/2">
           {post.image}
         </Link>
         {/* // * CONTENT */}
-        <div className="py-7 px-[5%] @md:py-10 @md:px-10 basis-1/2 flex flex-col">
+        <div className="py-7 px-[5%] @md:py-10 @md:px-10 basis-1/2 flex flex-col gap-y-6">
 
           {/* //* CATEGORY + TITLE + EXCERPT */}
           <div>
             {post.category ?
               <Link className="" href={"blog/category/" + post.category.slug?.current}>
-                <p>{post.category.title}</p>
+                <p className="">{post.category.title}</p>
               </Link>
               :
               <div></div>
             }
             <Link href={"blog/" + post.slug}>
-              <h2>{post.title}</h2>
+              <h2 className="mt-2">{post.title}</h2>
             </Link>
-            <p className="line-clamp-3 @2xl:line-clamp-6">{post.excerpt}</p>
+            <p className="line-clamp-3 @xl:line-clamp-6 mt-2 @5xl:line-clamp-[10]">{post.excerpt}</p>
           </div>
 
           {/* //* AUTHOR + DATE + TAGS */}
-          <div className="flex flex-wrap mt-auto">
-            <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
+          <div className="flex mt-auto">
+            {post.author && <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
               {post.author?.image}
-            </div>
+            </div>}
             <div>
               <div>{post.author?.name}</div>
-              <p>{post.date}</p>
+              <p>{postDate}</p>
             </div>
             {/* {post.tags &&
               <div className="basis-full">

@@ -27,7 +27,7 @@ export const BlogCategories = (props: BlogCategoriesProps) => {
   return (
     <div className="px-[5%] md:px-16 overflow-x-visible">
       <div className="container">
-        <NavigationMenu className="!justify-start overflow-x-scroll" >
+        <NavigationMenu className="!justify-start overflow-x-scroll py-2" >
           {/* // ? CATEGORY SELECTOR */}
           <NavigationMenuList>
             <NavigationMenuItem>
