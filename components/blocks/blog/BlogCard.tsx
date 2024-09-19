@@ -48,7 +48,7 @@ export const BlogCard = (props: BlogCardProps) => {
     <div className={cn("@container overflow-hidden shadow-xxlarge rounded-lg bg-white border border-border", post.className)}>
       <div className="size-full  flex flex-col  @xl:flex-row">
         {/* // * IMAGE */}
-        <Link href={"blog/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @xl:basis-1/2">
+        <Link href={"/blog/post/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @xl:basis-1/2">
           {post.image}
         </Link>
         {/* // * CONTENT */}
@@ -63,11 +63,11 @@ export const BlogCard = (props: BlogCardProps) => {
               :
               <p className="h-6"></p>
             }
-            <Link href={"/blog/" + post.slug}>
+            <Link href={"/blog/post/" + post.slug}>
               <h2 className="mt-2 type-mobile-h4 md:type-desktop-h4">{post.title}</h2>
             </Link>
             <p className="line-clamp-3 @xl:line-clamp-6 mt-2 @5xl:line-clamp-[10] type-regular">{post.excerpt}</p>
-            <Link className="mt-2 block font-semibold underline type-regular" href={"/blog/" + post.slug}>Read more</Link>
+            <Link className="mt-2 block font-semibold underline type-regular" href={"/blog/post/" + post.slug}>Read more</Link>
           </div>
 
           {/* //* AUTHOR + DATE + TAGS */}
