@@ -30,10 +30,6 @@ export default async function Page({
   };
 }) {
 
-  // Pagination
-  const query = searchParams?.query || '';
-  const currentPage = Number(searchParams?.page) || 1;
-
   //Fetched data
   const [settings, posts, categories] = await Promise.all([
     sanityFetch<SettingsQueryResult>({
@@ -46,6 +42,11 @@ export default async function Page({
       query: categoriesQuery
     }),
   ]);
+
+  // Pagination
+  const query = searchParams?.query || '';
+  const currentPage = Number(searchParams?.page) || 1;
+  const pages = Math.ceil(posts.length / 6)
 
   // Featured post
   const post = settings?.featuredPost
@@ -98,7 +99,11 @@ export default async function Page({
     <>
       <Blog7 {...Blog7Props} />
       <BlogCategories categories={categories} />
-      <Blog7List posts={Blog7ListProps} />
+      <Blog7List
+        posts={Blog7ListProps}
+        currentPage={currentPage}
+        pages={pages}
+      />
     </>
   );
 }

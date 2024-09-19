@@ -53,7 +53,9 @@ export const postsQuery = groq`*[_type == "post"]
 }`;
 
 export const categoriesQuery = groq`*[_type == "category"] 
-| order(date desc, _updatedAt desc) {
+| order(category_order desc, date desc) {
   title,
   slug,
+  meta_description,
+  catergory_order
 }`;
