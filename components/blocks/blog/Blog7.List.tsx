@@ -25,7 +25,7 @@ export const Blog7List = (props: BlogListProps) => {
     ...props,
   };
   return (
-    <section id="blog-list" className={cn("px-[5%] md:px-16 pt-10 pb-16 md:pt-14 md:pb-24 lg:py-28 relative")}>
+    <section id="blog-list" className={cn("px-[5%] md:px-16 pt-10 pb-16 md:pt-14 md:pb-24 lg:pt-14 lg:pb-28 relative")}>
       <div className="container">
         {/* // ? LIST */}
         <div className="gap-y-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-x-5 md:gap-y-12 xl:gap-x-8 xl:gap-y-16">
