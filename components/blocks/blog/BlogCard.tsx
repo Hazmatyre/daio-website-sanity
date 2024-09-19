@@ -37,16 +37,16 @@ export const BlogCard = (props: BlogCardProps) => {
     ...props,
   };
   return (
-    <div className={cn("@container", post.className)}>
-      <div className="size-full rounded-lg bg-white border border-border flex flex-col overflow-hidden @2xl:flex-row">
+    <div className={cn("@container overflow-hidden shadow-xxlarge rounded-lg bg-white border border-border", post.className)}>
+      <div className="size-full  flex flex-col  @2xl:flex-row">
         {/* // * IMAGE */}
-        <Link href={"blog/" + post.slug} className="relative aspect-video block shrink-0 grow-0 basis-1/2 @2xl:aspect-[656/500]">
+        <Link href={"blog/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @2xl:basis-1/2">
           {post.image}
         </Link>
         {/* // * CONTENT */}
         <div className="py-7 px-[5%] @md:py-10 @md:px-10 basis-1/2 flex flex-col">
 
-        {/* //* CATEGORY + TITLE + EXCERPT */}
+          {/* //* CATEGORY + TITLE + EXCERPT */}
           <div>
             {post.category ?
               <Link className="" href={"blog/category/" + post.category.slug?.current}>

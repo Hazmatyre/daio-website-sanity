@@ -45,7 +45,7 @@ export const Navbar3 = (props: Navbar3Props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <nav className="flex items-center justify-between border-b-0 border-border-primary bg-background-primary px-[5%] min-h-20 basis-0 grow">
+    <nav className="flex items-center justify-between border-b-0 border-border-primary bg-background-primary px-[5%] md:px-16 min-h-20 basis-0 grow">
       <Sheet open={open} onOpenChange={setOpen}>
         <SheetTrigger asChild className="md:hidden">
           <div className="basis-0 grow md:basis-auto md:grow-0">

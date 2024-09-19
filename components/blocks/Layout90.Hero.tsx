@@ -28,7 +28,7 @@ export const Layout90 = (props: Layout90Props) => {
     ...props,
   };
   return (
-    <section id={props.id} className={cn("px-[5%] py-16 md:pb-24 lg:pb-28", className)}>
+    <section id={props.id} className={cn("px-[5%] md:px-16 py-16 md:pb-24 lg:pb-28", className)}>
       <div className="container grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
         <div className=" flex md:items-start flex-col w-fit md:ml-auto">
           {subtitle &&

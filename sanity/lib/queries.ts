@@ -52,9 +52,8 @@ export const postsQuery = groq`*[_type == "post"]
   ${seo}
 }`;
 
-// Featured Post
-// export const featuredPostQuery = groq`
-// *[_type == "post" && slug.current == $slug] [0] {
-
-// }
-// `
+export const categoriesQuery = groq`*[_type == "post"] 
+| order(date desc, _updatedAt desc) {
+  title,
+  slug,
+}`;

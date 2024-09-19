@@ -59,7 +59,7 @@ export const Gallery17 = (props: Gallery17Props) => {
 
   return (
     <section className="">
-      <div className={cn("px-[5%] pt-14 md:pt-16 lg:pt-16 xl:pt-28", topSectionClassName)}>
+      <div className={cn("px-[5%] md:px-16 pt-14 md:pt-16 lg:pt-16 xl:pt-28", topSectionClassName)}>
         <div className="container">
           <div className=" text-left flex flex-col items-start">
             {heading && (headingTag === "h1"

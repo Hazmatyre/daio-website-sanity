@@ -24,7 +24,7 @@ export const Blog7 = (props: Blog7Props) => {
     ...props,
   } as Props;
   return (
-    <section className={cn("px-[5%] py-16 md:py-24 lg:py-28")}>
+    <section className={cn("px-[5%] md:px-16 py-16 md:py-24 lg:py-28")}>
       <div className="container">
         {/* header */}
         <div>

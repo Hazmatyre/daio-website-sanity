@@ -746,6 +746,12 @@ export type PostsQueryResult = Array<{
     }> | null;
   } | null;
 }>;
+// Variable: categoriesQuery
+// Query: *[_type == "post"] | order(date desc, _updatedAt desc) {  title,  slug,}
+export type CategoriesQueryResult = Array<{
+  title: string | null;
+  slug: Slug | null;
+}>;
 
 // Source: ./app/(site)/blog/[slug]/page.tsx
 // Variable: postSlugs
@@ -763,6 +769,7 @@ declare module "@sanity/client" {
     "*[_type == \"post\" && _id != $skip && defined(slug.current)] | order(date desc, _updatedAt desc) [0...$limit] {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n  \"categories\": categories[]-> {title,slug},\n  \"tags\": tags[]-> {title,slug},\n\n}": MoreStoriesQueryResult;
     "*[_type == \"post\" && slug.current == $slug] [0] {\n  content,\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n  \"categories\": categories[]-> {title,slug},\n  \"tags\": tags[]-> {title,slug},\n\n}": PostQueryResult;
     "*[_type == \"post\"] \n| order(date desc, _updatedAt desc) {\n  \n  _id,\n  \"status\": select(_originalId in path(\"drafts.**\") => \"draft\", \"published\"),\n  \"title\": coalesce(title, \"Untitled\"),\n  \"slug\": slug.current,\n  excerpt,\n  coverImage,\n  \"date\": coalesce(date, _updatedAt),\n  \"author\": author->{\"name\": coalesce(name, \"Anonymous\"), picture},\n  \"categories\": categories[]-> {title,slug},\n  \"tags\": tags[]-> {title,slug},\n\n  seo{\n    \n  _type,\n  metaTitle,\n  nofollowAttributes,\n  seoKeywords,\n  metaDescription,\n  openGraph{\n  \n  _type,\n  siteName,\n  url,\n  description,\n  title,\n  image{\n  \n  _type,\n  crop{\n  _type,\n  right,\n  top,\n  left,\n  bottom\n  },\n  hotspot{\n  _type,\n  x,\n  y,\n  height,\n  width,\n  },\n  asset->{...}\n  \n  }\n  \n  },\n  twitter{\n  \n  _type,\n  site,\n  creator,\n  cardType,\n  handle\n  \n  },\n  additionalMetaTags[]{\n  _type,\n  metaAttributes[]{\n  \n  _type,\n  attributeValueString,\n  attributeType,\n  attributeKey,\n  attributeValueImage{\n  \n  _type,\n  crop{\n  _type,\n  right,\n  top,\n  left,\n  bottom\n  },\n  hotspot{\n  _type,\n  x,\n  y,\n  height,\n  width,\n  },\n  asset->{...}\n  \n  }\n  \n  }\n  }\n  \n    }\n}": PostsQueryResult;
+    "*[_type == \"post\"] \n| order(date desc, _updatedAt desc) {\n  title,\n  slug,\n}": CategoriesQueryResult;
     "*[_type == \"post\"]{slug}": PostSlugsResult;
   }
 }

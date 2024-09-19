@@ -10,6 +10,7 @@ import { Slug } from "@/sanity.types";
 import { BlogCard } from "./BlogCard";
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 
 type Props = {
@@ -24,26 +25,17 @@ export const Blog7List = (props: BlogListProps) => {
     ...props,
   };
   return (
-    <section id="blog-list" className={cn("px-[5%] py-16 md:py-24 lg:py-28")}>
+    <section id="blog-list" className={cn("px-[5%] md:px-16 pt-12 pb-16 md:pt-16 md:pb-24 lg:py-28 relative")}>
       <div className="container">
-        {/* // ? CATEGORY SELECTOR */}
-        <Tabs defaultValue="account" className="w-[400px]">
-          <TabsList>
-            <TabsTrigger value="account">Account</TabsTrigger>
-            <TabsTrigger value="password">Password</TabsTrigger>
-          </TabsList>
-          <TabsContent value="account">Make changes to your account here.</TabsContent>
-          <TabsContent value="password">Change your password here.</TabsContent>
-        </Tabs>
         {/* // ? LIST */}
-        <div className="md:grid grid-cols-2 lg:grid-cols-3 md:gap-4">
+        <div className="gap-y-8 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 md:gap-x-5 md:gap-y-12 xl:gap-x-8 xl:gap-y-16">
           {posts?.map((post, index) => {
             return <BlogCard key={index} {...post}></BlogCard>
           })}
         </div>
       </div>
       {/* // ? PAGINATION */}
-      <Pagination>
+      <Pagination className=" mt-5 md:mt-8 sticky bottom-5 bg-background border border-border p-1 rounded-lg drop-shadow-2xl w-fit">
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious href="#" />

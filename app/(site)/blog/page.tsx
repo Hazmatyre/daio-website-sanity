@@ -9,16 +9,17 @@ import Onboarding from "../onboarding";
 import PortableText from "../portable-text";
 import Image from "next/image";
 
-import { internalGroqTypeReferenceTo, type HeroQueryResult, type PostsQueryResult, type SettingsQueryResult } from "@/sanity.types";
+import { CategoriesQueryResult, internalGroqTypeReferenceTo, type HeroQueryResult, type PostsQueryResult, type SettingsQueryResult } from "@/sanity.types";
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
-import { heroQuery, postsQuery, settingsQuery } from "@/sanity/lib/queries";
+import { categoriesQuery, heroQuery, postsQuery, settingsQuery } from "@/sanity/lib/queries";
 import { cn } from "@/lib/utils";
 import { Blog7 } from "@/components/blocks/blog/Blog7";
 import { useSearchParams } from 'next/navigation';
 import { urlForImage } from '@/sanity/lib/utils';
 import imgPlaceholder from "/images/placeholder.png"
 import { Blog7List } from "@/components/blocks/blog/Blog7.List";
+import { BlogCategories } from "@/components/blocks/blog/BlogCategories";
 
 export default async function Page({
   searchParams,
@@ -34,15 +35,15 @@ export default async function Page({
   const currentPage = Number(searchParams?.page) || 1;
 
   //Fetched data
-  const [settings, heroPost, posts] = await Promise.all([
+  const [settings, posts, categories] = await Promise.all([
     sanityFetch<SettingsQueryResult>({
       query: settingsQuery,
     }),
-    sanityFetch<HeroQueryResult>({
-      query: heroQuery
-    }),
     sanityFetch<PostsQueryResult>({
       query: postsQuery
+    }),
+    sanityFetch<CategoriesQueryResult>({
+      query: categoriesQuery
     }),
   ]);
 
@@ -96,7 +97,8 @@ export default async function Page({
   return (
     <>
       <Blog7 {...Blog7Props} />
-      <Blog7List posts={Blog7ListProps}/>
+      <BlogCategories />
+      <Blog7List posts={Blog7ListProps} />
     </>
   );
 }
