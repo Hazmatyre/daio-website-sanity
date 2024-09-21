@@ -28,8 +28,8 @@ import { Navbar3 } from "@/components/blocks/navbar3";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#FFFDF5' },
-    { media: '(prefers-color-scheme: dark)', color: '#FFFDF5' },
+    { media: '(prefers-color-scheme: light)', color: '#00663a' },
+    { media: '(prefers-color-scheme: dark)', color: '#00663a' },
   ],
 }
 

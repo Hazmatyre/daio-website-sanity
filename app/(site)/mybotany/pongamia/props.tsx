@@ -14,6 +14,8 @@ import img10 from "/images/mybotany-pongamia/img10.webp"
 import { Gallery17 } from "@/components/blocks/Gallery17.Images";
 
 
+// const fujiSizes = "(max-width: 768px) 64vw, (max-width: 1000px) 31vw, (max-width: 1280px) 100%, (max-width: 1440px) 100%, (max-width: 1920px) 100%, 100%"
+
 const fujiSizes = "80vw, (min-width: 767px) 55vw, (min-width: 1000px) 42vw, (min-width: 1279px) 33vw, (min-width: 1439px) 30vw, (min-width: 1919px) 22vw"
 
 const fujiSizesPortrait = "64vw, (min-width: 767px) 31vw, (min-width: 1000px) 23vw, (min-width: 1279px) 19vw, (min-width: 1439px) 16vw, (min-width: 1919px) 12vw"
@@ -93,7 +95,7 @@ export const Props_Pongamia_Gallery17: React.ComponentProps<typeof Gallery17> = 
   slides: images.map((img, index) => ({
     cardContent:
       // eslint-disable-next-line jsx-a11y/alt-text
-      <div className=" h-80">
+      <div className="h-80 md:aspect-video">
         <Image
           key={index}
           className="size-full object-cover rounded-lg shadow-xxlarge"
