@@ -17,7 +17,7 @@ export const Layout48 = (props: Layout48Props) => {
     ...props,
   } as Props;
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28 text-brand-900 bg-primary">
+    <section className="px-[5%] md:px-16 py-16 md:py-24 lg:py-28 text-brand-900 bg-primary">
       <div className="container grid grid-cols-1 items-start justify-between gap-5 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
         {heading}
         <div>

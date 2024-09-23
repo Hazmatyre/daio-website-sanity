@@ -9,12 +9,14 @@
  */
 
 import {
+  CreateDataAttribute,
   PortableText,
   type PortableTextComponents,
   type PortableTextBlock,
 } from "next-sanity";
 import Image from "next/image";
 import { urlForImage } from "@/sanity/lib/utils";
+
 
 
 export default function CustomPortableText({
@@ -24,23 +26,25 @@ export default function CustomPortableText({
   className?: string;
   value: PortableTextBlock[];
 }) {
-// console.warn(value)
 
   const components: PortableTextComponents = {
     types: {
-      image: ({value, isInline}) => {
+      image: ({ value, isInline, renderNode }) => {
+        console.log(value)
+        // console.log("WOWWOWOWOOWOWOOWW======")
+        // console.log(urlForImage(value)?.height(1000).width(2000).url())
 
-        console.log("WOWWOWOWOOWOWOOWW======")
-        console.log(urlForImage(value)?.height(1000).width(2000).url())
         return (
-          <div className="max-h-96 h-96 w-full relative max-w-full">
+          <div
+            className="w-full h-fit relative max-w-full"
+            // data-sanity-edit-target
+          >
             <Image
-              className="h-auto w-full"
-              width={2000}
-              height={1000}
+              className="!relative"
               alt={value?.alt || ""}
               src={urlForImage(value)?.height(1000).width(2000).url() as string}
               sizes="100vw"
+              fill
             />
           </div>
         )
@@ -52,6 +56,11 @@ export default function CustomPortableText({
       ),
       h6: ({ children }) => (
         <h6 className="mb-1 text-xs font-semibold">{children}</h6>
+      ),
+      image: ({ children }) => (
+        <div>
+          <h1>test</h1>
+        </div>
       ),
     },
     marks: {

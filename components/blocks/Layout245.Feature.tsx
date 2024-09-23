@@ -39,7 +39,7 @@ export const Layout245 = (props: Layout245Props) => {
     buttons = [],
   } = { ...props, ...Layout245Defaults };
   return (
-    <section className={cn("px-[5%] py-16 md:py-24 lg:py-28", props.className)}>
+    <section className={cn("px-[5%] md:px-16 py-16 md:py-24 lg:py-28", props.className)}>
       <div className="container flex flex-col items-start">
         <div className="mb-12 grid grid-cols-1 items-start justify-between gap-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20">
           <div>

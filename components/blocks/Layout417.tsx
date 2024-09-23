@@ -52,7 +52,7 @@ export const Layout417 = (props: Layout417Props) => {
       )}
     >
       <div className="container relative h-[300svh] lg:h-[300vh]">
-        <div className="sticky top-0 grid h-[100svh] grid-cols-1 content-center items-center justify-center px-[5%] md:flex md:content-normal md:px-0 lg:h-screen">
+        <div className="sticky top-0 grid h-[100svh] grid-cols-1 content-center items-center justify-center px-[5%] md:px-16 md:flex md:content-normal md:px-0 lg:h-screen">
           <div className="absolute bottom-auto left-0 right-0 top-0 flex w-full justify-center overflow-hidden pt-8 md:inset-auto md:pt-0">
             <h2 className="text-5xl font-bold sm:text-8xl md:text-[7.5rem] lg:text-[10rem] text-brand-naplesYellow type-desktop-h1 text-center">
               {heading}

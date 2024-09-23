@@ -28,7 +28,7 @@ export const Layout90 = (props: Layout90Props) => {
     ...props,
   };
   return (
-    <section id={props.id} className={cn("px-[5%] py-16 md:pb-24 lg:pb-28", className)}>
+    <section id={props.id} className={cn("px-[5%] md:px-16 py-16 md:pb-24 lg:pb-28", className)}>
       <div className="container grid grid-cols-1 items-start justify-between gap-x-12 gap-y-8 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:gap-x-20">
         <div className=" flex md:items-start flex-col w-fit md:ml-auto">
           {subtitle &&
@@ -54,8 +54,8 @@ export const Layout90 = (props: Layout90Props) => {
             sizes="(max-width: 1440px) 89vw, 75vw"
             quality={30}
           />}
-          {imageCaption && <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{imageCaption}</p>}
         </div>
+        {imageCaption && <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{imageCaption}</p>}
       </div>
     </section>
   );

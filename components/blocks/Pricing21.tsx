@@ -36,7 +36,7 @@ export const Pricing21 = (props: Pricing21Props) => {
     ...props,
   } as Props;
   return (
-    <section className="px-[5%] py-16 md:py-24 lg:py-28" id={props.id}>
+    <section className="px-[5%] md:px-16 py-16 md:py-24 lg:py-28" id={props.id}>
       <div className="container">
         <div className="mx-auto mb-12 max-w-lg text-center md:mb-18 lg:mb-20">
           {tagline && <p className="mb-3 font-semibold md:mb-4">{tagline}</p>}

@@ -28,8 +28,8 @@ import { Navbar3 } from "@/components/blocks/navbar3";
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#FFFDF5' },
-    { media: '(prefers-color-scheme: dark)', color: '#FFFDF5' },
+    { media: '(prefers-color-scheme: light)', color: '#00663a' },
+    { media: '(prefers-color-scheme: dark)', color: '#00663a' },
   ],
 }
 
@@ -44,24 +44,24 @@ export async function generateMetadata(): Promise<Metadata> {
   const description = settings?.description || demo.description;
   
 
-  const ogImage = resolveOpenGraphImage(settings?.ogImage);
+  // const ogImage = resolveOpenGraphImage(settings?.ogImage);
   let metadataBase: URL | undefined = undefined;
-  try {
-    metadataBase = settings?.ogImage?.metadataBase
-      ? new URL(settings.ogImage.metadataBase)
-      : undefined;
-  } catch {
-    // ignore
-  }
+  // try {
+  //   metadataBase = settings?.ogImage?.metadataBase
+  //     ? new URL(settings.ogImage.metadataBase)
+  //     : undefined;
+  // } catch {
+  //   // ignore
+  // }
   return {
     metadataBase,
     title: {
       template: `%s | ${title}`,
       default: title,
     },
-    description: toPlainText(description),
+    // description: toPlainText(description),
     openGraph: {
-      images: ogImage ? [ogImage] : [],
+      // images: ogImage ? [ogImage] : [],
     },
   };
 }
@@ -77,20 +77,6 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   display: "swap",
 });
-
-async function Footer() {
-  const data = await sanityFetch<SettingsQueryResult>({
-    query: settingsQuery,
-  });
-  const footer = data?.footer || [];
-
-  return (
-    <footer className="bg-accent-1 border-accent-2 border-t">
-      This is the footer.
-      <Button>Wow!</Button>
-    </footer>
-  );
-}
 
 export default function RootLayout({
   children,
@@ -110,7 +96,7 @@ export default function RootLayout({
             <Footer3 />
           </Suspense>
         </section>
-        {draftMode().isEnabled && <VisualEditing />}
+        {draftMode().isEnabled && <VisualEditing zIndex={1000} />}
         <SpeedInsights />
         <Toaster
           toastOptions={{

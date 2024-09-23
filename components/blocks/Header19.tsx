@@ -25,7 +25,7 @@ export const Header19 = (props: Header19Props) => {
     ...props,
   } as Props;
   return (
-    <header className="px-[5%] py-16 md:py-24 lg:py-28">
+    <header className="px-[5%] md:px-16 py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-x-20 gap-y-12 md:gap-y-16 lg:grid-cols-2 lg:items-center">
           <div className="order-2 lg:order-1 overflow-hidden rounded-3xl block shadow-xxlarge">

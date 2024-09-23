@@ -25,7 +25,7 @@ export const Header110 = (props: Header110Props) => {
     ...props,
   } as Props;
   return (
-    <header className="px-[5%] py-16 md:py-24 lg:py-28">
+    <header className="px-[5%] md:px-16 py-16 md:py-24 lg:py-28">
       <div className="container grid grid-cols-1 gap-12 lg:grid-cols-[0.5fr_1fr] lg:gap-16">
         <div className="flex h-full flex-col justify-start">
           <h2 className="mb-5 md:mb-6 type-mobile-h2 md:desktop-h2">{heading}</h2>

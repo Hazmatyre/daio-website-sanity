@@ -3,6 +3,7 @@ import { format, parseISO } from "date-fns";
 import { defineField, defineType } from "sanity";
 
 import authorType from "./author";
+import { title } from '../../lib/demo';
 
 /**
  * This file is the schema definition for a post.
@@ -46,17 +47,39 @@ export default defineType({
       type: "array",
       of: [
         { type: "block" },
-        { type: "image" },
+        {
+          name: "image",
+          title: "Inline Image",
+          type: "image",
+          fields: [
+            {
+              name: "alt",
+              type: "string",
+              title: "Alternative text",
+              description: "Important for SEO and accessiblity.",
+              validation: (rule) => {
+                return rule.custom((alt, context) => {
+                  if ((context.document?.coverImage as any)?.asset?._ref && !alt) {
+                    return "Required";
+                  }
+                  return true;
+                });
+              },
+            },
+          ],
+        },
       ],
     }),
     defineField({
       name: "excerpt",
       title: "Excerpt",
       type: "text",
+      description: "What do display on blog home listing page and other pages e.g. featured blogs. This is capped to a few lines if left too long!"
     }),
     defineField({
       name: "coverImage",
       title: "Cover Image",
+      description:"Mandatory!",
       type: "image",
       options: {
         hotspot: true,
@@ -93,6 +116,23 @@ export default defineType({
       title: "Author",
       type: "reference",
       to: [{ type: authorType.name }],
+    }),
+    defineField({
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "reference", to: { type: "category" } }],
+    }),
+    defineField({
+      name: "tags",
+      title: "Tags",
+      type: "array",
+      of: [{ type: "reference", to: { type: "tags" } }],
+    }),
+    defineField({
+      title: "Seo",
+      name: "seo",
+      type: "seoMetaFields",
     }),
   ],
   preview: {

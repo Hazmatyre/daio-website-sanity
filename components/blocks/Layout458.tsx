@@ -42,7 +42,7 @@ export const Layout458 = (props: Layout458Props) => {
   };
 
   return (
-    <section className={cn("overflow-hidden px-[5%] py-16 md:py-24 lg:py-28", className)}>
+    <section className={cn("overflow-hidden px-[5%] md:px-16 py-16 md:py-24 lg:py-28", className)}>
       <div className="container">
         <div className="mb-12 grid auto-cols-fr grid-cols-1 items-start gap-x-5 gap-y-5 md:mb-18 md:grid-cols-2 md:gap-x-12 lg:mb-20 lg:gap-x-20 lg:gap-y-20">
           <div className="flex h-full flex-col">

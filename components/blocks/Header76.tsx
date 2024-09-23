@@ -26,14 +26,14 @@ export const Header76 = (props: Header76Props) => {
   } as Props;
   return (
     <div className="grid grid-cols-1 gap-y-16 pt-16 md:grid-flow-row md:pt-24 lg:grid-flow-col lg:grid-cols-2 lg:items-center lg:pt-0">
-      <div className="mx-[5%] max-w-[40rem] justify-self-start lg:ml-[5vw] lg:mr-20 lg:justify-self-end relative">
+      <div className="mx-[5%] md:mx-16 max-w-[40rem] justify-self-start lg:ml-16 lg:mr-20 lg:justify-self-end relative">
         <h2 className="mb-5 md:mb-6 type-mobile-h2 md:type-desktop-h2">{heading}</h2>
         <p className="type-regular font-medium md:type-medium ">{description}</p>
         <div className="mt-6 flex gap-x-4 md:mt-8">
           {buttons}
         </div>
       </div>
-      <div className="h-[30rem] overflow-y-clip pl-[5vw] pr-[5vw] md:h-[40rem] lg:h-screen lg:pl-0 border-border">
+      <div className="h-[30rem] overflow-y-clip px-[5%] md:px-16 md:h-[40rem] lg:h-screen lg:pl-0 border-border">
         <div className="grid w-full grid-cols-2 gap-x-4">
           <div className="-mt-[120%] grid size-full animate-loop-vertically2 columns-2 grid-cols-1 gap-4 self-center">
             {images.map((image, index) => (

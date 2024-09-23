@@ -45,94 +45,95 @@ export const Navbar3 = (props: Navbar3Props) => {
   const [open, setOpen] = React.useState(false);
 
   return (
-    <nav className="flex items-center justify-between border-b-0 border-border-primary bg-background-primary px-[5%] min-h-20 basis-0 grow">
-      <Sheet open={open} onOpenChange={setOpen}>
-        <SheetTrigger asChild className="md:hidden">
-          <div className="basis-0 grow md:basis-auto md:grow-0">
-            <Button
-              className="flex size-12 flex-col justify-center md:hidden bg-transparent hover:bg-transparent relative -left-4 border-0"
-            >
-              {Array(3)
-                .fill(null)
-                .map((_, index) => (
-                  <span key={index} className=" no-overflow-anchoring my-[3px] h-0.5 w-6 bg-black md:hidden" />
-                ))}
-            </Button>
-          </div>
-        </SheetTrigger>
-        <SheetContent side={"left"} title="Navigation Menu">
-          <VisuallyHidden.Root>
-            <SheetTitle>Navigation Menu</SheetTitle>
-            <SheetDescription>Mobile-only navigation menu</SheetDescription>
-          </VisuallyHidden.Root>
-          <SheetHeader className="flex flex-col gap-y-5">
-            <div className="flex">
-              <Image
-                src={logo}
-                alt="DAIO International Logo"
-                className="h-6 w-auto"
-                priority
-              />
+    <nav className="px-[5%] md:pl-12 md:pr-16">
+      <div className="flex items-center justify-between border-b-0 border-border-primary bg-background-primary  min-h-20 basis-0 grow md:container">
+        <Sheet open={open} onOpenChange={setOpen}>
+          <SheetTrigger asChild className="md:hidden">
+            <div className="basis-0 grow md:basis-auto md:grow-0">
+              <Button
+                className="flex size-12 flex-col justify-center md:hidden bg-transparent hover:bg-transparent relative -left-4 border-0"
+              >
+                {Array(3)
+                  .fill(null)
+                  .map((_, index) => (
+                    <span key={index} className=" no-overflow-anchoring my-[3px] h-0.5 w-6 bg-black md:hidden" />
+                  ))}
+              </Button>
             </div>
-          </SheetHeader>
-          <ul className="flex flex-col gap-y-8 mt-8 tracking-tighter">
-            <li
-              onClick={() => { setOpen(false) }}
-              className="type-mobile-h4"
-            >
-              <Link href="/">Home</Link>
-            </li>
-            <li
-              onClick={() => { setOpen(false) }}
-              className="type-mobile-h4">
-              <Link href="/about">About Us</Link>
-            </li>
-            <li
-              onClick={() => { setOpen(false) }}
-              className="type-mobile-h4">
-              <Link href="/mybio/biotoilet">MyBio Bio-Toilet</Link>
-            </li>
-            <li
-              onClick={() => { setOpen(false) }}
-              className="type-mobile-h4">
-              <Link href="/mybotany/pongamia">MyBotany Pongamia</Link>
-            </li>
-          </ul>
-        </SheetContent>
-      </Sheet>
-      <NavigationMenu className="hidden md:flex ">
-        <NavigationMenuList>
+          </SheetTrigger>
+          <SheetContent side={"left"} title="Navigation Menu">
+            <VisuallyHidden.Root>
+              <SheetTitle>Navigation Menu</SheetTitle>
+              <SheetDescription>Mobile-only navigation menu</SheetDescription>
+            </VisuallyHidden.Root>
+            <SheetHeader className="flex flex-col gap-y-5">
+              <div className="flex">
+                <Image
+                  src={logo}
+                  alt="DAIO International Logo"
+                  className="h-6 w-auto"
+                  priority
+                />
+              </div>
+            </SheetHeader>
+            <ul className="flex flex-col gap-y-8 mt-8 tracking-tighter">
+              <li
+                onClick={() => { setOpen(false) }}
+                className="type-mobile-h4"
+              >
+                <Link href="/">Home</Link>
+              </li>
+              <li
+                onClick={() => { setOpen(false) }}
+                className="type-mobile-h4">
+                <Link href="/about">About Us</Link>
+              </li>
+              <li
+                onClick={() => { setOpen(false) }}
+                className="type-mobile-h4">
+                <Link href="/mybio/biotoilet">MyBio Bio-Toilet</Link>
+              </li>
+              <li
+                onClick={() => { setOpen(false) }}
+                className="type-mobile-h4">
+                <Link href="/mybotany/pongamia">MyBotany Pongamia</Link>
+              </li>
+            </ul>
+          </SheetContent>
+        </Sheet>
+        <NavigationMenu className="hidden md:flex justify-start">
+          <NavigationMenuList>
 
-          <NavigationMenuItem>
-            <Link href="/about" legacyBehavior passHref>
-              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                About Us
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/about" legacyBehavior passHref>
+                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                  About Us
+                </NavigationMenuLink>
+              </Link>
+            </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>MyBio</NavigationMenuTrigger>
-            <NavigationMenuContent className="shadow-xxlarge">
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] /lg:grid-cols-[.75fr_1fr]">
-                <ListItem href="/mybio/biotoilet" title="Bio-Toilet">
-                  Zero sewage. Save water.
-                </ListItem>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>MyBio</NavigationMenuTrigger>
+              <NavigationMenuContent className="shadow-xxlarge">
+                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] /lg:grid-cols-[.75fr_1fr]">
+                  <ListItem href="/mybio/biotoilet" title="Bio-Toilet">
+                    Zero sewage. Save water.
+                  </ListItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
 
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>MyBotany</NavigationMenuTrigger>
-            <NavigationMenuContent>
-              <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] /lg:grid-cols-[.75fr_1fr]">
-                <ListItem
-                  title={"Pongamia Plantation"}
-                  href={"/mybotany/pongamia"}
-                >
-                  {"The most natural bio-fuel source from tree seeds through our reforestation initiative."}
-                </ListItem>
-                {/* {components.map((component) => (
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>MyBotany</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] /lg:grid-cols-[.75fr_1fr]">
+                  <ListItem
+                    title={"Pongamia Plantation"}
+                    href={"/mybotany/pongamia"}
+                  >
+                    {"The most natural bio-fuel source from tree seeds through our reforestation initiative."}
+                  </ListItem>
+                  {/* {components.map((component) => (
                   <ListItem
                     key={component.title}
                     title={component.title}
@@ -141,13 +142,13 @@ export const Navbar3 = (props: Navbar3Props) => {
                     {component.description}
                   </ListItem>
                 ))} */}
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
 
-        </NavigationMenuList>
-      </NavigationMenu>
-      {/* <ul className="hidden md:flex basis-0 grow gap-x-5">
+          </NavigationMenuList>
+        </NavigationMenu>
+        {/* <ul className="hidden md:flex basis-0 grow gap-x-5">
         <li className="type-regular"><Link href="/about">About</Link></li>
         <Popover>
           <PopoverTrigger className="flex items-center">MyBio <RxChevronDown/></PopoverTrigger>
@@ -159,19 +160,20 @@ export const Navbar3 = (props: Navbar3Props) => {
           <li>MyBotany</li>
         </a>
       </ul> */}
-      <a href="/" className="block">
-        <Image
-          src={logo}
-          alt="DAIO International Logo"
-          className="h-6 w-auto"
-          priority
-        />
-      </a>
-      <Link className="basis-0 grow flex justify-end block" href="/#contact-us">
-        <Button variant={"outline"} className="">
-          Contact
-        </Button>
-      </Link>
+        <a href="/" className="block">
+          <Image
+            src={logo}
+            alt="DAIO International Logo"
+            className="h-6 w-auto"
+            priority
+          />
+        </a>
+        <Link className="basis-0 grow flex justify-end block" href="/#contact-us">
+          <Button variant={"outline"} className="">
+            Contact
+          </Button>
+        </Link>
+      </div>
     </nav>
   )
 
