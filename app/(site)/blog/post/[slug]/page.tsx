@@ -87,7 +87,12 @@ export default async function PostPage({ params }: Props) {
       fill
       priority
     />,
-    category: post.categories?.at(0)
+    category: post.categories?.at(0),
+    author: {
+      image: <Image className="size-full" fill src={urlForImage(post.author?.picture)?.url() as string} alt={urlForImage(post.author?.name)?.url() as string} />,
+      name: post.author?.name as string
+    },
+    date: post.date
   }
 
   return (

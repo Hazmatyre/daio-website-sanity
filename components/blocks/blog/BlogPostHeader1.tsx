@@ -10,6 +10,7 @@ import { BlogCard } from "./BlogCard";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { Slug } from "@/sanity.types";
 import { title } from '../../../sanity/lib/demo';
+import { format } from "date-fns";
 
 
 type Props = {
@@ -30,7 +31,7 @@ type Props = {
 export type BlogPostHeader1Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const BlogPostHeader1 = (props: BlogPostHeader1Props) => {
-  const { heading, category, description, image } = {
+  const { heading, category, description, image, author, date } = {
     ...BlogPostHeader1Defaults,
     ...props,
   } as Props;
@@ -59,8 +60,32 @@ export const BlogPostHeader1 = (props: BlogPostHeader1Props) => {
         <h1 className="type-mobile-h2 md:type-desktop-h2 mt-6">{heading}</h1>
 
         {/* author info */}
-        <div className="bg-red-500 mt-8 md:mt-12">
-
+        {/* //* AUTHOR + DATE + SHARE */}
+        <div className="mt-8 md:mt-12 flex justify-between md:items-center gap-y-4 max-md:flex-col">
+          <div className="flex gap-x-4">
+            {author && <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
+              {author?.image}
+            </div>}
+            <div>
+              <div className="type-small font-semibold">{author?.name}</div>
+              <time className="type-regular" dateTime={date}>
+                {format(new Date(date), "dd	LLL yyyy")}
+              </time>
+            </div>
+            {/* {post.tags &&
+                <div className="basis-full">
+                  {post.tags.map((tag, index) => {
+                    return <Link key={index} href={tag.slug?.current || "#"}>{tag.title}</Link>
+                  })}
+                </div>
+              } */}
+          </div>
+          <ul className="flex gap-5">
+            <li>share</li>
+            <li>share</li>
+            <li>share</li>
+            <li>share</li>
+          </ul>
         </div>
 
         {/* Image */}

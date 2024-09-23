@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import img from "/images/mybio-bio-toilet/homepage-daio-international-nagoya.webp"
 import imgAuthor from "/images/placeholder.png"
 import { Slug } from "@/sanity.types";
+import { format } from "date-fns";
 
 
 type Props = {
@@ -77,7 +78,9 @@ export const BlogCard = (props: BlogCardProps) => {
             </div>}
             <div>
               <div className="type-small font-semibold">{post.author?.name}</div>
-              <time className="type-regular">{postDate}</time>
+              <time className="type-regular" dateTime={postDate}>
+                {format(new Date(postDate), "LLLL	d, yyyy")}
+              </time>
             </div>
             {/* {post.tags &&
               <div className="basis-full">

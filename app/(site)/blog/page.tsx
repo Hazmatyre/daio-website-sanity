@@ -69,7 +69,7 @@ export default async function Page({
       excerpt: post?.excerpt,
       author: post?.author
         ? {
-          image: <Image className="size-full object-cover !relative" src={authorImage || imgPlaceholder} alt={post?.author?.name || ""} fill />,
+          image: <Image className="size-full object-cover !relative" src={urlForImage(post.author?.picture)?.url() as string || imgPlaceholder} alt={post?.author?.name || ""} fill />,
           name: post.author.name,
         }
         : undefined
@@ -91,7 +91,7 @@ export default async function Page({
       excerpt: post.excerpt,
       author: post?.author
         ? {
-          image: <Image className="object-cover !relative" src={urlForImage(post?.author)?.url() || imgPlaceholder} alt={post?.author?.name || ""} fill />,
+          image: <Image className="size-full object-cover !relative" src={urlForImage(post.author?.picture)?.url() as string || imgPlaceholder} alt={post?.author?.name || ""} fill />,
           name: post.author.name,
         }
         : undefined

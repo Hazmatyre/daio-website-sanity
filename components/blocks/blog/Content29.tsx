@@ -12,6 +12,8 @@ import { PostQueryResult } from "@/sanity.types";
 import PortableText from "@/app/(site)/portable-text";
 import { PortableTextBlock } from "next-sanity";
 import post from '@/sanity/schemas/documents/post';
+import { urlForImage } from "@/sanity/lib/utils";
+import { format } from "date-fns";
 
 
 type Props = {
@@ -34,6 +36,28 @@ export const Content29 = (props: Content29Props) => {
             value={post.content as PortableTextBlock[]}
           />
         )}
+
+        <p className="font-semibold mb-4 mt-8 md:mt-30">Share this post</p>
+        <ul className="flex gap-5 mb-8 md:mb-12">
+          <li>share</li>
+          <li>share</li>
+          <li>share</li>
+          <li>share</li>
+        </ul>
+
+        <hr className="mb-8 md:mb-12" />
+
+        <div className="flex gap-4">
+          {post?.author && <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
+            <Image className="size-full" fill src={urlForImage(post.author?.picture)?.url() as string} alt={urlForImage(post.author?.name)?.url() as string} />
+          </div>}
+          <div>
+            <div className="type-small font-semibold">{post?.author?.name}</div>
+            {post?.date && <time className="type-regular" dateTime={post?.date}>
+              {format(new Date(post?.date), "dd	LLL yyyy")}
+            </time>}
+          </div>
+        </div>
 
       </div>
     </section>
