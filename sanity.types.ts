@@ -866,7 +866,7 @@ export type CategoriesQueryResult = Array<{
   catergory_order: null;
 }>;
 
-// Source: ./app/(site)/blog/[slug]/page.tsx
+// Source: ./app/(site)/blog/post/[slug]/page.tsx
 // Variable: postSlugs
 // Query: *[_type == "post"]{slug}
 export type PostSlugsResult = Array<{

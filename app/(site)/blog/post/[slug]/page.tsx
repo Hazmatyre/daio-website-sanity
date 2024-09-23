@@ -4,11 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 
-import Avatar from "../../avatar";
-import CoverImage from "../../cover-image";
-import DateComponent from "../../date";
-import MoreStories from "../../more-stories";
-import PortableText from "../../portable-text";
+import Avatar from "../../../avatar";
+import CoverImage from "../../../cover-image";
+import DateComponent from "../../../date";
+import MoreStories from "../../../more-stories";
+import PortableText from "../../../portable-text";
+import Image from "next/image";
 
 import type {
   PostQueryResult,
@@ -18,7 +19,11 @@ import type {
 import * as demo from "@/sanity/lib/demo";
 import { sanityFetch } from "@/sanity/lib/fetch";
 import { postQuery, settingsQuery } from "@/sanity/lib/queries";
-import { resolveOpenGraphImage } from "@/sanity/lib/utils";
+import { resolveOpenGraphImage, urlForImage } from "@/sanity/lib/utils";
+import { Blog7 } from "@/components/blocks/blog/Blog7";
+import { BlogPostHeader1 } from "@/components/blocks/blog/BlogPostHeader1";
+import { Content29 } from "@/components/blocks/blog/Content29";
+import { Contact5 } from "@/components/blocks/Contact5";
 
 type Props = {
   params: { slug: string };
@@ -72,8 +77,29 @@ export default async function PostPage({ params }: Props) {
     return notFound();
   }
 
+  //Header
+  const BlogPostHeader1Props: React.ComponentPropsWithoutRef<typeof BlogPostHeader1> = {
+    image: <Image
+      className="!relative size-full object-cover rounded-lg shadow-xxsmall"
+      alt={post.coverImage?.alt || ""}
+      src={urlForImage(post.coverImage)?.url() as string}
+      sizes="(max-width: 1023px) 100vw, 40vw"
+      fill
+      priority
+    />,
+    category: post.categories?.at(0)
+  }
+
   return (
-    <></>
+    <>
+      <BlogPostHeader1
+        {...BlogPostHeader1Props}
+      />
+      <Content29
+        post={post}
+      />
+      <Contact5></Contact5>
+    </>
   )
 
   // return (
@@ -126,3 +152,5 @@ export default async function PostPage({ params }: Props) {
   //   </div>
   // );
 }
+
+

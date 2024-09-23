@@ -47,7 +47,6 @@ export default async function Page({
   const query = searchParams?.query || '';
   const postsPerPage = 6
   const currentPage = Number(searchParams?.page) || 1;
-  console.log("page: " + currentPage)
   const pages = Math.ceil(posts.length / postsPerPage)
   if ((currentPage > pages) || (currentPage < 1)) {
     return notFound()
