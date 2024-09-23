@@ -57,6 +57,12 @@ export default defineType({
       //   }),
       // ],
     }),
+    defineField({
+      title: "Seo",
+      name: "seo_default",
+      type: "seoMetaFields",
+      description: "Base metadata for entire site. See individual blog posts to overwrite per page."
+    }),
     // defineField({
     //   name: "footer",
     //   description:

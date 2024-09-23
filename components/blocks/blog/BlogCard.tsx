@@ -77,7 +77,7 @@ export const BlogCard = (props: BlogCardProps) => {
             </div>}
             <div>
               <div className="type-small font-semibold">{post.author?.name}</div>
-              <p className="type-regular">{postDate}</p>
+              <time className="type-regular">{postDate}</time>
             </div>
             {/* {post.tags &&
               <div className="basis-full">
