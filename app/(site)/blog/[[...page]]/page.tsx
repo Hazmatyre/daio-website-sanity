@@ -50,6 +50,7 @@ export async function generateStaticParams() {
   // return [{ eventId: "1" }, { eventId: "2" }];
 }
 
+// todo: blog category pages?
 
 export default async function Page({
   params,
@@ -58,8 +59,6 @@ export default async function Page({
     page?: string;
   };
 }) {
-
-  //todo: separate out pages into separate dynamic routes for ssg.
 
   //Fetched data
   const [settings, posts, categories] = await Promise.all([
