@@ -46,10 +46,10 @@ export const BlogCard = (props: BlogCardProps) => {
   ).format(Date.parse(post.date || ""))
 
   return (
-    <div className={cn("@container overflow-hidden shadow-xxlarge rounded-lg bg-white border border-border", post.className)}>
+    <div className={cn("@container overflow-hidden shadow-xxlarge rounded-lg bg-white border border-border hover:scale-[101%] transition-transform group", post.className)}>
       <div className="size-full  flex flex-col  @xl:flex-row">
         {/* // * IMAGE */}
-        <Link href={"/blog/post/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @xl:basis-1/2">
+        <Link href={"/blog/post/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @xl:basis-1/2 group-hover:opacity-90 transition-opacity">
           {post.image}
         </Link>
         {/* // * CONTENT */}

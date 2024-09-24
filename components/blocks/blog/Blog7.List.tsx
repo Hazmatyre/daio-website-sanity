@@ -38,7 +38,7 @@ export const Blog7List = (props: BlogListProps) => {
         </div>
       </div>
       {/* // ? PAGINATION */}
-      <Pagination className=" mt-5 md:mt-8 sticky bottom-5 bg-brand-50 border border-border p-1 rounded-lg drop-shadow-2xl w-fit">
+      <Pagination className="hover:scale-110 transition-transform mt-5 md:mt-8 sticky bottom-5 bg-brand-50 border border-border p-1 rounded-lg drop-shadow-2xl w-fit">
         <PaginationContent>
 
           {/* //* PREVIOUS BUTTON */}

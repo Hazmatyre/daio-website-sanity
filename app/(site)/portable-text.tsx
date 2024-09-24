@@ -113,7 +113,7 @@ export default function CustomPortableText({
   return (
     <div className={[`
     prose
-    md:!prose-xl
+    xxl:!prose-lg
     !prose-daioGreen 
     prose-p:text-brand-700 
     prose-p:font-sans

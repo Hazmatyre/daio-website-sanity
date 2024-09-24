@@ -77,6 +77,10 @@ export default async function PostPage({ params }: Props) {
     return notFound();
   }
 
+  // todo: check metadata
+  // todo: do share buttons properly
+  // todo: do metadata for ogImage in layout.tsx
+
   //Header
   const BlogPostHeader1Props: React.ComponentPropsWithoutRef<typeof BlogPostHeader1> = {
     image: <Image
