@@ -56,8 +56,15 @@ export async function generateMetadata(
     authors: post?.author?.name ? [{ name: post?.author?.name }] : [],
     title: post?.seo?.metaTitle || post?.title,
     description: post?.seo?.metaTitle || post?.excerpt,
+    keywords: post?.seo?.seoKeywords,
     openGraph: {
       images: ogImage ? [ogImage, ...previousImages] : previousImages,
+      url: "https//daiointernational.com/blog/"+post?.slug,
+      description: post?.seo?.metaTitle || post?.excerpt || undefined,
+      //todo format date: publishedTime: post?.date
+      title: post?.seo?.metaTitle || post?.title,
+
+
     },
   } satisfies Metadata;
 }

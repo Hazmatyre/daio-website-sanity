@@ -30,6 +30,8 @@ export default async function Page({
   };
 }) {
 
+  //todo: separate out pages into separate dynamic routes for ssg.
+
   //Fetched data
   const [settings, posts, categories] = await Promise.all([
     sanityFetch<SettingsQueryResult>({
