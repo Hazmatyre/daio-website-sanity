@@ -55,7 +55,7 @@ export async function generateMetadata(
   return {
     authors: post?.author?.name ? [{ name: post?.author?.name }] : [],
     title: post?.seo?.metaTitle || post?.title,
-    description: post?.excerpt,
+    description: post?.seo?.metaTitle || post?.excerpt,
     openGraph: {
       images: ogImage ? [ogImage, ...previousImages] : previousImages,
     },
@@ -98,6 +98,8 @@ export default async function PostPage({ params }: Props) {
     },
     date: post.date
   }
+
+
 
   return (
     <>
