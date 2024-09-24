@@ -35,6 +35,7 @@ export const BlogPostHeader1 = (props: BlogPostHeader1Props) => {
     ...BlogPostHeader1Defaults,
     ...props,
   } as Props;
+
   return (
     <section className={cn("px-[5%] md:px-16 py-16 md:py-28")}>
       <div className="container md:max-w-lg">
@@ -63,11 +64,13 @@ export const BlogPostHeader1 = (props: BlogPostHeader1Props) => {
         {/* //* AUTHOR + DATE + SHARE */}
         <div className="mt-8 md:mt-12 flex justify-between md:items-center gap-y-4 max-md:flex-col">
           <div className="flex gap-x-4">
-            {author && <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
-              {author?.image}
-            </div>}
+            {author?.name &&
+              <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
+                {author?.image}
+              </div>
+            }
             <div>
-              <div className="type-small font-semibold">{author?.name}</div>
+              {author?.name && <div className="type-small font-semibold">{author?.name}</div>}
               <time className="type-regular" dateTime={date}>
                 {format(new Date(date), "dd	LLL yyyy")}
               </time>

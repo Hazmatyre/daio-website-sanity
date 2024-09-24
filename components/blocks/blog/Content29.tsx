@@ -48,11 +48,13 @@ export const Content29 = (props: Content29Props) => {
         <hr className="mb-8 md:mb-12" />
 
         <div className="flex gap-4">
-          {post?.author && <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
+          {post?.author?.name && <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
             <Image className="size-full" fill src={urlForImage(post.author?.picture)?.url() as string} alt={post.author.name} />
           </div>}
           <div>
-            <div className="type-small font-semibold">{post?.author?.name}</div>
+            {post?.author?.name &&
+              <div className="type-small font-semibold">{post?.author?.name}</div>
+            }
             {post?.date && <time className="type-regular" dateTime={post?.date}>
               {format(new Date(post?.date), "dd LLL yyyy")}
             </time>}

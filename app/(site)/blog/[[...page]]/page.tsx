@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Suspense } from "react";
 
-import Avatar from "../avatar";
-import CoverImage from "../cover-image";
-import DateComponent from "../date";
-import MoreStories from "../more-stories";
-import Onboarding from "../onboarding";
-import PortableText from "../portable-text";
+import Avatar from "../../avatar";
+import CoverImage from "../../cover-image";
+import DateComponent from "../../date";
+import MoreStories from "../../more-stories";
+import Onboarding from "../../onboarding";
+import PortableText from "../../portable-text";
 import Image from "next/image";
 
 import { CategoriesQueryResult, internalGroqTypeReferenceTo, type HeroQueryResult, type PostsQueryResult, type SettingsQueryResult } from "@/sanity.types";
@@ -35,10 +35,9 @@ export const metadata: Metadata = {
 
 
 export default async function Page({
-  searchParams,
+  params,
 }: {
-  searchParams?: {
-    query?: string;
+  params?: {
     page?: string;
   };
 }) {
@@ -59,9 +58,8 @@ export default async function Page({
   ]);
 
   // Pagination
-  const query = searchParams?.query || '';
   const postsPerPage = 6
-  const currentPage = Number(searchParams?.page) || 1;
+  const currentPage = Number(params?.page) || 1;
   const pages = Math.ceil(posts.length / postsPerPage)
   if ((currentPage > pages) || (currentPage < 1)) {
     return notFound()

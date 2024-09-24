@@ -47,7 +47,7 @@ export const Blog7List = (props: BlogListProps) => {
             <PaginationItem>
               <PaginationPrevious
                 isActive={currentPage > 1}
-                href={"?page=" + (currentPage - 1) + "#blog-list"}
+                href={"/blog/"+(currentPage - 1) + "#blog-list"}
                 className=""
               />
             </PaginationItem>
@@ -59,7 +59,7 @@ export const Blog7List = (props: BlogListProps) => {
           {currentPage > 1 &&
             <PaginationItem>
               <PaginationLink
-                href={"?page=" + (currentPage - 1) + "#blog-list"}
+                href={"/blog/"+(currentPage - 1) + "#blog-list"}
               >
                 {currentPage - 1}
               </PaginationLink>
@@ -72,7 +72,7 @@ export const Blog7List = (props: BlogListProps) => {
           {currentPage > 1 && currentPage + 1 <= pages &&
             <PaginationItem>
               <PaginationLink
-                href={"?page=" + (currentPage - 1) + "#blog-list"}
+                href={"/blog/"+(currentPage - 1) + "#blog-list"}
               >
                 {currentPage - 1}
               </PaginationLink>
@@ -82,7 +82,7 @@ export const Blog7List = (props: BlogListProps) => {
           {/* // * CURRENT PAGE */}
           <PaginationItem>
             <PaginationLink
-              href={"?page=" + (currentPage) + "#blog-list"}
+              href={"/blog/"+(currentPage) + "#blog-list"}
               isActive
             >
               {currentPage}
@@ -96,7 +96,7 @@ export const Blog7List = (props: BlogListProps) => {
           {currentPage + 1 <= pages &&
             <PaginationItem>
               <PaginationLink
-                href={"?page=" + (currentPage + 1) + "#blog-list"}
+                href={"/blog/"+(currentPage + 1) + "#blog-list"}
               >
                 {currentPage + 1}
               </PaginationLink>
@@ -108,7 +108,9 @@ export const Blog7List = (props: BlogListProps) => {
           {/* do not display if we've hit the cap */}
           {(currentPage === 1) && (currentPage + 2 <= pages) &&
             <PaginationItem>
-              <PaginationLink href="#">
+              <PaginationLink 
+              href={"/blog/"+(currentPage + 2) + "#blog-list"}
+              >
                 {currentPage + 2}
               </PaginationLink>
             </PaginationItem>
@@ -119,7 +121,7 @@ export const Blog7List = (props: BlogListProps) => {
             <PaginationItem>
               <PaginationNext
                 isActive={currentPage + 1 <= pages}
-                href={"?page=" + (currentPage + 1) + "#blog-list"}
+                href={"/blog/"+(currentPage + 1) + "#blog-list"}
                 className=""
               />
             </PaginationItem>
