@@ -33,6 +33,23 @@ export const metadata: Metadata = {
   },
 } satisfies Metadata;
 
+export async function generateStaticParams() {
+  const [posts] = await Promise.all([
+    sanityFetch<PostsQueryResult>({
+      query: postsQuery,
+      stega: false,
+      perspective: "published"
+    }),
+  ]);
+  const totalPages = Math.ceil(posts.length / 6)
+  const pagesArray = Array.from({ length: totalPages }, (value, index) => index);
+  const pages = pagesArray.map((page, index) => ({
+    page: [(index + 1).toString()],
+  }))
+  return pages
+  // return [{ eventId: "1" }, { eventId: "2" }];
+}
+
 
 export default async function Page({
   params,
