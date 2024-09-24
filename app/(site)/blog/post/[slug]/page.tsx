@@ -54,7 +54,7 @@ export async function generateMetadata(
 
   return {
     authors: post?.author?.name ? [{ name: post?.author?.name }] : [],
-    title: post?.title,
+    title: post?.seo?.metaTitle || post?.title,
     description: post?.excerpt,
     openGraph: {
       images: ogImage ? [ogImage, ...previousImages] : previousImages,
@@ -93,7 +93,7 @@ export default async function PostPage({ params }: Props) {
     />,
     category: post.categories?.at(0),
     author: {
-      image: <Image className="size-full" fill src={urlForImage(post.author?.picture)?.url() as string} alt={urlForImage(post.author?.name)?.url() as string} />,
+      image: <Image className="size-full" fill src={urlForImage(post.author?.picture)?.url() as string} alt={post.author?.name as string} />,
       name: post.author?.name as string
     },
     date: post.date

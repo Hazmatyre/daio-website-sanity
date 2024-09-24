@@ -49,7 +49,7 @@ export const Content29 = (props: Content29Props) => {
 
         <div className="flex gap-4">
           {post?.author && <div className="relative size-12 aspect-square rounded-lg overflow-hidden">
-            <Image className="size-full" fill src={urlForImage(post.author?.picture)?.url() as string} alt={urlForImage(post.author?.name)?.url() as string} />
+            <Image className="size-full" fill src={urlForImage(post.author?.picture)?.url() as string} alt={post.author.name} />
           </div>}
           <div>
             <div className="type-small font-semibold">{post?.author?.name}</div>
