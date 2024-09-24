@@ -24,6 +24,7 @@ import { Blog7 } from "@/components/blocks/blog/Blog7";
 import { BlogPostHeader1 } from "@/components/blocks/blog/BlogPostHeader1";
 import { Content29 } from "@/components/blocks/blog/Content29";
 import { Contact5 } from "@/components/blocks/Contact5";
+import { format } from "date-fns";
 
 type Props = {
   params: { slug: string };
@@ -61,10 +62,8 @@ export async function generateMetadata(
       images: ogImage ? [ogImage, ...previousImages] : previousImages,
       url: "https//daiointernational.com/blog/"+post?.slug,
       description: post?.seo?.metaTitle || post?.excerpt || undefined,
-      //todo format date: publishedTime: post?.date
+      publishedTime: post?.date ? format(new Date(post.date), "dd LLL yyyy") : undefined,
       title: post?.seo?.metaTitle || post?.title,
-
-
     },
   } satisfies Metadata;
 }

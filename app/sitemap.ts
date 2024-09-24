@@ -1,6 +1,7 @@
 import { PostsQueryResult } from '@/sanity.types';
 import { sanityFetch } from '@/sanity/lib/fetch';
 import { postsQuery } from '@/sanity/lib/queries';
+import { format } from 'date-fns';
 import type { MetadataRoute } from 'next'
  
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -13,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // const parsed = posts.map((p) => {
   //   return {
   //     url: "https://daiointernational.com/blog/post"+p.slug,
-  //     lastModified: Date.parse(p.date).toString(),
+  //     lastModified: format(new Date(p.date), "dd LLL yyyy"),
   //     changeFrequency:'yearly' as 'yearly',
   //     priority: 0.8
   //   }

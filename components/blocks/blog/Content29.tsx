@@ -54,7 +54,7 @@ export const Content29 = (props: Content29Props) => {
           <div>
             <div className="type-small font-semibold">{post?.author?.name}</div>
             {post?.date && <time className="type-regular" dateTime={post?.date}>
-              {format(new Date(post?.date), "dd	LLL yyyy")}
+              {format(new Date(post?.date), "dd LLL yyyy")}
             </time>}
           </div>
         </div>

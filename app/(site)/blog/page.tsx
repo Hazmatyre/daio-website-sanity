@@ -20,6 +20,19 @@ import { urlForImage } from '@/sanity/lib/utils';
 import imgPlaceholder from "/images/placeholder.png"
 import { Blog7List } from "@/components/blocks/blog/Blog7.List";
 import { BlogCategories } from "@/components/blocks/blog/BlogCategories";
+import { Metadata, ResolvingMetadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "DAIO International's company news and blog on how to save the environment.",
+  // keywords: post?.seo?.seoKeywords,
+  openGraph: {
+    url: "https//daiointernational.com/blog/",
+    description: "DAIO International's company news and blog on how to save the environment.",
+    title: "Blog | DAIO International",
+  },
+} satisfies Metadata;
+
 
 export default async function Page({
   searchParams,
