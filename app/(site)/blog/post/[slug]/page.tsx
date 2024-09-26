@@ -60,7 +60,7 @@ export async function generateMetadata(
     keywords: post?.seo?.seoKeywords,
     openGraph: {
       images: ogImage ? [ogImage, ...previousImages] : previousImages,
-      url: "https//daiointernational.com/blog/"+post?.slug,
+      url: "https//daiointernational.com/blog/post/"+post?.slug,
       description: post?.seo?.metaTitle || post?.excerpt || undefined,
       publishedTime: post?.date ? format(new Date(post.date), "dd LLL yyyy") : undefined,
       title: post?.seo?.metaTitle || post?.title,
