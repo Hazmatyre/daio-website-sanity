@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import img from "/images/mybio-bio-toilet/homepage-daio-international-nagoya.webp"
 import imgAuthor from "/images/placeholder.png"
 import { Slug } from "@/sanity.types";
+import { format } from "date-fns";
 
 
 type Props = {
@@ -45,10 +46,10 @@ export const BlogCard = (props: BlogCardProps) => {
   ).format(Date.parse(post.date || ""))
 
   return (
-    <div className={cn("@container overflow-hidden shadow-xxlarge rounded-lg bg-white border border-border", post.className)}>
+    <div className={cn("@container overflow-hidden shadow-xxlarge rounded-lg bg-white border border-border hover:scale-[101%] transition-transform group", post.className)}>
       <div className="size-full  flex flex-col  @xl:flex-row">
         {/* // * IMAGE */}
-        <Link href={"/blog/post/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @xl:basis-1/2">
+        <Link href={"/blog/post/" + post.slug} className="relative aspect-video block shrink-0 grow-0 md:aspect-[656/500] @xl:basis-1/2 group-hover:opacity-90 transition-opacity">
           {post.image}
         </Link>
         {/* // * CONTENT */}
@@ -77,7 +78,9 @@ export const BlogCard = (props: BlogCardProps) => {
             </div>}
             <div>
               <div className="type-small font-semibold">{post.author?.name}</div>
-              <p className="type-regular">{postDate}</p>
+              <time className="type-regular" dateTime={postDate}>
+                {format(new Date(postDate), "LLLL	d, yyyy")}
+              </time>
             </div>
             {/* {post.tags &&
               <div className="basis-full">

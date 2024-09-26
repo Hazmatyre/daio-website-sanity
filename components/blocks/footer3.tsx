@@ -63,7 +63,7 @@ export const Footer3 = (props: Footer3Props) => {
         <div className="grid grid-cols-1 gap-x-[4vw] gap-y-12 pb-12 md:gap-y-16 md:pb-18 lg:grid-cols-[1fr_0.7fr] lg:gap-y-4 lg:pb-20">
           <div>
             <div className="mb-6 md:mb-8">
-              <Link href="">
+              <Link passHref href="/">
                 <Image
                   src={WebsiteLogo}
                   alt="DAIO International Logo"

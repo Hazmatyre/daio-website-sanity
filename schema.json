@@ -528,6 +528,14 @@
           "type": "string"
         },
         "optional": true
+      },
+      "seo_default": {
+        "type": "objectAttribute",
+        "value": {
+          "type": "inline",
+          "name": "seoMetaFields"
+        },
+        "optional": true
       }
     }
   },

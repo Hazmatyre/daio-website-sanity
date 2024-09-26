@@ -71,8 +71,6 @@ export const Contact5 = (props: Contact5Props) => {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
 
-    console.log(values)
-
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
       headers: {

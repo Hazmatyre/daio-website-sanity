@@ -20,7 +20,7 @@ export type Blog7Props = React.ComponentPropsWithoutRef<"section"> & Partial<Pro
 
 export const Blog7 = (props: Blog7Props) => {
   const { heading, subtitle, description, post } = {
-    ...BlogHeader1Defaults,
+    ...Blog7Defaults,
     ...props,
   } as Props;
   return (
@@ -39,7 +39,7 @@ export const Blog7 = (props: Blog7Props) => {
   );
 };
 
-export const BlogHeader1Defaults: Blog7Props = {
+export const Blog7Defaults: Blog7Props = {
   subtitle: "Blog",
   heading: "DAIO Blog & Newsroom",
   description: "Learn how to save the environment with DAIO.",

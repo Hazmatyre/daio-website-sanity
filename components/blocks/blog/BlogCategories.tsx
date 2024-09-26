@@ -30,8 +30,6 @@ export const BlogCategories = (props: BlogCategoriesProps) => {
     ...props,
   };
 
-  console.log(categories)
-
   return (
     <div className="px-[5%] md:px-16 overflow-x-visible">
       <div className="container">

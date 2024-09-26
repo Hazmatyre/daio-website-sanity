@@ -30,9 +30,11 @@ export const moreStoriesQuery = groq`*[_type == "post" && _id != $skip && define
   ${postFields}
 }`;
 
+// Specific post
 export const postQuery = groq`*[_type == "post" && slug.current == $slug] [0] {
   content,
   ${postFields}
+  ${seo}
 }`;
 
 // * Example of SEO field

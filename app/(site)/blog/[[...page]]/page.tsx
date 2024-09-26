@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Suspense } from "react";
 
-import Avatar from "../avatar";
-import CoverImage from "../cover-image";
-import DateComponent from "../date";
-import MoreStories from "../more-stories";
-import Onboarding from "../onboarding";
-import PortableText from "../portable-text";
+import Avatar from "../../avatar";
+import CoverImage from "../../cover-image";
+import DateComponent from "../../date";
+import MoreStories from "../../more-stories";
+import Onboarding from "../../onboarding";
+import PortableText from "../../portable-text";
 import Image from "next/image";
 
 import { CategoriesQueryResult, internalGroqTypeReferenceTo, type HeroQueryResult, type PostsQueryResult, type SettingsQueryResult } from "@/sanity.types";
@@ -20,12 +20,42 @@ import { urlForImage } from '@/sanity/lib/utils';
 import imgPlaceholder from "/images/placeholder.png"
 import { Blog7List } from "@/components/blocks/blog/Blog7.List";
 import { BlogCategories } from "@/components/blocks/blog/BlogCategories";
+import { Metadata, ResolvingMetadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "DAIO International's company news and blog on how to save the environment.",
+  // keywords: post?.seo?.seoKeywords,
+  openGraph: {
+    url: "https//daiointernational.com/blog/",
+    description: "DAIO International's company news and blog on how to save the environment.",
+    title: "Blog | DAIO International",
+  },
+} satisfies Metadata;
+
+export async function generateStaticParams() {
+  const [posts] = await Promise.all([
+    sanityFetch<PostsQueryResult>({
+      query: postsQuery,
+      stega: false,
+      perspective: "published"
+    }),
+  ]);
+  const totalPages = Math.ceil(posts.length / 6)
+  const pagesArray = Array.from({ length: totalPages }, (value, index) => index);
+  const pages = pagesArray.map((page, index) => ({
+    page: [(index + 1).toString()],
+  }))
+  return pages
+  // return [{ eventId: "1" }, { eventId: "2" }];
+}
+
+// todo: blog category pages?
 
 export default async function Page({
-  searchParams,
+  params,
 }: {
-  searchParams?: {
-    query?: string;
+  params?: {
     page?: string;
   };
 }) {
@@ -44,10 +74,8 @@ export default async function Page({
   ]);
 
   // Pagination
-  const query = searchParams?.query || '';
   const postsPerPage = 6
-  const currentPage = Number(searchParams?.page) || 1;
-  console.log("page: " + currentPage)
+  const currentPage = Number(params?.page) || 1;
   const pages = Math.ceil(posts.length / postsPerPage)
   if ((currentPage > pages) || (currentPage < 1)) {
     return notFound()
@@ -70,7 +98,7 @@ export default async function Page({
       excerpt: post?.excerpt,
       author: post?.author
         ? {
-          image: <Image className="size-full object-cover !relative" src={authorImage || imgPlaceholder} alt={post?.author?.name || ""} fill />,
+          image: <Image className="size-full object-cover !relative" src={urlForImage(post.author?.picture)?.url() as string || imgPlaceholder} alt={post?.author?.name || ""} fill />,
           name: post.author.name,
         }
         : undefined
@@ -92,7 +120,7 @@ export default async function Page({
       excerpt: post.excerpt,
       author: post?.author
         ? {
-          image: <Image className="object-cover !relative" src={urlForImage(post?.author)?.url() || imgPlaceholder} alt={post?.author?.name || ""} fill />,
+          image: <Image className="size-full object-cover !relative" src={urlForImage(post.author?.picture)?.url() as string || imgPlaceholder} alt={post?.author?.name || ""} fill />,
           name: post.author.name,
         }
         : undefined
