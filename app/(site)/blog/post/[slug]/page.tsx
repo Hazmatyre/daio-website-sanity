@@ -83,7 +83,6 @@ export default async function PostPage({ params }: Props) {
     return notFound();
   }
 
-  // todo: check metadata
   // todo: do share buttons properly
   // todo: do metadata for ogImage in layout.tsx
 
