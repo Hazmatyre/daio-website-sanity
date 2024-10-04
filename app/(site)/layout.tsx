@@ -69,7 +69,7 @@ export async function generateMetadata(): Promise<Metadata> {
 const eb_garamond = EB_Garamond({
   variable: "--font-eb-garamond",
   subsets: ["latin"],
-  display: "swap",
+  display: "auto",
 });
 
 const montserrat = Montserrat({

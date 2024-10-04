@@ -15,6 +15,7 @@ import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMe
 
 
 type Props = {
+  currentPage?: number
   categories?: Array<{
     title: string | null;
     slug: Slug | null;
@@ -25,7 +26,7 @@ type Props = {
 export type BlogCategoriesProps = React.ComponentPropsWithoutRef<"div"> & Partial<Props>;
 
 export const BlogCategories = (props: BlogCategoriesProps) => {
-  const { categories, activeSlug } = {
+  const { categories, activeSlug, currentPage } = {
     ...BlogListDefaults,
     ...props,
   };
@@ -33,7 +34,8 @@ export const BlogCategories = (props: BlogCategoriesProps) => {
   return (
     <div className="px-[5%] md:px-16 overflow-x-visible">
       <div className="container">
-        <NavigationMenu className="!justify-start overflow-x-scroll py-2" >
+        <div className="type-desktop-h2">Page {currentPage}</div>
+        {/* <NavigationMenu className="!justify-start overflow-x-scroll py-2" >
           <NavigationMenuList>
             {categories?.map((category, index) => (
               <NavigationMenuItem key={index}>
@@ -45,7 +47,7 @@ export const BlogCategories = (props: BlogCategoriesProps) => {
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
-        </NavigationMenu>
+        </NavigationMenu> */}
       </div>
     </div>
   );
@@ -58,7 +60,8 @@ export const BlogListDefaults: BlogCategoriesProps = {
       slug: { _type: "slug", current: "blog/all-news" }
     }
   ],
-  activeSlug: undefined
+  activeSlug: undefined,
+  currentPage: undefined
 };
 
 

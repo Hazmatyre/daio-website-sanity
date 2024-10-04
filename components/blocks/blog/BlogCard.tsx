@@ -57,18 +57,18 @@ export const BlogCard = (props: BlogCardProps) => {
 
           {/* //* CATEGORY + TITLE + EXCERPT */}
           <div>
-            {post.category ?
+            {/* {post.category ?
               <Link className="" href={"blog/category/" + post.category.slug?.current}>
                 <p className="type-small font-semibold">{post.category.title}</p>
               </Link>
               :
               <p className="h-6"></p>
-            }
-            <Link href={"/blog/post/" + post.slug}>
+            } */}
+            <Link className="line-clamp-3 hover:underline hover:text-blue-500 transition-colors" href={"/blog/post/" + post.slug}>
               <h2 className="mt-2 type-mobile-h4 md:type-desktop-h4">{post.title}</h2>
             </Link>
             <p className="line-clamp-3 @xl:line-clamp-6 mt-2 @5xl:line-clamp-[10] type-regular">{post.excerpt}</p>
-            <Link className="mt-2 block font-semibold underline type-regular" href={"/blog/post/" + post.slug}>Read more</Link>
+            <Link className="mt-2 block font-semibold underline type-regular hover:text-blue-500 transition-colors" href={"/blog/post/" + post.slug}>Read more</Link>
           </div>
 
           {/* //* AUTHOR + DATE + TAGS */}

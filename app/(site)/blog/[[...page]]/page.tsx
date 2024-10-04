@@ -134,7 +134,7 @@ export default async function Page({
   return (
     <>
       <Blog7 {...Blog7Props} />
-      <BlogCategories categories={categories} />
+      <BlogCategories categories={categories} currentPage={currentPage} />
       <Blog7List
         posts={Blog7ListProps}
         currentPage={currentPage}
