@@ -4,6 +4,7 @@ import Image from "next/image";
 import img1 from "/images/mybio-bio-toilet/man-overlooking-r21.webp"
 import img2 from "/images/mybio-bio-toilet/model-opening-r21.webp"
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 type ImageProps = {
   src: string;
@@ -15,22 +16,32 @@ type Props = {
   description: string;
   buttons: React.ReactNode
   images: ImageProps[];
+  subtitle?: string
+  bgImage?: ImageProps
 };
 
 export type Header110Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
-export const Header110 = (props: Header110Props) => {
-  const { heading, description, buttons, images } = {
+export const Header110Custom = (props: Header110Props) => {
+  const { heading, description, buttons, images, subtitle, bgImage } = {
     ...Header110Defaults,
     ...props,
   } as Props;
   return (
-    <header className="px-[5%] md:px-16 py-16 md:py-24 lg:py-28">
-      <div className="container grid grid-cols-1 gap-12 lg:grid-cols-[0.5fr_1fr] lg:gap-16">
+    <header className={cn("px-[5%] md:px-16 py-16 md:py-24 lg:py-28 relative overflow-hidden bg-black", props.className)}>
+      {bgImage &&
+        // <div className="size-full">
+          <Image priority className="opacity-35" sizes="100vw" quality={5} objectFit="cover" fill alt={bgImage.alt || ""} src={bgImage.src} />
+        // </div>
+      }
+      <div className="relative z-10 container grid grid-cols-1 gap-12 lg:grid-cols-[0.5fr_1fr] lg:gap-16">
         <div className="flex h-full flex-col justify-start">
-          <h2 className="mb-5 md:mb-6 type-mobile-h2 md:type-desktop-h2">{heading}</h2>
+          {subtitle &&
+            <p className="text-left font-semibold block type-regular text-background md:type-large">{subtitle}</p>
+          }
+          <h1 className="text-brand-naplesYellow mb-5 md:mb-6 lg:mb-[25%] xxl:mb-28 type-mobile-h2 md:type-desktop-h2">{heading}</h1>
           <div className="ml-[7.5%]">
-            <p className="type-regular whitespace-pre-line">{description}</p>
+            <p className="text-white type-regular whitespace-pre-line">{description}</p>
             <div className="mt-6 flex gap-4 md:mt-8 flex-wrap">
               {buttons}
             </div>
@@ -45,7 +56,10 @@ export const Header110 = (props: Header110Props) => {
               <Image
                 src={image.src}
                 alt={image.alt || ""}
-                className={clsx("size-full object-cover rounded-lg")}
+                className={clsx(
+                  "size-full object-cover rounded-lg",
+                  index == 0 && "-rotate-12"
+                )}
                 quality={60}
                 fill
                 sizes={index == 0
@@ -90,4 +104,4 @@ export const Header110Defaults: Header110Props = {
   ],
 };
 
-Header110.displayName = "Header110";
+Header110Custom.displayName = "Header110Custom";
