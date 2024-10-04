@@ -30,6 +30,10 @@ import { Cta7 } from "@/components/blocks/Cta7";
 import { Layout1Slot } from "@/components/blocks/Layout1";
 import { Gallery17 } from "@/components/blocks/Gallery17.Images";
 import { Props_biofertiliser_gallery17_other } from "./props";
+import icon1 from "/images/mybio-bio-toilet/BxTrophy.svg";
+import icon2 from "/images/mybio-bio-toilet/BxHappyBeaming.svg";
+import icon3 from "/images/mybio-bio-toilet/TablerDropletOff.svg";
+import icon4 from "/images/mybio-bio-toilet/CarbonEnergyRenewable.svg";
 
 export const metadata: Metadata = {
   title: "Bio-Fertiliser",
@@ -61,9 +65,13 @@ export default async function Page() {
       <Cta7
         {...Cta7Props}
       />
-      <Layout1Slot/>
+      <Layout1Slot />
       <Gallery17
         {...Props_biofertiliser_gallery17_other}
+      />
+      <Layout245
+        className="bg-brand-naplesYellow text-brand-900"
+        {...Layout245Props}
       />
 
       <Header76 />
@@ -112,4 +120,52 @@ const Cta7Props: React.ComponentPropsWithoutRef<typeof Cta7> = {
   description: "We purchase urine produced from livestock such as cows. We aim to boost the local Malaysian economy by creating demand for animal waste for the creation of our bio-fertiliser. Contact us for more information.",
   buttons:
     <Link key={1} href="#contact-us"><Button size={"lg"} key={1}>Contact Us</Button></Link>
+}
+
+const Layout245Props: React.ComponentPropsWithoutRef<typeof Layout245> = {
+  tagline: "It's been done before. Why us?",
+  heading: "We save your business time and money.",
+  description:
+    "Going green should not be expensive. We work with green-conscious businesses to help reduce their expenditure in the long-term with our MyBio Bio-Fertiliser.",
+  sections: [
+    {
+      icon: {
+        src: icon1,
+        alt: "Relume logo 1",
+      },
+      heading: "Tax breaks.",
+      description:
+        "Depending on where you live, you may be eligible for tax breaks. Contact us and we will help you out!",
+    },
+    {
+      icon: {
+        src: icon2,
+        alt: "Relume logo 2",
+      },
+      heading: "Eco-friendly means cheap",
+      description:
+        <>
+          Low-cost and accessible for small-scale farmers, providing a cost-effective alternative to expensive chemical fertilisers. <a href="" className="font-semibold underline hover:text-blue-500">(Singh et al. 2019)</a>
+        </>,
+    },
+    {
+      icon: {
+        src: icon3,
+        alt: "Relume logo 3",
+      },
+      heading: "Preserve your land",
+      description:
+        "Chemical-based fertilisers are also known to damage soil fertility over time which is costly to repair. our fertiliser is designed without any harmful metals.",
+    },
+    {
+      icon: {
+        src: icon4,
+        alt: "Relume logo 4",
+      },
+      heading: "Save shipping and space",
+      description:
+        "Our compact bio-fertiliser comes in both concentrated liquid and powdered forms which is to be diluted for use, which takes up less space during transit.",
+    },
+  ],
+  buttons: []
 }

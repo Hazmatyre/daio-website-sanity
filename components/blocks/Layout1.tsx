@@ -40,7 +40,7 @@ export const Layout1SlotDefaults: Layout1SlotProps = {
       </p>
     </>,
     <div>
-      <Link key={1} href="#contact-us"><Button size={"lg"} key={1}>Contact Us</Button></Link>
+      <a key={1} href="#"><Button size={"lg"} key={1}>View Paper</Button></a>
     </div>,
   ],
   slot2: [
