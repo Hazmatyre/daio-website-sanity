@@ -25,6 +25,7 @@ import { Button } from "@/components/ui/button";
 import img1 from "/images/mybio-bio-fertiliser/img_2134.webp"
 import img2 from "/images/mybio-bio-fertiliser/img_2132.webp"
 import imgBackground from "/images/mybio-bio-fertiliser/hero-landscape.webp"
+import imgMachine from '/images/mybio-bio-fertiliser/machine.webp'
 import { Metadata } from "next";
 import { Cta7 } from "@/components/blocks/Cta7";
 import { Layout1Slot } from "@/components/blocks/Layout1";
@@ -34,6 +35,7 @@ import icon1 from "/images/mybio-bio-toilet/BxTrophy.svg";
 import icon2 from "/images/mybio-bio-toilet/BxHappyBeaming.svg";
 import icon3 from "/images/mybio-bio-toilet/TablerDropletOff.svg";
 import icon4 from "/images/mybio-bio-toilet/CarbonEnergyRenewable.svg";
+import { Timeline6 } from "@/components/blocks/Timeline6";
 
 export const metadata: Metadata = {
   title: "Bio-Fertiliser",
@@ -65,13 +67,16 @@ export default async function Page() {
       <Cta7
         {...Cta7Props}
       />
-      <Layout1Slot />
+      <Layout1Slot id="scientific-test"/>
       <Gallery17
         {...Props_biofertiliser_gallery17_other}
       />
       <Layout245
         className="bg-brand-naplesYellow text-brand-900"
         {...Layout245Props}
+      />
+      <Timeline6
+        {...Timeline6Props}
       />
 
       <Header76 />
@@ -145,7 +150,8 @@ const Layout245Props: React.ComponentPropsWithoutRef<typeof Layout245> = {
       heading: "Eco-friendly means cheap",
       description:
         <>
-          Low-cost and accessible for small-scale farmers, providing a cost-effective alternative to expensive chemical fertilisers. <a href="" className="font-semibold underline hover:text-blue-500">(Singh et al. 2019)</a>
+          {/* Low-cost and accessible for small-scale farmers, providing a cost-effective alternative to expensive chemical fertilisers. <a href="" className="font-semibold underline hover:text-blue-500">(Singh et al. 2019)</a> */}
+          Low-cost and accessible for small-scale farmers, providing a cost-effective alternative to expensive chemical fertilisers.
         </>,
     },
     {
@@ -169,3 +175,28 @@ const Layout245Props: React.ComponentPropsWithoutRef<typeof Layout245> = {
   ],
   buttons: []
 }
+
+const Timeline6Props: React.ComponentPropsWithoutRef<typeof Timeline6> = {
+  className: "bg-brand-50",
+  tagline: "How it's made",
+  heading: "DAIO Purification Treatment Process",
+  description: "Our Japanese-patented process of converting waste into fertiliser is fairly straightforward. Reach out to us for more technical information.",
+  buttons: [
+    <Link href="#contact-us" key={1}><Button size={"lg"}>Contact Us</Button></Link>
+  ],
+  features: [
+    <>
+      <h3 className="type-large">Urine waste collected from DAIO MyBio Toilets.</h3>
+    </>,
+    <>
+      <h3 className="type-large ">Urine purification treatment started by ozone aeration. The aeration source is via 'Ultra Fine Bubble' (UFB).</h3>
+    </>,
+    <>
+      <h3 className="type-large">When ozone saturation is confirmed by the ozone monitor, the urine purification process is complete.</h3>
+    </>,
+    <>
+      <h3 className="type-large">Purified urine ready to be utilised as bio fertiliser. There is no scum when collecting purified urine.</h3>
+    </>
+  ],
+  image: <Image className="size-full" src={imgMachine} alt="DAIO's Urine Purification Machine"></Image>
+};

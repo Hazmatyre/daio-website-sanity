@@ -17,7 +17,7 @@ export const Layout1Slot = (props: Layout1SlotProps) => {
     ...props,
   } as Props;
   return (
-    <section id="relume" className="px-[5%] md:px-16 py-16 md:py-24 lg:py-28">
+    <section id={props.id} className="px-[5%] md:px-16 py-16 md:py-24 lg:py-28">
       <div className="container">
         <div className="grid grid-cols-1 gap-y-12 lg:grid-cols-2 lg:items-center lg:gap-x-12 xl:gap-x-20">
           <div>{slot1}</div>

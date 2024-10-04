@@ -77,7 +77,7 @@ export const Props_biofertiliser_gallery17_other: React.ComponentProps<typeof Ga
   headingTag: "h2",
   heading: "We already use our own product.",
   description: <>
-    We have  been planting crops and flowers with our urine-based bio-fertiliser since 2007 in Japan. <a className="font-semibold underline hover:text-blue-500" href="https://daiobio.co.jp/news/">https://daiobio.co.jp/news/</a>
+    We have  been planting crops and flowers with our urine-based bio-fertiliser since 2007 in Japan. <a className="font-semibold underline hover:text-blue-500" rel="nofollow" href="https://daiobio.co.jp/news/">https://daiobio.co.jp/news/</a>
   </>,
   slides: images.map((img, index) => ({
     cardContent:
