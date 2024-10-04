@@ -44,14 +44,17 @@ export const BlogPostHeader1 = (props: BlogPostHeader1Props) => {
         <Breadcrumb className="type-regular">
           <BreadcrumbList>
             <BreadcrumbItem>
-              <BreadcrumbLink asChild>
+              {/* <BreadcrumbLink asChild>
                 {category
                   ? <Link className="underline underline-offset-2" href={"/blog"}>Blog</Link>
                   : <Link className="underline underline-offset-2" href={"/blog"}>Back to Blog Home</Link>
                 }
+              </BreadcrumbLink> */}
+              <BreadcrumbLink asChild>
+                <Link className="underline underline-offset-2" href={"/blog"}>Back to Blog Home</Link>
               </BreadcrumbLink>
             </BreadcrumbItem>
-            {category &&
+            {/* {category &&
               <>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
@@ -60,7 +63,7 @@ export const BlogPostHeader1 = (props: BlogPostHeader1Props) => {
                   </BreadcrumbLink>
                 </BreadcrumbItem>
               </>
-            }
+            } */}
           </BreadcrumbList>
         </Breadcrumb>
 

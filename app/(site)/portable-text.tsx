@@ -102,7 +102,7 @@ export default function CustomPortableText({
     marks: {
       link: ({ children, value }) => {
         return (
-          <a className="" href={value?.href} rel="noreferrer noopener">
+          <a className="hover:text-blue-500" href={value?.href} rel="noreferrer noopener">
             {children}
           </a>
         );
