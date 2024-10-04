@@ -96,6 +96,11 @@ export const Navbar3 = (props: Navbar3Props) => {
               <li
                 onClick={() => { setOpen(false) }}
                 className="type-mobile-h4">
+                <Link href="/mybio/biofertiliser">MyBio Bio-Fertiliser</Link>
+              </li>
+              <li
+                onClick={() => { setOpen(false) }}
+                className="type-mobile-h4">
                 <Link href="/mybotany/pongamia">MyBotany Pongamia</Link>
               </li>
             </ul>
@@ -118,6 +123,9 @@ export const Navbar3 = (props: Navbar3Props) => {
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] /lg:grid-cols-[.75fr_1fr]">
                   <ListItem href="/mybio/biotoilet" title="Bio-Toilet">
                     Zero sewage. Save water.
+                  </ListItem>
+                  <ListItem href="/mybio/biofertiliser" title="Bio-Fertiliser">
+                    Eco-friendly bio-fertiliser made from human waste.
                   </ListItem>
                 </ul>
               </NavigationMenuContent>
