@@ -107,11 +107,11 @@ const Header110Props: React.ComponentPropsWithoutRef<typeof Header110Custom> = {
   images: [
     {
       src: img1.src,
-      alt: "DAIO Director standing beside Bio R-21 core unit skewer.",
+      alt: "Bottle of DAIO Bio-Fertiliser",
     },
     {
       src: img2.src,
-      alt: "Model standing beside Bio R-21 core unit holding its top lid.",
+      alt: "Powdered and liquid form of DAIO Bio-Fertiliser",
     },
   ],
   bgImage: {
