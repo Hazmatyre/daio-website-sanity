@@ -32,7 +32,7 @@ export const BlogCategories = (props: BlogCategoriesProps) => {
   };
 
   return (
-    <div className="px-[5%] md:px-16 overflow-x-visible">
+    <div id="blog-page" className="px-[5%] md:px-16 overflow-x-visible">
       <div className="container">
         <div className="type-desktop-h2">Page {currentPage}</div>
         {/* <NavigationMenu className="!justify-start overflow-x-scroll py-2" >
