@@ -25,6 +25,18 @@ import { Button } from "@/components/ui/button";
 import img1 from "/images/mybio-bio-fertiliser/img_2134.webp"
 import img2 from "/images/mybio-bio-fertiliser/img_2132.webp"
 import imgBackground from "/images/mybio-bio-fertiliser/hero-landscape.webp"
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Bio-Fertiliser",
+  description: "Odourless Bio-Fertiliser made from urine that’s proven to be as good as chemical fertiliser. Comes in both liquid and compact powdered forms to help your business save on shipping costs. Malaysian companies and government-linked bodies are welcome to apply for discounts as early adopters.",
+  // keywords: post?.seo?.seoKeywords,
+  openGraph: {
+    url: "https//daiointernational.com/mybio/biofertiliser",
+    description: "Odourless Bio-Fertiliser made from urine that’s proven to be as good as chemical fertiliser. Comes in both liquid and compact powdered forms to help your business save on shipping costs. Malaysian companies and government-linked bodies are welcome to apply for discounts as early adopters.",
+    title: "Bio-Fertiliser | DAIO International",
+  },
+} satisfies Metadata;
 
 
 export default async function Page() {
