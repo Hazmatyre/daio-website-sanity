@@ -26,6 +26,7 @@ import img1 from "/images/mybio-bio-fertiliser/img_2134.webp"
 import img2 from "/images/mybio-bio-fertiliser/img_2132.webp"
 import imgBackground from "/images/mybio-bio-fertiliser/hero-landscape.webp"
 import { Metadata } from "next";
+import { Cta7 } from "@/components/blocks/Cta7";
 
 export const metadata: Metadata = {
   title: "Bio-Fertiliser",
@@ -54,6 +55,9 @@ export default async function Page() {
         {...Header110Props}
         className=""
       />
+      <Cta7
+        {...Cta7Props}
+      />
 
 
 
@@ -73,9 +77,8 @@ const Header110Props: React.ComponentPropsWithoutRef<typeof Header110Custom> = {
 
     Reach out to us for more technical specifications.`,
   buttons: [
-    <Link key={1} href="#contact-us"><Button key={1}>Contact Us</Button></Link>,
-    <Link key={2} href="#scientific-test"><Button key={1} variant={"default"} className="dark">Scientific Test</Button></Link>
-
+    <Link key={1} href="#contact-us"><Button size={"lg"} key={1}>Contact Us</Button></Link>,
+    <Link key={2} href="#scientific-test"><Button size={"lg"} key={2} variant={"default"} className="dark">Scientific Test</Button></Link>
   ],
   // buttons: [
   //   { title: "Button" },
@@ -98,3 +101,10 @@ const Header110Props: React.ComponentPropsWithoutRef<typeof Header110Custom> = {
     alt: "Landscape of farmland. Image from pexels."
   },
 };
+
+const Cta7Props: React.ComponentPropsWithoutRef<typeof Cta7> = {
+  heading: "Sell your livestock waste to DAIO.",
+  description: "We purchase urine produced from livestock such as cows. We aim to boost the local Malaysian economy by creating demand for animal waste for the creation of our bio-fertiliser. Contact us for more information.",
+  buttons:
+    <Link key={1} href="#contact-us"><Button size={"lg"} key={1}>Contact Us</Button></Link>
+}
