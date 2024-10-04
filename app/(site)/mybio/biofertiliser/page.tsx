@@ -28,6 +28,8 @@ import imgBackground from "/images/mybio-bio-fertiliser/hero-landscape.webp"
 import { Metadata } from "next";
 import { Cta7 } from "@/components/blocks/Cta7";
 import { Layout1Slot } from "@/components/blocks/Layout1";
+import { Gallery17 } from "@/components/blocks/Gallery17.Images";
+import { Props_biofertiliser_gallery17_other } from "./props";
 
 export const metadata: Metadata = {
   title: "Bio-Fertiliser",
@@ -60,8 +62,9 @@ export default async function Page() {
         {...Cta7Props}
       />
       <Layout1Slot/>
-
-
+      <Gallery17
+        {...Props_biofertiliser_gallery17_other}
+      />
 
       <Header76 />
       <Suspense>
