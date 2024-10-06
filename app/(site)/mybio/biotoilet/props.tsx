@@ -238,15 +238,15 @@ export const Props_biotoilet_gallery17_other: React.ComponentProps<typeof Galler
   slides: imagesOther.map((img, index) => ({
     cardContent:
       <>
-        <div className=" h-80">
+        <div className="h-80">
           <Image
             key={index}
-            className="size-full object-cover rounded-lg shadow-xxsmall"
+            className="h-full w-auto object-cover rounded-lg shadow-xxsmall"
             quality={5}
             {...img}
           />
         </div>
-        <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{img["aria-description"]}</p>
+        <p className="type-tiny uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest max-w-xxs">{img["aria-description"]}</p>
       </>
   }))
 }

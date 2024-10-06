@@ -21,55 +21,55 @@ const images: React.ComponentProps<typeof Image>[] = [
     src: img1,
     alt: "Tomatoes",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
   {
     src: img2,
     alt: "Shishito Pepper",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
   {
     src: img3,
     alt: "Eggplant",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
   {
     src: img4,
     alt: "Green Peppers",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
   {
     src: img5,
     alt: "Watermelon",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
   {
     src: img6,
     alt: "Blueberries",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
   {
     src: img7,
     alt: "Grapes",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
   {
     src: img8,
     alt: "Cucumber",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
   {
     src: img9,
     alt: "Scallion",
     sizes: fujiSizes,
-    quality: 20,
+    quality: 50,
   },
 ]
 
@@ -85,12 +85,12 @@ export const Props_biofertiliser_gallery17_other: React.ComponentProps<typeof Ga
         <div className=" h-80">
           <Image
             key={index}
-            className="size-full object-cover rounded-lg shadow-xxsmall"
+            className="block h-full w-auto object-cover rounded-lg shadow-xxsmall"
             quality={5}
             {...img}
           />
         </div>
-        <p className="type-tiny text-center uppercase font-medium text-gray-400/90 lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{img["alt"]}</p>
+        <p className="type-tiny text-left uppercase font-medium text-gray-400/90 max-w-xxs lg:tracking-wider lg:mt-2.5 mt-3 leading-normal tracking-widest">{img["alt"]}</p>
       </>
   }))
 }

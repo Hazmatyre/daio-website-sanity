@@ -95,10 +95,10 @@ export const Props_Pongamia_Gallery17: React.ComponentProps<typeof Gallery17> = 
   slides: images.map((img, index) => ({
     cardContent:
       // eslint-disable-next-line jsx-a11y/alt-text
-      <div className="h-80 md:aspect-video">
+      <div className="h-80">
         <Image
           key={index}
-          className="size-full object-cover rounded-lg shadow-xxlarge"
+          className="h-full w-auto object-cover rounded-lg shadow-xxlarge"
           {...img}
         />
       </div>

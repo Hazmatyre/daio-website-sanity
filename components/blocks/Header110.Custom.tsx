@@ -31,7 +31,7 @@ export const Header110Custom = (props: Header110Props) => {
     <header className={cn("px-[5%] md:px-16 py-16 md:py-24 lg:py-28 relative overflow-hidden bg-black", props.className)}>
       {bgImage &&
         // <div className="size-full">
-          <Image priority className="opacity-35" sizes="100vw" quality={5} objectFit="cover" fill alt={bgImage.alt || ""} src={bgImage.src} />
+          <Image priority className="opacity-35 object-cover" sizes="100vw" quality={5} fill alt={bgImage.alt || ""} src={bgImage.src} />
         // </div>
       }
       <div className="relative z-10 container grid grid-cols-1 gap-12 lg:grid-cols-[0.5fr_1fr] lg:gap-16">
