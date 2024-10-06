@@ -218,9 +218,9 @@ export const Gallery17Defaults: Gallery17Props = {
           </Button>
           <h3 className="type-mobile-h3 md:mt-5 font-bold mt-2.5 text-brand-200 xxl:type-desktop-h1 md:type-desktop-h2">Bio-Fertiliser</h3>
           <p className="font-bold md:type-regular type-tiny text-background">Maintain soil fertility for generations with zero sewage</p>
-          <Link passHref href="/#contact-us" className="block mt-auto w-fit self-end">
+          <Link passHref href="/mybio/biofertiliser" className="block mt-auto w-fit self-end">
             <Button variant={"default"} className="mt-auto w-fit self-end">
-              Contact Us
+              Learn more
             </Button>
           </Link>
         </div>
