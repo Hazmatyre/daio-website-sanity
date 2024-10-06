@@ -40,7 +40,7 @@ export const Layout1SlotDefaults: Layout1SlotProps = {
       </p>
     </>,
     <div>
-      <Link key={1} href="/docs/daio-fertiliser-test.pdf"><Button size={"lg"} key={1}>View Paper</Button></Link>
+      <Link key={1} target="_blank" href="/docs/daio-fertiliser-test.pdf"><Button size={"lg"} key={1}>View Paper</Button></Link>
     </div>,
   ],
   slot2: [
