@@ -39,12 +39,12 @@ export const Layout1SlotDefaults: Layout1SlotProps = {
         Our bio-fertiliser is also rated to be safe to be handled without safety equipment or gloves regardless of whether it is made from human or livestock urine.
       </p>
     </>,
-    <div>
+    <div key={1}>
       <Link key={1} target="_blank" href="/docs/daio-fertiliser-test.pdf"><Button size={"lg"} key={1}>View Paper</Button></Link>
     </div>,
   ],
   slot2: [
-    <div>
+    <div key={1}>
       <Image className="rounded-lg shadow-xxlarge" sizes="40vw" alt="some" src={img} />
     </div>
   ],
