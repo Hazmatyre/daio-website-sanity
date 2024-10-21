@@ -189,7 +189,7 @@ const Timeline6Props: React.ComponentPropsWithoutRef<typeof Timeline6> = {
       <h3 className="type-large">Urine waste collected from DAIO MyBio Toilets.</h3>
     </>,
     <>
-      <h3 className="type-large ">Urine purification treatment started by ozone aeration. The aeration source is via 'Ultra Fine Bubble' (UFB).</h3>
+      <h3 className="type-large ">Urine purification treatment started by ozone aeration. The aeration source is via `Ultra Fine Bubble` (UFB).</h3>
     </>,
     <>
       <h3 className="type-large">When ozone saturation is confirmed by the ozone monitor, the urine purification process is complete.</h3>
