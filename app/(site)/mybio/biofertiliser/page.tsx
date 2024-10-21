@@ -23,7 +23,7 @@ import { Header110Custom } from "@/components/blocks/Header110.Custom";
 import { Button } from "@/components/ui/button";
 
 import img1 from "/images/mybio-bio-fertiliser/IMG_2134.webp"
-import img2 from "/images/mybio-bio-fertiliser/ING_2132.webp"
+import img2 from "/images/mybio-bio-fertiliser/IMG_2132.webp"
 import imgBackground from "/images/mybio-bio-fertiliser/hero-landscape.webp"
 import imgMachine from '/images/mybio-bio-fertiliser/machine.webp'
 import { Metadata } from "next";
