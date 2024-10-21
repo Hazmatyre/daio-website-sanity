@@ -37,13 +37,14 @@ export const Content29 = (props: Content29Props) => {
           />
         )}
 
-        <p className="font-semibold mb-4 mt-8 md:mt-30">Share this post</p>
+        <div className="font-semibold mb-4 mt-8 md:mt-30"></div>
+        {/* <p className="font-semibold mb-4 mt-8 md:mt-30">Share this post</p>
         <ul className="flex gap-5 mb-8 md:mb-12">
           <li>share</li>
           <li>share</li>
           <li>share</li>
           <li>share</li>
-        </ul>
+        </ul> */}
 
         <hr className="mb-8 md:mb-12" />
 

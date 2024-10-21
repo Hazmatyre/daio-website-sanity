@@ -12,18 +12,19 @@ type Props = {
   description: string;
   buttons: React.ReactNode[];
   features: React.ReactNode[]
+  image?: React.ReactNode
 };
 
 export type Timeline6Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Timeline6 = (props: Timeline6Props) => {
-  const { tagline, heading, description, buttons, features } = {
+  const { tagline, heading, description, buttons, features, image } = {
     ...Contact5Defaults,
     ...props,
   } as Props;
 
   return (
-    <section className="px-[5%] md:px-16 py-16 md:py-24 lg:py-28">
+    <section className={cn("px-[5%] md:px-16 py-16 md:py-24 lg:py-28", props.className)}>
       <div className="container max-w-md">
         {/* //* INTRO */}
         <div>
@@ -42,6 +43,10 @@ export const Timeline6 = (props: Timeline6Props) => {
           <div className="mt-6 md:mt-8">
             {buttons}
           </div>
+          {image &&
+            <div className="w-full mt-12 md:mt-16">
+              {image}
+            </div>}
         </div>
         {/* //* TIMELINE */}
         <div className="mt-12 md:mt-20 flex">

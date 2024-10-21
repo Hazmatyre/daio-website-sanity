@@ -93,12 +93,12 @@ export const BlogPostHeader1 = (props: BlogPostHeader1Props) => {
                 </div>
               } */}
           </div>
-          <ul className="flex gap-5">
+          {/* <ul className="flex gap-5">
             <li>share</li>
             <li>share</li>
             <li>share</li>
             <li>share</li>
-          </ul>
+          </ul> */}
         </div>
 
         {/* Image */}

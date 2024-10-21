@@ -25,7 +25,7 @@ type SlideProps = {
 type Props = {
   headingTag: "h1" | "h2"
   heading: string | null;
-  description: string | null;
+  description: string | null | React.ReactNode;
   slides: SlideProps[];
   topSectionClassName?: string
   bottomSectionClassName?: string

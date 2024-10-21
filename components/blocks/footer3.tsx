@@ -148,7 +148,7 @@ export const Footer3Defaults: Footer3Props = {
         { title: "Home", url: "/" },
         { title: "About", url: "/about" },
         { title: "MyBio Bio-Toilet", url: "/mybio/biotoilet" },
-        // { title: "MyBio Bio-Fertiliser", url: "#" },
+        { title: "MyBio Bio-Fertiliser", url: "/mybio/biofertiliser" },
         { title: "MyBotany Pongamia", url: "/mybotany/pongamia" },
       ],
     },

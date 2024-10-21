@@ -17,7 +17,7 @@ type ImageProps = {
 type SectionProps = {
   icon: ImageProps;
   heading: string;
-  description: string;
+  description: string | React.ReactNode;
 };
 
 type Props = React.HTMLAttributes<"div"> & {
@@ -37,7 +37,7 @@ export const Layout245 = (props: Layout245Props) => {
     description,
     sections = [],
     buttons = [],
-  } = { ...props, ...Layout245Defaults };
+  } = { ...Layout245Defaults, ...props, };
   return (
     <section className={cn("px-[5%] md:px-16 py-16 md:py-24 lg:py-28", props.className)}>
       <div className="container flex flex-col items-start">
@@ -57,13 +57,15 @@ export const Layout245 = (props: Layout245Props) => {
               <h3 className="mb-5 md:mb-6 type-mobile-h5 md:type-desktop-h5 tracking-tight">
                 {section.heading}
               </h3>
-              <p className="type-regular leading-relaxed">{parse(section.description)}</p>
+              <p className="type-regular leading-relaxed">{section.description}</p>
             </div>
           ))}
         </div>
-        <div className="mt-10 flex items-center gap-4 md:mt-14 lg:mt-16">
-          {buttons}
-        </div>
+        {buttons &&
+          <div className="mt-10 flex items-center gap-4 md:mt-14 lg:mt-16">
+            {buttons}
+          </div>
+        }
       </div>
     </section>
   );
