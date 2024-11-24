@@ -101,7 +101,8 @@ export default async function PostPage({ params }: Props) {
       image: <Image className="size-full" fill src={urlForImage(post.author?.picture)?.url() as string} alt={post.author?.name as string} />,
       name: post.author?.name as string
     },
-    date: post.date
+    date: post.date,
+    heading: post.title
   }
 
 
